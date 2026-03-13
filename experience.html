@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Experience — Muhammad Ilham Pratama</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg:          #0b1628;
+      --bg2:         #0f1e35;
+      --surface:     #162540;
+      --surface2:    #1a2d4d;
+      --border:      rgba(255,255,255,0.07);
+      --blue:        #2563EB;
+      --blue-bright: #60a5fa;
+      --orange:      #F97316;
+      --orange-dim:  rgba(249,115,22,0.13);
+      --text:        #e8f0fe;
+      --muted:       #7a9cc4;
+      --muted2:      #3d5a80;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Manrope', sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.2rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(20px);
+      background: rgba(11,22,40,0.88);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--orange); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--text); }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      padding: 9rem 4rem 4rem;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero-bg {
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(37,99,235,0.1) 0%, transparent 70%);
+      filter: blur(100px);
+      top: -200px; right: -100px;
+      pointer-events: none;
+    }
+    .page-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    .page-eyebrow-line { width: 28px; height: 2px; background: var(--orange); border-radius: 2px; }
+    .page-eyebrow-text {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--orange);
+    }
+    .page-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+    .page-desc {
+      font-size: 0.93rem;
+      color: rgba(232,240,254,0.6);
+      max-width: 580px;
+      line-height: 1.9;
+    }
+
+    /* ── MAIN ── */
+    .main {
+      padding: 5rem 4rem;
+      max-width: 1000px;
+    }
+
+    /* ── SECTION BLOCK ── */
+    .exp-section { margin-bottom: 5rem; }
+
+    .section-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 0.4rem;
+    }
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, var(--blue), transparent);
+      margin-bottom: 2.5rem;
+      opacity: 0.3;
+    }
+
+    /* ── TIMELINE ── */
+    /*
+      HOW TO ADD A NEW ENTRY:
+      1. Copy one full <!-- ===== ENTRY ===== --> block
+      2. Fill in: timeline-org, timeline-role, timeline-period,
+                  timeline-desc bullets, and timeline-tags
+      3. Paste it inside the correct .timeline block
+    */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 8px; bottom: 0;
+      width: 1px;
+      background: linear-gradient(180deg, var(--blue), transparent);
+      opacity: 0.3;
+    }
+
+    .timeline-entry {
+      position: relative;
+      margin-bottom: 2.5rem;
+    }
+    .timeline-entry:last-child { margin-bottom: 0; }
+
+    /* Dot on timeline */
+    .timeline-entry::before {
+      content: '';
+      position: absolute;
+      left: -2rem;
+      top: 8px;
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--blue-bright);
+      border: 2px solid var(--bg);
+      box-shadow: 0 0 0 2px var(--blue);
+    }
+
+    .timeline-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.6rem 1.8rem;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .timeline-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue), transparent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s;
+    }
+    .timeline-card:hover::before { transform: scaleX(1); }
+    .timeline-card:hover { border-color: rgba(37,99,235,0.25); transform: translateX(4px); }
+
+    .timeline-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 0.3rem;
+      flex-wrap: wrap;
+    }
+    .timeline-org {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .timeline-period {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--muted);
+      white-space: nowrap;
+      background: rgba(37,99,235,0.08);
+      border: 1px solid rgba(37,99,235,0.2);
+      padding: 0.2rem 0.7rem;
+      border-radius: 3px;
+    }
+    .timeline-role {
+      font-size: 0.83rem;
+      font-weight: 600;
+      color: var(--blue-bright);
+      margin-bottom: 1rem;
+    }
+
+    .timeline-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .timeline-bullets li {
+      font-size: 0.82rem;
+      color: rgba(232,240,254,0.65);
+      line-height: 1.7;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .timeline-bullets li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--orange);
+      font-size: 0.7rem;
+      top: 0.15rem;
+    }
+
+    .timeline-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+    .ttag {
+      font-size: 0.65rem;
+      font-weight: 600;
+      padding: 0.18rem 0.55rem;
+      border-radius: 3px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: rgba(255,255,255,0.02);
+    }
+    .ttag.blue { border-color: rgba(37,99,235,0.2); color: var(--blue-bright); background: rgba(37,99,235,0.06); }
+    .ttag.orange { border-color: rgba(249,115,22,0.2); color: var(--orange); background: var(--orange-dim); }
+
+    /* Sub-role (for multiple roles in one org) */
+    .sub-role-block {
+      margin-top: 1.2rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--border);
+    }
+    .sub-role-title {
+      font-size: 0.83rem;
+      font-weight: 600;
+      color: var(--blue-bright);
+      margin-bottom: 0.7rem;
+    }
+
+    /* ── ORG CARDS (for committee/org section) ── */
+    .org-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+
+    .org-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.4rem 1.6rem;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .org-card::after {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 2px;
+      background: var(--blue);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.3s;
+    }
+    .org-card:hover::after { transform: scaleY(1); }
+    .org-card:hover { border-color: rgba(37,99,235,0.25); transform: translateY(-2px); }
+
+    .org-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.2rem;
+    }
+    .org-role {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--blue-bright);
+      margin-bottom: 0.5rem;
+    }
+    .org-period {
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+    .org-desc {
+      font-size: 0.78rem;
+      color: rgba(232,240,254,0.6);
+      line-height: 1.7;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2rem 4rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg2);
+    }
+    .footer-left { font-family:'Syne',sans-serif; font-size:0.85rem; font-weight:600; color:var(--muted); }
+    .footer-right { font-size:0.72rem; color:var(--muted2); }
+
+    .reveal { opacity:0; transform:translateY(20px); transition:opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity:1; transform:none; }
+
+    @media (max-width: 900px) {
+      nav { padding:1.2rem 1.5rem; }
+      .page-hero { padding:7rem 1.5rem 3rem; }
+      .main { padding:3rem 1.5rem; }
+      .org-grid { grid-template-columns:1fr; }
+      footer { padding:1.5rem; flex-direction:column; gap:0.8rem; text-align:center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">M<span>·</span>I<span>·</span>P</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="experience.html" class="active">Experience</a></li>
+      <li><a href="mailto:ilhamp2709@gmail.com">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-eyebrow">
+      <div class="page-eyebrow-line"></div>
+      <span class="page-eyebrow-text">Professional Journey</span>
+    </div>
+    <h1 class="page-title">Experience &<br>Organizations</h1>
+    <p class="page-desc">
+      A timeline of my professional experiences, organizational roles, and community involvement throughout my undergraduate years.
+    </p>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- ============================================================ -->
+    <!-- SECTION 1: WORKING EXPERIENCE                                -->
+    <!-- To add new entry: copy one timeline-entry block & fill in    -->
+    <!-- ============================================================ -->
+    <div class="exp-section reveal">
+      <div class="section-label">Section 01</div>
+      <div class="section-title">Working Experience</div>
+      <div class="section-divider"></div>
+
+      <div class="timeline">
+
+        <!-- ===== ENTRY #1 — Arc Institute ===== -->
+        <div class="timeline-entry">
+          <div class="timeline-card">
+            <div class="timeline-top">
+              <span class="timeline-org">Arc Institute</span>
+              <span class="timeline-period">Feb 2026 – Present</span>
+            </div>
+            <div class="timeline-role">AMALGAM II Project Volunteer</div>
+            <ul class="timeline-bullets">
+              <li>Contributed to the harmonization and recoding of longitudinal SUSENAS datasets (1993–present).</li>
+              <li>Performed variable recoding, data validation, and documentation in research workflows.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="ttag blue">SUSENAS</span>
+              <span class="ttag blue">Data Harmonization</span>
+              <span class="ttag orange">Stata</span>
+            </div>
+          </div>
+        </div>
+        <!-- ===== END ENTRY #1 ===== -->
+
+        <!-- ===== ENTRY #2 — Bank Indonesia ===== -->
+        <div class="timeline-entry">
+          <div class="timeline-card">
+            <div class="timeline-top">
+              <span class="timeline-org">Bank Indonesia</span>
+              <span class="timeline-period">Aug 2025 – Feb 2026</span>
+            </div>
+
+            <!-- Sub-role 1 -->
+            <div class="timeline-role">Research Intern — Bank Indonesia Institute</div>
+            <ul class="timeline-bullets">
+              <li>Assisted in drafting research reports and presentations on CGE impact simulation on biodiesel downstreaming under the supervision of M.H.A Ridhwan, Ph.D.</li>
+              <li>Assisted in managing other daily research-related tasks supporting activities conducted by Bank Indonesia.</li>
+            </ul>
+
+            <!-- Sub-role 2 -->
+            <div class="sub-role-block">
+              <div class="sub-role-title">Research Intern — Department of Reporting Management & Compliance</div>
+              <ul class="timeline-bullets">
+                <li>Prepared literature reviews, data analysis, and presentation materials to support the Natural Resource Export Proceeds (DHE SDA) project.</li>
+                <li>Supported daily reporting on Indonesia's foreign exchange reserves, including data compilation, validation, reconciliation, and internal reporting materials.</li>
+              </ul>
+            </div>
+
+            <div class="timeline-tags" style="margin-top:1rem;">
+              <span class="ttag blue">CGE Modeling</span>
+              <span class="ttag blue">FX Reserves</span>
+              <span class="ttag blue">DHE SDA</span>
+              <span class="ttag orange">Research Report</span>
+              <span class="ttag orange">Stata</span>
+            </div>
+          </div>
+        </div>
+        <!-- ===== END ENTRY #2 ===== -->
+
+        <!-- ===== ENTRY #3 — Lembaga Demografi FEB UI ===== -->
+        <div class="timeline-entry">
+          <div class="timeline-card">
+            <div class="timeline-top">
+              <span class="timeline-org">Lembaga Demografi FEB UI</span>
+              <span class="timeline-period">Jun 2025 – Aug 2025</span>
+            </div>
+            <div class="timeline-role">Research Intern</div>
+            <ul class="timeline-bullets">
+              <li>Contributed to the CRVS (Civil Registration and Vital Statistics) project by collecting and compiling national and regional government expenditure data.</li>
+              <li>Evaluated program implementation and budget allocation for CRVS initiatives across regions.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="ttag blue">CRVS</span>
+              <span class="ttag blue">Government Expenditure</span>
+              <span class="ttag orange">Data Compilation</span>
+            </div>
+          </div>
+        </div>
+        <!-- ===== END ENTRY #3 ===== -->
+
+        <!-- ===== ENTRY #4 — Kanopi FEB UI (Research Assistant) ===== -->
+        <div class="timeline-entry">
+          <div class="timeline-card">
+            <div class="timeline-top">
+              <span class="timeline-org">Kanopi FEB UI</span>
+              <span class="timeline-period">Mar 2024 – Dec 2024</span>
+            </div>
+            <div class="timeline-role">Research Assistant (Project Based)</div>
+            <ul class="timeline-bullets">
+              <li>Managed PENSAR (Penelitian Besar) 2025 — successfully raised IDR 15M in sponsorships and IDR 20M from research-related services.</li>
+              <li>Contributed to the publication of PENSAR 2025 (in progress), PENSAR 2024, and PENSAR 2023 reports.</li>
+              <li>Assisted in preparing, cleaning, and running regressions on SUSENAS, Sakernas, Statistik Industri, PODES, and World Bank datasets using Stata.</li>
+              <li>Conducted data scraping and manual data entry from BPS and Bank Financial Reports.</li>
+              <li>Performed literature reviews and compiled research reports.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="ttag blue">SUSENAS</span>
+              <span class="ttag blue">PODES</span>
+              <span class="ttag blue">Sakernas</span>
+              <span class="ttag orange">Stata</span>
+              <span class="ttag orange">Data Scraping</span>
+            </div>
+          </div>
+        </div>
+        <!-- ===== END ENTRY #4 ===== -->
+
+        <!-- ===== ENTRY #5 — Teaching Assistant ===== -->
+        <div class="timeline-entry">
+          <div class="timeline-card">
+            <div class="timeline-top">
+              <span class="timeline-org">Universitas Indonesia</span>
+              <span class="timeline-period">Sept 2024 – Dec 2024</span>
+            </div>
+            <div class="timeline-role">Teaching Assistant — Econometrics</div>
+            <ul class="timeline-bullets">
+              <li>Led weekly tutorial sessions providing in-depth explanations of econometrics concepts and Stata exercises.</li>
+              <li>Supervised under Dr. Khoirunurrofik for undergraduate econometrics class.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="ttag blue">Econometrics</span>
+              <span class="ttag orange">Stata</span>
+              <span class="ttag orange">Teaching</span>
+            </div>
+          </div>
+        </div>
+        <!-- ===== END ENTRY #5 ===== -->
+
+      </div>
+    </div>
+    <!-- ========== END SECTION 1 ========== -->
+
+
+    <!-- ============================================================ -->
+    <!-- SECTION 2: COMMITTEE & ORGANIZATIONAL EXPERIENCE             -->
+    <!-- To add new entry: copy one org-card block & fill in          -->
+    <!-- ============================================================ -->
+    <div class="exp-section reveal">
+      <div class="section-label">Section 02</div>
+      <div class="section-title">Committee & Organizational Experience</div>
+      <div class="section-divider"></div>
+
+      <div class="org-grid">
+
+        <!-- ===== ORG #1 — Kanopi Vice Manager ===== -->
+        <div class="org-card">
+          <div class="org-name">Kanopi FEB UI</div>
+          <div class="org-role">Vice Manager of Research Division</div>
+          <div class="org-period">Sep 2022 – Jan 2024</div>
+          <div class="org-desc">Co-led a team of 9 economics undergraduates managing PRIMERA FE, EJR (Economic Journal Review), and PENSAR — KANOPI's annual research programs.</div>
+        </div>
+        <!-- ===== END ORG #1 ===== -->
+
+        <!-- ===== ORG #2 — Kanopi Staff ===== -->
+        <div class="org-card">
+          <div class="org-name">Kanopi FEB UI</div>
+          <div class="org-role">Staff & Trainee of Research Division</div>
+          <div class="org-period">Sep 2022 – Jan 2024</div>
+          <div class="org-desc">Contributed to research division activities including program coordination, literature reviews, and research project support.</div>
+        </div>
+        <!-- ===== END ORG #2 ===== -->
+
+        <!-- ===== ORG #3 — Indonesia Economic Outlook ===== -->
+        <div class="org-card">
+          <div class="org-name">Indonesia Economic Outlook FEB UI</div>
+          <div class="org-role">Expert Staff & Staff of Marketing Division</div>
+          <div class="org-period">Sep 2022 – Mar 2024</div>
+          <div class="org-desc">Contributed to marketing division activities for Indonesia Economic Outlook, one of FEB UI's major annual economic events.</div>
+        </div>
+        <!-- ===== END ORG #3 ===== -->
+
+        <!-- ===== ORG #4 — OPK FEB UI ===== -->
+        <div class="org-card">
+          <div class="org-name">OPK FEB UI</div>
+          <div class="org-role">Administrative Staff</div>
+          <div class="org-period">Jul 2023 – Sep 2023</div>
+          <div class="org-desc">Managed administrative tasks for FEB UI's student orientation program (OPK), supporting coordination between committees and participants.</div>
+        </div>
+        <!-- ===== END ORG #4 ===== -->
+
+      </div>
+    </div>
+    <!-- ========== END SECTION 2 ========== -->
+
+
+    <!-- ============================================================ -->
+    <!-- SECTION 3: VOLUNTEER & COMMUNITY SERVICES                    -->
+    <!-- To add new entry: copy one org-card block & fill in          -->
+    <!-- ============================================================ -->
+    <div class="exp-section reveal">
+      <div class="section-label">Section 03</div>
+      <div class="section-title">Volunteer & Community Services</div>
+      <div class="section-divider"></div>
+
+      <div class="org-grid">
+
+        <!-- ===== VOL #1 — Forum Studi Islam Head ===== -->
+        <div class="org-card">
+          <div class="org-name">Forum Studi Islam FEB UI</div>
+          <div class="org-role">Head of Community and Social Affairs</div>
+          <div class="org-period">Mar 2025 – Jan 2026</div>
+          <div class="org-desc">Led community and social affairs division, organizing social programs and community engagement initiatives for FEB UI students.</div>
+        </div>
+        <!-- ===== END VOL #1 ===== -->
+
+        <!-- ===== VOL #2 — Forum Studi Islam Intern ===== -->
+        <div class="org-card">
+          <div class="org-name">Forum Studi Islam FEB UI</div>
+          <div class="org-role">Intern of Community and Social Affairs</div>
+          <div class="org-period">Sep 2022 – Mar 2023</div>
+          <div class="org-desc">Supported community and social affairs activities as an intern, contributing to student welfare and social outreach programs.</div>
+        </div>
+        <!-- ===== END VOL #2 ===== -->
+
+        <!-- ===== VOL #3 — Kanopi Empowerment ===== -->
+        <div class="org-card">
+          <div class="org-name">Kanopi FEB UI</div>
+          <div class="org-role">Kanopi Empowerment at Bangka Belitung</div>
+          <div class="org-period">Sep 2023 – Aug 2023</div>
+          <div class="org-desc">Participated in Kanopi's community empowerment program in Bangka Belitung, contributing to local economic development initiatives.</div>
+        </div>
+        <!-- ===== END VOL #3 ===== -->
+
+        <!-- ===== VOL #4 — Student Mentor ===== -->
+        <div class="org-card">
+          <div class="org-name">Kanopi FEB UI</div>
+          <div class="org-role">Student Mentor</div>
+          <div class="org-period">Jan 2025</div>
+          <div class="org-desc">Mentored junior students in research methodology and academic writing as part of Kanopi's student development program.</div>
+        </div>
+        <!-- ===== END VOL #4 ===== -->
+
+      </div>
+    </div>
+    <!-- ========== END SECTION 3 ========== -->
+
+  </div><!-- end .main -->
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">Muhammad Ilham Pratama · Jakarta, Indonesia</div>
+    <div class="footer-right">ilhamp2709@gmail.com &nbsp;·&nbsp; +62 877-7656-5132</div>
+  </footer>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.05 });
+    revealEls.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
