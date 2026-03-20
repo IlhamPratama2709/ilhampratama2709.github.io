@@ -46,7 +46,7 @@
     }
 
     /* ── NAVBAR ── */
-    nav {
+     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
@@ -54,11 +54,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid rgba(255,255,255,0.12);
-      background-image: url('images/FEB%20UI%20main%20header.jpg');
-      background-size: cover;
-      background-position: center 35%;
-      box-shadow: inset 0 0 0 9999px rgba(11,22,40,0.72);
+      backdrop-filter: blur(20px);
+      background: rgba(11,22,40,0.88);
+      border-bottom: 1px solid var(--border);
     }
 
     .nav-logo {
