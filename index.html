@@ -545,14 +545,14 @@
       position: relative;
       overflow: hidden;
     }
-    .interest-card::after {
+     .interest-card::after {
       content:''; position:absolute; left:0; top:0; bottom:0; width:2px;
-      background:var(--blue); transform:scaleY(0); transform-origin:bottom; transition:transform 0.3s;
+      background: var(--accent, var(--blue));
+      transform:scaleY(0); transform-origin:bottom; transition:transform 0.3s;
     }
     .interest-card:hover::after { transform:scaleY(1); }
-    .interest-card:hover { border-color:rgba(37,99,235,0.3); transform:translateY(-2px); }
-    .interest-icon { font-size:1.1rem; margin-bottom:0.4rem; }
-    .interest-name { font-family:'Syne',sans-serif; font-size:0.78rem; font-weight:600; color:var(--text); margin-bottom:0.15rem; }
+    .interest-card:hover { border-color: color-mix(in srgb, var(--accent, var(--blue)) 40%, transparent); transform:translateY(-2px); }
+    .interest-card .interest-name { color: var(--accent, var(--text)); }
     .interest-desc { font-size:0.68rem; color:var(--muted); line-height:1.5; }
 
     /* ── EDUCATION ── */
@@ -903,36 +903,36 @@
         <p>Through this website, I aim to document my research papers and projects, mostly developed using Stata, R, and QGIS. I'm open to discussions about economic issues, research opportunities, or data-related projects.</p>
       </div>
       <div class="reveal">
-        <div class="interests-grid">
-          <div class="interest-card">
+          <div class="interests-grid">
+          <div class="interest-card" style="--accent:#60a5fa">
             <div class="interest-icon">🏙️</div>
             <div class="interest-name">Regional & Urban Economics</div>
             <div class="interest-desc">Cities, regions, spatial dynamics</div>
           </div>
-          <div class="interest-card">
+          <div class="interest-card" style="--accent:#34d399">
             <div class="interest-icon">🌿</div>
-            <div class="interest-name">Environmental Economics</div>
-            <div class="interest-desc">Energy, climate, green transitions</div>
+            <div class="interest-name">Environmental & Energy Economics</div>
+            <div class="interest-desc">Climate, energy transition, green policy</div>
           </div>
-          <div class="interest-card">
+          <div class="interest-card" style="--accent:#fbbf24">
+            <div class="interest-icon">🌐</div>
+            <div class="interest-name">International & Industrial Economics</div>
+            <div class="interest-desc">Trade, SEZs, downstreaming, industrial policy</div>
+          </div>
+          <div class="interest-card" style="--accent:#e879f9">
+            <div class="interest-icon">🏦</div>
+            <div class="interest-name">Monetary & Financial Economics</div>
+            <div class="interest-desc">Monetary policy, FX, financial systems</div>
+          </div>
+          <div class="interest-card" style="--accent:#f97316">
             <div class="interest-icon">👷</div>
-            <div class="interest-name">Labor Economics</div>
-            <div class="interest-desc">Employment, wages, labor markets</div>
+            <div class="interest-name">Labor & Health Economics</div>
+            <div class="interest-desc">Employment, wages, health outcomes</div>
           </div>
-          <div class="interest-card">
+          <div class="interest-card" style="--accent:#a78bfa">
             <div class="interest-icon">📊</div>
-            <div class="interest-name">Causal Inference</div>
-            <div class="interest-desc">DiD, IV, regression discontinuity</div>
-          </div>
-          <div class="interest-card">
-            <div class="interest-icon">🗺️</div>
-            <div class="interest-name">Spatial Analysis & Remote Sensing</div>
-            <div class="interest-desc">QGIS, GEE, spatial econometrics</div>
-          </div>
-          <div class="interest-card">
-            <div class="interest-icon">➕</div>
-            <div class="interest-name">Others</div>
-            <div class="interest-desc">Health Econ, Public Policy, Dev. Econ</div>
+            <div class="interest-name">Development & Public Policy</div>
+            <div class="interest-desc">Growth, inequality, poverty, policy design</div>
           </div>
         </div>
       </div>
