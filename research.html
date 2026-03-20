@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Research & Publications — Muhammad Ilham Pratama</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg:          #0b1628;
+      --bg2:         #0f1e35;
+      --surface:     #162540;
+      --surface2:    #1a2d4d;
+      --border:      rgba(255,255,255,0.07);
+      --blue:        #2563EB;
+      --blue-bright: #60a5fa;
+      --orange:      #F97316;
+      --orange-dim:  rgba(249,115,22,0.13);
+      --text:        #e8f0fe;
+      --muted:       #7a9cc4;
+      --muted2:      #3d5a80;
+      --regional:    #60a5fa;
+      --environ:     #4ade80;
+      --intl:        #fb923c;
+      --monetary:    #f472b6;
+      --labor:       #fbbf24;
+      --devpolicy:   #c084fc;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'Manrope', sans-serif; font-weight: 400; line-height: 1.7; overflow-x: hidden; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.2rem 4rem; display: flex; justify-content: space-between; align-items: center; backdrop-filter: blur(20px); background: rgba(11,22,40,0.88); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.18em; color: var(--text); text-decoration: none; }
+    .nav-logo span { color: var(--orange); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.3s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+
+    .page-hero { padding: 9rem 4rem 4rem; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
+    .page-hero-bg { position: absolute; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(37,99,235,0.1) 0%, transparent 70%); filter: blur(100px); top: -200px; right: -100px; pointer-events: none; }
+    .page-eyebrow { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem; }
+    .page-eyebrow-line { width: 28px; height: 2px; background: var(--orange); border-radius: 2px; }
+    .page-eyebrow-text { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange); }
+    .page-title { font-family: 'Syne', sans-serif; font-size: clamp(2.2rem, 4vw, 3.8rem); font-weight: 700; line-height: 1.1; margin-bottom: 1rem; color: var(--text); }
+    .page-desc { font-size: 0.93rem; color: rgba(232,240,254,0.6); max-width: 580px; line-height: 1.9; margin-bottom: 2rem; }
+
+    .filter-area { display: flex; flex-direction: column; gap: 0.8rem; }
+    .filter-row { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .filter-row-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted2); min-width: 52px; }
+    .filter-btn { font-family: 'Manrope', sans-serif; font-size: 0.73rem; font-weight: 600; padding: 0.4rem 1rem; border-radius: 3px; border: 1px solid var(--border); background: transparent; color: var(--muted); cursor: pointer; transition: all 0.25s; letter-spacing: 0.04em; }
+    .filter-btn:hover { border-color: var(--blue-bright); color: var(--blue-bright); }
+    .filter-btn.active { background: var(--blue); border-color: var(--blue); color: #fff; }
+    .expand-toggle { font-family: 'Manrope', sans-serif; font-size: 0.73rem; font-weight: 600; padding: 0.4rem 1rem; border-radius: 3px; border: 1px solid rgba(96,165,250,0.25); background: rgba(37,99,235,0.06); color: var(--blue-bright); cursor: pointer; transition: all 0.25s; letter-spacing: 0.04em; display: flex; align-items: center; gap: 0.4rem; }
+    .expand-toggle:hover { background: rgba(37,99,235,0.15); }
+    .expand-toggle.active { background: rgba(37,99,235,0.18); border-color: var(--blue-bright); }
+
+    .main { padding: 4rem; max-width: 1400px; margin: 0 auto; }
+
+    .research-section { margin-bottom: 5rem; }
+    .section-group-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--orange); margin-bottom: 0.4rem; }
+    .section-group-title { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--text); margin-bottom: 0.4rem; }
+    .section-group-desc { font-size: 0.82rem; color: var(--muted); margin-bottom: 1.8rem; max-width: 600px; }
+    .section-header { display: flex; align-items: center; gap: 1.2rem; margin-bottom: 1.5rem; }
+    .section-header-line { flex: 1; height: 1px; background: linear-gradient(90deg, rgba(37,99,235,0.4), transparent); }
+
+    /* Cert cards — Style A */
+    .cert-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1.2rem; }
+    .cert-card { border-radius: 8px; overflow: hidden; border: 1px solid var(--border); position: relative; aspect-ratio: 4/3; background: var(--surface2); transition: transform 0.3s, box-shadow 0.3s; display: block; }
+    .cert-card:hover { transform: translateY(-3px); box-shadow: 0 10px 36px rgba(0,0,0,0.4); }
+    .cert-card.hidden { display: none; }
+    .cert-img-slot { position: absolute; inset: 0; }
+    .cert-img-slot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .cert-img-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; color: var(--muted2); }
+    .cert-img-placeholder svg { opacity: 0.3; }
+    .cert-img-placeholder span { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; }
+    .cert-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 2.5rem 1rem 0.9rem; background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.6) 50%, transparent 100%); display: flex; flex-direction: column; gap: 2px; }
+    .cert-issuer { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.65); text-shadow: 0 1px 4px rgba(0,0,0,0.9); }
+    .cert-name { font-family: 'Syne', sans-serif; font-size: 0.82rem; font-weight: 700; color: #fff; line-height: 1.35; text-shadow: 0 1px 6px rgba(0,0,0,0.95); }
+    .cert-meta { font-size: 0.68rem; color: rgba(255,255,255,0.6); text-shadow: 0 1px 4px rgba(0,0,0,0.9); margin-top: 1px; }
+    .cert-tag { font-size: 0.6rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.5); display: inline-block; margin-top: 3px; width: fit-content; }
+    .cert-view-btn { position: absolute; top: 8px; right: 8px; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.06em; color: rgba(255,255,255,0.55); background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); padding: 0.2rem 0.55rem; border-radius: 4px; text-decoration: none; transition: color 0.2s, background 0.2s; }
+    .cert-view-btn:hover { color: #fff; background: rgba(0,0,0,0.55); }
+
+    /* Topic chips */
+    .paper-topic-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .topic-chip { font-size: 0.65rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 20px; letter-spacing: 0.03em; }
+    .topic-chip.regional  { background: transparent; color: var(--regional);  border: 1px solid rgba(96,165,250,0.4); }
+    .topic-chip.environ   { background: transparent; color: var(--environ);   border: 1px solid rgba(74,222,128,0.4); }
+    .topic-chip.intl      { background: transparent; color: var(--intl);      border: 1px solid rgba(251,146,60,0.4); }
+    .topic-chip.monetary  { background: transparent; color: var(--monetary);  border: 1px solid rgba(244,114,182,0.4); }
+    .topic-chip.labor     { background: transparent; color: var(--labor);     border: 1px solid rgba(251,191,36,0.4); }
+    .topic-chip.devpolicy { background: transparent; color: var(--devpolicy); border: 1px solid rgba(192,132,252,0.4); }
+    .topic-chip.other     { background: transparent; color: var(--muted);     border: 1px solid rgba(255,255,255,0.15); }
+
+    /* Paper list */
+    .paper-list { display: flex; flex-direction: column; gap: 0.7rem; }
+    .paper-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; display: flex; flex-direction: row; align-items: stretch; transition: border-color 0.25s, box-shadow 0.25s; overflow: hidden; }
+    .paper-card:hover { border-color: rgba(37,99,235,0.2); box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    .paper-card.hidden { display: none; }
+    .cert-card.hidden  { display: none; }
+
+    .paper-accent-bar { width: 3px; flex-shrink: 0; }
+    .paper-card-inner { padding: 1rem 1.3rem; display: flex; flex-direction: row; gap: 1rem; align-items: flex-start; flex: 1; }
+    .paper-card-body { flex: 1; display: flex; flex-direction: column; gap: 0.5rem; }
+    .paper-card-top { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+    .paper-year { font-family: 'Syne', sans-serif; font-size: 0.68rem; font-weight: 700; color: var(--muted2); letter-spacing: 0.08em; }
+    .paper-rank { font-size: 0.65rem; font-weight: 700; padding: 0.18rem 0.55rem; border-radius: 3px; white-space: nowrap; background: rgba(255,255,255,0.04); color: var(--muted); border: 1px solid rgba(255,255,255,0.1); }
+    .paper-title { font-family: 'Syne', sans-serif; font-size: 0.92rem; font-weight: 700; color: var(--text); line-height: 1.45; }
+    .paper-event { font-size: 0.75rem; color: var(--muted); font-style: italic; }
+
+    .paper-expand-body { display: none; flex-direction: column; gap: 0.5rem; border-top: 1px solid var(--border); padding-top: 0.6rem; margin-top: 0.2rem; }
+    .paper-expand-body.open { display: flex; }
+    .paper-desc { font-size: 0.78rem; color: rgba(232,240,254,0.6); line-height: 1.7; }
+    .paper-method-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .ptag { font-size: 0.65rem; font-weight: 600; padding: 0.2rem 0.55rem; border-radius: 3px; border: 1px solid rgba(249,115,22,0.2); color: var(--orange); background: var(--orange-dim); letter-spacing: 0.03em; }
+
+    .paper-card-actions { display: flex; flex-direction: column; align-items: flex-end; justify-content: space-between; gap: 1rem; flex-shrink: 0; padding-top: 0.1rem; min-width: 90px; }
+    .expand-btn { background: none; border: none; font-family: 'Manrope', sans-serif; font-size: 0.68rem; font-weight: 600; color: var(--muted2); cursor: pointer; display: flex; align-items: center; gap: 0.3rem; transition: color 0.2s; letter-spacing: 0.04em; white-space: nowrap; }
+    .expand-btn:hover { color: var(--muted); }
+    .expand-chevron { transition: transform 0.25s; display: inline-block; }
+    .expand-chevron.open { transform: rotate(180deg); }
+    .paper-link { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.73rem; font-weight: 600; color: var(--blue-bright); text-decoration: none; transition: color 0.2s; letter-spacing: 0.03em; white-space: nowrap; }
+    .paper-link:hover { color: #fff; }
+    .paper-link svg { transition: transform 0.2s; }
+    .paper-link:hover svg { transform: translate(2px,-2px); }
+
+    footer { padding: 2rem 4rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: var(--bg2); }
+    .footer-left { font-family:'Syne',sans-serif; font-size:0.85rem; font-weight:600; color:var(--muted); }
+    .footer-right { font-size:0.72rem; color:var(--muted2); }
+
+    .reveal { opacity:0; transform:translateY(20px); transition:opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity:1; transform:none; }
+
+    @media (max-width: 900px) {
+      nav { padding:1.2rem 1.5rem; }
+      .page-hero { padding:7rem 1.5rem 3rem; }
+      .main { padding:3rem 1.5rem; }
+      .cert-grid { grid-template-columns:1fr; }
+      .paper-card-actions { min-width: auto; }
+      footer { padding:1.5rem; flex-direction:column; gap:0.8rem; text-align:center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">M<span>·</span>I<span>·</span>P</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#education">Education</a></li>
+      <li><a href="research.html" class="active">Research</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-eyebrow">
+      <div class="page-eyebrow-line"></div>
+      <span class="page-eyebrow-text">Academic Work</span>
+    </div>
+    <h1 class="page-title">Research &<br>Publications</h1>
+    <p class="page-desc">A collection of certifications, research papers, competition entries, and class projects — covering regional economics, energy policy, spatial analysis, and more.</p>
+    <div class="filter-area">
+      <div class="filter-row">
+        <span class="filter-row-label">TYPE</span>
+        <button class="filter-btn active" onclick="filterType('all',this)">All</button>
+        <button class="filter-btn" onclick="filterType('cert',this)">Certifications</button>
+        <button class="filter-btn" onclick="filterType('competition',this)">Competition Papers</button>
+        <button class="filter-btn" onclick="filterType('pensar',this)">PENSAR</button>
+        <button class="filter-btn" onclick="filterType('class',this)">Class Projects</button>
+      </div>
+      <div class="filter-row">
+        <span class="filter-row-label">TOPIC</span>
+        <button class="filter-btn active" onclick="filterTopic('all',this)">All Topics</button>
+        <button class="filter-btn" onclick="filterTopic('regional',this)">🏙️ Regional &amp; Urban</button>
+        <button class="filter-btn" onclick="filterTopic('environ',this)">🌿 Environmental &amp; Energy</button>
+        <button class="filter-btn" onclick="filterTopic('intl',this)">🌐 International &amp; Industrial</button>
+        <button class="filter-btn" onclick="filterTopic('labor',this)">👤 Labor &amp; Health</button>
+        <button class="filter-btn" onclick="filterTopic('devpolicy',this)">🏛️ Development &amp; Public Policy</button>
+        <button class="filter-btn" onclick="filterTopic('other',this)">＋ Other</button>
+      </div>
+      <div class="filter-row">
+        <span class="filter-row-label"></span>
+        <button class="expand-toggle" id="expand-all-btn" onclick="toggleExpandAll()">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 15l5 5 5-5M7 9l5-5 5 5"/></svg>
+          Expand All
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="main">
+
+    <!-- SECTION 01: CERTIFICATIONS -->
+    <div class="research-section reveal" data-section="cert">
+      <div class="section-group-label">Section 01</div>
+      <div class="section-group-title">Certifications</div>
+      <div class="section-group-desc">Professional certifications and training programs completed.</div>
+      <div class="section-header"><div class="section-header-line"></div></div>
+      <div class="cert-grid">
+
+        <div class="cert-card" data-category="cert" data-topics="other">
+          <div class="cert-img-slot">
+            <img src="images/certificate/cert - Introduction to Behavioral Science in Public Policy.png" alt="World Bank Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="cert-img-placeholder" style="display:none;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              <span>Upload image</span>
+            </div>
+          </div>
+          <div class="cert-overlay">
+            <span class="cert-issuer">World Bank Group Program</span>
+            <span class="cert-name">Introduction to Behavioral Science in Public Policy</span>
+            <span class="cert-meta">Mar 2026</span>
+            <span class="cert-tag">+ Other</span>
+          </div>
+          <a href="#" class="cert-view-btn">View ↗</a>
+        </div>
+
+        <div class="cert-card" data-category="cert" data-topics="other">
+          <div class="cert-img-slot">
+            <img src="images/certificate/cert - Fundamentals of Remote Sensing.png" alt="NASA ARSET Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="cert-img-placeholder" style="display:none;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              <span>Upload image</span>
+            </div>
+          </div>
+          <div class="cert-overlay">
+            <span class="cert-issuer">NASA ARSET Program</span>
+            <span class="cert-name">Fundamentals of Remote Sensing</span>
+            <span class="cert-meta">Mar 2026</span>
+            <span class="cert-tag">+ Other</span>
+          </div>
+          <a href="#" class="cert-view-btn">View ↗</a>
+        </div>
+
+        <div class="cert-card" data-category="cert" data-topics="other">
+          <div class="cert-img-slot">
+            <img src="images/certificate/cert - Social & Behavioral Research.png" alt="CITI Program Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="cert-img-placeholder" style="display:none;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              <span>Upload image</span>
+            </div>
+          </div>
+          <div class="cert-overlay">
+            <span class="cert-issuer">CITI Program</span>
+            <span class="cert-name">Social & Behavioral Research — Basic Course</span>
+            <span class="cert-meta">Oct 2024 &nbsp;·&nbsp; Valid until Oct 2027 &nbsp;·&nbsp; Universitas Indonesia</span>
+            <span class="cert-tag">+ Other</span>
+          </div>
+          <a href="#" class="cert-view-btn">View ↗</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION 02: COMPETITION & AWARD PAPERS -->
+    <div class="research-section reveal" data-section="competition">
+      <div class="section-group-label">Section 02</div>
+      <div class="section-group-title">Competition & Award Papers</div>
+      <div class="section-group-desc">Research papers submitted to national and international competitions, mostly on regional, energy, and development economics.</div>
+      <div class="section-header"><div class="section-header-line"></div></div>
+      <div class="paper-list">
+
+        <div class="paper-card" data-category="competition" data-topics="regional labor devpolicy">
+          <div class="paper-accent-bar" style="background:linear-gradient(180deg,var(--regional),var(--labor),var(--devpolicy));"></div>
+          <div class="paper-card-inner">
+            <div class="paper-card-body">
+              <div class="paper-card-top"><span class="paper-year">2025</span><span class="paper-rank">1st Place — EJAVEC 2025</span></div>
+              <div class="paper-title">Paving the Way, Sustaining Hope: An Analysis of the Impact of the Trans-Java Toll Road on East Java's Economy</div>
+              <div class="paper-event">EJAVEC Call for Paper | Bank Indonesia KPw Jawa Timur</div>
+              <div class="paper-topic-chips"><span class="topic-chip regional">🏙️ Regional & Urban</span><span class="topic-chip labor">👤 Labor & Health</span><span class="topic-chip devpolicy">🏛️ Development & Public Policy</span></div>
+              <div class="paper-expand-body"><div class="paper-desc">Empirically assesses the economic impact of the Trans-Java Toll Road on East Java using DiD with Staggered Adoption and QGIS spatial analysis on panel data from 30 regencies/cities (2011–2023).</div><div class="paper-method-chips"><span class="ptag">📐 DiD Staggered</span><span class="ptag">🗺️ QGIS</span><span class="ptag">📊 Panel Data</span></div></div>
+            </div>
+            <div class="paper-card-actions">
+              <button class="expand-btn" onclick="toggleExpand(this)"><span class="expand-chevron">▾</span>&nbsp;Details</button>
+              <a href="https://drive.google.com/drive/folders/1uC9JmEj6kYn9F45ns69kg-oHdkfTuZY1?usp=drive_link" class="paper-link" target="_blank">View Paper <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="paper-card" data-category="competition" data-topics="regional intl">
+          <div class="paper-accent-bar" style="background:linear-gradient(180deg,var(--regional),var(--intl));"></div>
+          <div class="paper-card-inner">
+            <div class="paper-card-body">
+              <div class="paper-card-top"><span class="paper-year">2025</span><span class="paper-rank">2nd Place — Sumatranomics 7th</span></div>
+              <div class="paper-title">When Spillovers Don't Spill: Unpacking the Heterogeneous Effects of Special Economic Zones in Sumatra</div>
+              <div class="paper-event">7th Sumatranomics | Bank Indonesia KPw Sumatera Utara</div>
+              <div class="paper-topic-chips"><span class="topic-chip regional">🏙️ Regional & Urban</span><span class="topic-chip intl">🌐 International & Industrial</span></div>
+              <div class="paper-expand-body"><div class="paper-desc">Investigates why SEZ spillovers in Sumatra are spatially uneven, estimating impacts on GRDP, employment, and productivity across manufacturing, trade, and transportation sectors using panel data from 154 districts/cities (2010–2024).</div><div class="paper-method-chips"><span class="ptag">📐 DiD Staggered</span><span class="ptag">🗺️ QGIS</span><span class="ptag">📊 Panel FE</span></div></div>
+            </div>
+            <div class="paper-card-actions">
+              <button class="expand-btn" onclick="toggleExpand(this)"><span class="expand-chevron">▾</span>&nbsp;Details</button>
+              <a href="https://drive.google.com/drive/folders/10jnVVOmJh2rUiqU8_geWk38uhrGXIBLg?usp=drive_link" class="paper-link" target="_blank">View Paper <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="paper-card" data-category="competition" data-topics="regional intl">
+          <div class="paper-accent-bar" style="background:linear-gradient(180deg,var(--regional),var(--intl));"></div>
+          <div class="paper-card-inner">
+            <div class="paper-card-body">
+              <div class="paper-card-top"><span class="paper-year">2024</span><span class="paper-rank">2nd Place — Sumatranomics 6th</span></div>
+              <div class="paper-title">Paving the Road to Economic Growth: An Analysis of the Role of the Trans-Sumatra Toll Road in Enhancing the Economy of Sumatra Island</div>
+              <div class="paper-event">6th Sumatranomics | Bank Indonesia KPw Sumatera Utara</div>
+              <div class="paper-topic-chips"><span class="topic-chip regional">🏙️ Regional & Urban</span><span class="topic-chip intl">🌐 International & Industrial</span></div>
+              <div class="paper-expand-body"><div class="paper-desc">Analyzes the economic impact of the Trans-Sumatra Toll Road using DiD and Long Difference methods across 132 districts in Sumatra (2017–2023), with QGIS to classify areas within 0–25, 25–50, and 50+ km from toll roads.</div><div class="paper-method-chips"><span class="ptag">📐 DiD</span><span class="ptag">📐 Long Difference</span><span class="ptag">🗺️ QGIS</span></div></div>
+            </div>
+            <div class="paper-card-actions">
+              <button class="expand-btn" onclick="toggleExpand(this)"><span class="expand-chevron">▾</span>&nbsp;Details</button>
+              <a href="https://drive.google.com/drive/folders/1LxL8SWhTDcNhXDWfCkc8Rvshu3zn9V0r?usp=drive_link" class="paper-link" target="_blank">View Paper <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="paper-card" data-category="competition" data-topics="regional intl">
+          <div class="paper-accent-bar" style="background:linear-gradient(180deg,var(--regional),var(--intl));"></div>
+          <div class="paper-card-inner">
+            <div class="paper-card-body">
+              <div class="paper-card-top"><span class="paper-year">2025</span><span class="paper-rank">2nd Place — Aksinomi Sulampua</span></div>
+              <div class="paper-title">Illuminating Downstreaming in Eastern Indonesia: Analyzing the Spillover Effects of Special Economic Zones and Industrial Estates in Sulampua's Regional Economy</div>
+              <div class="paper-event">Aksinomi Sulampua | Bank Indonesia KPw Sulawesi Selatan</div>
+              <div class="paper-topic-chips"><span class="topic-chip regional">🏙️ Regional & Urban</span><span class="topic-chip intl">🌐 International & Industrial</span></div>
+              <div class="paper-expand-body"><div class="paper-desc">Examines spillover effects of SEZs and Industrial Estates on Sulampua's regional GDP, labor, and productivity using panel data from 104 regencies/cities (2013–2024) with NTL intensity as an infrastructure proxy.</div><div class="paper-method-chips"><span class="ptag">📐 DiD Staggered</span><span class="ptag">🛰️ NTL Data</span><span class="ptag">📊 Panel FE</span></div></div>
+            </div>
+            <div class="paper-card-actions">
+              <button class="expand-btn" onclick="toggleExpand(this)"><span class="expand-chevron">▾</span>&nbsp;Details</button>
+              <a href="https://drive.google.com/drive/folders/1JDZW6Fr6wlXxAnTlXOBfcEwfrEWPnhjz?usp=drive_link" class="paper-link" target="_blank">View Paper <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="paper-card" data-category="competition" data-topics="regional devpolicy">
+          <div class="paper-accent-bar" style="background:linear-gradient(180deg,var(--regional),var(--devpolicy));"></div>
+          <div class="paper-card-inner">
+            <div class="paper-card-body">
+              <div class="paper-card-top"><span class="paper-year">2025</span><span class="paper-rank">1st Place — BAKU PANDAI 2025</span></div>
+              <div class="paper-title">Investment Acceleration in the Heart of Eastern Indonesia: An Analysis of the Potential and Sectoral Dynamics of Papua's New Autonomous Regions</div>
+              <div class="paper-event">BAKU PANDAI Research Paper | Bank Indonesia KPw Papua</div>
+              <div class="paper-topic-chips"><span class="topic-chip regional">🏙️ Regional & Urban</span><span class="topic-chip devpolicy">🏛️ Development & Public Policy</span></div>
+              <div class="paper-expand-body"><div class="paper-desc">Analyzes investment potential and sectoral dynamics in Papua's newly formed autonomous regions (DOBs) using Location Quotient and Shift-Share analysis to formulate targeted investment acceleration strategies.</div><div class="paper-method-chips"><span class="ptag">📐 Location Quotient</span><span class="ptag">📐 Shift-Share</span></div></div>
+            </div>
+            <div class="paper-card-actions">
+              <button class="expand-btn" onclick="toggleExpand(this)"><span class="expand-chevron">▾</span>&nbsp;Details</button>
+              <a href="https://drive.google.com/drive/folders/12IpqYRGb5PKY8FzJsbHgR0ecel3A2DFn?usp=drive_link" class="paper-link" target="_blank">View Paper <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="paper-card" data-category="competition" data-topics="regional devpolicy">
+          <div class="paper-accent-bar" style="background:linear-gradient(180deg,var(--regional),var(--devpolicy));"></div>
+          <div class="paper-card-inner">
+            <div class="paper-card-body">
+              <div class="paper-card-top"><span class="paper-year">2024</span><span class="paper-rank">1st Place — Papedanomics 2024</span></div>
+              <div class="paper-title">The Role of Urban Areas in Enhancing Papua's Economy: A Location Quotient and Sectoral Shift Share Analysis at the Regency/City Level</div>
+              <div class="paper-event">Papedanomics 2024 | Bank Indonesia KPw Papua Barat</div>
+              <div class="paper-topic-chips"><span class="topic-chip regional">🏙️ Regional & Urban</span><span class="topic-chip devpolicy">🏛️ Development & Public Policy</span></div>
+              <div class="paper-expand-body"><div class="paper-desc">Examines how urban centers (Manokwari and Jayapura) generate spillover effects through agglomeration theory using LQ and Shift-Share across 8 Papuan regencies/cities (2018–2023).</div><div class="paper-method-chips"><span class="ptag">📐 Location Quotient</span><span class="ptag">📐 Shift-Share</span></div></div>
+            </div>
+            <div class="paper-card-actions">
+              <button class="expand-btn" onclick="toggleExpand(this)"><span class="expand-chevron">▾</span>&nbsp;Details</button>
+              <a href="https://drive.google.com/drive/folders/1SGwxmb5rLxnqPlTDCGPhzBA_Qpw8ItNw?usp=drive_link" class="paper-link" target="_blank">View Paper <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="paper-card" data-category="competition" data-topics="regional">
+          <div class="paper-accent-bar" style="background:var(--regional);"></div>
+          <div class="paper-card-inner">
+            <div class="paper-card-body">
+              <div class="paper-card-top"><span class="paper-year">2024</span><span class="paper-rank">2nd Place — Sumatranomics 5th</span></div>
+              <div class="paper-title">Paving the Road to Economic Growth: An Analysis of the Role of the Trans-Sumatra Toll Road (5th Edition)</div>
+              <div class="paper-event">5th Sumatranomics Research Paper | Bank Indonesia KPw Sumatera Utara</div>
+              <div class="paper-topic-chips"><span class="topic-chip regional">🏙️ Regional & Urban</span></div>
+              <div class="paper-expand-body"><div class="paper-desc">Earlier study on Trans-Sumatra Toll Road's impact on economic indicators (sectoral GRDP, workers, productivity) using DiD and Long Difference across 132 Sumatra districts (2017–2023).</div><div class="paper-method-chips"><span class="ptag">📐 DiD</span><span class="ptag">📐 Long Difference</span><span class="ptag">🗺️ QGIS</span></div></div>
+            </div>
+            <div class="paper-card-actions">
+              <button class="expand-btn" onclick="toggleExpand(this)"><span class="expand-chevron">▾</span>&nbsp;Details</button>
+              <a href="https://drive.google.com/drive/folders/1LxL8SWhTDcNhXDWfCkc8Rvshu3zn9V0r?usp=drive_link" class="paper-link" target="_blank">View Paper <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="paper-card" data-category="competition" data-topics="environ">
+          <div class="paper-accent-bar" style="background:var(--environ);"></div>
+          <div class="paper-card-inner">
+            <div class="paper-card-body">
+              <div class="paper-card-top"><span class="paper-year">2025</span><span class="paper-rank">3rd Place — CORE Indonesia 2026</span></div>
+              <div class="paper-title">Indonesia's Energy Dilemma: The Impact of Power Plants on the Economy and Emissions</div>
+              <div class="paper-event">CORE Indonesia Call for Paper | Bank Indonesia KPw Sumatera Utara</div>
+              <div class="paper-topic-chips"><span class="topic-chip environ">🌿 Environmental & Energy</span></div>
+              <div class="paper-expand-body"><div class="paper-desc">Compares heterogeneous impacts of coal-fired (PLTU), solar (PLTS), and hydropower (PLTA) plants at district/city level on GRDP, CO₂ emissions, and structural change using Generalized DiD with Staggered Adoption (2011–2022).</div><div class="paper-method-chips"><span class="ptag">📐 DiD Staggered</span><span class="ptag">🗺️ QGIS</span><span class="ptag">📊 Panel FE</span></div></div>
+            </div>
+            <div class="paper-card-actions">
+              <button class="expand-btn" onclick="toggleExpand(this)"><span class="expand-chevron">▾</span>&nbsp;Details</button>
+              <a href="https://drive.google.com/drive/folders/1UV52JhkpQH1kLXI5dAD8dG3SND9OJJdg?usp=drive_link" class="paper-link" target="_blank">View Paper <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="paper-card" data-category="competition" data-topics="environ devpolicy">
+          <div class="paper-accent-bar" style="background:linear-gradient(180deg,var(--environ),var(--devpolicy));"></div>
+          <div class="paper-card-inner">
+            <div class="paper-card-body">
+              <div class="paper-card-top"><span class="paper-year">2025</span><span class="paper-rank">1st Place — AEYA 2025</span></div>
+              <div class="paper-title">Beyond Megadams: ASHARE, A Policy Framework to Unlock ASEAN's Community-Scale Hydropower Potential</div>
+              <div class="paper-event">The 5th ASEAN Energy Youth Awards | ASEAN Center for Energy</div>
+              <div class="paper-topic-chips"><span class="topic-chip environ">🌿 Environmental & Energy</span><span class="topic-chip devpolicy">🏛️ Development & Public Policy</span></div>
+              <div class="paper-expand-body"><div class="paper-desc">Proposes the ASHARE Framework — a three-pillar approach combining data-driven decision-making, innovative financing, and youth-led capacity building for community-scale hydropower across ASEAN.</div><div class="paper-method-chips"><span class="ptag">📐 Cost-Benefit Analysis</span><span class="ptag">📝 Policy Framework</span></div></div>
+            </div>
+            <div class="paper-card-actions">
+              <button class="expand-btn" onclick="toggleExpand(this)"><span class="expand-chevron">▾</span>&nbsp;Details</button>
+              <a href="https://drive.google.com/drive/folders/1lR7BCJoVCx0V04G-SrbuCG3lCloWAY-F?usp=drive_link" class="paper-link" target="_blank">View Paper <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="paper-card" data-category="competition" data-topics="environ intl">
+          <div class="paper-accent-bar" style="background:linear-gradient(180deg,var(--environ),var(--intl));"></div>
+          <div class="paper-card-inner">
+            <div class="paper-card-body">
+              <div class="paper-card-top"><span class="paper-year">2025</span><span class="paper-rank">1st Place — PYC 2025</span></div>
+              <div class="paper-title">The Nexus of Climate Adaptation, Public-Private Partnership Investment Flows, and Renewable Energy Transition: Evidence from a Cross-Country Panel Study</div>
+              <div class="paper-event">Purnomo Yusgiantoro Center Call for Paper 2025</div>
+              <div class="paper-topic-chips"><span class="topic-chip environ">🌿 Environmental & Energy</span><span class="topic-chip intl">🌐 International & Industrial</span></div>
+              <div class="paper-expand-body"><div class="paper-desc">Cross-country panel study (214 countries, 2010–2022) examining how climate readiness and vulnerability influence PPP and private energy investment flows in renewable energy.</div><div class="paper-method-chips"><span class="ptag">📐 Panel RE</span><span class="ptag">🌍 Cross-Country</span></div></div>
+            </div>
+            <div class="paper-card-actions">
+              <button class="expand-btn" onclick="toggleExpand(this)"><span class="expand-chevron">▾</span>&nbsp;Details</button>
+              <a href="https://drive.google.com/drive/folders/1ZREd8SFRDNU_pdkqsHj2mFGwd-d-xm1G?usp=drive_link" class="paper-link" target="_blank">View Paper <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="paper-card" data-category="competition" data-topics="regional devpolicy">
+          <div class="paper-accent-bar" style="background:linear-gradient(180deg,var(--regional),var(--devpolicy));"></div>
+          <div class="paper-card-inner">
+            <div class="paper-card-body">
+              <div class="paper-card-top"><span class="paper-year">2025</span><span class="paper-rank">Submitted — Jogja Economic Symposium</span></div>
+              <div class="paper-title">Tracing the Economic Footprints of Tourism: A Multi-Analysis of the Tourism Sector's Impact on the Economy and Food Security in Yogyakarta</div>
+              <div class="paper-event">Jogja Economic Symposium | Bank Indonesia KPw DI Yogyakarta</div>
+              <div class="paper-topic-chips"><span class="topic-chip regional">🏙️ Regional & Urban</span><span class="topic-chip devpolicy">🏛️ Development & Public Policy</span></div>
+              <div class="paper-expand-body"><div class="paper-desc">Investigates the paradoxical relationship between tourism-led growth and persistent inequality in Yogyakarta using a multi-analysis framework integrating Input-Output, LQ, Shift-Share, and OLS regression.</div><div class="paper-method-chips"><span class="ptag">📐 Input-Output</span><span class="ptag">📐 Location Quotient</span><span class="ptag">📐 OLS</span></div></div>
+            </div>
+            <div class="paper-card-actions">
+              <button class="expand-btn" onclick="toggleExpand(this)"><span class="expand-chevron">▾</span>&nbsp;Details</button>
+              <a href="#" class="paper-link">View Paper <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="paper-card" data-category="competition" data-topics="devpolicy">
+          <div class="paper-accent-bar" style="background:var(--devpolicy);"></div>
+          <div class="paper-card-inner">
+            <div class="paper-card-body">
+              <div class="paper-card-top"><span class="paper-year">2025</span><span class="paper-rank">4th Place — EQUITAS UGM</span></div>
+              <div class="paper-title">Addressing Student Hunger: The Role of PIP and PKH in Enhancing Nutrition and Food Security in Indonesia</div>
+              <div class="paper-event">EQUITAS Paper Competition | UGM 2025</div>
+              <div class="paper-topic-chips"><span class="topic-chip devpolicy">🏛️ Development & Public Policy</span></div>
+              <div class="paper-expand-body"><div class="paper-desc">Evaluates the effectiveness of PIP and PKH social assistance programs in addressing student hunger and improving food security outcomes across Indonesia.</div><div class="paper-method-chips"><span class="ptag">📐 Regression</span></div></div>
+            </div>
+            <div class="paper-card-actions">
+              <button class="expand-btn" onclick="toggleExpand(this)"><span class="expand-chevron">▾</span>&nbsp;Details</button>
+              <a href="https://drive.google.com/drive/folders/173uQh_IHYAbkirnOtEf4DiZdym2mwSh0?usp=drive_link" class="paper-link" target="_blank">View Paper <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="paper-card" data-category="competition" data-topics="intl devpolicy">
+          <div class="paper-accent-bar" style="background:linear-gradient(180deg,var(--intl),var(--devpolicy));"></div>
+          <div class="paper-card-inner">
+            <div class="paper-card-body">
+              <div class="paper-card-top"><span class="paper-year">2024</span><span class="paper-rank">Grand Champion — IEO 2024</span></div>
+              <div class="paper-title">The Role of Infrastructure Investment and Local Content (TKDN) Policy in Accelerating Indonesia's Economic Growth</div>
+              <div class="paper-event">Indonesia Economics Olympiad (IEO) 2024 | Best Essay & Best Presenter</div>
+              <div class="paper-topic-chips"><span class="topic-chip intl">🌐 International & Industrial</span><span class="topic-chip devpolicy">🏛️ Development & Public Policy</span></div>
+              <div class="paper-expand-body"><div class="paper-desc">Examines how infrastructure investment and TKDN policy interact to drive Indonesia's economic growth, addressing structural issues like premature deindustrialization and high ICOR.</div><div class="paper-method-chips"><span class="ptag">📝 Policy Essay</span><span class="ptag">📐 CBA</span></div></div>
+            </div>
+            <div class="paper-card-actions">
+              <button class="expand-btn" onclick="toggleExpand(this)"><span class="expand-chevron">▾</span>&nbsp;Details</button>
+              <a href="https://drive.google.com/drive/folders/1QbsSs1YuHylx0cl5XJw-v5bFolys61bE?usp=drive_link" class="paper-link" target="_blank">View Paper <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="paper-card" data-category="competition" data-topics="labor intl">
+          <div class="paper-accent-bar" style="background:linear-gradient(180deg,var(--labor),var(--intl));"></div>
+          <div class="paper-card-inner">
+            <div class="paper-card-body">
+              <div class="paper-card-top"><span class="paper-year">2025</span><span class="paper-rank">4th Place & Best Presenter — Economix</span></div>
+              <div class="paper-title">The Impact of R&D Investments on Employment Absorption: A Comparative Analysis Across ICT Layers</div>
+              <div class="paper-event">The 22nd Economix Paper Competition 2025</div>
+              <div class="paper-topic-chips"><span class="topic-chip labor">👤 Labor & Health</span><span class="topic-chip intl">🌐 International & Industrial</span></div>
+              <div class="paper-expand-body"><div class="paper-desc">Compares employment absorption effects of R&D investments across ICT layers using fixed-effects panel model on data from top 2,500 global companies in 55 countries (2014–2023).</div><div class="paper-method-chips"><span class="ptag">📐 Panel FE</span><span class="ptag">🌍 Cross-Country</span></div></div>
+            </div>
+            <div class="paper-card-actions">
+              <button class="expand-btn" onclick="toggleExpand(this)"><span class="expand-chevron">▾</span>&nbsp;Details</button>
+              <a href="https://drive.google.com/drive/folders/1fZXRW2p5Mx-6Gpb7s9LY48_CFpIm7XUT?usp=drive_link" class="paper-link" target="_blank">View Paper <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION 03: PENSAR -->
+    <div class="research-section reveal" data-section="pensar">
+      <div class="section-group-label">Section 03</div>
+      <div class="section-group-title">PENSAR — KANOPI FEB UI</div>
+      <div class="section-group-desc">Annual primary research program held by KANOPI FEB UI, involving original data collection and fieldwork.</div>
+      <div class="section-header"><div class="section-header-line"></div></div>
+      <div class="paper-list">
+
+        <div class="paper-card" data-category="pensar" data-topics="labor intl">
+          <div class="paper-accent-bar" style="background:linear-gradient(180deg,var(--labor),var(--intl));"></div>
+          <div class="paper-card-inner">
+            <div class="paper-card-body">
+              <div class="paper-card-top"><span class="paper-year">2023</span><span class="paper-rank">PENSAR 2023</span></div>
+              <div class="paper-title">Determinants of Digital Payments Use in MSMEs: Evidence From Yogyakarta</div>
+              <div class="paper-event">Penelitian Besar (PENSAR) 2023 | KANOPI FEB UI</div>
+              <div class="paper-topic-chips"><span class="topic-chip labor">👤 Labor & Health</span><span class="topic-chip intl">🌐 International & Industrial</span></div>
+              <div class="paper-expand-body"><div class="paper-desc">Investigates the determinants of digital payment adoption among MSMEs in Yogyakarta from both merchant and customer perspectives, using logistic regression on primary data from 150 respondents in Malioboro.</div><div class="paper-method-chips"><span class="ptag">📐 Logistic Regression</span><span class="ptag">📋 Primary Data</span></div></div>
+            </div>
+            <div class="paper-card-actions">
+              <button class="expand-btn" onclick="toggleExpand(this)"><span class="expand-chevron">▾</span>&nbsp;Details</button>
+              <a href="https://drive.google.com/file/d/1izLhpKzmDImSsq8G0cXNSOKzO8d1NKii/view?usp=drive_link" class="paper-link" target="_blank">View Paper <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="paper-card" data-category="pensar" data-topics="labor devpolicy">
+          <div class="paper-accent-bar" style="background:linear-gradient(180deg,var(--labor),var(--devpolicy));"></div>
+          <div class="paper-card-inner">
+            <div class="paper-card-body">
+              <div class="paper-card-top"><span class="paper-year">2024</span><span class="paper-rank">PENSAR 2024</span></div>
+              <div class="paper-title">Seeds of Change: Understanding the Factors Affecting Succession in Balinese Farming Communities</div>
+              <div class="paper-event">Penelitian Besar (PENSAR) 2024 | KANOPI FEB UI</div>
+              <div class="paper-topic-chips"><span class="topic-chip labor">👤 Labor & Health</span><span class="topic-chip devpolicy">🏛️ Development & Public Policy</span></div>
+              <div class="paper-expand-body"><div class="paper-desc">Analyzes the determinants of farmer succession in Bali using a mixed-methods approach combining probit regression on primary data from 69 farm households in Tabanan and in-depth interviews.</div><div class="paper-method-chips"><span class="ptag">📐 Probit Regression</span><span class="ptag">📋 Primary Data</span><span class="ptag">📝 Mixed Methods</span></div></div>
+            </div>
+            <div class="paper-card-actions">
+              <button class="expand-btn" onclick="toggleExpand(this)"><span class="expand-chevron">▾</span>&nbsp;Details</button>
+              <a href="https://drive.google.com/file/d/1mOmF5fr7q78fdtAJbCfZE90Oyb-QLWxf/view?usp=drive_link" class="paper-link" target="_blank">View Paper <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION 04: CLASS PROJECTS -->
+    <div class="research-section reveal" data-section="class">
+      <div class="section-group-label">Section 04</div>
+      <div class="section-group-title">Class Projects & Final Papers</div>
+      <div class="section-group-desc">Selected academic papers written for coursework at FEB Universitas Indonesia.</div>
+      <div class="section-header"><div class="section-header-line"></div></div>
+      <div class="paper-list">
+
+        <div class="paper-card" data-category="class" data-topics="intl devpolicy">
+          <div class="paper-accent-bar" style="background:linear-gradient(180deg,var(--intl),var(--devpolicy));"></div>
+          <div class="paper-card-inner">
+            <div class="paper-card-body">
+              <div class="paper-card-top"><span class="paper-year">2025</span><span class="paper-rank">Public Policy Analysis</span></div>
+              <div class="paper-title">Policy Brief: Local Content Requirement (LCR) Policy Mix in the Electric Vehicle (EV) Industry to Accelerate Indonesia's Economic Growth</div>
+              <div class="paper-event">Class Final Project | Public Policy Analysis</div>
+              <div class="paper-topic-chips"><span class="topic-chip intl">🌐 International & Industrial</span><span class="topic-chip devpolicy">🏛️ Development & Public Policy</span></div>
+              <div class="paper-expand-body"><div class="paper-desc">Employs Cost-Benefit Analysis to evaluate two competing TKDN scenarios — 'Status Quo' vs 'Relaxation' — finding the Relaxation scenario yields higher net benefit (Rp11.499T vs Rp11.340T) and superior B/C ratio.</div><div class="paper-method-chips"><span class="ptag">📐 Cost-Benefit Analysis</span><span class="ptag">📝 Policy Brief</span></div></div>
+            </div>
+            <div class="paper-card-actions">
+              <button class="expand-btn" onclick="toggleExpand(this)"><span class="expand-chevron">▾</span>&nbsp;Details</button>
+              <a href="https://drive.google.com/drive/folders/1X-BTAgbjNk266Iq5J-Re0yovcGxSo2B1?usp=drive_link" class="paper-link" target="_blank">View Paper <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="paper-card" data-category="class" data-topics="labor devpolicy">
+          <div class="paper-accent-bar" style="background:linear-gradient(180deg,var(--labor),var(--devpolicy));"></div>
+          <div class="paper-card-inner">
+            <div class="paper-card-body">
+              <div class="paper-card-top"><span class="paper-year">2025</span><span class="paper-rank">Health Economics</span></div>
+              <div class="paper-title">Envisioning Indonesia's Healthcare Independence: An Analysis of Pharmaceutical & Medical Device Incentives with Benchmarking from India</div>
+              <div class="paper-event">Class Final Project | Health Economics</div>
+              <div class="paper-topic-chips"><span class="topic-chip labor">👤 Labor & Health</span><span class="topic-chip devpolicy">🏛️ Development & Public Policy</span></div>
+              <div class="paper-expand-body"><div class="paper-desc">Analyzes Indonesia's high pharmaceutical and medical device import dependency, benchmarking against India's PLI scheme to recommend a comprehensive output-based incentive framework.</div><div class="paper-method-chips"><span class="ptag">📝 Strategic Benchmarking</span></div></div>
+            </div>
+            <div class="paper-card-actions">
+              <button class="expand-btn" onclick="toggleExpand(this)"><span class="expand-chevron">▾</span>&nbsp;Details</button>
+              <a href="https://drive.google.com/drive/folders/1V3ODXoX0UuYXSczuf4KNXn_y9Zv1cx5e?usp=drive_link" class="paper-link" target="_blank">View Paper <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="paper-card" data-category="class" data-topics="labor devpolicy">
+          <div class="paper-accent-bar" style="background:linear-gradient(180deg,var(--labor),var(--devpolicy));"></div>
+          <div class="paper-card-inner">
+            <div class="paper-card-body">
+              <div class="paper-card-top"><span class="paper-year">2025</span><span class="paper-rank">Intro to Data Science</span></div>
+              <div class="paper-title">Macronutrient Consumption Patterns Based on Per Capita Expenditure in Indonesia: A Clustering Approach Using Susenas Data</div>
+              <div class="paper-event">Class Final Project | Introduction to Data Science</div>
+              <div class="paper-topic-chips"><span class="topic-chip labor">👤 Labor & Health</span><span class="topic-chip devpolicy">🏛️ Development & Public Policy</span></div>
+              <div class="paper-expand-body"><div class="paper-desc">Clusters Indonesian households by macronutrient consumption patterns using SUSENAS data, revealing disparities in dietary quality across expenditure groups.</div><div class="paper-method-chips"><span class="ptag">📐 Cluster Analysis</span><span class="ptag">📊 SUSENAS</span></div></div>
+            </div>
+            <div class="paper-card-actions">
+              <button class="expand-btn" onclick="toggleExpand(this)"><span class="expand-chevron">▾</span>&nbsp;Details</button>
+              <a href="https://drive.google.com/drive/folders/167TQgDtTOA1-rv0mGXWqxYcuvpdUltdv?usp=drive_link" class="paper-link" target="_blank">View Paper <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="paper-card" data-category="class" data-topics="intl">
+          <div class="paper-accent-bar" style="background:var(--intl);"></div>
+          <div class="paper-card-inner">
+            <div class="paper-card-body">
+              <div class="paper-card-top"><span class="paper-year">2025</span><span class="paper-rank">International Financial Economics</span></div>
+              <div class="paper-title">Breaking Barriers: How Indonesia's 2021 Reforms Revolutionized Foreign Investment</div>
+              <div class="paper-event">Class Final Project | International Financial Economics</div>
+              <div class="paper-topic-chips"><span class="topic-chip intl">🌐 International & Industrial</span></div>
+              <div class="paper-expand-body"><div class="paper-desc">Evaluates the impact of Indonesia's 2021 Omnibus Law investment reforms on foreign direct investment flows using before-after comparative analysis.</div><div class="paper-method-chips"><span class="ptag">📐 Comparative Analysis</span></div></div>
+            </div>
+            <div class="paper-card-actions">
+              <button class="expand-btn" onclick="toggleExpand(this)"><span class="expand-chevron">▾</span>&nbsp;Details</button>
+              <a href="https://drive.google.com/drive/folders/1lnP-Q9eRUNg53o_u_WMxhy-PGxi-0I_j?usp=drive_link" class="paper-link" target="_blank">View Paper <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="paper-card" data-category="class" data-topics="devpolicy">
+          <div class="paper-accent-bar" style="background:var(--devpolicy);"></div>
+          <div class="paper-card-inner">
+            <div class="paper-card-body">
+              <div class="paper-card-top"><span class="paper-year">2025</span><span class="paper-rank">OJK Innovation Paper</span></div>
+              <div class="paper-title">From Data to Dinner Plates: How Digital Financial Inclusion Drives Food Welfare in the Agricultural Sector</div>
+              <div class="paper-event">Submitted for OJK Innovation Paper Competition</div>
+              <div class="paper-topic-chips"><span class="topic-chip devpolicy">🏛️ Development & Public Policy</span></div>
+              <div class="paper-expand-body"><div class="paper-desc">Examines the relationship between digital financial inclusion and food welfare outcomes in Indonesia's agricultural sector using panel data analysis.</div><div class="paper-method-chips"><span class="ptag">📐 Panel Data</span></div></div>
+            </div>
+            <div class="paper-card-actions">
+              <button class="expand-btn" onclick="toggleExpand(this)"><span class="expand-chevron">▾</span>&nbsp;Details</button>
+              <a href="https://drive.google.com/drive/folders/1pDcBe2ll5z5u2STXXiGKV4wK-p4iK3k-?usp=drive_link" class="paper-link" target="_blank">View Paper <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="paper-card" data-category="class" data-topics="labor">
+          <div class="paper-accent-bar" style="background:var(--labor);"></div>
+          <div class="paper-card-inner">
+            <div class="paper-card-body">
+              <div class="paper-card-top"><span class="paper-year">2025</span><span class="paper-rank">Labour Economics</span></div>
+              <div class="paper-title">Beyond Bereavement: An Analysis of Gender Inequality in the Labor Market Following the Loss of a Spouse</div>
+              <div class="paper-event">Class Final Project | Labour Economics</div>
+              <div class="paper-topic-chips"><span class="topic-chip labor">👤 Labor & Health</span></div>
+              <div class="paper-expand-body"><div class="paper-desc">Analyzes how spousal loss differentially affects men and women's labor market outcomes in Indonesia, examining wage gaps, employment probability, and sectoral shifts.</div><div class="paper-method-chips"><span class="ptag">📐 Regression</span></div></div>
+            </div>
+            <div class="paper-card-actions">
+              <button class="expand-btn" onclick="toggleExpand(this)"><span class="expand-chevron">▾</span>&nbsp;Details</button>
+              <a href="https://drive.google.com/drive/folders/1_D_Z0-94xXQfGtcc5DGxYX7PtzZ_9Yfz?usp=drive_link" class="paper-link" target="_blank">View Paper <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-left">Muhammad Ilham Pratama · Jakarta, Indonesia</div>
+    <div class="footer-right">ilhamp2709@gmail.com &nbsp;·&nbsp; +62 877-7656-5132</div>
+  </footer>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.05 });
+    revealEls.forEach(el => obs.observe(el));
+
+    let activeType = 'all', activeTopic = 'all';
+
+    function applyFilters() {
+      document.querySelectorAll('.paper-card, .cert-card').forEach(card => {
+        const cat = card.dataset.category || '';
+        const topics = (card.dataset.topics || '').split(' ');
+        const ok = (activeType === 'all' || cat === activeType) && (activeTopic === 'all' || topics.includes(activeTopic));
+        card.classList.toggle('hidden', !ok);
+      });
+      document.querySelectorAll('.research-section').forEach(sec => {
+        const visible = sec.querySelectorAll('.paper-card:not(.hidden), .cert-card:not(.hidden)');
+        sec.style.display = visible.length === 0 ? 'none' : '';
+      });
+    }
+
+    function filterType(type, btn) {
+      activeType = type;
+      btn.closest('.filter-row').querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      applyFilters();
+    }
+
+    function filterTopic(topic, btn) {
+      activeTopic = topic;
+      btn.closest('.filter-row').querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      applyFilters();
+    }
+
+    function toggleExpand(btn) {
+      const body = btn.closest('.paper-card').querySelector('.paper-expand-body');
+      const ch = btn.querySelector('.expand-chevron');
+      const isOpen = body.classList.contains('open');
+      body.classList.toggle('open');
+      ch.classList.toggle('open');
+    }
+
+    let allExpanded = false;
+    function toggleExpandAll() {
+      allExpanded = !allExpanded;
+      const btn = document.getElementById('expand-all-btn');
+      btn.classList.toggle('active', allExpanded);
+      btn.innerHTML = allExpanded
+        ? `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 9l-5-5-5 5M17 15l-5 5-5-5"/></svg> Collapse All`
+        : `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 15l5 5 5-5M7 9l5-5 5 5"/></svg> Expand All`;
+      document.querySelectorAll('.paper-expand-body').forEach(b => b.classList.toggle('open', allExpanded));
+      document.querySelectorAll('.expand-chevron').forEach(c => c.classList.toggle('open', allExpanded));
+    }
+  </script>
+</body>
+</html>
