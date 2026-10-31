@@ -29,13 +29,24 @@
 .video-proyek video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: var(--bg-panel-2); border: 1px solid var(--border); }
 
 /* judul berfoto: tirai mengikuti token pembuka supaya ikut tema */
-.judul-foto { position: relative; background: var(--pembuka-dasar) url("../images/proyek/komitmen/latar-pltb-sidrap.jpg") center 45% / cover no-repeat; padding: 56px 0 52px; border-bottom: 0; }
+.judul-foto { position: relative; background: var(--pembuka-dasar) url("../images/proyek/komitmen/latar-pltb-sidrap.jpg") center 45% / cover no-repeat; padding: 26px 0 30px; border-bottom: 0; }
 .judul-foto::before { content: ""; position: absolute; inset: 0; background: var(--pembuka-tirai); }
 .judul-foto .wadah { position: relative; }
 .judul-foto h1, .judul-foto .lead { color: var(--pembuka-tinta); }
 .judul-foto .supertitle { color: var(--pembuka-super); }
 .judul-foto .jejak a { color: var(--pembuka-tinta); }
+.judul-foto .jejak { margin-bottom: 8px; }
+.judul-foto .supertitle { margin-bottom: 6px; }
+.judul-foto h1 { font-size: 34px; margin-bottom: 8px; }
+.judul-foto .lead { max-width: 900px; font-size: 18px; margin-bottom: 0; }
+.judul-paper.judul-foto .status-proyek { max-width: 900px; margin-top: 10px; padding: 6px 12px; font-size: 14px; }
 .kredit-proyek { position: absolute; right: 12px; bottom: 6px; margin: 0; font-size: 11px; color: var(--pembuka-sub); }
+
+/* video tur di atas halaman, supaya terlihat tanpa menggulir jauh */
+.film-utama { max-width: 1080px; padding-top: 16px; }
+.film-utama h2 { font-size: 22px; margin: 0 0 8px; }
+.film-utama video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: var(--bg-panel-2); border: 3px solid var(--emas); }
+.film-utama .catatan { margin: 8px 0 0; }
 
 /* alur: rute melekat di atas, langkah bernomor disambung garis emas */
 .rute { position: sticky; top: 56px; z-index: 5; display: grid; grid-template-columns: repeat(4, 1fr); margin: 18px 0 26px; background: var(--bg-page); border-bottom: 2px solid var(--border); }
@@ -60,8 +71,11 @@
 
 @media (max-width: 820px) {
   .rute { position: static; }
-  .kredit-proyek { position: static; padding: 14px 16px 0; }
-  .judul-foto { padding-bottom: 12px; }
+  .kredit-proyek { position: relative; right: auto; bottom: auto; padding: 8px 16px 0; }
+  .judul-foto { padding: 18px 0 8px; }
+  .judul-foto h1 { font-size: 28px; }
+  .judul-foto .lead { font-size: 16px; }
+  .film-utama { padding-top: 18px; }
 }
 @media (max-width: 560px) {
   .langkah { padding-left: 42px; }
