@@ -35,7 +35,7 @@
 .judul-foto h1, .judul-foto .lead { color: var(--pembuka-tinta); }
 .judul-foto .supertitle { color: var(--pembuka-super); }
 .judul-foto .jejak a { color: var(--pembuka-tinta); }
-.kredit-foto { position: absolute; right: 12px; bottom: 6px; margin: 0; font-size: 11px; color: var(--pembuka-sub); }
+.kredit-proyek { position: absolute; right: 12px; bottom: 6px; margin: 0; font-size: 11px; color: var(--pembuka-sub); }
 
 /* alur: rute melekat di atas, langkah bernomor disambung garis emas */
 .rute { position: sticky; top: 56px; z-index: 5; display: grid; grid-template-columns: repeat(4, 1fr); margin: 18px 0 26px; background: var(--bg-page); border-bottom: 2px solid var(--border); }
@@ -60,7 +60,7 @@
 
 @media (max-width: 820px) {
   .rute { position: static; }
-  .kredit-foto { position: relative; right: auto; bottom: auto; padding: 14px 24px 0; }
+  .kredit-proyek { position: static; padding: 14px 16px 0; }
   .judul-foto { padding-bottom: 12px; }
 }
 @media (max-width: 560px) {
