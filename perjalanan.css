@@ -79,3 +79,35 @@
   .perjalanan h2 { font-size: 24px; }
   .kendali button { min-width: 34px; height: 34px; }
 }
+
+/* Beranda ringkas: pembuka lebih pendek, Experience terlipat, Methods tanpa grafik */
+.pembuka .wadah { padding-top: 34px; padding-bottom: 32px; }
+.pembuka .lead2 { margin-bottom: 14px; }
+.pembuka .terbuka { margin-bottom: 14px; }
+.lipat { border-top: 3px solid var(--pita); }
+.lipat details { border-bottom: 1px solid var(--border); }
+.lipat summary { display: grid; grid-template-columns: 150px minmax(0, 1fr) 16px; gap: 12px; align-items: baseline; padding: 11px 0; cursor: pointer; list-style: none; font-size: 15px; color: var(--ink-2); }
+.lipat summary::-webkit-details-marker { display: none; }
+.lipat summary::after { content: "+"; font-weight: 700; color: var(--ink-1); text-align: right; }
+.lipat details[open] summary::after { content: "−"; }
+.lipat summary:hover b { color: var(--tautan); }
+.lipat .waktu { font-size: 13px; color: var(--ink-3); white-space: nowrap; }
+.lipat .siapa b { color: var(--ink-1); }
+.lipat details > p, .lipat details > ul { margin: 0 0 14px 162px; max-width: 720px; font-size: 15px; }
+.lipat details > ul { padding-left: 18px; }
+.lipat li { margin: 4px 0; }
+.lipat summary.polos { grid-template-columns: minmax(0, 1fr) 16px; }
+#metode .metode { grid-template-columns: minmax(0, 1fr); }
+#metode .alat { columns: 2; column-gap: 40px; }
+#metode .alat p { break-inside: avoid; }
+#peta.bisa-geser { cursor: grab; }
+#peta.bisa-geser:active { cursor: grabbing; }
+#peta:focus-visible { outline: 2px solid var(--emas); outline-offset: -2px; }
+@media (max-width: 700px) {
+  .lipat summary { grid-template-columns: minmax(0, 1fr) 16px; gap: 2px 12px; }
+  .lipat .waktu { grid-column: 1; }
+  .lipat .siapa { grid-column: 1; grid-row: 2; }
+  .lipat summary::after { grid-row: 1 / span 2; grid-column: 2; }
+  .lipat details > p, .lipat details > ul { margin-left: 0; }
+  #metode .alat { columns: 1; }
+}

@@ -27,7 +27,7 @@ const PROYEK_RUMAH = [
 }).filter(Boolean);
 
 const KEPALA = 34, UKURAN_PIN = 26; // piksel layar, tetap sama saat peta diperbesar
-const JAUH = 70, DEKAT = 6; // unit peta: 10 unit = 1 derajat
+const JAUH = 70, DEKAT = 6, LEBAR_MIN = 14; // unit peta: 10 unit = 1 derajat
 const NS = "http://www.w3.org/2000/svg", GAMBAR = "images/perjalanan/";
 const svg = document.getElementById("peta");
 const hemat = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -99,20 +99,24 @@ function gambarKamera() {
   orang.setAttribute("x", arah > 0 ? pos[0] - s / 2 : -pos[0] - s / 2);
   orang.setAttribute("y", pos[1] - s - q * .5);
   orang.setAttribute("transform", arah > 0 ? "" : "scale(-1 1)");
+  const dekat = cam.w < 479;
+  svg.style.touchAction = dekat ? "none" : "pan-y"; // peta utuh: satu jari tetap menggulir halaman
+  svg.classList.toggle("bisa-geser", dekat);
 }
 function pandang(x, y, w) {
-  w = Math.max(24, Math.min(480, w));
+  w = Math.max(LEBAR_MIN, Math.min(480, w));
   const h = w * rasio();
   return { x: Math.max(0, Math.min(480 - w, x - w / 2)), y: h >= 200 ? (200 - h) / 2 : Math.max(0, Math.min(200 - h, y - h / 2)), w, h };
 }
 
 // Perjalanan: jalan kaki untuk jarak dekat, kereta di Jawa, mobil di satu pulau, pesawat antarpulau atau jarak jauh.
-let tugas = 0;
+let tugas = 0, kameraBebas = false;
 const lembut = (t) => t * t * (3 - 2 * t);
 function pergi(ke, pulauKe, lebarAkhir) {
   return new Promise((selesai) => {
     const nomor = ++tugas, dari = pos.slice(), dx = ke[0] - dari[0], dy = ke[1] - dari[1], jarak = Math.hypot(dx, dy);
     const camDari = { ...cam }, camKe = pandang(ke[0], ke[1], lebarAkhir || cam.w);
+    kameraBebas = false;
     const cara = moda(pulauKini, pulauKe, jarak);
     if (Math.abs(dx) > .5) arah = dx > 0 ? 1 : -1;
     pulauKini = pulauKe;
@@ -122,7 +126,7 @@ function pergi(ke, pulauKe, lebarAkhir) {
       if (nomor !== tugas) return selesai(false);
       const t = lama ? Math.min(1, (performance.now() - mulai) / lama) : 1, e = lembut(t);
       pos = [dari[0] + dx * e, dari[1] + dy * e];
-      ["x", "y", "w", "h"].forEach((k) => { cam[k] = camDari[k] + (camKe[k] - camDari[k]) * e; });
+      if (!kameraBebas) ["x", "y", "w", "h"].forEach((k) => { cam[k] = camDari[k] + (camKe[k] - camDari[k]) * e; });
       const bingkai = Math.floor(performance.now() / 160) % 2 + 1;
       orang.setAttribute("href", GAMBAR + (t < 1 ? (cara === "jalan" ? `orang-${bingkai}` : cara) : "orang-1") + ".png");
       gambarKamera();
@@ -170,6 +174,7 @@ function jelajah(k) {
   return pergi(k.c, pulauDari(k.id));
 }
 svg.addEventListener("click", (e) => {
+  if (digeser) { digeser = false; return; } // akhir geseran bukan klik
   const sasaran = e.target.closest("[data-id]");
   if (!sasaran) return;
   berhentiTur();
@@ -183,11 +188,72 @@ svg.addEventListener("click", (e) => {
   if (v) kunjungi(v); else if (kab[id]) jelajah(kab[id]);
 });
 
-// Perbesar dan tur
-const zum = (f) => { tugas++; cam = pandang(cam.x + cam.w / 2, cam.y + cam.h / 2, cam.w * f); gambarKamera(); };
-ambil("z-tambah").onclick = () => zum(.65);
-ambil("z-kurang").onclick = () => zum(1.5);
-ambil("z-awal").onclick = () => { tugas++; cam = pandang(240, 100, 480); gambarKamera(); };
+// Perbesar dan geser: pinch trackpad, Ctrl + gulir, cubit di layar sentuh, seret, dan keyboard.
+const batas = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+function aturKamera(x, y, w) {
+  w = batas(w, LEBAR_MIN, 480);
+  const h = w * rasio();
+  cam = { x: batas(x, 0, 480 - w), y: h >= 200 ? (200 - h) / 2 : batas(y, 0, 200 - h), w, h };
+  kameraBebas = true;
+  gambarKamera();
+}
+function zumDi(px, py, f) { // titik di bawah kursor tetap di tempatnya
+  const r = svg.getBoundingClientRect(), u = (px - r.left) / r.width, v = (py - r.top) / r.height;
+  const x = cam.x + u * cam.w, y = cam.y + v * cam.h, w = batas(cam.w * f, LEBAR_MIN, 480);
+  aturKamera(x - u * w, y - v * w * rasio(), w);
+}
+function zumTengah(f) { const r = svg.getBoundingClientRect(); zumDi(r.left + r.width / 2, r.top + r.height / 2, f); }
+function geser(dxPx, dyPx) {
+  const r = svg.getBoundingClientRect();
+  aturKamera(cam.x - dxPx / r.width * cam.w, cam.y - dyPx / r.height * cam.h, cam.w);
+}
+ambil("z-tambah").onclick = () => zumTengah(.65);
+ambil("z-kurang").onclick = () => zumTengah(1.5);
+ambil("z-awal").onclick = () => aturKamera(0, 0, 480);
+svg.addEventListener("wheel", (e) => { // pinch trackpad terbaca sebagai gulir dengan ctrlKey; gulir biasa tetap untuk halaman
+  if (!e.ctrlKey && !e.metaKey) return;
+  e.preventDefault();
+  zumDi(e.clientX, e.clientY, Math.exp(e.deltaY * .012));
+}, { passive: false });
+let skalaGestur = 1; // Safari di Mac memakai gesture event
+svg.addEventListener("gesturestart", (e) => { e.preventDefault(); skalaGestur = 1; });
+svg.addEventListener("gesturechange", (e) => {
+  e.preventDefault();
+  zumDi(e.clientX, e.clientY, skalaGestur / e.scale);
+  skalaGestur = e.scale;
+});
+const jari = new Map();
+let digeser = false, jarakCubit = 0;
+svg.addEventListener("pointerdown", (e) => {
+  jari.set(e.pointerId, [e.clientX, e.clientY]);
+  digeser = false; jarakCubit = 0;
+});
+svg.addEventListener("pointermove", (e) => {
+  const lama = jari.get(e.pointerId);
+  if (!lama) return;
+  const baru = [e.clientX, e.clientY];
+  if (jari.size === 2) {
+    jari.set(e.pointerId, baru);
+    const [a, b] = [...jari.values()], d = Math.hypot(a[0] - b[0], a[1] - b[1]);
+    if (jarakCubit) zumDi((a[0] + b[0]) / 2, (a[1] + b[1]) / 2, jarakCubit / d);
+    jarakCubit = d; digeser = true;
+    return;
+  }
+  const dx = baru[0] - lama[0], dy = baru[1] - lama[1];
+  if (!digeser && Math.hypot(dx, dy) < 5) return;
+  jari.set(e.pointerId, baru);
+  if (cam.w >= 479) return;
+  digeser = true;
+  geser(dx, dy);
+  try { svg.setPointerCapture(e.pointerId); } catch (_) {} // seret tetap jalan walau kursor keluar peta
+});
+["pointerup", "pointercancel", "pointerleave"].forEach((n) => svg.addEventListener(n, (e) => { jari.delete(e.pointerId); jarakCubit = 0; }));
+svg.addEventListener("keydown", (e) => {
+  const k = { "+": () => zumTengah(.75), "=": () => zumTengah(.75), "-": () => zumTengah(1.33), "0": () => aturKamera(0, 0, 480), ArrowLeft: () => geser(60, 0), ArrowRight: () => geser(-60, 0), ArrowUp: () => geser(0, 60), ArrowDown: () => geser(0, -60) }[e.key];
+  if (k) { e.preventDefault(); k(); }
+});
+
+// Tur
 let turJalan = false;
 const tunda = (ms) => new Promise((r) => setTimeout(r, ms));
 function berhentiTur() { turJalan = false; ambil("tur").textContent = "Walk the whole journey"; }

@@ -1,4 +1,4 @@
-// Isi tabel riset, bidang, dan grafik metode. Tambah paper baru cukup di daftar RISET.
+// Isi tabel riset. Tambah paper baru cukup di daftar RISET.
 const D = "https://drive.google.com/drive/folders/";
 const BIDANG = [
   { t: "reg", nama: "Regional & urban", ikon: "reg", ket: "Toll roads, SEZs, regional growth" },
@@ -25,14 +25,9 @@ const RISET = [
   [2024, "Seeds of Change: farmer succession in Bali", "PENSAR, Kanopi FEB UI", "69 farm households, Tabanan", "Probit, interviews", "Fieldwork", ["lab", "dev"], "riset/pensar-bali.html"],
   [2023, "Digital payment use among MSMEs in Yogyakarta", "PENSAR, Kanopi FEB UI", "150 respondents, Malioboro", "Logit, survey", "Fieldwork", ["lab"], "riset/pensar-yogyakarta.html"],
 ];
-// jumlah paper di RISET yang memakai tiap metode
-const METODE = [["Staggered DiD / DiD", 5], ["Spatial data (QGIS, NTL)", 5], ["Panel FE / RE", 4], ["LQ and shift-share", 4], ["Logit / probit", 3], ["Primary survey", 3], ["Cost-benefit analysis", 2], ["Input-output", 1]];
 
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
-const jumlah = (t) => RISET.filter((r) => r[6].includes(t)).length;
 
-document.getElementById("bidang").innerHTML = BIDANG.map((b) =>
-  `<a href="#riset" data-t="${b.t}"><img src="images/ikon/${b.ikon}.svg" alt=""><div><b>${b.nama}</b><span>${jumlah(b.t)} papers · ${b.ket}</span></div></a>`).join("");
 
 const saring = document.getElementById("saring");
 saring.innerHTML = `<button aria-pressed="true" data-t="semua">All (${RISET.length})</button>` + BIDANG.map((b) =>
@@ -49,8 +44,3 @@ function gambar(t) {
 }
 gambar("semua");
 saring.addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) gambar(b.dataset.t); });
-document.getElementById("bidang").addEventListener("click", (e) => { const a = e.target.closest("a"); if (a) gambar(a.dataset.t); });
-
-const maks = Math.max(...METODE.map((m) => m[1]));
-document.getElementById("bar-metode").innerHTML = METODE.map(([n, v]) =>
-  `<div class="bar-baris"><span>${n}</span><div><div class="bar" style="width:${(v / maks) * 100}%"></div></div><span class="n">${v}</span></div>`).join("");

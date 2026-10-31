@@ -1,12 +1,12 @@
 // Slider proyek di pembuka. Tambah proyek baru cukup di daftar PROYEK.
 const DRIVE = "https://drive.google.com/drive/folders/";
 const PROYEK = [
-  { meta: "Now · KOMITMEN, UIII", judul: "KOMITMEN dashboards", ket: "Eight dashboards and reports for 38 provinces and 514 districts.", foto: "images/proyek/komitmen/klip-3-sampul.jpg", posisi: "62% 50%", tautan: "proyek/komitmen-dashboard.html", sprite: "peta" },
-  { meta: "EJAVEC 2025 · 1st place", judul: "The Trans-Java Toll Road and East Java's economy", ket: "Toll-road proximity and regional GDP in 30 regencies and cities, 2011–2023.", foto: "images/perjalanan/kota/surabaya.jpg", posisi: "50% 70%", tautan: DRIVE + "1uC9JmEj6kYn9F45ns69kg-oHdkfTuZY1", sprite: "kura" },
-  { meta: "Sumatranomics 2025 · 2nd place", judul: "When spillovers don't spill: SEZs in Sumatra", ket: "Why SEZ spillovers are uneven across 154 districts and cities, 2010–2024.", foto: "images/perjalanan/kota/medan.jpg", posisi: "50% 45%", tautan: DRIVE + "10jnVVOmJh2rUiqU8_geWk38uhrGXIBLg", sprite: "kunang" },
-  { meta: "PENSAR 2025 · Bangka", judul: "Residents back tourism but take little part", ket: "A survey I led in two villages of Bangka Tengah, with 193 respondents.", foto: "images/perjalanan/kota/bangka.jpg", posisi: "50% 50%", tautan: "riset/pensar-bangka.html", sprite: "enumerator" },
-  { meta: "PENSAR 2024 · Bali", judul: "Few Tabanan farms have a successor", ket: "Only 22 of 69 farm households in two rice villages have one.", foto: "images/perjalanan/kota/tabanan.jpg", posisi: "50% 55%", tautan: "riset/pensar-bali.html", sprite: "desa" },
-  { meta: "PENSAR 2023 · Yogyakarta", judul: "Malioboro merchants follow their neighbours", ket: "Digital payment among 75 merchants and 75 customers.", foto: "images/perjalanan/kota/yogyakarta.jpg", posisi: "50% 70%", tautan: "riset/pensar-yogyakarta.html", sprite: "klip" },
+  { meta: "Now · KOMITMEN, UIII", judul: "KOMITMEN dashboards", ket: "Eight dashboards and reports for 38 provinces and 514 districts.", foto: "images/proyek/komitmen/klip-3-sampul.jpg", posisi: "62% 50%", tautan: "proyek/komitmen-dashboard.html", sprite: "monas" },
+  { meta: "EJAVEC 2025 · 1st place", judul: "The Trans-Java Toll Road and East Java's economy", ket: "Toll-road proximity and regional GDP in 30 regencies and cities, 2011–2023.", foto: "images/perjalanan/kota/surabaya.jpg", posisi: "50% 70%", tautan: DRIVE + "1uC9JmEj6kYn9F45ns69kg-oHdkfTuZY1", sprite: "sura" },
+  { meta: "Sumatranomics 2025 · 2nd place", judul: "When spillovers don't spill: SEZs in Sumatra", ket: "Why SEZ spillovers are uneven across 154 districts and cities, 2010–2024.", foto: "images/perjalanan/kota/medan.jpg", posisi: "50% 45%", tautan: DRIVE + "10jnVVOmJh2rUiqU8_geWk38uhrGXIBLg", sprite: "maimun" },
+  { meta: "PENSAR 2025 · Bangka", judul: "Residents back tourism but take little part", ket: "A survey I led in two villages of Bangka Tengah, with 193 respondents.", foto: "images/perjalanan/kota/bangka.jpg", posisi: "50% 50%", tautan: "riset/pensar-bangka.html", sprite: "ikan" },
+  { meta: "PENSAR 2024 · Bali", judul: "Few Tabanan farms have a successor", ket: "Only 22 of 69 farm households in two rice villages have one.", foto: "images/perjalanan/kota/tabanan.jpg", posisi: "50% 55%", tautan: "riset/pensar-bali.html", sprite: "meru" },
+  { meta: "PENSAR 2023 · Yogyakarta", judul: "Malioboro merchants follow their neighbours", ket: "Digital payment among 75 merchants and 75 customers.", foto: "images/perjalanan/kota/yogyakarta.jpg", posisi: "50% 70%", tautan: "riset/pensar-yogyakarta.html", sprite: "tugu" },
 ];
 const LAMA = 9000;
 const IKON = { mundur: '<path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2"/>', maju: '<path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2"/>', jeda: '<path d="M5 3v10M11 3v10" stroke="currentColor" stroke-width="2.4"/>', putar: '<path d="M5 3v10l8-5z" fill="currentColor"/>' };
@@ -32,7 +32,7 @@ function tampil(k) {
   const p = PROYEK[i];
   slide.forEach((s, j) => s.classList.toggle("aktif", j === i));
   titik.forEach((t, j) => t.setAttribute("aria-current", j === i));
-  kotak.querySelector(".sprite").src = `images/sprite/${p.sprite}.png`;
+  kotak.querySelector(".sprite").src = `images/perjalanan/${p.sprite}.png`;
   kotak.querySelector(".meta-slide").textContent = p.meta;
   tautan.textContent = p.judul;
   tautan.href = p.tautan;

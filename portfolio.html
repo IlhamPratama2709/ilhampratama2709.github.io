@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio · Muhammad Ilham Pratama</title>
+<meta name="description" content="Research papers, field surveys, and projects by Muhammad Ilham Pratama on Indonesian regional, environmental, and development economics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="gaya.css">
+<link rel="stylesheet" href="portfolio.css">
+<script>try { if (localStorage.getItem("tema") === "dark") document.documentElement.dataset.theme = "dark"; } catch (e) {}</script>
+</head>
+<body>
+
+<header class="pita">
+  <div class="wadah">
+    <a class="merek" href="index.html">Muhammad Ilham Pratama</a>
+    <nav>
+      <a href="index.html#perjalanan">Journey</a>
+      <a href="index.html#pengalaman">Experience</a>
+      <a href="index.html#riset">Research</a>
+      <a href="index.html#metode">Methods</a>
+      <a class="tombol" href="portfolio.html" aria-current="page">Portfolio</a>
+      <button class="tema" id="tema" type="button" aria-label="Switch colour theme">
+        <svg class="bulan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+        <svg class="matahari" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main class="portofolio">
+  <div class="wadah">
+    <p class="supertitle">Portfolio</p>
+    <h1>Research papers and projects</h1>
+    <p class="pengantar">Each card opens a short summary of the work, with a link to the full paper or report.</p>
+    <div class="saring" id="saring" role="group" aria-label="Filter by topic"><button type="button" aria-pressed="true" data-t="semua">All (18)</button><button type="button" aria-pressed="false" data-t="reg">Regional &amp; urban</button><button type="button" aria-pressed="false" data-t="env">Environment &amp; energy</button><button type="button" aria-pressed="false" data-t="dev">Development &amp; policy</button><button type="button" aria-pressed="false" data-t="lab">Labour &amp; firms</button></div>
+    <div class="kisi-karya" id="kisi">
+      <a class="kartu-karya" href="proyek/komitmen-dashboard.html" data-topik="reg env" style="background-image:url('images/proyek/komitmen/klip-3-sampul.jpg')"><span class="meta">2026 · Project · KOMITMEN, UIII</span><h2>KOMITMEN dashboard site</h2><p>Eight research dashboards share one private site, which gives each of Indonesia&#x27;s 514 districts and 38 provinces its own page and PDF report.</p></a>
+      <a class="kartu-karya" href="riset/spillover-or-still-over.html" data-topik="reg env" style="background-image:url('images/riset/spillover/lights-of-java.jpg')"><span class="meta">2026 · Bachelor&#x27;s thesis · Universitas Indonesia</span><h2>Spillover or Still Over? SEZs in Indonesia</h2><p>Environmental costs have appeared around some zones before any economic gain can be seen from space.</p></a>
+      <a class="kartu-karya" href="riset/trans-java-toll-road.html" data-topik="reg dev" style="background-image:url('images/riset/ejavec/kepala.jpg')"><span class="meta">2025 · EJAVEC · 1st</span><h2>Paving the Way, Sustaining Hope: the Trans-Java Toll Road and East Java&#x27;s economy</h2><p>The toll road made transport firms far more productive with fewer workers, and it added lower-productivity jobs in food and lodging.</p></a>
+      <a class="kartu-karya" href="riset/when-spillovers-dont-spill.html" data-topik="reg" style="background-image:url('images/riset/sumatra/kepala.jpg')"><span class="meta">2025 · 6th Sumatranomics · 2nd</span><h2>When Spillovers Don&#x27;t Spill: heterogeneous effects of SEZs in Sumatra</h2><p>What a zone does to its neighbours depends on what the zone does, and many apparent gains began before it opened.</p></a>
+      <a class="kartu-karya" href="riset/illuminating-downstreaming.html" data-topik="reg" style="background-image:url('images/riset/sulampua/kepala.jpg')"><span class="meta">2025 · Aksinomi Sulampua · 2nd</span><h2>Illuminating Downstreaming: SEZs and industrial estates in Sulampua</h2><p>Older industrial estates are carrying eastern Indonesia&#x27;s downstreaming so far, and newer zones have yet to show the same results.</p></a>
+      <a class="kartu-karya" href="riset/investment-acceleration-papua.html" data-topik="reg dev" style="background-image:url('images/riset/investment-acceleration-papua/kepala.jpg')"><span class="meta">2025 · BAKU PANDAI · 1st</span><h2>Investment acceleration in Papua&#x27;s new autonomous regions</h2><p>Construction and farming are base sectors in most districts of Papua&#x27;s three new provinces, while manufacturing is a base sector in only 7 of 20.</p></a>
+      <a class="kartu-karya" href="riset/beyond-megadams-ashare.html" data-topik="env dev" style="background-image:url('images/riset/beyond-megadams-ashare/kepala.jpg')"><span class="meta">2025 · ASEAN Energy Youth Awards · 1st</span><h2>Beyond Megadams: ASHARE, community-scale hydropower in ASEAN</h2><p>Local power projects in ASEAN struggle for finance because nobody can show which one pays, so this pitch proposes a shared cost toolkit, a guarantee fund, and trained young facilitators.</p></a>
+      <a class="kartu-karya" href="riset/climate-adaptation-ppp-renewables.html" data-topik="env" style="background-image:url('images/riset/climate-adaptation-ppp-renewables/kepala.jpg')"><span class="meta">2025 · Purnomo Yusgiantoro Center · 1st</span><h2>Climate adaptation, PPP investment, and the renewable energy transition</h2><p>Climate-ready countries draw more private energy investment, but the link with public-private partnerships fades once controls enter, and PPP money shows no link with the renewable share of electricity.</p></a>
+      <a class="kartu-karya" href="riset/indonesias-energy-dilemma.html" data-topik="env" style="background-image:url('images/riset/indonesias-energy-dilemma/kepala.jpg')"><span class="meta">2025 · CORE Indonesia · 3rd</span><h2>Indonesia&#x27;s energy dilemma: power plants, growth, and emissions</h2><p>Coal plants go with slightly higher GDP in Java and Sumatra at the 10 percent level, solar and hydropower show no GDP effect, and the coal emissions estimate fails its parallel-trends test.</p></a>
+      <a class="kartu-karya" href="riset/pensar-bangka.html" data-topik="reg dev" style="background-image:url('images/riset/pensar/bangka-kota.jpg')"><span class="meta">2025 · PENSAR</span><h2>Unveiling local support: community views on tourism in Bangka</h2><p>Residents of two Bangka villages strongly support tourism, but few have a hand in shaping it.</p></a>
+      <a class="kartu-karya" href="riset/tourism-footprints-yogyakarta.html" data-topik="reg dev" style="background-image:url('images/riset/tourism-footprints-yogyakarta/kepala.jpg')"><span class="meta">2025 · Jogja Economic Symposium</span><h2>Tracing the economic footprints of tourism in Yogyakarta</h2><p>Tourism and farming in Yogyakarta sit in different districts, and farm workers in farm-base districts earn about 38 percent less than farm workers elsewhere.</p></a>
+      <a class="kartu-karya" href="riset/addressing-student-hunger.html" data-topik="dev" style="background-image:url('images/riset/addressing-student-hunger/kepala.jpg')"><span class="meta">2025 · EQUITAS · 4th</span><h2>Addressing student hunger: PIP, PKH, and food security</h2><p>Students in PKH households are less likely to be food secure even after controls, and PIP shows no significant link with food security.</p></a>
+      <a class="kartu-karya" href="riset/rd-investment-employment-ict.html" data-topik="lab" style="background-image:url('images/riset/rd-investment-employment-ict/kepala.jpg')"><span class="meta">2025 · 22nd Economix · 4th, best presenter</span><h2>R&amp;D investment and employment across ICT layers</h2><p>R&amp;D goes with far fewer added jobs in ICT hardware and software firms than in non-ICT firms, but that gap disappears within two years.</p></a>
+      <a class="kartu-karya" href="riset/trans-sumatra-toll-road.html" data-topik="reg" style="background-image:url('images/riset/trans-sumatra-toll-road/kepala.jpg')"><span class="meta">2024 · 5th Sumatranomics · 2nd</span><h2>The Trans-Sumatra Toll Road and Sumatra&#x27;s economy</h2><p>Districts within 25 km of the toll road gained more workers than distant districts, but output per worker did not change significantly.</p></a>
+      <a class="kartu-karya" href="riset/urban-areas-papua-economy.html" data-topik="reg dev" style="background-image:url('images/riset/urban-areas-papua-economy/kepala.jpg')"><span class="meta">2024 · Papedanomics · 1st</span><h2>Urban areas and Papua&#x27;s economy</h2><p>Seven sectors are a base across all four districts of the Jayapura area, against only construction in the Sorong area.</p></a>
+      <a class="kartu-karya" href="riset/infrastructure-local-content-growth.html" data-topik="dev lab" style="background-image:url('images/riset/infrastructure-local-content-growth/kepala.jpg')"><span class="meta">2024 · Indonesia Economic Outlook · Grand champion</span><h2>Infrastructure investment, local content (TKDN), and growth</h2><p>Indonesia needed 6.9 units of investment for each extra unit of output in 2019, up from 4.2 in 2008, and this essay argues that better-mapped infrastructure and local content rules can improve that return.</p></a>
+      <a class="kartu-karya" href="riset/pensar-bali.html" data-topik="lab dev" style="background-image:url('images/riset/pensar/bali-kota.jpg')"><span class="meta">2024 · PENSAR</span><h2>Seeds of Change: farmer succession in Bali</h2><p>Fewer than one in three farm households in two Tabanan villages has a successor, and parents want one far more often than children do.</p></a>
+      <a class="kartu-karya" href="riset/pensar-yogyakarta.html" data-topik="lab" style="background-image:url('images/riset/pensar/yogyakarta-kota.jpg')"><span class="meta">2023 · PENSAR</span><h2>Digital payment use among MSMEs in Yogyakarta</h2><p>Merchants on Malioboro adopt digital payment when their competitors do, and customer demand shows no detectable effect.</p></a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wadah">
+    <span>Muhammad Ilham Pratama · Jakarta · <a href="mailto:ilhamp2709@gmail.com">ilhamp2709@gmail.com</a> · <a href="https://www.linkedin.com/in/muhammad-ilham-pratama-172825245/">LinkedIn</a></span>
+    <span>Last updated October 2026</span>
+  </div>
+</footer>
+
+<script src="portfolio.js"></script>
+<script src="tema.js"></script>
+</body>
+</html>
