@@ -31,7 +31,7 @@
   </div>
 </header>
 
-<div class="judul-paper">
+<div class="judul-paper judul-foto">
   <div class="wadah">
     <p class="jejak"><a href="../index.html#sekarang">Current work</a></p>
     <p class="supertitle">Project · KOMITMEN, Universitas Islam Internasional Indonesia · 2026</p>
@@ -39,6 +39,7 @@
     <p class="lead">Eight research dashboards share one private site, which gives each of Indonesia's 514 districts and 38 provinces its own page and PDF report.</p>
     <p class="status-proyek"><b>Status:</b> private preview. Access is restricted, so this page shows the site through videos only. Figures are preliminary and not for citation.</p>
   </div>
+  <p class="kredit-foto">PLTB Sidrap wind farm, South Sulawesi (2021). Photo: Selisik, CC BY-SA 4.0.</p>
 </div>
 
 <div class="wadah tata-paper">
@@ -46,8 +47,8 @@
     <b>On this page</b>
     <div>
       <a href="#ringkasan">Summary</a>
-      <a href="#fungsi">What the site does</a>
-      <a href="#video">Three videos</a>
+      <a href="#fungsi">From a topic to a village</a>
+      <a href="#kerja">The research behind it</a>
       <a href="#peran">My role</a>
       <a href="#alat">Tools</a>
     </div>
@@ -61,44 +62,83 @@
     </section>
 
     <section id="fungsi">
-      <h2>What the site does</h2>
-      <p>Each dashboard covers one topic: power plants, land subsidence in Java, regional descriptive analysis and regional development plans (RPJMD), industrial decarbonisation, regional finance, regional statistics from BPS, household welfare, and green jobs.</p>
-      <p>The land subsidence dashboard works at village level. Its map covers 24,689 of Java's 25,366 villages, those with at least 20 radar measurement points, and clicking a village shows its subsidence rate, population, and flood record. GNSS stations on the same map show measured height over time.</p>
-      <p>Region pages arrange the same data by place. Each page has one section per dashboard, with the area's figures, a comparison, and charts, and it offers the data as CSV and the report as PDF. Some gaps remain. Green jobs figures for six provinces in Papua cannot yet be matched, and those pages say so.</p>
-      <p>A comparison page plots any two district indicators against each other, even when they come from different dashboards, and it uses the latest year of each indicator that has data for at least 30 districts.</p>
-      <p>The site is not finished. Regional finance, BPS regional statistics, and household welfare are still marked as internal drafts, and the BPS figures have not been verified.</p>
+      <h2>A reader can go from a national topic to one village in four steps</h2>
+      <p>The videos follow that route. They have no sound and play when scrolled into view. The site is in Indonesian, and each video carries English captions.</p>
+      <nav class="rute" aria-label="Steps in the route">
+        <a href="#langkah-1">Topic</a><a href="#langkah-2">Place</a><a href="#langkah-3">Village</a><a href="#langkah-4">Comparison</a>
+      </nav>
+      <ol class="alur">
+        <li class="langkah" id="langkah-1">
+          <h3>Eight dashboards cover one programme, so a reader starts with a topic</h3>
+          <p>Each dashboard covers one topic: power plants, land subsidence in Java, regional descriptive analysis and regional development plans (RPJMD), industrial decarbonisation, regional finance, regional statistics from BPS, household welfare, and green jobs.</p>
+          <p class="judul-video" id="video-situs">Video 1 · Site overview</p>
+          <figure class="video-proyek">
+            <video controls muted playsinline loop preload="metadata" data-putar-sendiri width="1920" height="1080" poster="../images/proyek/komitmen/klip-1-sampul.jpg" aria-labelledby="video-situs">
+              <source src="../images/proyek/komitmen/klip-1-gambaran-situs.mp4" type="video/mp4">
+              Your browser cannot play this video.
+            </video>
+            <figcaption>The home page lists each dashboard on a card with a short summary. A second page lists the seven workstreams, and a third opens the region explorer. 38 seconds.</figcaption>
+          </figure>
+          <p class="lanjut">But most readers ask about a place, and a topic page cannot answer for one district.</p>
+        </li>
+        <li class="langkah" id="langkah-2">
+          <h3>Region pages rearrange the same data by place, for 552 regions</h3>
+          <p>Each page has one section per dashboard, with the area's figures, a comparison, and charts, and it offers the data as CSV and the report as PDF. Some gaps remain. Green jobs figures for six provinces in Papua cannot yet be matched, and those pages say so.</p>
+          <p class="judul-video" id="video-laporan">Video 2 · Regional reports</p>
+          <figure class="video-proyek">
+            <video controls muted playsinline loop preload="metadata" data-putar-sendiri width="1920" height="1080" poster="../images/proyek/komitmen/klip-2-sampul.jpg" aria-labelledby="video-laporan">
+              <source src="../images/proyek/komitmen/klip-2-laporan-wilayah.mp4" type="video/mp4">
+              Your browser cannot play this video.
+            </video>
+            <figcaption>The video goes from the province list to Jawa Tengah and then Kota Semarang, and downloads the 36-page report. Key findings come first, and an annex lists every figure with its year. 48 seconds.</figcaption>
+          </figure>
+          <p class="lanjut">A district average can still hide the risk. In Kota Semarang, 38 of 177 villages sink faster than 5 cm a year.</p>
+        </li>
+        <li class="langkah" id="langkah-3">
+          <h3>The land subsidence map goes down to 24,689 villages</h3>
+          <p>The map covers 24,689 of Java's 25,366 villages, those with at least 20 radar measurement points. Clicking a village shows its subsidence rate, population, and flood record. GNSS stations on the same map show measured height over time.</p>
+          <p class="judul-video" id="video-peta">Video 3 · Stranded assets map</p>
+          <figure class="video-proyek">
+            <video controls muted playsinline loop preload="metadata" data-putar-sendiri width="1920" height="1080" poster="../images/proyek/komitmen/klip-3-sampul.jpg" aria-labelledby="video-peta">
+              <source src="../images/proyek/komitmen/klip-3-peta-stranded-assets.mp4" type="video/mp4">
+              Your browser cannot play this video.
+            </video>
+            <figcaption>The land subsidence map opens on all of Java, then moves to Kendal, Semarang, and Demak on the north coast. One click opens a village record and another opens a GNSS station. 34 seconds.</figcaption>
+          </figure>
+        </li>
+        <li class="langkah" id="langkah-4">
+          <h3>A comparison page then links the dashboards to each other</h3>
+          <p>It plots any two district indicators against each other, even when they come from different dashboards, and it uses the latest year of each indicator that has data for at least 30 districts.</p>
+          <p>The site is not finished. Regional finance, BPS regional statistics, and household welfare are still marked as internal drafts, and the BPS figures have not been verified.</p>
+        </li>
+      </ol>
     </section>
 
-    <section id="video">
-      <h2>Three videos</h2>
-      <p>These screen recordings stand in for a link to the site. They have no sound and play when scrolled into view. The site is in Indonesian, and each video carries English captions.</p>
+    <section id="kerja">
+      <h2>The dashboards grew out of research on three workstreams</h2>
+      <p>Each dashboard began as working material for a study. Three of those studies shaped most of what the site shows.</p>
 
-      <h3 id="video-peta">Stranded assets map</h3>
-      <figure class="video-proyek">
-        <video controls muted playsinline loop preload="metadata" data-putar-sendiri width="1920" height="1080" poster="../images/proyek/komitmen/klip-3-sampul.jpg" aria-labelledby="video-peta">
-          <source src="../images/proyek/komitmen/klip-3-peta-stranded-assets.mp4" type="video/mp4">
-          Your browser cannot play this video.
-        </video>
-        <figcaption>The land subsidence map opens on all of Java, then moves to Kendal, Semarang, and Demak on the north coast. One click opens a village record and another opens a GNSS station. 34 seconds.</figcaption>
-      </figure>
+      <article class="kerja">
+        <p class="meta-kerja">Stream 2 · Stranded assets</p>
+        <h3>Fast subsidence is rare, but 3.35 million people live on it</h3>
+        <p>This stream asks when coal, palm oil, and land lose their economic value before the end of their planned life. Ground sinking faster than 5 cm a year appears in only 11 of the 119 districts in Java, and 3.35 million people live on it.</p>
+        <p>I combined radar estimates from Ohenhen et al. (2026) with village boundaries, population, night-time light, PODES flood reports, and land cover, so each village has one record. The next question is whether coastal land and buildings in Semarang lose value, and whether owners, banks, or local property-tax revenue bear the loss.</p>
+        <p>A second dashboard sets the regional development plans of 38 provinces and 514 districts beside field data: 521 coal mining sites, 280 coal power plants, and 1,227 palm oil mills.</p>
+      </article>
 
-      <h3 id="video-laporan">Regional reports</h3>
-      <figure class="video-proyek">
-        <video controls muted playsinline loop preload="metadata" data-putar-sendiri width="1920" height="1080" poster="../images/proyek/komitmen/klip-2-sampul.jpg" aria-labelledby="video-laporan">
-          <source src="../images/proyek/komitmen/klip-2-laporan-wilayah.mp4" type="video/mp4">
-          Your browser cannot play this video.
-        </video>
-        <figcaption>The video goes from the province list to Jawa Tengah and then Kota Semarang, and downloads the 36-page report. Key findings come first, and an annex lists every figure with its year. 48 seconds.</figcaption>
-      </figure>
+      <article class="kerja">
+        <p class="meta-kerja">Stream 3 · Growth diagnostics</p>
+        <h3>A database of 514 districts shows what holds growth back in each place</h3>
+        <p>This stream applies the Hausmann–Rodrik–Velasco framework at district level, asking which constraint binds growth in each place. I built the database behind it: 95 variables for 514 districts, drawn from PODES 2024, Susenas March 2025, regional finance records, and Bank Indonesia statistics. A two-year panel adds 1,028 observations for 2021 and 2024.</p>
+        <p>The power plant dashboard came from the same work. It maps 3,123 plants with 104.7 GW of installed capacity from BIG, Global Energy Monitor, and news reports, and it compares the totals with the Energy Ministry's official figures.</p>
+      </article>
 
-      <h3 id="video-situs">Site overview</h3>
-      <figure class="video-proyek">
-        <video controls muted playsinline loop preload="metadata" data-putar-sendiri width="1920" height="1080" poster="../images/proyek/komitmen/klip-1-sampul.jpg" aria-labelledby="video-situs">
-          <source src="../images/proyek/komitmen/klip-1-gambaran-situs.mp4" type="video/mp4">
-          Your browser cannot play this video.
-        </video>
-        <figcaption>The home page lists each dashboard on a card with a short summary. A second page lists the seven workstreams, and a third opens the region explorer. 38 seconds.</figcaption>
-      </figure>
+      <article class="kerja">
+        <p class="meta-kerja">Stream 6 · Industrial decarbonisation</p>
+        <h3>Six of 16 years of plant energy data could not be read as a trend</h3>
+        <p>This stream studies green industrial policy for net zero by 2050. Its dashboard covers nine energy-intensive subsectors from the BPS survey of large and medium manufacturers, 2000–2015, along with 143 industrial estates and 25 special economic zones.</p>
+        <p>We checked the energy figures plant by plant before drawing any chart. Recorded electricity use at identical plants fell 39 percent in 2010 and rose 86 percent in 2014, while median employment did not move. That pattern points to reporting, not production. So the dashboard compares sectors within a year and uses intensity per plant, and it does not show energy use as a trend.</p>
+      </article>
     </section>
 
     <section id="peran">
@@ -119,7 +159,6 @@
         </tbody>
       </table></div>
       <p class="catatan">Sources shown in the videos include BIG boundaries, Sentinel-1 radar estimates (Ohenhen et al., 2026), Ina-CORS GNSS stations, WorldPop, and PODES.</p>
-      <p>The land subsidence data package is 21.6 MB, close to Cloudflare's limit of 25 MB per file, so the update script stops if any file passes 24 MB.</p>
       <p>Questions are welcome at <a href="mailto:ilhamp2709@gmail.com">ilhamp2709@gmail.com</a>.</p>
     </section>
   </main>

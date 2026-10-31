@@ -26,6 +26,18 @@
   });
 })();
 
+// Rute di atas alur menandai langkah yang sedang dibaca.
+(() => {
+  const tautan = [...document.querySelectorAll(".rute a")];
+  if (!tautan.length || !("IntersectionObserver" in window)) return;
+  const tandai = (id) => tautan.forEach((a) => a.classList.toggle("aktif", a.getAttribute("href") === "#" + id));
+  const pengamat = new IntersectionObserver((daftar) => {
+    daftar.forEach((d) => { if (d.isIntersecting) tandai(d.target.id); });
+  }, { rootMargin: "-35% 0px -60% 0px" });
+  document.querySelectorAll(".langkah").forEach((l) => pengamat.observe(l));
+  tandai("langkah-1");
+})();
+
 // Tombol terang/gelap.
 document.getElementById("tema").addEventListener("click", () => {
   const akar = document.documentElement;
