@@ -1,9 +1,9 @@
 /* Halaman PENSAR. Kerangka dan skala huruf dari halaman paper di gaya.css; di sini hanya foto kepala, peta piksel, tebak angka, dan grafik titik. */
 .kepala-foto.pensar { background-blend-mode: normal; background-size: cover; background-repeat: no-repeat; }
 .kepala-foto.pensar::before { background: linear-gradient(90deg, rgba(8,42,66,.9) 0%, rgba(8,42,66,.74) 55%, rgba(8,42,66,.28) 100%); }
-.pensar-yogyakarta { background-image: url("../images/riset/pensar/yogyakarta-kepala.jpg"); background-position: 50% 38%; }
-.pensar-bali { background-image: url("../images/riset/pensar/bali-kepala.jpg"); background-position: 50% 62%; }
-.pensar-bangka { background-image: url("../images/riset/pensar/bangka-kepala.jpg"); background-position: 50% 60%; }
+.pensar-yogyakarta { background-image: url("../images/riset/pensar/yogyakarta-kota.jpg"); background-position: 50% 62%; }
+.pensar-bali { background-image: url("../images/riset/pensar/bali-kota.jpg"); background-position: 50% 55%; }
+.pensar-bangka { background-image: url("../images/riset/pensar/bangka-kota.jpg"); background-position: 50% 45%; }
 .kepala-foto .tombol-unduh { margin-top: 16px; }
 .tombol-unduh { display: inline-block; padding: 7px 12px; background: var(--emas); color: #003a5d; font-size: 13.4px; font-weight: 700; text-decoration: none; }
 .tombol-unduh:hover { filter: brightness(1.07); }

@@ -37,7 +37,12 @@
 .kendali button:hover { border-color: var(--ink-1); }
 
 .kartu { min-height: 340px; display: flex; flex-direction: column; border: 1px solid var(--border); background: var(--bg-page); min-width: 0; }
+.bingkai-foto { position: relative; }
 .kartu img.foto { display: block; width: 100%; height: 118px; object-fit: cover; }
+.kartu a.kredit { position: absolute; right: 0; bottom: 0; padding: 1px 5px; background: rgba(8,42,66,.62); color: #fff; font-size: 10.5px; text-decoration: none; max-width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.foto-acara { font-size: 12.5px; color: var(--ink-2); }
+.foto-acara summary { cursor: pointer; font-weight: 700; color: var(--tautan); }
+.foto-acara img { display: block; width: 100%; margin-top: 6px; }
 .kartu .isi { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 5px; flex: 1; }
 .kartu .meta { display: flex; align-items: center; gap: 7px; font-size: 12.5px; font-weight: 700; color: var(--supertitle); }
 .kartu .meta img { width: 24px; height: 24px; image-rendering: pixelated; }
