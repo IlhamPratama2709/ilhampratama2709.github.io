@@ -53,9 +53,3 @@ document.getElementById("bidang").addEventListener("click", (e) => { const a = e
 const maks = Math.max(...METODE.map((m) => m[1]));
 document.getElementById("bar-metode").innerHTML = METODE.map(([n, v]) =>
   `<div class="bar-baris"><span>${n}</span><div><div class="bar" style="width:${(v / maks) * 100}%"></div></div><span class="n">${v}</span></div>`).join("");
-
-document.getElementById("tema").addEventListener("click", () => {
-  const akar = document.documentElement;
-  if (akar.dataset.theme === "dark") delete akar.dataset.theme; else akar.dataset.theme = "dark";
-  try { localStorage.setItem("tema", akar.dataset.theme || "light"); } catch (e) {}
-});

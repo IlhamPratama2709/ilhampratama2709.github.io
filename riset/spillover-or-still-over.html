@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spillover or Still Over? · Muhammad Ilham Pratama</title>
+<meta name="description" content="Summary of a bachelor's thesis on whether Indonesia's special economic zones leave economic and environmental signatures in surrounding districts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../gaya.css">
+<script>try { if (localStorage.getItem("tema") === "dark") document.documentElement.dataset.theme = "dark"; } catch (e) {}</script>
+</head>
+<body>
+
+<header class="pita">
+  <div class="wadah">
+    <a class="merek" href="../index.html">Muhammad Ilham Pratama</a>
+    <nav>
+      <a href="../index.html#sekarang">Now</a>
+      <a href="../index.html#riset">Research</a>
+      <a href="../index.html#metode">Methods</a>
+      <a href="../index.html#pengalaman">Experience</a>
+      <a class="tombol" href="https://drive.google.com/drive/folders/1XornkzLssT57CylmrSPeVhFlCcZnFp9r">Portfolio</a>
+      <button class="tema" id="tema" type="button" aria-label="Switch colour theme">
+        <svg class="bulan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+        <svg class="matahari" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="kepala-foto">
+  <div class="wadah">
+    <p class="supertitle">Bachelor's thesis · Universitas Indonesia · 2026</p>
+    <h1>Spillover or Still Over? Do Indonesia's SEZs Leave Light and Environmental Signatures Beyond Their Borders?</h1>
+    <p class="lead">Environmental costs have appeared around some zones before any economic gain can be seen from space.</p>
+    <ul class="tanda">
+      <li class="emas">Chapter in Bappenas, <i>Transforming Indonesia</i> (forthcoming)</li>
+      <li>Presented at IRSA 2026</li>
+      <li>FEB UI International Research Grant</li>
+    </ul>
+    <p class="meta-kepala">Muhammad Ilham Pratama · Supervised by Khoirunurrofik, Ph.D.</p>
+  </div>
+  <a class="kredit-foto" href="https://commons.wikimedia.org/wiki/File:Lights_of_Java.jpg">Java at night from the International Space Station. Photo: NASA, public domain</a>
+</div>
+
+<div class="wadah tata-paper">
+  <aside class="daftar-isi" aria-label="On this page">
+    <b>On this page</b>
+    <div>
+      <a href="#ringkasan">Executive summary</a>
+      <a href="#sekilas">How the study works</a>
+      <a href="#pertanyaan">The question</a>
+      <a href="-paper">Data and method</a>
+      <a href="#temuan">Findings</a>
+      <a href="#penjelasan">Why the lights stay off</a>
+      <a href="#kebijakan">Policy implications</a>
+      <a href="#batas">Limitations</a>
+      <a href="#sitasi">How to cite</a>
+    </div>
+  </aside>
+
+  <main class="naskah">
+    <section id="ringkasan">
+      <h2>Executive summary</h2>
+      <p>Indonesia's special economic zones (SEZs) have not yet raised night-time light in the districts around them. By mid-2025 the country had 25 operating zones and IDR 294.4 trillion in cumulative realised investment, on the premise that growth would spread past the zone border. This thesis tests that premise on 514 districts, with 72 of them within 60 km of a zone. The estimated effect on night-time light is 0.024 log points for all zones together, and it is not statistically different from zero.</p>
+      <p>Method changes the answer. A standard two-way fixed effects model reports a significant rise of 0.074 for the same outcome. That result disappears once the estimator of Callaway and Sant'Anna (2021) handles zones that opened in different years.</p>
+      <p>Tourism zones are the exception on the environmental side. Carbon dioxide in nearby districts is about 4.5 percent higher, and nitrogen dioxide is higher by 1.725 µmol/m². Manufacturing zones show no significant change in light or in any pollutant.</p>
+      <p>These results point to an imbalance around tourism zones, where emissions are already measurable and economic gains are not. But most zones in the sample had operated for only two to five years, while spillovers elsewhere have taken four to ten, so the findings describe the early years of the programme.</p>
+    </section>
+
+    <section id="sekilas">
+      <h2>How the study works</h2>
+      <ol class="rantai">
+        <li><img src="../images/riset/spillover/ikon/kawasan.svg" alt=""><b>A zone opens</b><span>19 SEZs, opening between 2015 and 2024</span></li>
+        <li><img src="../images/riset/spillover/ikon/cincin.svg" alt=""><b>Neighbours are identified</b><span>72 districts with a centre within 60 km</span></li>
+        <li><img src="../images/riset/spillover/ikon/satelit.svg" alt=""><b>Satellites keep watch</b><span>Night-time light, CO₂, NO₂, SO₂, and CO</span></li>
+        <li><img src="../images/riset/spillover/ikon/banding.svg" alt=""><b>Districts are compared</b><span>Against 442 districts that never had a zone nearby</span></li>
+      </ol>
+    </section>
+
+    <section id="pertanyaan">
+      <h2>The question</h2>
+      <p>Zone-based policy often stops at the fence. Agglomeration theory predicts that activity inside a zone should spread through labour mobility, supply chains, and infrastructure. Yet evidence from other countries repeatedly finds zones that work as enclaves, where investment and jobs stay inside the boundary, and most Indonesian evidence comes from case studies of single zones that are hard to generalise.</p>
+      <p>The thesis asks three questions at national scale:</p>
+      <ol>
+        <li>Do SEZs change economic activity and air quality in surrounding districts?</li>
+        <li>How far do those effects reach, and do they fade with distance?</li>
+        <li>Do the effects differ between manufacturing and tourism zones?</li>
+      </ol>
+      <p>Pollution matters here because it does not wait for linkages to form. Construction and new energy demand can raise emissions early, and pollutants travel farther than most economic spillovers.</p>
+    </section>
+
+    <section id="metode-paper">
+      <h2>Data and method</h2>
+      <figure class="foto-samping"><img src="../images/riset/spillover/surabaya-iss.jpg" alt="Greater Surabaya at night, seen from the International Space Station" loading="lazy" width="1000" height="937"><figcaption>Greater Surabaya at night, the kind of signal the thesis measures. Photo: <a href="https://commons.wikimedia.org/wiki/File:Surabaya-iss.jpg">NASA</a>, public domain.</figcaption></figure>
+      <p>Satellite data make a national comparison possible. Night-time light stands in for local economic activity, which is poorly measured in many districts, and its correlation with district GDP in this sample is 0.57, although it misses daytime and informal activity. Annual pollutant data come from ODIAC and Sentinel-5P, aggregated to district boundaries with Google Earth Engine and QGIS.</p>
+      <p>A district counts as treated when its centre lies within 60 km of a zone, from the year the zone began operating. Using operating years avoids counting the construction period as treatment. Distance works better than shared borders in an archipelago, where two districts across a strait are not formally neighbours.</p>
+      <p>Zones opened in different years, which is why the estimator matters. Two-way fixed effects can compare newly treated districts with those treated earlier, and that comparison can bias results. The thesis uses Callaway and Sant'Anna's estimator with never-treated districts as controls, and tests pre-trends, distance rings, regional subsamples, alternative control groups, and placebo dates.</p>
+      <div class="dua-peta">
+        <figure><img src="../images/riset/spillover/peta-ntl-2023.jpg" alt="Map of Indonesian districts by mean night-time light in 2023, brightest across Java and Bali" loading="lazy" width="1200" height="848"><figcaption>Mean night-time light by district, 2023. Java and Bali are brightest.</figcaption></figure>
+        <figure><img src="../images/riset/spillover/peta-co2-2023.jpg" alt="Map of Indonesian districts by CO₂ in 2023" loading="lazy" width="1200" height="848"><figcaption>CO₂ by district, 2023 (ODIAC).</figcaption></figure>
+      </div>
+    </section>
+
+    <section id="temuan">
+      <h2>Findings</h2>
+      <p>Lights rose almost everywhere between 2013 and 2023, so a rise near a zone proves little by itself. Districts within 60 km of a zone brightened by 67 percent over the decade, and all other districts by 75 percent. The formal estimates compare each district with its own earlier path.</p>
+      <figure class="gr" data-gr>
+        <header><h3>Districts near zones did not brighten faster than the rest</h3><p>Mean night-time light by district, indexed to 100 in 2013. Districts are grouped by distance to a zone, whatever year the zone opened.</p></header>
+        <div class="gr-tab" role="tablist"><button role="tab" aria-selected="true" data-p="grafik">Chart</button><button role="tab" aria-selected="false" data-p="tabel">Table</button><button role="tab" aria-selected="false" data-p="sumber">Sources</button></div>
+        <div data-panel="grafik"><div id="garis"></div></div>
+        <div data-panel="tabel" hidden><div class="tabel-gulir"><table class="kanan" id="tabel-garis"></table></div></div>
+        <div data-panel="sumber" hidden><p>Author's calculation from the thesis panel of 514 districts. Night-time light is VIIRS mean radiance. These group averages are descriptive and do not estimate the effect of a zone. 2024 is left out.</p></div>
+        <footer>Source: author's calculation from VIIRS night-time light.</footer>
+      </figure>
+
+      <figure class="gr" data-gr>
+        <header><h3>Only tourism zones left a significant pollution signal</h3><p>Estimated change in nearby districts after a zone opens, in log points, with 95 percent confidence intervals.</p></header>
+        <div class="gr-tab" role="tablist"><button role="tab" aria-selected="true" data-p="grafik">Chart</button><button role="tab" aria-selected="false" data-p="tabel">Table</button><button role="tab" aria-selected="false" data-p="sumber">Sources</button></div>
+        <div data-panel="grafik">
+          <div class="att" role="img" aria-label="Estimated effects with 95 percent confidence intervals. Only the tourism estimate for CO2 excludes zero."
+            data-rentang="[-0.08, 0.12]" data-garis="[-0.05, 0, 0.05, 0.10]"
+            data-att='[{"grup":"Night-time light","baris":[["All zones",0.024,0.024,false],["Manufacturing",0.035,0.031,false],["Tourism",0.006,0.036,false]]},{"grup":"CO₂","baris":[["All zones",0.008,0.005,false],["Manufacturing",0.007,0.005,false],["Tourism",0.044,0.022,true]]}]'></div>
+          <div class="att-legenda"><span><i class="isi"></i>Significant at 5 percent</span><span><i></i>Not significant</span></div>
+        </div>
+        <div data-panel="tabel" hidden><div class="tabel-gulir"><table class="kanan">
+          <thead><tr><th>Outcome</th><th>All zones</th><th>Manufacturing</th><th>Tourism</th></tr></thead>
+          <tbody>
+            <tr><td>Night-time light (log)</td><td>0.024 (0.024)</td><td>0.035 (0.031)</td><td>0.006 (0.036)</td></tr>
+            <tr><td>CO₂ (log)</td><td>0.008 (0.005)</td><td>0.007 (0.005)</td><td>0.044** (0.022)</td></tr>
+            <tr><td>NO₂ (µmol/m²)</td><td>0.129 (0.814)</td><td>−0.611 (1.163)</td><td>1.725** (0.704)</td></tr>
+            <tr><td>SO₂ (µmol/m²)</td><td>−6.397 (5.867)</td><td>−7.448 (7.731)</td><td>−4.110 (9.667)</td></tr>
+            <tr><td>CO (mmol/m²)</td><td>−0.219 (0.152)</td><td>−0.363 (0.223)</td><td>−0.142 (0.254)</td></tr>
+          </tbody>
+        </table></div><p class="catatan">Standard errors in parentheses. ** p &lt; 0.05.</p></div>
+        <div data-panel="sumber" hidden><p>Callaway and Sant'Anna estimates with never-treated controls and doubly robust weighting. Light from VIIRS, CO₂ from ODIAC, NO₂, SO₂, and CO from Sentinel-5P. Pre-treatment averages show no sign of diverging trends.</p></div>
+        <footer>Source: author's estimates. Zones within 60 km of a district centre.</footer>
+      </figure>
+
+      <h3>The two types of zone behave differently</h3>
+      <div class="dua-jenis">
+        <div><img src="../images/riset/spillover/ikon/manufaktur.svg" alt=""><h4>Manufacturing zones</h4><p>No significant change in light or any pollutant. These zones sit in corridors that were already polluted, so one new zone is hard to detect.</p></div>
+        <div><img src="../images/riset/spillover/ikon/wisata.svg" alt=""><h4>Tourism zones</h4><p>CO₂ is about 4.5 percent higher and NO₂ is 1.725 µmol/m² higher, or about 13 percent of the sample mean. Light does not change. The CO₂ estimate averages 0.065 across the post-treatment years, so emissions have not yet turned.</p></div>
+      </div>
+
+      <h3>Distance tells less than expected</h3>
+      <p>Effects do not fade neatly with distance. Night-time light is insignificant in every ring, so the 60 km cut-off is not hiding a stronger effect close to the zones. The CO₂ estimate is largest at 60 to 90 km, though no single ring is significant.</p>
+      <div class="tabel-gulir"><table class="kanan">
+        <thead><tr><th>Distance from zone</th><th>0–30 km</th><th>30–60 km</th><th>60–90 km</th><th>90–120 km</th></tr></thead>
+        <tbody>
+          <tr><td>Night-time light</td><td>0.052 (0.094)</td><td>0.020 (0.068)</td><td>−0.030 (0.048)</td><td>0.016 (0.027)</td></tr>
+          <tr><td>CO₂</td><td>0.007 (0.023)</td><td>0.011 (0.009)</td><td>0.029 (0.028)</td><td>0.009 (0.006)</td></tr>
+        </tbody>
+      </table></div>
+      <p class="catatan">All zones. Standard errors in parentheses. No estimate is significant.</p>
+
+      <h3>The national average hides regional signals</h3>
+      <p>Light does respond in one part of the country. The Sumatra and Bangka group records a significant effect of 0.089 at the 5 percent level, and manufacturing zones in Java and Sumatra record 0.047 at the 10 percent level. Both fit a pattern in which industrial gains appear where agglomeration already exists.</p>
+    </section>
+
+    <section id="penjelasan">
+      <h2>Why the lights stay off</h2>
+      <img class="ikon-kanan" src="../images/riset/spillover/ikon/malam.svg" alt="">
+      <p>The thesis does not show that Indonesian SEZs have failed. Three explanations fit the null result, and the data cannot yet separate them.</p>
+      <ul>
+        <li><b>Dilution.</b> Growth near a zone is averaged across a whole district, and Damayanti (2024) finds signals at sub-district level.</li>
+        <li><b>Time.</b> Most zones are two to five years old, and spillovers elsewhere have taken four to ten.</li>
+        <li><b>Enclaves.</b> Zones may attract investment without building links to local suppliers and workers, as case studies of Sei Mangkei suggest.</li>
+      </ul>
+      <p>The tourism result has its own likely causes: low emissions before the zone opened, construction in previously undeveloped areas, and a lasting footprint from travel and energy use. Manufacturing zones sit in corridors that were already polluted, so one new zone is hard to detect. That does not make them clean.</p>
+    </section>
+
+    <section id="kebijakan">
+      <h2>Policy implications</h2>
+      <ol>
+        <li><b>Report emissions at zone level.</b> Presidential Regulation 110 of 2025 assigns greenhouse gas inventories by firm and sector, so a zone's total is never consolidated. Operating zones could begin with mandatory self-assessment and baseline data.</li>
+        <li><b>Account for tourism emissions by destination.</b> These emissions come from many small providers and visitor trips, which plant-level monitoring cannot capture. A workable method still needs to be agreed between the central government, zone managers, and environmental authorities.</li>
+        <li><b>Evaluate zones beyond their fences.</b> National SEZ Council reporting rests on investment, tenants, and jobs inside each zone. Adding outcomes in surrounding districts would show whether a zone is a growth centre or an enclave.</li>
+      </ol>
+    </section>
+
+    <section id="batas">
+      <h2>Limitations</h2>
+      <p>District-level data cannot see small local effects, particularly in large districts outside Java. Narrower cut-offs would sit closer to the zones, but the treated group falls from 72 districts at 60 km to 7 at 15 km.</p>
+      <p>The window is short. Sentinel-5P data leave few pre-treatment years for NO₂, SO₂, and CO, so those parallel-trends checks are weaker than the ones for light and CO₂. The CO₂ placebo at two years before opening is marginally significant, which may reflect emissions from construction.</p>
+      <p>Each district is assigned to its nearest zone as of the end of the period, and the thesis has no zone-level data on investment, jobs, or land use. Sub-district or village data would be the natural next step.</p>
+    </section>
+
+    <section id="sitasi">
+      <h2>How to cite</h2>
+      <p class="sitasi">Pratama, M. I. (2026). <i>Spillover or Still Over? Do Indonesia's SEZs Leave Light and Environmental Signature Beyond Their Borders?</i> Bachelor's thesis, Faculty of Economics and Business, Universitas Indonesia.</p>
+      <p>Other papers are in the <a href="#">research list</a>. Questions are welcome at <a href="mailto:ilhamp2709@gmail.com">ilhamp2709@gmail.com</a>.</p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wadah">
+    <span>Muhammad Ilham Pratama · Jakarta · <a href="mailto:ilhamp2709@gmail.com">ilhamp2709@gmail.com</a> · <a href="https://www.linkedin.com/in/muhammad-ilham-pratama-172825245/">LinkedIn</a></span>
+    <span>Last updated October 2026</span>
+  </div>
+</footer>
+
+<script src="../paper.js"></script>
+<script src="spillover-or-still-over.js"></script>
+<script src="../tema.js"></script>
+</body>
+</html>
