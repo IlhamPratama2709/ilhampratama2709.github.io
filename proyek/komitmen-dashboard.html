@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KOMITMEN Dashboard Site · Muhammad Ilham Pratama</title>
+<meta name="description" content="A private site that brings eight KOMITMEN research dashboards together, with a page and a PDF report for each of 514 districts and 38 provinces, shown here through videos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../gaya.css">
+<link rel="stylesheet" href="proyek.css">
+<script>try { if (localStorage.getItem("tema") === "dark") document.documentElement.dataset.theme = "dark"; } catch (e) {}</script>
+</head>
+<body>
+
+<header class="pita">
+  <div class="wadah">
+    <a class="merek" href="../index.html">Muhammad Ilham Pratama</a>
+    <nav>
+      <a href="../index.html#sekarang">Now</a>
+      <a href="../index.html#riset">Research</a>
+      <a href="../index.html#metode">Methods</a>
+      <a href="../index.html#pengalaman">Experience</a>
+      <a class="tombol" href="https://drive.google.com/drive/folders/1XornkzLssT57CylmrSPeVhFlCcZnFp9r">Portfolio</a>
+      <button class="tema" id="tema" type="button" aria-label="Switch colour theme">
+        <svg class="bulan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+        <svg class="matahari" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="judul-paper">
+  <div class="wadah">
+    <p class="jejak"><a href="../index.html#sekarang">Current work</a></p>
+    <p class="supertitle">Project · KOMITMEN, Universitas Islam Internasional Indonesia · 2026</p>
+    <h1>KOMITMEN dashboard site</h1>
+    <p class="lead">Eight research dashboards share one private site, which gives each of Indonesia's 514 districts and 38 provinces its own page and PDF report.</p>
+    <p class="status-proyek"><b>Status:</b> private preview. Access is restricted, so this page shows the site through videos only. Figures are preliminary and not for citation.</p>
+  </div>
+</div>
+
+<div class="wadah tata-paper">
+  <aside class="daftar-isi" aria-label="On this page">
+    <b>On this page</b>
+    <div>
+      <a href="#ringkasan">Summary</a>
+      <a href="#fungsi">What the site does</a>
+      <a href="#video">Three videos</a>
+      <a href="#peran">My role</a>
+      <a href="#alat">Tools</a>
+    </div>
+  </aside>
+
+  <main class="naskah">
+    <section id="ringkasan">
+      <h2>Summary</h2>
+      <p>KOMITMEN is a research programme at Universitas Islam Internasional Indonesia with seven workstreams. I built this site so that its eight dashboards sit in one place and a reader can start from a district or province as well as from a topic.</p>
+      <p>Kota Semarang shows the result. Its page draws figures from all eight dashboards, and its PDF report runs to 36 A4 pages. Every other district and province has a page and report in the same layout, 552 in all.</p>
+    </section>
+
+    <section id="fungsi">
+      <h2>What the site does</h2>
+      <p>Each dashboard covers one topic: power plants, land subsidence in Java, regional descriptive analysis and regional development plans (RPJMD), industrial decarbonisation, regional finance, regional statistics from BPS, household welfare, and green jobs.</p>
+      <p>The land subsidence dashboard works at village level. Its map covers 24,689 of Java's 25,366 villages, those with at least 20 radar measurement points, and clicking a village shows its subsidence rate, population, and flood record. GNSS stations on the same map show measured height over time.</p>
+      <p>Region pages arrange the same data by place. Each page has one section per dashboard, with the area's figures, a comparison, and charts, and it offers the data as CSV and the report as PDF. Some gaps remain. Green jobs figures for six provinces in Papua cannot yet be matched, and those pages say so.</p>
+      <p>A comparison page plots any two district indicators against each other, even when they come from different dashboards, and it uses the latest year of each indicator that has data for at least 30 districts.</p>
+      <p>The site is not finished. Regional finance, BPS regional statistics, and household welfare are still marked as internal drafts, and the BPS figures have not been verified.</p>
+    </section>
+
+    <section id="video">
+      <h2>Three videos</h2>
+      <p>These screen recordings stand in for a link to the site. They have no sound and play when scrolled into view. The site is in Indonesian, and each video carries English captions.</p>
+
+      <h3 id="video-peta">Stranded assets map</h3>
+      <figure class="video-proyek">
+        <video controls muted playsinline loop preload="metadata" data-putar-sendiri width="1920" height="1080" poster="../images/proyek/komitmen/klip-3-sampul.jpg" aria-labelledby="video-peta">
+          <source src="../images/proyek/komitmen/klip-3-peta-stranded-assets.mp4" type="video/mp4">
+          Your browser cannot play this video.
+        </video>
+        <figcaption>The land subsidence map opens on all of Java, then moves to Kendal, Semarang, and Demak on the north coast. One click opens a village record and another opens a GNSS station. 34 seconds.</figcaption>
+      </figure>
+
+      <h3 id="video-laporan">Regional reports</h3>
+      <figure class="video-proyek">
+        <video controls muted playsinline loop preload="metadata" data-putar-sendiri width="1920" height="1080" poster="../images/proyek/komitmen/klip-2-sampul.jpg" aria-labelledby="video-laporan">
+          <source src="../images/proyek/komitmen/klip-2-laporan-wilayah.mp4" type="video/mp4">
+          Your browser cannot play this video.
+        </video>
+        <figcaption>The video goes from the province list to Jawa Tengah and then Kota Semarang, and downloads the 36-page report. Key findings come first, and an annex lists every figure with its year. 48 seconds.</figcaption>
+      </figure>
+
+      <h3 id="video-situs">Site overview</h3>
+      <figure class="video-proyek">
+        <video controls muted playsinline loop preload="metadata" data-putar-sendiri width="1920" height="1080" poster="../images/proyek/komitmen/klip-1-sampul.jpg" aria-labelledby="video-situs">
+          <source src="../images/proyek/komitmen/klip-1-gambaran-situs.mp4" type="video/mp4">
+          Your browser cannot play this video.
+        </video>
+        <figcaption>The home page lists each dashboard on a card with a short summary. A second page lists the seven workstreams, and a third opens the region explorer. 38 seconds.</figcaption>
+      </figure>
+    </section>
+
+    <section id="peran">
+      <h2>My role</h2>
+      <p>I built the site, including the region pages and PDF reports, and most of the dashboards. A colleague built the green jobs dashboard.</p>
+      <p>The data came from the team as well as from public sources. The household welfare dashboard, for example, uses Susenas March 2025 data processed by a colleague. My part there was the dashboard.</p>
+    </section>
+
+    <section id="alat">
+      <h2>Tools</h2>
+      <div class="tabel-gulir"><table class="sekilas">
+        <tbody>
+          <tr><td>Site</td><td>Static HTML, CSS, and JavaScript, deployed on Cloudflare</td></tr>
+          <tr><td>Build</td><td>Python scripts that copy each finished dashboard into the site and check its data package</td></tr>
+          <tr><td>Data</td><td>Shared CSV and JSON packages. Survey microdata stay off the site</td></tr>
+          <tr><td>Reports</td><td>A4 print layout that reads the same data as the region pages</td></tr>
+          <tr><td>Version control</td><td>Git and GitHub, in a private repository</td></tr>
+        </tbody>
+      </table></div>
+      <p class="catatan">Sources shown in the videos include BIG boundaries, Sentinel-1 radar estimates (Ohenhen et al., 2026), Ina-CORS GNSS stations, WorldPop, and PODES.</p>
+      <p>The land subsidence data package is 21.6 MB, close to Cloudflare's limit of 25 MB per file, so the update script stops if any file passes 24 MB.</p>
+      <p>Questions are welcome at <a href="mailto:ilhamp2709@gmail.com">ilhamp2709@gmail.com</a>.</p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wadah">
+    <span>Muhammad Ilham Pratama · Jakarta · <a href="mailto:ilhamp2709@gmail.com">ilhamp2709@gmail.com</a> · <a href="https://www.linkedin.com/in/muhammad-ilham-pratama-172825245/">LinkedIn</a></span>
+    <span>Last updated October 2026</span>
+  </div>
+</footer>
+
+<script src="proyek.js"></script>
+</body>
+</html>

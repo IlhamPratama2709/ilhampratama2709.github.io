@@ -1,0 +1,29 @@
+.judul-paper { background: var(--bg-panel-2); border-bottom: 1px solid var(--border); padding: 40px 0 34px; }
+.judul-paper h1 { font-size: 40px; line-height: 1.15; color: var(--ink-1); max-width: 860px; text-wrap: balance; }
+.judul-paper .lead { max-width: 760px; color: var(--teks); }
+.jejak { font-size: 14px; margin: 0 0 18px; }
+.tata-paper { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 44px; padding-top: 36px; padding-bottom: 56px; }
+.daftar-isi { position: sticky; top: 76px; align-self: start; font-size: 14px; }
+.daftar-isi b { display: block; color: var(--ink-1); margin-bottom: 6px; }
+.daftar-isi a { display: block; padding: 3px 0; color: var(--ink-2); text-decoration: none; }
+.daftar-isi a:hover { color: var(--tautan); }
+.naskah { max-width: 760px; min-width: 0; }
+.naskah section + section { margin-top: 44px; }
+.naskah h2 { font-size: 27px; margin-bottom: 10px; }
+.naskah h3 { font: 700 17px/1.4 var(--sans); color: var(--ink-1); margin: 22px 0 6px; }
+.naskah p { margin: 0 0 14px; }
+.naskah table td:first-child { color: var(--ink-1); font-weight: 700; }
+.sekilas td:first-child { width: 150px; }
+.naskah figure { margin: 22px 0; }
+.naskah figcaption, .catatan { font-size: 13px; color: var(--ink-3); margin-top: 6px; }
+@media (max-width: 820px) {
+  .judul-paper h1 { font-size: 30px; }
+  .tata-paper { grid-template-columns: minmax(0, 1fr); gap: 20px; padding-top: 20px; }
+  .daftar-isi { position: static; }
+  .daftar-isi div { display: flex; flex-wrap: wrap; gap: 2px 14px; }
+}
+/* Tambahan untuk halaman proyek. Semua warna dari variabel gaya.css, jadi ikut tema terang dan gelap. */
+.judul-paper .status-proyek { max-width: 760px; margin: 18px 0 0; padding: 10px 14px; background: var(--bg-page); border-left: 3px solid var(--emas); font-size: 15px; color: var(--teks); }
+.status-proyek b { color: var(--ink-1); }
+.naskah .video-proyek { margin: 8px 0 26px; }
+.video-proyek video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: var(--bg-panel-2); border: 1px solid var(--border); }

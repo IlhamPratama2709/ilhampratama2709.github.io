@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="gaya.css">
+<link rel="stylesheet" href="slider.css">
 <script>try { if (localStorage.getItem("tema") === "dark") document.documentElement.dataset.theme = "dark"; } catch (e) {}</script>
 </head>
 <body>
@@ -34,7 +35,10 @@
   <div class="wadah">
     <div>
       <p class="supertitle">Researcher · KOMITMEN, Universitas Islam Internasional Indonesia</p>
-      <h1>Muhammad Ilham Pratama</h1>
+      <div class="nama-baris">
+        <img class="foto-kecil" src="images/web/foto-kecil.jpg" alt="Portrait of Muhammad Ilham Pratama">
+        <h1>Muhammad Ilham Pratama</h1>
+      </div>
       <p class="lead">I study how toll roads, special economic zones, and power plants change the economy and the environment of the Indonesian districts around them.</p>
       <p class="lead2">Most of my work combines district panel data with satellite data, such as night-time lights and land cover, and estimates effects with staggered difference-in-differences. I hold a bachelor's degree in economics from Universitas Indonesia (2026) and am preparing for graduate study.</p>
       <div class="tautan-baris">
@@ -43,9 +47,8 @@
         <a href="https://drive.google.com/drive/folders/1XornkzLssT57CylmrSPeVhFlCcZnFp9r">Papers on Google Drive</a>
       </div>
     </div>
-    <div class="foto-kol">
-      <img class="foto" src="images/web/foto.jpg" alt="Muhammad Ilham Pratama">
-    </div>
+    <div class="slider" id="slider" role="region" aria-roledescription="carousel" aria-label="Selected projects"></div>
+    <script src="slider.js" defer></script>
   </div>
 </section>
 
@@ -62,6 +65,7 @@
         <div class="instansi">KOMITMEN, UIII</div>
         <div class="peran">Researcher · Aug 2026 – now</div>
         <p>Regional transition readiness, stranded-asset risk, and the labour-market effects of decarbonisation, under the KOMITMEN and SETARA programmes (supervisor: T. Yudo Wicaksono, Ph.D.).</p>
+        <p><a href="proyek/komitmen-dashboard.html">See the dashboard site</a></p>
       </div>
       <div>
         <div class="instansi">FEB Universitas Indonesia</div>

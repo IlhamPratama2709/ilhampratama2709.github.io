@@ -1,0 +1,46 @@
+/* Slider proyek di pembuka. Kotak teks dan sprite bergaya gim RPG lama; warna mengikuti token situs. */
+
+.pembuka .wadah { grid-template-columns: minmax(0, 1fr) minmax(0, 460px); }
+.nama-baris { display: flex; align-items: center; gap: 18px; margin-bottom: 20px; }
+.nama-baris h1 { margin: 0; }
+.foto-kecil { flex: none; width: 84px; height: 84px; object-fit: cover; display: block; border: 3px solid var(--emas); }
+
+.slider { position: relative; min-width: 0; }
+.slide-bingkai { position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 3px solid var(--emas); background: var(--pita); }
+.slide { position: absolute; inset: 0; margin: 0; opacity: 0; visibility: hidden; transition: opacity .6s, visibility .6s; }
+.slide.aktif { opacity: 1; visibility: visible; }
+.slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.kotak-teks { position: relative; margin: -34px 12px 0; padding: 12px 16px 12px; min-height: 142px; background: var(--bg-page); color: var(--teks); border: 3px solid var(--ink-1); box-shadow: 0 0 0 3px var(--bg-page), 0 6px 14px rgba(0, 0, 0, .25); z-index: 1; }
+.kotak-teks .meta-slide { font: 700 13px var(--sans); color: var(--supertitle); padding-right: 64px; }
+.kotak-teks h3 { font: 600 18px/1.25 var(--serif); margin: 4px 0 4px; padding-right: 58px; }
+.kotak-teks h3 a { color: var(--ink-1); text-decoration: none; }
+.kotak-teks h3 a:hover { text-decoration: underline; }
+.kotak-teks p { margin: 0; font-size: 14px; line-height: 1.45; color: var(--ink-2); }
+.sprite { position: absolute; right: 8px; top: -30px; width: 64px; height: 64px; image-rendering: pixelated; animation: lompat 1.2s steps(2) infinite; }
+@keyframes lompat { 50% { transform: translateY(-4px); } }
+
+.kendali-slide { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 12px 12px 0; }
+.titik-slide { display: flex; gap: 6px; }
+.titik-slide button { width: 14px; height: 14px; padding: 0; border: 2px solid var(--ink-1); background: transparent; cursor: pointer; }
+.titik-slide button[aria-current="true"] { background: var(--emas); }
+.tombol-slide { display: flex; gap: 6px; }
+.tombol-slide button { width: 32px; height: 32px; display: grid; place-items: center; padding: 0; border: 2px solid var(--ink-1); background: var(--bg-page); color: var(--ink-1); cursor: pointer; }
+.tombol-slide svg { width: 14px; height: 14px; }
+.titik-slide button:focus-visible, .tombol-slide button:focus-visible { outline: 2px solid var(--emas); outline-offset: 2px; }
+
+@media (max-width: 820px) {
+  .pembuka .wadah { grid-template-columns: 1fr; gap: 28px; }
+  .slider { max-width: 520px; }
+}
+@media (max-width: 560px) {
+  .nama-baris { gap: 12px; }
+  .foto-kecil { width: 64px; height: 64px; }
+  .nama-baris h1 { font-size: 32px; }
+  .kotak-teks { margin-left: 6px; margin-right: 6px; }
+  .kendali-slide { margin-left: 6px; margin-right: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .slide { transition: none; }
+  .sprite { animation: none; }
+}
