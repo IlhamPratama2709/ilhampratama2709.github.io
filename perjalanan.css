@@ -1,0 +1,76 @@
+/* Bagian Ilham's Journey. Warna mengikuti token gaya.css, jadi ikut tema terang dan gelap. */
+:root { --laut: #f4f8fb; --darat: #cdd8e0; --darat-garis: #ffffff; --prov: #a9b9c5; --tetangga: #e6ebef; --singgah: #cc9e42; --singgah-kini: #a87a22; }
+[data-theme="dark"] { --laut: #17303f; --darat: #2c4a5e; --darat-garis: #17303f; --prov: #5d7c90; --tetangga: #233f51; --singgah: #cc9e42; --singgah-kini: #e8bd63; }
+
+.perjalanan { padding: 44px 0 48px; border-bottom: 1px solid var(--border); }
+.judul-bagian { display: grid; grid-template-columns: minmax(0, 1fr) 250px; gap: 32px; align-items: end; margin-bottom: 16px; }
+.perjalanan h2 { font-size: 28px; color: var(--ink-1); margin: 2px 0 6px; }
+.perjalanan .supertitle { margin: 0; }
+.pengantar { margin: 0; max-width: 640px; font-size: 15.2px; color: var(--ink-2); }
+.hitungan { font-size: 13.4px; color: var(--ink-2); }
+.hitungan b { font: 600 30px/1 var(--serif); color: var(--ink-1); margin-right: 6px; }
+.kemajuan { height: 6px; margin: 6px 0; background: var(--border); }
+.kemajuan i { display: block; height: 100%; min-width: 3px; background: var(--emas); transition: width .4s; }
+
+.papan { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 16px; align-items: stretch; }
+.bingkai-peta { margin: 0; min-width: 0; }
+.kanvas { position: relative; border: 1px solid var(--border); background: var(--laut); overflow: hidden; line-height: 0; }
+#peta { display: block; width: 100%; height: auto; aspect-ratio: 480 / 200; touch-action: manipulation; }
+.bingkai-peta figcaption { font-size: 12px; color: var(--ink-3); margin-top: 5px; }
+.kab { fill: var(--darat); stroke: var(--darat-garis); stroke-width: .08; cursor: pointer; }
+.kab:hover { fill: var(--accent-wash); }
+.kab.singgah { fill: var(--singgah); }
+.kab.kini { fill: var(--singgah-kini); }
+.kab.titik-kini { fill: var(--tautan); }
+.batas-prov { fill: none; stroke: var(--prov); stroke-width: .16; pointer-events: none; }
+.negara { fill: var(--tetangga); stroke: var(--darat-garis); stroke-width: .1; }
+.negara.singgah { fill: #efe2c6; cursor: pointer; }
+[data-theme="dark"] .negara.singgah { fill: #4a4a35; }
+.pin { cursor: pointer; }
+.pin rect { fill: var(--bg-page); stroke: var(--ink-1); }
+.pin image, #pejalan, #pejalan-pesawat { image-rendering: pixelated; }
+.pin.kini rect { fill: var(--emas); }
+#pejalan, #pejalan-pesawat { pointer-events: none; }
+
+.kendali { position: absolute; right: 8px; top: 8px; display: flex; gap: 4px; line-height: 1; }
+.kendali button { min-width: 30px; height: 30px; padding: 0 7px; border: 1px solid var(--border-strong); background: var(--bg-page); color: var(--ink-1); font: 700 14px var(--sans); cursor: pointer; }
+.kendali button:hover { border-color: var(--ink-1); }
+
+.kartu { min-height: 340px; display: flex; flex-direction: column; border: 1px solid var(--border); background: var(--bg-page); min-width: 0; }
+.kartu img.foto { display: block; width: 100%; height: 118px; object-fit: cover; }
+.kartu .isi { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 5px; flex: 1; }
+.kartu .meta { display: flex; align-items: center; gap: 7px; font-size: 12.5px; font-weight: 700; color: var(--supertitle); }
+.kartu .meta img { width: 24px; height: 24px; image-rendering: pixelated; }
+.kartu h3 { font: 600 19.2px/1.25 var(--serif); color: var(--ink-1); margin: 0; }
+.kartu p { margin: 0; font-size: 14.4px; line-height: 1.5; color: var(--teks); }
+.kartu .label { align-self: flex-start; padding: 1px 7px; border: 1px solid var(--emas); font-size: 12.5px; font-weight: 700; color: var(--ink-1); }
+.kartu a.lanjut { margin-top: auto; padding-top: 6px; font-size: 14px; font-weight: 700; color: var(--tautan); }
+.daftar-rumah { list-style: none; margin: 2px 0 0; padding: 0; overflow-y: auto; max-height: 190px; font-size: 13.4px; line-height: 1.35; }
+.daftar-rumah li { padding: 5px 0; border-top: 1px solid var(--border); }
+.daftar-rumah a { color: var(--tautan); text-decoration: none; }
+.daftar-rumah a:hover { text-decoration: underline; }
+.kartu .kosong { color: var(--ink-3); }
+.kartu .sisa { font-size: 13.4px; color: var(--ink-2); }
+
+.daftar-henti { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.daftar-henti button { display: inline-flex; align-items: center; gap: 6px; padding: 4px 9px 4px 5px; border: 1px solid var(--border-strong); background: var(--bg-page); color: var(--ink-1); font: 700 13.1px var(--sans); cursor: pointer; }
+.daftar-henti button span { font-weight: 400; color: var(--ink-2); }
+.daftar-henti img { width: 20px; height: 20px; image-rendering: pixelated; }
+.daftar-henti button:hover { border-color: var(--ink-1); }
+.daftar-henti button[aria-current="true"] { background: var(--ink-1); border-color: var(--ink-1); color: var(--bg-page); }
+.daftar-henti button[aria-current="true"] span { color: var(--bg-page); }
+.aksi { margin-top: 10px; }
+.aksi button { padding: 6px 12px; border: 0; background: var(--emas); color: #003a5d; font: 700 13.4px var(--sans); cursor: pointer; }
+.aksi button:disabled { opacity: .6; cursor: default; }
+
+@media (max-width: 900px) {
+  .papan { grid-template-columns: minmax(0, 1fr); }
+  .judul-bagian { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .kartu { min-height: 0; }
+  .kartu img.foto { height: 170px; }
+}
+@media (max-width: 560px) {
+  #peta { aspect-ratio: 480 / 280; }
+  .perjalanan h2 { font-size: 24px; }
+  .kendali button { min-width: 34px; height: 34px; }
+}

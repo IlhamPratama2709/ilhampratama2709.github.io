@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="gaya.css">
 <link rel="stylesheet" href="slider.css">
+<link rel="stylesheet" href="perjalanan.css">
 <script>try { if (localStorage.getItem("tema") === "dark") document.documentElement.dataset.theme = "dark"; } catch (e) {}</script>
 </head>
 <body>
@@ -18,6 +19,7 @@
   <div class="wadah">
     <a class="merek" href="#">Muhammad Ilham Pratama</a>
     <nav>
+      <a href="#perjalanan">Journey</a>
       <a href="#sekarang">Now</a>
       <a href="#riset">Research</a>
       <a href="#metode">Methods</a>
@@ -57,6 +59,42 @@
 <nav class="bidang" aria-label="Research areas">
   <div class="wadah" id="bidang"></div>
 </nav>
+
+<section class="perjalanan" id="perjalanan">
+  <div class="wadah">
+    <div class="judul-bagian">
+      <div>
+        <p class="supertitle">Ilham's Journey</p>
+        <h2>Where the research has taken me</h2>
+        <p class="pengantar">Pick a place and I will travel there. Gold areas are places I have visited for research, and each one shows what I worked on.</p>
+      </div>
+      <div class="hitungan" aria-live="polite">
+        <b id="hit-kab"></b><span>of 514 districts and cities</span>
+        <div class="kemajuan"><i id="hit-bar"></i></div>
+        <span id="hit-luar"></span>
+      </div>
+    </div>
+
+    <div class="papan">
+      <figure class="bingkai-peta">
+        <div class="kanvas">
+          <svg id="peta" role="application" aria-label="Map of Indonesia and neighbouring countries by district" preserveAspectRatio="xMidYMid meet"></svg>
+          <div class="kendali">
+            <button type="button" id="z-tambah" aria-label="Zoom in">+</button>
+            <button type="button" id="z-kurang" aria-label="Zoom out">−</button>
+            <button type="button" id="z-awal">All</button>
+          </div>
+        </div>
+        <figcaption>District boundaries: Badan Informasi Geospasial. Neighbouring countries: Natural Earth.</figcaption>
+      </figure>
+
+      <article class="kartu" id="kartu" aria-live="polite"></article>
+    </div>
+
+    <div class="daftar-henti" id="daftar" role="list"></div>
+    <div class="aksi"><button type="button" id="tur">Walk the whole journey</button></div>
+  </div>
+</section>
 
 <section class="bagian" id="sekarang">
   <div class="wadah">
@@ -215,6 +253,8 @@
 </footer>
 
 <script src="situs.js"></script>
+<script src="peta-data.js"></script>
+<script src="perjalanan.js"></script>
 <script src="tema.js"></script>
 </body>
 </html>
