@@ -226,14 +226,6 @@ footer a { color: #fff; }
   .bidang .wadah { grid-template-columns: 1fr; }
   .bidang a, .bidang a:nth-child(2n) { padding: 14px 0; border-left: 0; }
   .bidang a + a { border-top: 1px solid var(--border); }
-  #riset .tabel-gulir thead { display: none; }
-  #riset .tabel-gulir table, #riset .tabel-gulir tbody, #riset .tabel-gulir tr, #riset .tabel-gulir td { display: block; width: auto; }
-  #riset .tabel-gulir tr { position: relative; padding: 12px 0; border-bottom: 1px solid var(--border); }
-  #riset .tabel-gulir td { border: 0; padding: 0; }
-  #riset .tabel-gulir td.judul { min-width: 0; margin: 2px 0 6px; }
-  #riset .tabel-gulir td.hasil { white-space: normal; margin-top: 2px; }
-  #riset .tabel-gulir td:nth-child(3), #riset .tabel-gulir td:nth-child(4) { display: inline; font-size: 13px; color: var(--ink-2); }
-  #riset .tabel-gulir td:nth-child(3)::after { content: " · "; }
   .garis-waktu, .garis-waktu tbody, .garis-waktu tr, .garis-waktu td { display: block; width: auto; }
   .garis-waktu tr { padding: 10px 0; border-bottom: 1px solid var(--border); }
   .garis-waktu td { border: 0; padding: 0; }
@@ -318,3 +310,11 @@ footer a { color: #fff; }
 .naskah table td:first-child { min-width: 130px; }
 .naskah table.teks td { min-width: 130px; }
 
+/* ikon piksel di samping nama, dipakai semua halaman */
+.merek { display: inline-flex; align-items: center; gap: 8px; }
+.merek::before { content: ""; flex: none; width: 24px; height: 24px; background: #dbe5f0 url("images/perjalanan/orang-1.png") center / 20px 20px no-repeat; image-rendering: pixelated; border-radius: 50%; }
+/* tabel riset tetap tabel di layar sempit, digulir ke samping */
+@media (max-width: 700px) {
+  #riset table { min-width: 660px; }
+  #riset td.judul { min-width: 240px; }
+}
