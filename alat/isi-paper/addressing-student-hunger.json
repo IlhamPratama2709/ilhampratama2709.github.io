@@ -1,0 +1,238 @@
+{
+ "slug": "addressing-student-hunger",
+ "pendek": "Addressing Student Hunger",
+ "desk": "A study of how two Indonesian social assistance programmes, PIP and PKH, relate to students' calorie intake and food security.",
+ "super": "Competition paper · EQUITAS, Universitas Gadjah Mada · 2025",
+ "judul": "Addressing Student Hunger: The Role of PIP and PKH in Enhancing Nutrition and Food Security in Indonesia",
+ "judul_asli": "Addressing Student Hunger: The Role of PIP and PKH in Enhancing Nutrition and Food Security in Indonesia",
+ "lead": "Students in PKH households are less likely to be food secure even after controls, and PIP shows no significant link with food security.",
+ "hasil": "4th place",
+ "tanda": [
+  "Students, Indonesia, 2023",
+  "Logit, OLS"
+ ],
+ "penulis": "Muhammad Ilham Pratama, Athillah Ayu Istiqomah, Anindya Ayu Putri Paramitha",
+ "lokasi": {
+  "wilayah": "Indonesia",
+  "wilayah_lat": -2.5,
+  "wilayah_lon": 118.0,
+  "skala": "nasional",
+  "ajang_kota": null,
+  "ajang_lat": null,
+  "ajang_lon": null
+ },
+ "ringkasan": [
+  "Receiving social assistance does not go with better food security among Indonesian students in this data. The paper uses SUSENAS 2023 to compare recipients and non-recipients of two programmes: Program Indonesia Pintar (PIP), which helps students with school costs, and Program Keluarga Harapan (PKH), a conditional cash transfer for poor families. About 14.3 percent of the sample received PIP and 21.2 percent received PKH.",
+  "PIP shows no significant association with food security. Its coefficient with controls is 0.0267 log-odds, with a standard error of 0.0272. PKH is negative and significant at −0.317, which means odds of food security about 27 percent lower than for non-recipients.",
+  "Calorie results depend on the controls. PKH moves from −120.0 without controls to 238.6 with them, and PIP from 31.10 to 88.63, all significant at 1 percent. The controls include household food spending, so these figures compare households with similar food budgets.",
+  "These are associations from one year of data. PKH is aimed at poor households, so its negative coefficient may reflect who receives the programme. The paper concludes that linking PKH with the Free Nutritious Meal Program could help reduce food insecurity among beneficiaries."
+ ],
+ "rantai": [
+  [
+   "rumah",
+   "Assistance reaches families",
+   "PIP for students, PKH for poor households"
+  ],
+  [
+   "sekolah",
+   "Students are selected",
+   "Enrolled students, elementary to senior secondary, in SUSENAS 2023"
+  ],
+  [
+   "warung",
+   "Food is measured",
+   "Calorie consumption and a food security indicator"
+  ],
+  [
+   "banding",
+   "Recipients are compared",
+   "Logit and OLS with household controls"
+  ]
+ ],
+ "pertanyaan": [
+  "The Ministry of Health reports that 41 percent of Indonesian children go to school on an empty stomach, and the paper cites an FAO estimate of 19.4 million people still facing hunger. The Free Nutritious Meal Program, set out in Presidential Regulation No. 83 of 2024, aims to reach 82.9 million beneficiaries over five years.",
+  "The new programme raises a question about the older ones. Many studies examine PIP and schooling or PKH and welfare, but few look at what students eat. This paper asks how the two programmes relate to students' calorie consumption and food security."
+ ],
+ "metode": [
+  "The data come from the individual, household, and consumption modules of SUSENAS 2023. The sample keeps school-aged individuals enrolled from elementary to senior secondary level, and household consumption is adjusted to the individual level. Regressions use 319,183 observations without controls and 309,253 with them.",
+  "A logit model estimates the probability of being food secure, and OLS estimates calorie consumption. Controls are household size, urban or rural residence, education level, and log food spending. VIFs are all below 5, with a mean of 1.11. Tests reject constant variance in both models, so the paper says it corrects the standard errors for this."
+ ],
+ "grafik": {
+  "judul": "PKH recipients remain less food secure, and PIP shows no link",
+  "sub": "Logit coefficients on being food secure, in log-odds, with 95 percent confidence intervals.",
+  "data": [
+   {
+    "grup": "PIP",
+    "baris": [
+     [
+      "No controls",
+      0.00369,
+      0.0268,
+      false
+     ],
+     [
+      "With controls",
+      0.0267,
+      0.0272,
+      false
+     ]
+    ]
+   },
+   {
+    "grup": "PKH",
+    "baris": [
+     [
+      "No controls",
+      -0.59,
+      0.0208,
+      true
+     ],
+     [
+      "With controls",
+      -0.317,
+      0.0219,
+      true
+     ]
+    ]
+   }
+  ],
+  "rentang": [
+   -0.7,
+   0.2
+  ],
+  "garis": [
+   -0.6,
+   -0.3,
+   0
+  ],
+  "aria": "Both PKH estimates are negative and exclude zero. Both PIP estimates are close to zero and their confidence intervals include zero.",
+  "sumber": "Authors' estimates from SUSENAS 2023. Logit models with 319,183 observations without controls and 309,253 with controls. Controls are household size, urban residence, education level, and log food spending.",
+  "kaki": "Source: authors' estimates, EQUITAS paper. SUSENAS 2023."
+ },
+ "tabel": {
+  "kolom": [
+   "Variable",
+   "Calories, no controls",
+   "Calories, controls",
+   "Food security, no controls",
+   "Food security, controls"
+  ],
+  "baris": [
+   [
+    "PIP",
+    "31.10*** (5.868)",
+    "88.63*** (4.479)",
+    "0.00369 (0.0268)",
+    "0.0267 (0.0272)"
+   ],
+   [
+    "PKH",
+    "−120.0*** (4.883)",
+    "238.6*** (3.756)",
+    "−0.590*** (0.0208)",
+    "−0.317*** (0.0219)"
+   ],
+   [
+    "Household members",
+    "",
+    "−107.3*** (1.084)",
+    "",
+    "−0.0935*** (0.00572)"
+   ],
+   [
+    "Urban residence",
+    "",
+    "−253.5*** (3.238)",
+    "",
+    "0.0674*** (0.021)"
+   ],
+   [
+    "Junior secondary",
+    "",
+    "41.18*** (3.873)",
+    "",
+    "−0.00824 (0.0236)"
+   ],
+   [
+    "Senior secondary",
+    "",
+    "31.99*** (3.889)",
+    "",
+    "0.0722*** (0.0246)"
+   ],
+   [
+    "Log food spending",
+    "",
+    "1,472*** (3.764)",
+    "",
+    "1.049*** (0.0229)"
+   ],
+   [
+    "Observations",
+    "319,183",
+    "309,253",
+    "319,183",
+    "309,253"
+   ],
+   [
+    "R-squared",
+    "0.002",
+    "0.451",
+    "",
+    ""
+   ]
+  ],
+  "catatan": "Calories are OLS estimates in the paper's reported unit. Food security columns are logit coefficients in log-odds. Elementary school is the education reference. Standard errors in parentheses, printed with a minus sign in the paper and shown here as positive values. *** p < 0.01, ** p < 0.05, * p < 0.1."
+ },
+ "jenis": [
+  [
+   "sekolah",
+   "PIP",
+   "PIP recipients show 88.63 more calories than non-recipients with controls, significant at 1 percent. Food security shows no significant link in either model, at 0.00369 (0.0268) and 0.0267 (0.0272)."
+  ],
+  [
+   "rumah",
+   "PKH",
+   "PKH recipients show 238.6 more calories with controls, the larger of the two programme coefficients. Yet their odds of food security are about 27 percent lower. The paper attributes this to targeting, since PKH reaches poor families and better-off households outside it can avoid food insecurity."
+  ],
+  [
+   "warung",
+   "Household conditions",
+   "Each extra household member goes with 107.3 fewer calories and 0.0935 lower log-odds of food security. Urban students show 253.5 fewer calories but higher log-odds of food security, by 0.0674."
+  ]
+ ],
+ "jenis_judul": "What each group of variables shows",
+ "sub": [
+  {
+   "judul": "The PKH sign reverses once food spending enters",
+   "teks": "Without controls, PKH recipients report 120.0 fewer calories than non-recipients. With controls the coefficient becomes 238.6, and R-squared rises from 0.002 to 0.451. Log food spending has the largest coefficient, at 1,472, so a 1 percent rise in spending goes with about 14.7 more calories."
+  }
+ ],
+ "interpretasi": [
+  "Two results are direct readings of the table: PIP has no significant association with food security, and PKH has a significant negative one. The reason for the PKH result is less certain. Recipients are poorer to begin with, so the coefficient cannot show that PKH lowers food security. The paper's own reading is the same, that targeting drives the sign.",
+  "The calorie results are conditional on food spending. If cash helps by raising food budgets, this model holds that channel fixed, so its coefficients do not measure the total effect of a transfer. The without-controls column has the opposite problem for PKH, because it compares poorer recipients with everyone else."
+ ],
+ "kebijakan": [
+  [
+   "Pair PKH with free meals",
+   "Integrate PKH with additional programmes such as free nutritious meals to reduce food insecurity among beneficiaries."
+  ],
+  [
+   "Improve the design of assistance",
+   "Adjust social assistance programmes so that they have a greater effect on food security and student well-being."
+  ],
+  [
+   "Account for household size and location",
+   "Consider family size and region in programme design, since larger and rural households are more vulnerable to food insecurity."
+  ]
+ ],
+ "batas": [
+  "SUSENAS records consumption for households, so the paper aggregates it to individuals, which may blur the effect on each student. One year of cross-sectional data cannot show change over time or separate programme effects from selection into the programmes. The paper's tables and text also disagree on the calorie unit, so the size of the calorie coefficients should be read with care. The authors suggest panel data and a difference-in-differences design for further work."
+ ],
+ "sitasi": "Pratama, M. I., Istiqomah, A. A., & Paramitha, A. A. P. (2025). <i>Addressing student hunger: The role of PIP and PKH in enhancing nutrition and food security in Indonesia</i>. Competition paper, EQUITAS, Universitas Gadjah Mada.",
+ "foto_pilih": {
+  "url": "https://commons.wikimedia.org/wiki/File:SD_Negeri_01_Kbn._Kacang_(Pagi)_-_Tanah_Abang,_Jakarta_Pusat,_JKT.jpg",
+  "teks": "State primary school, Central Jakarta. Photo: Firzafp, CC BY 4.0, darkened"
+ },
+ "tautan": "https://drive.google.com/drive/folders/173uQh_IHYAbkirnOtEf4DiZdym2mwSh0"
+}

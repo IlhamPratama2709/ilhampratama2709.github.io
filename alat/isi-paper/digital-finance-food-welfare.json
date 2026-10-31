@@ -1,0 +1,219 @@
+{
+ "slug": "digital-finance-food-welfare",
+ "pendek": "Digital finance and food welfare",
+ "desk": "A panel study of 514 Indonesian districts that compares digital readiness with KUR credit as routes to higher farm productivity and food security.",
+ "super": "Competition paper · OJK paper competition, Financial Services Authority (OJK) · 2025",
+ "judul": "Harvesting Data and Rice: The Role of Digital Financial Inclusion for the Agricultural Sector in Promoting Food Welfare",
+ "judul_asli": "Panen Data dan Padi: Peran Inklusi Keuangan Digital untuk Sektor Pertanian dalam Mendorong Kesejahteraan Pangan",
+ "lead": "Across 514 Indonesian districts in 2021–2023, higher digital readiness goes with higher farm productivity and food security, while the share of farm workers on KUR credit goes only with food security.",
+ "hasil": "Competition entry",
+ "tanda": [
+  "514 districts, 2021–2023",
+  "Panel fixed effects"
+ ],
+ "penulis": "Muhammad Ilham Pratama, Athillah Ayu Istiqomah, Anindya Ayu Putri Paramitha",
+ "lokasi": {
+  "wilayah": "Indonesia",
+  "wilayah_lat": -2.5,
+  "wilayah_lon": 118.0,
+  "skala": "nasional",
+  "ajang_kota": null,
+  "ajang_lat": null,
+  "ajang_lon": null
+ },
+ "ringkasan": [
+  "Digital readiness and KUR credit show different links to farming outcomes in Indonesia. With controls, one more point on the Digital Finance Index goes with 0.00925 log points of farm productivity and 0.138 points on the Food Security Index. The share of farm workers receiving KUR shows no link with productivity, at 0.000137 with a standard error of 0.00261. But it does go with food security, at 0.411.",
+  "The comparison matters because farming employs more than 28 percent of Indonesian workers and remains a centre of poverty. KUR has a target of Rp 300 trillion for 2025, yet farm productivity growth has flattened. Internet use, meanwhile, has reached 79.5 percent of the population.",
+  "The evidence is associational. The paper fits a fixed effects model to three years of district data, and the authors state that it does not establish causation. The digital coefficients also fall by 63 and 73 percent once controls are added.",
+  "The authors propose two steps for the Financial Services Authority (OJK). Laku Pandai 2.0 would turn branchless banking agents into digital tutors and onboarding points for farmers. A regulatory framework for alternative credit scoring would let lenders assess farmers from digital records, without relying on physical collateral."
+ ],
+ "rantai": [
+  [
+   "sawah",
+   "Farmers lack credit",
+   "Low output and income leave them unbankable"
+  ],
+  [
+   "banding",
+   "Two routes are compared",
+   "KUR credit and digital finance in one model"
+  ],
+  [
+   "server",
+   "An index is built",
+   "Internet, phones, electricity and bank accounts"
+  ],
+  [
+   "kantor",
+   "OJK gets two options",
+   "Laku Pandai 2.0 and alternative credit scoring"
+  ]
+ ],
+ "pertanyaan": [
+  "Indonesian farmers face a credit trap. Scarce capital limits their inputs, poor inputs limit their income, and formal lenders then treat them as unbankable. Stiglitz and Weiss (1981) explain this through information gaps between lender and borrower, which lead banks to ration credit.",
+  "The paper asks how much digital financial inclusion matters, and how it compares with conventional credit. It examines two outcomes. Economic efficiency is measured by farm labour productivity, and social welfare by the Food Security Index."
+ ],
+ "metode": [
+  "The panel covers 514 districts from 2021 to 2023, with data from SUSENAS, SAKERNAS, CEIC and the Food Security and Vulnerability Atlas. Regressions use 1,446 to 1,460 observations out of a possible 1,542. The Digital Finance Index is a 0–100 score, the simple average of four shares: internet users, phone owners, electricity access and bank account holders.",
+  "KUR is measured as the percentage of farm workers who received it. The text specifies district fixed effects, chosen after a Hausman test, with standard errors adjusted for heteroskedasticity and autocorrelation. Controls cover population, working-age share, the Human Development Index, years of schooling, agriculture's share of GRDP and provincial consumer prices."
+ ],
+ "grafik": {
+  "judul": "Digital readiness is linked to farm productivity, and the KUR share is not",
+  "sub": "Coefficients on log farm labour productivity, per one-unit rise in each measure. The digital index is on a 0–100 scale. The unit of the KUR measure needs confirming.",
+  "data": [
+   {
+    "grup": "KUR share",
+    "baris": [
+     [
+      "No controls",
+      -0.00328,
+      0.00296,
+      false
+     ],
+     [
+      "With controls",
+      0.000137,
+      0.00261,
+      false
+     ]
+    ]
+   },
+   {
+    "grup": "Digital index",
+    "baris": [
+     [
+      "No controls",
+      0.0252,
+      0.00209,
+      true
+     ],
+     [
+      "With controls",
+      0.00925,
+      0.00318,
+      true
+     ]
+    ]
+   }
+  ],
+  "rentang": [
+   -0.01,
+   0.03
+  ],
+  "garis": [
+   -0.01,
+   0,
+   0.01,
+   0.02,
+   0.03
+  ],
+  "aria": "The digital index coefficient is positive and significant with and without controls, at 0.0252 and 0.00925. The KUR coefficient is close to zero and not significant in both models.",
+  "sumber": "Authors' fixed effects estimates from Table 1 and Appendix 2 of the paper. Productivity comes from CEIC and SAKERNAS, KUR and the digital index from SUSENAS, and the Food Security Index from the Food Security and Vulnerability Atlas.",
+  "kaki": "Source: authors' estimates, OJK competition paper. 514 districts, 2021–2023. 1,457 and 1,446 observations."
+ },
+ "tabel": {
+  "kolom": [
+   "Variable",
+   "Productivity (1)",
+   "Productivity (2)",
+   "Food Security Index (3)",
+   "Food Security Index (4)"
+  ],
+  "baris": [
+   [
+    "KUR share of farm workers",
+    "−0.00328 (0.00296)",
+    "0.000137 (0.00261)",
+    "0.445*** (0.0395)",
+    "0.411*** (0.0337)"
+   ],
+   [
+    "Digital Finance Index",
+    "0.0252*** (0.00209)",
+    "0.00925*** (0.00318)",
+    "0.506*** (0.0279)",
+    "0.138*** (0.0411)"
+   ],
+   [
+    "Controls",
+    "No",
+    "Yes",
+    "No",
+    "Yes"
+   ],
+   [
+    "Observations",
+    "1,457",
+    "1,446",
+    "1,460",
+    "1,446"
+   ],
+   [
+    "R-squared",
+    "0.092",
+    "0.321",
+    "0.269",
+    "0.480"
+   ]
+  ],
+  "catatan": "Productivity is in natural logs. Standard errors in parentheses. *** p < 0.01, ** p < 0.05, * p < 0.1. Controls follow Appendix 2 of the paper. These are fixed effects associations, and no pre-trend test applies."
+ },
+ "jenis": [
+  [
+   "server",
+   "Digital Finance Index",
+   "Positive and significant at 1 percent for both outcomes, with and without controls. With controls, 10 more points go with about 9.7 percent higher farm productivity and 1.38 points on the Food Security Index."
+  ],
+  [
+   "sawah",
+   "KUR share of farm workers",
+   "No significant link with productivity in either model. Positive and significant at 1 percent for food security, at 0.445 without controls and 0.411 with them."
+  ]
+ ],
+ "jenis_judul": "What each measure is linked to",
+ "sub": [
+  {
+   "judul": "Controls absorb most of the digital link",
+   "teks": "Adding controls cuts the digital coefficient from 0.0252 to 0.00925 for productivity and from 0.506 to 0.138 for food security. The KUR coefficient on food security drops by about 8 percent, from 0.445 to 0.411. A large part of the raw digital gap reflects other district characteristics, among them human development."
+  },
+  {
+   "judul": "KUR shows a null result on productivity",
+   "teks": "The KUR coefficient is −0.00328 (0.00296) without controls and 0.000137 (0.00261) with them. Neither is significant at the 10 percent level. The measure counts recipients, so it says nothing about the size of loans or how farmers use them."
+  },
+  {
+   "judul": "Digital readiness is uneven across the country",
+   "teks": "The index peaks at 60.3 in 2023, on a scale that runs to 100. The top band of 49.5 to 60.3 includes parts of Kalimantan, while much of Papua sits in the lowest band, at or below 36.1. The authors use this gap to justify their first recommendation."
+  }
+ ],
+ "interpretasi": [
+  "The tables show associations. The authors read KUR as a safety net that helps farmers keep buying food, and digital finance as a way to reduce market frictions through better information and cheaper transactions. The regressions test neither channel.",
+  "The index also measures access more than use. It holds no data on digital payments, loans or data trails, so the case for harvesting data rests on theory and on studies from countries such as China. Better-connected districts may also differ in ways the controls miss."
+ ],
+ "kebijakan": [
+  [
+   "Agents as digital literacy tutors",
+   "In districts with low index scores, Laku Pandai agents would use a standard OJK module to teach safe use of mobile banking and simple finance apps."
+  ],
+  [
+   "Agents as onboarding points",
+   "In areas with many farmers, agents would register them on verified P2P lending platforms and farm marketplaces supervised by OJK."
+  ],
+  [
+   "Pay agents for active use",
+   "OJK would encourage banks to base agent incentives on the number and value of active digital transactions from farmers, in place of new account counts."
+  ],
+  [
+   "Regulate alternative credit scoring",
+   "OJK would set clear rules so that lenders can assess creditworthiness from digital records. The authors name regulatory uncertainty as the main barrier."
+  ]
+ ],
+ "batas": [
+  "The authors state that their data are non-experimental, so the results show association, and that district averages may hide what happens to individual farmers. They suggest micro data or evaluations of fintech platforms as next steps. The tables add further cautions. They cover only three years, and they report three year groups with no district count, which leaves open whether the fixed effects sit at district level as the text says. The KUR measure also tops out at 0.452 in the 2023 map, so the unit behind its coefficient needs confirming."
+ ],
+ "sitasi": "Pratama, M. I., Istiqomah, A. A., & Paramitha, A. A. P. (2025). <i>Panen data dan padi: Peran inklusi keuangan digital untuk sektor pertanian dalam mendorong kesejahteraan pangan</i> [Harvesting data and rice: The role of digital financial inclusion for the agricultural sector in promoting food welfare] [Competition paper]. Faculty of Economics and Business, Universitas Indonesia.",
+ "foto_pilih": {
+  "url": "https://commons.wikimedia.org/wiki/File:Petani_Memanen_Padi_di_Area_Sawah_Tugu,_Desa_Tersidilor,_Jawa_Tengah.jpg",
+  "teks": "Rice harvest in Central Java. Photo: Anjas Imaji, CC BY 4.0, darkened"
+ },
+ "tautan": "https://drive.google.com/drive/folders/1pDcBe2ll5z5u2STXXiGKV4wK-p4iK3k-"
+}

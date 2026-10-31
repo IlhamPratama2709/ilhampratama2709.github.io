@@ -1,0 +1,297 @@
+{
+ "slug": "climate-adaptation-ppp-renewables",
+ "pendek": "Climate Adaptation, PPPs and Renewables",
+ "desk": "Summary of a cross-country paper on how climate readiness relates to public-private and private energy investment and to renewable electricity.",
+ "super": "Competition paper · PYC International Energy Conference, Purnomo Yusgiantoro Center · 2025",
+ "judul": "The Nexus of Climate Adaptation, Public-Private Partnership Investment Flows, and Renewable Energy Transition: Evidence from a Cross-Country Panel Study",
+ "judul_asli": "The Nexus of Climate Adaptation, Public-Private Partnership Investment Flows, and Renewable Energy Transition: Evidence from a Cross-Country Panel Study",
+ "lead": "Climate-ready countries draw more private energy investment, but the link with public-private partnerships fades once controls enter, and PPP money shows no link with the renewable share of electricity.",
+ "hasil": "1st place",
+ "tanda": [
+  "214 countries, 2010–2022",
+  "Panel random effects"
+ ],
+ "penulis": "Faiz Attaqi, Siti Komariah, Muhammad Ilham Pratama",
+ "lokasi": {
+  "wilayah": "Global",
+  "wilayah_lat": null,
+  "wilayah_lon": null,
+  "skala": "global",
+  "ajang_kota": null,
+  "ajang_lat": null,
+  "ajang_lon": null
+ },
+ "ringkasan": [
+  "Countries better prepared for climate change attract more private energy investment, while the evidence for public-private partnerships is weaker. A one-point higher ND-GAIN score goes with about 3 percent more private investment, with controls in the model. The same score has no significant link with PPP investment once those controls enter: 0.0191, with a standard error of 0.0160.",
+  "PPP investment shows no link with the renewable share of electricity in any of four specifications. In the fullest model the coefficient is −0.0212 with a standard error of 0.288. The renewable share moves instead with renewable energy consumption and energy efficiency, and with foreign direct investment at the 10 percent level.",
+  "Institutions matter more than climate scores for PPP investment. Voice and accountability carries coefficients of 0.530 for PPP and 0.543 for private investment, both at the 1 percent level. Population and trade openness also rise with investment, while high energy intensity goes with less.",
+  "These are associations across countries. The data list 214 countries, but the regressions use 56 to 83 of them because investment data are sparse. Within-country estimates in the appendix turn the ND-GAIN coefficient negative, so a higher score should not be read as a cause of investment."
+ ],
+ "rantai": [
+  [
+   "satelit",
+   "Climate readiness is scored",
+   "ND-GAIN combines vulnerability and readiness on a 0 to 100 scale"
+  ],
+  [
+   "kantor",
+   "Capital flows are measured",
+   "PPP and private energy investment from World Bank data"
+  ],
+  [
+   "banding",
+   "Country factors are added",
+   "Governance, population, trade, energy intensity, and interest rates"
+  ],
+  [
+   "surya",
+   "Renewable output is tested",
+   "Whether PPP money goes with a higher renewable share of electricity"
+  ]
+ ],
+ "pertanyaan": [
+  "Global investment in energy transition technologies reached USD 1.3 trillion in 2022, and IRENA says this must rise at least fourfold each year to match the 1.5°C pathway. Governments have limited fiscal room, and private capital supplied about 75 percent of renewable investment between 2013 and 2020. Earlier work on PPPs is split. Hossin et al. (2024) link PPP energy investment in Southeast Asia to a 52.6 percent rise in greenhouse gases, while other studies find PPPs help renewables.",
+  "The paper asks how a country's climate readiness relates to PPP and private energy investment, and whether PPP investment goes with more renewable electricity. It studies production, where most earlier PPP work studies consumption."
+ ],
+ "metode": [
+  "The panel lists 214 countries from 2010 to 2022, drawn from World Bank WDI, WGI, and PPI data and the ND-GAIN index. Three outcomes are modelled: log PPP energy investment, log private energy investment, and renewable electricity as a share of total output. Each model is built up from a bivariate form to a form with controls.",
+  "The authors use random effects because the panel is unbalanced, with many missing values that rule out ARDL, and because some regressors change little over time. Hausman tests in the appendix do not reject random effects at 5 percent, with p-values of 0.0601, 0.0829, and 0.2951. The first two are close to the 5 percent line."
+ ],
+ "grafik": {
+  "judul": "Climate readiness holds for private investment and fades for PPPs",
+  "sub": "Estimated change in log energy investment for a one-point higher ND-GAIN score. These are random-effects associations.",
+  "data": [
+   {
+    "grup": "PPP energy investment",
+    "baris": [
+     [
+      "No controls",
+      0.0349,
+      0.0174,
+      true
+     ],
+     [
+      "With controls",
+      0.0191,
+      0.016,
+      false
+     ]
+    ]
+   },
+   {
+    "grup": "Private energy investment",
+    "baris": [
+     [
+      "No controls",
+      0.0417,
+      0.0171,
+      true
+     ],
+     [
+      "With controls",
+      0.0306,
+      0.0141,
+      true
+     ]
+    ]
+   }
+  ],
+  "rentang": [
+   -0.02,
+   0.08
+  ],
+  "garis": [
+   0,
+   0.04
+  ],
+  "aria": "ND-GAIN is significantly linked with private energy investment with and without controls. Its link with PPP investment is significant alone and not significant with controls.",
+  "sumber": "Authors' estimates in a random-effects panel. ND-GAIN comes from the University of Notre Dame, investment from the World Bank WDI and PPI databases, and governance from the WGI. Estimated in Stata 16.",
+  "kaki": "Source: authors' estimates, Purnomo Yusgiantoro Center paper. 296 to 408 observations, 2010–2022."
+ },
+ "tabel": {
+  "kolom": [
+   "Variable",
+   "PPP (1)",
+   "PPP (2)",
+   "Private (3)",
+   "Private (4)",
+   "Renewable (1)",
+   "Renewable (4)"
+  ],
+  "baris": [
+   [
+    "ND-GAIN",
+    "0.0349** (0.0174)",
+    "0.0191 (0.0160)",
+    "0.0417** (0.0171)",
+    "0.0306** (0.0141)",
+    "",
+    ""
+   ],
+   [
+    "Log PPP energy investment",
+    "",
+    "",
+    "",
+    "",
+    "−0.0139 (0.292)",
+    "−0.0212 (0.288)"
+   ],
+   [
+    "Voice and accountability",
+    "",
+    "0.530*** (0.185)",
+    "",
+    "0.543*** (0.164)",
+    "",
+    "1.316 (3.258)"
+   ],
+   [
+    "Energy intensity",
+    "",
+    "−0.0964* (0.0494)",
+    "",
+    "−0.107** (0.0441)",
+    "",
+    "−2.824** (1.205)"
+   ],
+   [
+    "Log population",
+    "",
+    "0.700*** (0.0770)",
+    "",
+    "0.709*** (0.0661)",
+    "",
+    "0.0742 (1.831)"
+   ],
+   [
+    "Trade openness",
+    "",
+    "0.0110*** (0.00372)",
+    "",
+    "0.00985*** (0.00331)",
+    "",
+    ""
+   ],
+   [
+    "Real interest rate",
+    "",
+    "0.0143 (0.0106)",
+    "",
+    "0.0160 (0.0103)",
+    "",
+    ""
+   ],
+   [
+    "FDI inflows",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "0.528* (0.281)"
+   ],
+   [
+    "Renewable energy consumption",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "0.881*** (0.133)"
+   ],
+   [
+    "Log GDP per capita",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "7.681 (4.845)"
+   ],
+   [
+    "Observations",
+    "408",
+    "296",
+    "388",
+    "308",
+    "181",
+    "180"
+   ],
+   [
+    "Countries",
+    "83",
+    "58",
+    "78",
+    "56",
+    "61",
+    "60"
+   ],
+   [
+    "R²",
+    "0.0445",
+    "0.3824",
+    "0.0502",
+    "0.4009",
+    "0.0202",
+    "0.5241"
+   ]
+  ],
+  "catatan": "Random-effects estimates. Standard errors in parentheses. *** p < 0.01, ** p < 0.05, * p < 0.1. Renewable columns 2 and 3 are omitted here. In column 3, renewable consumption is 0.882*** (0.132) and log GDP per capita 11.77*** (4.54). PPP investment is not significant in either."
+ },
+ "jenis": [
+  [
+   "kantor",
+   "PPP energy investment",
+   "ND-GAIN is significant alone at 0.0349, and falls to 0.0191 with controls. Governance, population, and trade openness carry the model. Together the variables explain about 38 percent of the variation."
+  ],
+  [
+   "jasa",
+   "Private energy investment",
+   "ND-GAIN stays significant with controls at 0.0306, or about 3 percent per point. Energy intensity is negative at −0.107. The real interest rate is not significant, which the authors link to special financing schemes."
+  ],
+  [
+   "surya",
+   "Renewable electricity output",
+   "PPP investment is never significant. A one-point higher renewable consumption share goes with a 0.881 point higher output share. GDP per capita is significant in column 3 and loses significance in the full model."
+  ]
+ ],
+ "jenis_judul": "Three outcomes, three patterns",
+ "sub": [
+  {
+   "judul": "The ND-GAIN result reflects gaps between countries",
+   "teks": "The appendix shows the fixed effects estimates used in the Hausman tests. There, the ND-GAIN coefficient is −0.034 for PPP investment and −0.054 for private investment, against 0.019 and 0.031 in random effects. Fixed effects use only changes within a country. The positive link therefore rests on differences between countries, and the paper does not discuss this reversal."
+  },
+  {
+   "judul": "Regions differ widely on readiness and renewables",
+   "teks": "Mean ND-GAIN is 60.25 in Europe and Central Asia and 38.43 in Sub-Saharan Africa. Mean renewable output is 47.37 percent in South Asia, on 48 observations, and 2.54 percent in the Middle East and North Africa. Sub-Saharan Africa has a high renewable share of 43.35 percent despite the lowest readiness score, which shows how far climate readiness and renewable output can diverge."
+  }
+ ],
+ "interpretasi": [
+  "The tables show that private investment rises with climate readiness across countries, and that PPP investment does so only until governance and market size are held constant. The authors read this as investors seeking stable settings with lower climate risk. The slides add that readiness may work through institutions and economic conditions, a channel the models do not test directly.",
+  "The null result for PPPs concerns the share of renewables in electricity. The authors suggest that PPPs may matter in other ways, or that results may depend on market maturity and policy design. They call the renewable consumption result a demand-pull effect, but a correlational panel cannot show which way it runs."
+ ],
+ "kebijakan": [
+  [
+   "Build climate indicators into energy planning.",
+   "Indices such as ND-GAIN would enter national energy plans and PPP frameworks, through climate risk assessments, adjustable tariffs, climate insurance, and upgrades in vulnerable regions."
+  ],
+  [
+   "Strengthen institutions.",
+   "Governments should improve transparency, the rule of law, and public accountability, since voice and accountability is significant for both types of investment."
+  ],
+  [
+   "Align with international climate programmes.",
+   "Taking part in Just Energy Transition Partnerships, the Green Climate Fund, and World Bank climate programmes can unlock concessional funding and expertise."
+  ]
+ ],
+ "batas": [
+  "The authors name two limits: scarce PPP data and the correlational nature of the panel. The sample shrinks sharply, from 214 listed countries to 56 in the private investment model and 60 in the full renewable model. The Hausman tests for the first two models sit close to the 5 percent line, and the ND-GAIN sign reverses with fixed effects. The PPP and private series also share the same minimum and maximum in several regions of Table 2, so they may overlap. The authors suggest causal methods and project-level data for future work."
+ ],
+ "sitasi": "Attaqi, F., Komariah, S., & Pratama, M. I. (2025). <i>The nexus of climate adaptation, public-private partnership investment flows, and renewable energy transition: Evidence from a cross-country panel study.</i> Paper for the PYC International Energy Conference, Purnomo Yusgiantoro Center.",
+ "foto_pilih": {
+  "url": "https://commons.wikimedia.org/wiki/File:PS20_%26_PS10_solar_power_plants.jpg",
+  "teks": "Solar power plants in Spain. Photo: kallerna, CC BY-SA 4.0, darkened"
+ },
+ "tautan": "https://drive.google.com/drive/folders/1ZREd8SFRDNU_pdkqsHj2mFGwd-d-xm1G"
+}

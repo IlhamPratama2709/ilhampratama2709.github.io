@@ -1,0 +1,184 @@
+{
+ "slug": "tourism-footprints-yogyakarta",
+ "pendek": "Tourism Footprints in Yogyakarta",
+ "desk": "A study that follows tourism in Yogyakarta from sector links to districts and individual workers, with attention to farming and food security.",
+ "super": "Competition paper · Jogja Economic Symposium, Bank Indonesia Yogyakarta · 2025",
+ "judul": "Tracing the Economic Footprints of Tourism: A Multi-Analysis of the Tourism Sector's Impact on the Economy and Food Security in Yogyakarta",
+ "judul_asli": "Mengurai Jejak Ekonomi Wisata: Multi-Analysis Dampak Sektor Pariwisata pada Perekonomian dan Ketahanan Pangan di Yogyakarta",
+ "lead": "Tourism and farming in Yogyakarta sit in different districts, and farm workers in farm-base districts earn about 38 percent less than farm workers elsewhere.",
+ "hasil": "Submitted",
+ "tanda": [
+  "5 districts, Yogyakarta",
+  "Input-output, LQ, shift-share, OLS"
+ ],
+ "penulis": "Muhammad Ilham Pratama, Nabil Azhar Musyaffa, Dani Huwaiza Busra",
+ "lokasi": {
+  "wilayah": "Yogyakarta",
+  "wilayah_lat": -7.87,
+  "wilayah_lon": 110.43,
+  "skala": "provinsi",
+  "ajang_kota": "Yogyakarta",
+  "ajang_lat": -7.797,
+  "ajang_lon": 110.369
+ },
+ "ringkasan": [
+  "Tourism has not carried Yogyakarta's farm districts along with it. This paper follows the sector from province to district to individual worker, using an input-output table, location quotients, shift-share analysis, and the 2024 labour force survey. Hotels and restaurants stand in for tourism. They made up 9.71 percent of provincial GDP in the paper's district data, against 7.37 percent for agriculture.",
+  "The sector's pull on the wider economy is moderate. Its output multiplier of 1.29 ranks ninth of 17 sectors. At that rate, a Rp962.5 million transfer for tourism services would produce about Rp1.24 billion of output across the province.",
+  "Geography separates tourism demand from farm supply. Kota Yogyakarta and Sleman produce almost 60 percent of provincial GDP and receive about 24 million of the 38 million domestic visitors. Kulon Progo and Gunung Kidul, the farm base, have the highest poverty rates, at 15.62 and 15.18 percent. Agriculture is slow-growing and uncompetitive in every district except Sleman.",
+  "Worker data point the same way. Neither hotel and restaurant employees (0.122) nor entrepreneurs (0.148) show a significant earnings premium over farm workers in the full model. Farm workers in farm-base districts earn about 38 percent less than farm workers in other districts. These are associations from one survey year, and the paper has no direct data on hotel purchasing, so the broken supply chain remains an inference."
+ ],
+ "rantai": [
+  [
+   "wisata",
+   "Tourism is defined",
+   "Accommodation and food services stand in for the sector"
+  ],
+  [
+   "gudang",
+   "Sector links are measured",
+   "A 17-sector input-output table for Yogyakarta, 2020"
+  ],
+  [
+   "kota",
+   "Districts are mapped",
+   "Location quotients and shift-share for five districts, 2019–2024"
+  ],
+  [
+   "rumah",
+   "Workers are compared",
+   "OLS on 5,115 workers from SAKERNAS 2024"
+  ]
+ ],
+ "pertanyaan": [
+  "Yogyakarta has the second-highest human development index in Indonesia, yet its poverty and inequality stay above the national average. In the paper's district table the provincial poverty rate is 10.83 percent and the Gini ratio is 0.435. Tourism keeps growing, which raises the question of who receives the gains.",
+  "Earlier studies tend to stop at one level: provincial GDP, district maps, or qualitative case studies. This paper joins the three levels for one province. It asks how tourism investment shapes the economic structure, food security, and the distribution of welfare, with most attention on the availability and access pillars of food security."
+ ],
+ "metode": [
+  "The input-output model takes the 2020 national table and adapts it to Yogyakarta with location quotients, a non-survey method that assumes local technology resembles national technology. The simulation starts from a Rp962.5 million central transfer for tourism services in 2021, assumed to enter hotel and restaurant final demand in full. Location quotients compare each district with the province for 2019 and 2024. Shift-share splits growth over 2019–2024 into national, sector, and local parts.",
+  "The worker model is an extended Mincer equation on log monthly earnings, with farm workers as the reference group. It adds a term for hotel and restaurant workers in tourism-base districts and another for farm workers in farm-base districts, and it uses survey weights. A normality test rejects on the residuals, and the paper relies on its sample of 5,115 workers. One interaction has a VIF of 11.23, while the others stay below 10."
+ ],
+ "grafik": null,
+ "tabel": {
+  "kolom": [
+   "District",
+   "Farming LQ 2024 (change from 2019)",
+   "Tourism LQ 2024 (change from 2019)",
+   "Farming quadrant",
+   "Tourism quadrant",
+   "Poverty (%)"
+  ],
+  "baris": [
+   [
+    "Kota Yogyakarta",
+    "0.0173 (−0.0002)",
+    "1.1851 (−0.0694)",
+    "IV",
+    "IV",
+    "6.26"
+   ],
+   [
+    "Sleman",
+    "0.7916 (+0.0296)",
+    "1.0345 (−0.0012)",
+    "III",
+    "III",
+    "7.46"
+   ],
+   [
+    "Bantul",
+    "1.3500 (−0.0334)",
+    "1.2012 (+0.0560)",
+    "IV",
+    "III",
+    "11.66"
+   ],
+   [
+    "Kulon Progo",
+    "1.6854 (−0.0866)",
+    "0.3958 (+0.0498)",
+    "IV",
+    "III",
+    "15.62"
+   ],
+   [
+    "Gunung Kidul",
+    "2.5111 (−0.0722)",
+    "0.6720 (+0.0660)",
+    "IV",
+    "III",
+    "15.18"
+   ]
+  ],
+  "catatan": "An LQ above 1 marks a base sector relative to the province. Quadrant III is slow-growing but competitive, and Quadrant IV is slow-growing and uncompetitive. No district falls in Quadrant I or II for either sector. Farming is agriculture, forestry, and fisheries. Tourism is accommodation and food services. These are descriptive measures, so no significance test applies."
+ },
+ "jenis": [
+  [
+   "kota",
+   "The urban tourism pole",
+   "Kota Yogyakarta and Sleman hold base status in hotels and restaurants, with LQs of 1.1851 and 1.0345. But Kota Yogyakarta is losing ground. Its LQ fell by 0.0694 from 2019, and it is the only district where tourism sits in Quadrant IV."
+  ],
+  [
+   "sawah",
+   "The rural farm pole",
+   "Gunung Kidul and Kulon Progo have farm LQs of 2.5111 and 1.6854, both lower than in 2019. Poverty in each is above 15 percent, against 10.83 percent for the province."
+  ],
+  [
+   "wisata",
+   "Bantul in between",
+   "Bantul is the only district with base status in both sectors, at 1.3500 in farming and 1.2012 in tourism. Its tourism LQ is the highest of the five in 2024, although the paper places it as a bridge between the two poles."
+  ]
+ ],
+ "jenis_judul": "Three economic profiles",
+ "sub": [
+  {
+   "judul": "Tourism's multiplier sits mid-table",
+   "teks": "Each extra rupiah of final demand for hotels and restaurants yields Rp1.29 of output across the province. That ranks ninth of 17 sectors, behind public administration at 1.381 and business services at 1.374. The backward linkage index of 1.031 is above the average of 1 and shares eighth place with construction. It measures pull on all suppliers, so it does not show how much reaches farmers."
+  },
+  {
+   "judul": "Farming lost competitiveness in four of five districts",
+   "teks": "Agriculture falls in Quadrant IV in Kota Yogyakarta, Kulon Progo, Bantul, and Gunung Kidul. Only Sleman is in Quadrant III. Between 2019 and 2024 the farm LQ fell by 0.0866 in Kulon Progo and 0.0722 in Gunung Kidul, while the tourism LQ rose in both, by 0.0498 and 0.0660."
+  },
+  {
+   "judul": "Tourism jobs show no significant premium in the full model",
+   "teks": "Without controls, hotel and restaurant employees earn 0.999 log points more than farm workers. With schooling, experience, hours, sex, and age added, the gap falls to 0.122 for employees and 0.148 for entrepreneurs, and neither is significant. Employees in other sectors keep a premium of 0.358 log points, or about 43 percent. These tourism coefficients describe workers outside tourism-base districts, because a separate term of 0.136, also not significant, covers those inside them."
+  },
+  {
+   "judul": "Farm workers in farm-base districts earn less",
+   "teks": "The term for farm workers in farm-base districts is −0.478, significant at 1 percent, which equals about 38 percent lower earnings. It stays negative and significant in all three models that include it, between −0.624 and −0.478. The comparison group is farm workers in districts where farming is not a base sector. The paper links the gap to small plots, surplus labour, and few other local jobs, but it does not test these channels."
+  }
+ ],
+ "interpretasi": [
+  "Two facts are well supported: specialisation is split by geography, and farm earnings are lower where farming is the base. The paper reads these as a linkage failure. Tourism is competitive in Kulon Progo and Gunung Kidul while farming there is not, so hotels and restaurants may be buying from outside the area.",
+  "That reading is plausible but untested. The paper has no data on what hotels buy or from whom, and its input-output table rests on national coefficients. The district food security figures also show no clear farm-district penalty. Kulon Progo has the highest food security index, at 85.73, and inadequate food consumption is highest in Kota Yogyakarta, at 10.35 percent."
+ ],
+ "kebijakan": [
+  [
+   "Zone the province by role",
+   "Treat Kota Yogyakarta and Sleman as demand centres, Kulon Progo and Gunung Kidul as the food base for tourism, and Bantul as a hub for food processing."
+  ],
+  [
+   "Reward local purchasing",
+   "Offer regional tax cuts or sustainable tourism certification to hotels and restaurants that can show a significant share of their inputs comes from Yogyakarta farmers."
+  ],
+  [
+   "Broker contract farming",
+   "Have local agencies connect tourism associations with farmer cooperatives, so that contracts give farmers market and price certainty and give buyers reliable supply."
+  ],
+  [
+   "Build post-harvest capacity",
+   "Invest in sorting houses and cold storage in the farm districts, so that farmers can sell higher-value produce with a stronger bargaining position."
+  ],
+  [
+   "Train workers in both sectors",
+   "Link vocational schools with industry for tourism skills, and support agro-technology training and access to finance for younger farmers."
+  ]
+ ],
+ "batas": [
+  "The earnings results come from one cross-section, so they show association. The published regression table omits standard errors, which means coefficients here appear without them. The input-output table dates from 2020 and may miss post-pandemic change. The paper's simulation table totals Rp129.3 trillion of output and 3.67 million jobs, close to the size of the provincial economy and population, so this page does not report those totals as the effect of a Rp962.5 million transfer. Social and cultural barriers to local supply chains remain outside the analysis."
+ ],
+ "sitasi": "Pratama, M. I., Musyaffa, N. A., &amp; Busra, D. H. (2025). <i>Tracing the economic footprints of tourism: A multi-analysis of the tourism sector's impact on the economy and food security in Yogyakarta</i> [Mengurai jejak ekonomi wisata: Multi-analysis dampak sektor pariwisata pada perekonomian dan ketahanan pangan di Yogyakarta]. Paper submitted to the Jogja Economic Symposium, Bank Indonesia Yogyakarta.",
+ "foto_pilih": {
+  "url": "https://commons.wikimedia.org/wiki/File:A_view_of_Menoreh_Mountains_from_a_rice_field.jpg",
+  "teks": "Menoreh Mountains, Yogyakarta. Photo: Alnrhh, CC BY-SA 4.0, darkened"
+ }
+}

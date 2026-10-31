@@ -1,0 +1,287 @@
+{
+ "slug": "investment-acceleration-papua",
+ "pendek": "Investment in Papua's New Provinces",
+ "desk": "Summary of a paper that maps sector strengths in Papua's three new provinces with location quotients and shift-share analysis.",
+ "super": "Competition paper · BAKU PANDAI, Bank Indonesia Papua · 2025",
+ "judul": "Accelerating Investment in the Heart of Eastern Indonesia: Sectoral Potential and Dynamics in Papua's New Autonomous Regions",
+ "judul_asli": "Akselerasi Investasi di Jantung Timur Indonesia: Analisis Potensi dan Dinamika Sektoral Daerah Otonomi Baru Papua",
+ "lead": "Construction and farming are base sectors in most districts of Papua's three new provinces, while manufacturing is a base sector in only 7 of 20.",
+ "hasil": "1st place",
+ "tanda": [
+  "20 districts, three new provinces",
+  "LQ, shift-share"
+ ],
+ "penulis": "Faiz Attaqi, Muhammad Ilham Pratama, Siti Komariah",
+ "lokasi": {
+  "wilayah": "Papua Selatan, Papua Tengah, and Papua Pegunungan",
+  "wilayah_lat": -4.6,
+  "wilayah_lon": 138.2,
+  "skala": "provinsi",
+  "ajang_kota": null,
+  "ajang_lat": null,
+  "ajang_lon": null
+ },
+ "ringkasan": [
+  "Papua's three new provinces still rest on primary activity and public works. In 2024, 15 of their 20 districts had a location quotient above 1 for agriculture, forestry, and fisheries, and 17 had one above 1 for construction. Manufacturing cleared that line in only 7 districts, which is why the paper treats processing as the main gap.",
+  "The three provincial capitals look quite different. Nabire is a base in 16 of 17 sectors, Merauke in 12, and Jayawijaya in 11. Construction and public administration are base sectors in all seven districts around Jayawijaya, yet in neither case in Jayawijaya itself.",
+  "Few sectors combined fast growth with a local competitive edge between 2023 and 2024. Construction and transport did so in Jayawijaya and Merauke. In Nabire only electricity and gas qualified, while construction, transport, and manufacturing grew fast without that edge.",
+  "The authors turn these patterns into separate plans for each province, drawing on the national medium-term plan for 2025–2029. They propose fisheries and transport links in Papua Tengah, Arabica coffee in Papua Pegunungan, and fisheries, sago, and cold chains in Papua Selatan. These are proposals, and two years of data cannot show whether a capital lifts its neighbours."
+ ],
+ "rantai": [
+  [
+   "kota",
+   "Three new provinces",
+   "Papua Selatan, Papua Tengah, and Papua Pegunungan, created by law in 2022"
+  ],
+  [
+   "sawah",
+   "Sector shares are compared",
+   "Location quotients for 17 sectors in 20 districts, 2024"
+  ],
+  [
+   "cincin",
+   "Capitals meet their neighbours",
+   "Merauke, Nabire, and Jayawijaya against nearby districts"
+  ],
+  [
+   "banding",
+   "Growth is split",
+   "Shift-share for the three capitals, 2023 to 2024"
+  ]
+ ],
+ "pertanyaan": [
+  "Three laws passed in 2022 created Papua Selatan, Papua Tengah, and Papua Pegunungan to bring public services closer and to form new growth centres. The provinces start from very different sizes. GRDP at constant prices in 2023 was Rp 101,066 billion in Papua Tengah, against Rp 18,135 billion in Papua Selatan and Rp 13,173 billion in Papua Pegunungan.",
+  "Investment has so far followed the existing economy. Foreign investment realised in Papua Tengah in 2024 reached Rp 1.47 trillion in metal ore mining, against Rp 7.8 billion in the next largest item, farming. The paper asks which sectors are strong in each new province, whether capitals pass activity to nearby districts, and where investment should go first."
+ ],
+ "metode": [
+  "The data are sectoral GRDP from CEIC, processed in Excel. A location quotient compares a sector's share of district GRDP with its share of provincial GRDP, and a value above 1 marks a base sector. The paper computes it for 17 sectors in all 20 districts for 2024.",
+  "Shift-share analysis covers only the three capitals, for 2023 to 2024. It splits each sector's change into regional, proportional, and differential components. The signs of the last two place the sector in one of four quadrants: a positive proportional shift marks fast growth, and a positive differential shift marks local competitive advantage."
+ ],
+ "grafik": null,
+ "tabel": {
+  "kolom": [
+   "Sector",
+   "Jayawijaya",
+   "Base nearby",
+   "Nabire",
+   "Base nearby",
+   "Merauke",
+   "Base nearby"
+  ],
+  "baris": [
+   [
+    "Agriculture, forestry, fisheries",
+    "0.705 (III)",
+    "6 of 7",
+    "<b>4.339</b> (III)",
+    "6 of 7",
+    "<b>1.029</b> (IV)",
+    "1 of 3"
+   ],
+   [
+    "Mining",
+    "<b>1.172</b> (III)",
+    "2 of 7",
+    "0.265 (II)",
+    "1 of 7",
+    "<b>1.256</b> (IV)",
+    "1 of 3"
+   ],
+   [
+    "Manufacturing",
+    "<b>2.235</b> (IV)",
+    "0 of 7",
+    "<b>6.402</b> (II)",
+    "4 of 7",
+    "0.582 (III)",
+    "1 of 3"
+   ],
+   [
+    "Electricity and gas",
+    "<b>2.106</b> (III)",
+    "0 of 7",
+    "<b>3.896</b> (I)",
+    "1 of 7",
+    "<b>1.487</b> (I)",
+    "0 of 3"
+   ],
+   [
+    "Water and waste",
+    "<b>2.537</b> (IV)",
+    "0 of 7",
+    "<b>3.531</b> (III)",
+    "0 of 7",
+    "<b>1.508</b> (III)",
+    "0 of 3"
+   ],
+   [
+    "Construction",
+    "0.709 (I)",
+    "7 of 7",
+    "<b>2.805</b> (II)",
+    "6 of 7",
+    "0.795 (I)",
+    "3 of 3"
+   ],
+   [
+    "Trade",
+    "<b>1.481</b> (I)",
+    "0 of 7",
+    "<b>4.792</b> (III)",
+    "5 of 7",
+    "<b>1.214</b> (III)",
+    "0 of 3"
+   ],
+   [
+    "Transport and storage",
+    "<b>1.715</b> (I)",
+    "0 of 7",
+    "<b>3.879</b> (II)",
+    "2 of 7",
+    "<b>1.336</b> (I)",
+    "0 of 3"
+   ],
+   [
+    "Accommodation and food",
+    "<b>1.749</b> (IV)",
+    "1 of 7",
+    "<b>2.342</b> (IV)",
+    "3 of 7",
+    "<b>1.473</b> (IV)",
+    "0 of 3"
+   ],
+   [
+    "Information and communication",
+    "<b>2.288</b> (III)",
+    "0 of 7",
+    "<b>1.989</b> (III)",
+    "0 of 7",
+    "<b>1.571</b> (III)",
+    "0 of 3"
+   ],
+   [
+    "Finance and insurance",
+    "<b>1.841</b> (IV)",
+    "1 of 7",
+    "<b>4.017</b> (IV)",
+    "0 of 7",
+    "<b>1.268</b> (III)",
+    "0 of 3"
+   ],
+   [
+    "Real estate",
+    "<b>1.533</b> (I)",
+    "0 of 7",
+    "<b>3.186</b> (II)",
+    "5 of 7",
+    "<b>1.143</b> (III)",
+    "0 of 3"
+   ],
+   [
+    "Business services",
+    "<b>2.261</b> (IV)",
+    "0 of 7",
+    "<b>2.544</b> (II)",
+    "0 of 7",
+    "<b>1.490</b> (II)",
+    "0 of 3"
+   ],
+   [
+    "Public administration",
+    "0.597 (IV)",
+    "7 of 7",
+    "<b>2.613</b> (IV)",
+    "6 of 7",
+    "0.789 (II)",
+    "2 of 3"
+   ],
+   [
+    "Education",
+    "0.606 (IV)",
+    "5 of 7",
+    "<b>4.894</b> (IV)",
+    "6 of 7",
+    "0.776 (II)",
+    "2 of 3"
+   ],
+   [
+    "Health and social work",
+    "0.742 (IV)",
+    "6 of 7",
+    "<b>4.391</b> (II)",
+    "6 of 7",
+    "0.855 (III)",
+    "2 of 3"
+   ],
+   [
+    "Other services",
+    "0.885 (III)",
+    "3 of 7",
+    "<b>3.822</b> (II)",
+    "5 of 7",
+    "<b>1.064</b> (IV)",
+    "1 of 3"
+   ]
+  ],
+  "catatan": "Location quotient in 2024, with the shift-share quadrant for 2023 to 2024 in brackets. Bold marks a base sector (LQ above 1). Base nearby counts the other districts in the province with LQ above 1. Quadrant I: fast growth, competitive. II: fast growth, not competitive. III: slow growth, competitive. IV: slow growth, not competitive. Source: authors' calculations from CEIC data."
+ },
+ "jenis": [
+  [
+   "kota",
+   "Jayawijaya",
+   "Eleven base sectors, mostly trade, transport, and services. Construction, trade, transport, and real estate sit in Quadrant I. Agriculture has an LQ of only 0.705, but its differential shift is positive at 15.06."
+  ],
+  [
+   "manufaktur",
+   "Nabire",
+   "A base in every sector except mining, with manufacturing at 6.402. Only electricity and gas reaches Quadrant I. Eight sectors, among them construction and transport, grew fast without a competitive edge."
+  ],
+  [
+   "pelabuhan",
+   "Merauke",
+   "Twelve base sectors. Electricity and gas, construction, and transport sit in Quadrant I. Agriculture is a base sector at 1.029, yet it sits in Quadrant IV with the most negative net shift of any sector in the capital, −84.37."
+  ]
+ ],
+ "jenis_judul": "Three capitals, three profiles",
+ "sub": [
+  {
+   "judul": "Construction is strongest outside the capitals",
+   "teks": "Construction is a base sector in all 17 districts outside the three capitals except one, Mimika, and in only one capital, Nabire. The authors read this as a sign of the infrastructure now being built around the new centres."
+  },
+  {
+   "judul": "Manufacturing is concentrated in a few places",
+   "teks": "The manufacturing LQ is 6.402 in Nabire and 2.235 in Jayawijaya, but none of the seven districts around Jayawijaya reaches 1. Four of the seven around Nabire do. Merauke stands at 0.582, although its differential shift is slightly positive at 0.86."
+  },
+  {
+   "judul": "Public administration lost ground in two capitals",
+   "teks": "Public administration has the largest negative differential shift in Jayawijaya, at −39.81, and in Merauke, at −67.54. Its total change is negative in both, at −20.00 and −3.30. The paper reads the Merauke result as early institution building, and it gives no unit for these figures."
+  }
+ ],
+ "interpretasi": [
+  "The data show where sectors are concentrated. They cannot show that a capital causes growth nearby. The authors note that shift-share covers only the capitals and so says nothing about spillovers, and they rest their recommendations on location quotients instead.",
+  "The authors read the pattern through Hirschman's unbalanced growth, in which investment in a few key sectors creates bottlenecks that draw in suppliers and buyers. On that reading, farming supplies the base, processing adds value, and construction connects districts. It is a plausible story that these measures cannot test."
+ ],
+ "kebijakan": [
+  [
+   "Papua Tengah: build on local resources and links",
+   "Support cooperatives and train workers in farming and fisheries, develop coffee and tuna processing in Mimika and Nabire, and upgrade the Nabire–Wagete–Enarotali road and local airports."
+  ],
+  [
+   "Papua Pegunungan: centre farm policy on Arabica coffee",
+   "Develop an integrated coffee area in and around Jayawijaya with training, market support, and post-harvest equipment, then a supply chain and an export brand. Roads, airstrips, and airports would reduce isolation."
+  ],
+  [
+   "Papua Selatan: fisheries, sago, and cold chains",
+   "Train farmers and fishers, document Asmat craftspeople, and build a cold chain for fish products over the long term. Road rehabilitation and support for Merauke port would strengthen its role as a logistics gateway."
+  ]
+ ],
+ "batas": [
+  "Location quotients and shift-share describe economic structure and do not test causes. Each LQ is measured against the district's own province, so values cannot be compared across provinces. In Papua Tengah they run very high, up to 11.440 for public administration in Puncak, and Mimika is the only district there with a mining LQ above 1. The shift-share window is a single year soon after the provinces were formed, and it covers only the capitals. The authors cite data accuracy and the need for careful interpretation as the main weaknesses of these methods, and they suggest regression work at district level for future research."
+ ],
+ "sitasi": "Attaqi, F., Pratama, M. I., &amp; Komariah, S. (2025). <i>Akselerasi Investasi di Jantung Timur Indonesia: Analisis Potensi dan Dinamika Sektoral Daerah Otonomi Baru Papua.</i> Paper for BAKU PANDAI, Bank Indonesia Papua.",
+ "foto_pilih": {
+  "url": "https://commons.wikimedia.org/wiki/File:20170904_Papouasie_Baliem_valley_7.jpg",
+  "teks": "Baliem Valley, Papua. Photo: Lasthib, CC BY-SA 4.0, darkened"
+ },
+ "tautan": "https://drive.google.com/drive/folders/12IpqYRGb5PKY8FzJsbHgR0ecel3A2DFn"
+}

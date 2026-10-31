@@ -16,6 +16,15 @@ Primitif dari iso_dasar.py, palet situs: navy #003a5d, emas #cc9e42.
   tol         jalan tol dengan gerbang
   gudang      gudang dan truk logistik
   warung      warung dan penginapan di tepi jalan
+  pltu        pembangkit batu bara
+  surya       panel surya
+  plta        bendungan kecil dan turbin air
+  sekolah     sekolah dan murid
+  kota        kota dengan gedung dan pin
+  kantor      gedung pemerintah
+  rumah       rumah tangga
+  sawah       sawah dan petani
+  server      pusat data dan laptop
 
 python3 -I alat/buat_ikon_paper.py
 """
@@ -300,7 +309,93 @@ def warung(sc):
     payung(sc, .5, 2.6, GOLD)
 
 
-IKON = {'kawasan': kawasan, 'cincin': cincin, 'satelit': satelit, 'banding': banding, 'malam': malam, 'manufaktur': manufaktur, 'wisata': wisata, 'ekstraktif': ekstraktif, 'jasa': jasa, 'tambang': tambang, 'pelabuhan': pelabuhan, 'tol': tol, 'gudang': gudang, 'warung': warung}
+def pltu(sc):
+    sc.plate(0, 0, 5.4, 5.4, .5)
+    sc.box(.6, 1.0, 0, 2.6, 2.0, 1.4, WHITE)
+    sc.roof(.6, 1.0, 1.4, 2.6, 2.0, .45, NAVY)
+    sc.cylinder(3.9, 1.2, 0, .24, 3.2, ABU, key=5.2)
+    sc.cylinder(3.9, 2.4, 0, .75, 1.4, '#c9d4dd', key=6.4)
+    asap(sc, 3.9, 1.2, 3.3, .85, key=2e3)
+    sc.box(.8, 3.8, 0, 2.2, .9, .3, '#3c4650', key=4.9)
+
+
+def surya(sc):
+    sc.plate(0, 0, 5.4, 5.4, .5, base=RUMPUT)
+    for i in range(3):
+        for j in range(2):
+            sc.solar(.4 + i * 1.65, .6 + j * 1.8, 0, 1.4, .9)
+    sc.tree(4.9, 4.6, 0, .7); sc.tree(.5, 4.7, 0, .7)
+    sc.person(2.7, 4.5, 0, GOLD, .85)
+
+
+def plta(sc):
+    sc.plate(0, 0, 5.6, 5.4, .5, base=RUMPUT)
+    sc.box(0, 0, 0, 5.6, 2.1, .06, LAUT, key=-7e4)
+    sc.box(0, 2.1, 0, 5.6, .7, 1.1, ABU, key=4)
+    sc.box(2.1, 3.3, 0, 1.3, 1.1, .8, WHITE, stroke=True)
+    sc.roof(2.1, 3.3, .8, 1.3, 1.1, .3, TEAL)
+    sc.box(2.6, 2.8, 0, .4, 2.6, .05, LAUT, key=-6e4)
+    sc.tree(.6, 3.6, 0, .9); sc.tree(4.8, 3.9, 0, .9); sc.tree(1.2, 4.7, 0, .7)
+
+
+def sekolah(sc):
+    sc.plate(0, 0, 5.4, 5.4, .5, base=RUMPUT)
+    sc.box(.7, .7, 0, 4.0, 1.4, 1.1, WHITE)
+    jendela(sc, .7, 2.1, 0, 4.0, 1.1, SKY, 6, 1, key=3.6)
+    sc.roof(.7, .7, 1.1, 4.0, 1.4, .45, '#d9694c')
+    sc.box(4.9, 2.9, 0, .06, .06, 2.0, ABU, key=7.9)
+    sc.box(4.95, 2.9, 1.65, .6, .05, .34, '#d9694c', key=8)
+    for (x, y, c) in [(1.4, 3.2, NAVY), (2.2, 3.6, GOLD), (3.1, 3.2, TEAL)]:
+        sc.person(x, y, 0, c, .8)
+
+
+def kota(sc):
+    sc.plate(0, 0, 5.4, 5.4, .5)
+    for (x, y, w, d, h, c) in [(.5, .5, 1.1, 1.1, 2.4, NAVY), (2.1, .4, 1.2, 1.2, 3.2, SKY), (3.9, .6, 1.0, 1.0, 1.7, TEAL), (.7, 3.2, 1.0, 1.0, 1.2, TEAL), (3.6, 3.3, 1.1, 1.1, 1.5, NAVY)]:
+        sc.box(x, y, 0, w, d, h, c, stroke=True)
+    sc.box(0, 2.2, 0, 5.4, .6, .04, '#4a5560', key=-7e4)
+    sc.pin(2.5, 3.8, .1, GOLD, .9)
+
+
+def kantor(sc):
+    sc.plate(0, 0, 5.4, 5.4, .5, base=RUMPUT)
+    sc.box(.9, 1.0, 0, 3.6, 1.8, 1.5, WHITE)
+    for k in range(5):
+        sc.box(1.1 + k * .72, 2.8, 0, .16, .12, 1.5, '#dfe7ee', key=5 + k * .01)
+    sc.roof(.9, 1.0, 1.5, 3.6, 1.8, .55, NAVY)
+    sc.box(2.6, 3.5, 0, .06, .06, 1.8, ABU, key=6.2)
+    sc.box(2.65, 3.5, 1.45, .6, .05, .32, '#d9694c', key=6.3)
+    sc.tree(.5, 4.4, 0, .8); sc.tree(4.8, 4.4, 0, .8)
+
+
+def rumah_tangga(sc):
+    sc.plate(0, 0, 5.2, 5.2, .5, base=RUMPUT)
+    iso.house(sc, .5, .5, NAVY)
+    sc.person(1.6, 3.4, 0, GOLD, 1.0); sc.person(2.3, 3.7, 0, TEAL, .75); sc.person(3.0, 3.4, 0, NAVY, 1.0)
+    sc.tree(4.2, 1.0, 0, .9); sc.tree(4.5, 4.2, 0, .7)
+
+
+def sawah(sc):
+    sc.plate(0, 0, 5.6, 5.6, .5, base='#a8cf8f')
+    for i in range(2):
+        for j in range(2):
+            sc.box(.3 + i * 2.6, .3 + j * 2.6, 0, 2.4, 2.4, .04, ['#8fc47a', '#b6d98f'][(i + j) % 2], key=-7e4)
+    sc.person(1.4, 1.5, 0, GOLD, .9); sc.person(4.0, 4.0, 0, NAVY, .9)
+    rumah(sc, 3.4, .5, TEAL)
+    sc.tree(.5, 5.0, 0, .7)
+
+
+def server(sc):
+    sc.plate(0, 0, 5.2, 5.2, .5)
+    for i in range(3):
+        sc.box(.6 + i * 1.35, .7, 0, 1.0, 1.0, 2.2, NAVY, stroke=True)
+        jendela(sc, .6 + i * 1.35, 1.7, 0, 1.0, 2.2, LAMPU, 2, 6, key=1.75 + i * 1.36)
+    sc.box(1.3, 3.2, 0, 2.4, 1.2, .55, WHITE, stroke=True)
+    sc.box(1.8, 3.5, .55, 1.3, .08, .7, SKY, key=5.9)
+    sc.person(4.3, 3.9, 0, GOLD, .9)
+
+
+IKON = {'kawasan': kawasan, 'cincin': cincin, 'satelit': satelit, 'banding': banding, 'malam': malam, 'manufaktur': manufaktur, 'wisata': wisata, 'ekstraktif': ekstraktif, 'jasa': jasa, 'tambang': tambang, 'pelabuhan': pelabuhan, 'tol': tol, 'gudang': gudang, 'warung': warung, 'pltu': pltu, 'surya': surya, 'plta': plta, 'sekolah': sekolah, 'kota': kota, 'kantor': kantor, 'rumah': rumah_tangga, 'sawah': sawah, 'server': server}
 
 if __name__ == '__main__':
     out = os.path.join(HERE, '..', 'images', 'riset', 'ikon'); os.makedirs(out, exist_ok=True)

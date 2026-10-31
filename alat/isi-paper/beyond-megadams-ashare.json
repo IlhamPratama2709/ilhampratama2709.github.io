@@ -1,0 +1,207 @@
+{
+ "slug": "beyond-megadams-ashare",
+ "pendek": "Beyond Megadams: ASHARE",
+ "desk": "Summary of a policy pitch for financing community-scale hydropower and rural electrification in ASEAN.",
+ "super": "Competition paper · 5th ASEAN Energy Youth Awards, ASEAN Centre for Energy · 2025",
+ "judul": "Beyond Megadams: ASHARE, A Policy Framework to Unlock ASEAN's Community-Scale Hydropower Potential",
+ "judul_asli": "Beyond Megadams: ASHARE, A Policy Framework to Unlock ASEAN's Community-Scale Hydropower Potential",
+ "lead": "Local power projects in ASEAN struggle for finance because nobody can show which one pays, so this pitch proposes a shared cost toolkit, a guarantee fund, and trained young facilitators.",
+ "hasil": "1st place",
+ "tanda": [
+  "ASEAN member states",
+  "Policy framework · LCOE toolkit"
+ ],
+ "penulis": "Muhammad Ilham Pratama, Siti Komariah, Faiz Attaqi",
+ "lokasi": {
+  "wilayah": "ASEAN",
+  "wilayah_lat": 4.0,
+  "wilayah_lon": 108.0,
+  "skala": "regional",
+  "ajang_kota": "Kuching",
+  "ajang_lat": 1.55,
+  "ajang_lon": 110.34
+ },
+ "ringkasan": [
+  "Southeast Asia's electricity gap has narrowed, but it has not closed. The region reached 95 percent access in 2017, according to IRENA. Five member states had reached full electrification that year, while Cambodia and Myanmar were still below 75 percent. The pitch argues that a regional focus on large dams leaves these remaining communities on diesel.",
+  "The cost data favour local renewables. Hydropower averaged USD 0.05 per kWh and solar PV USD 0.09 in 2018, against household prices of about USD 0.10. The ASEAN Energy Outlook's diesel marker sits at USD 0.25. The pitch concludes that technology is available and that the gap lies in showing which option suits each village.",
+  "ASHARE, the ASEAN Sustainable Hydropower and Rural Electrification framework, is the authors' proposal. It joins an open cost-benefit toolkit, a blended finance fund that gives risk guarantees to local banks, and university-trained community energy facilitators.",
+  "The proposal has not been costed or tested. The paper sets no fund size and no village target, and it runs no cost-benefit analysis of its own. It asks the ASEAN Centre for Energy to run a 24-month pilot in a country such as Indonesia or the Philippines."
+ ],
+ "rantai": [
+  [
+   "banding",
+   "Compare the options",
+   "An open toolkit ranks micro-hydro, communal solar, and grid extension by LCOE"
+  ],
+  [
+   "kantor",
+   "Guarantee the loans",
+   "A blended finance fund backs local banks on projects that pass the toolkit"
+  ],
+  [
+   "sekolah",
+   "Train the facilitators",
+   "Universities prepare young facilitators to work with villages"
+  ],
+  [
+   "plta",
+   "Pilot in one village",
+   "A 24-month trial with a university, a state firm, and a community"
+  ]
+ ],
+ "pertanyaan": [
+  "Hydropower sits at the centre of ASEAN's energy cooperation plan, yet the pitch finds that attention goes mainly to large and contested dams. Micro-hydro, communal solar, and biomass are judged too risky to finance. The paper places the cause in a missing process, since communities cannot prove which option is viable for them.",
+  "The pitch asks how ASEAN can turn local projects from too risky into bankable, in a systematic way. It frames the problem as a trilemma of access, cost, and potential."
+ ],
+ "metode": [
+  "This is a policy pitch, so it has no regression or new dataset. The authors review regional sources, including the ASEAN Energy Outlooks, IRENA, IEA, ERIA, and the IESR cost study for Indonesia, and collect them in a long appendix of figures.",
+  "From this review they design a framework with five decision steps: prioritise villages, assess local resources, collect and validate data, generate a cost-benefit and LCOE comparison, and decide the solution and its financing eligibility. A stakeholder matrix then sorts the actors by power and interest."
+ ],
+ "grafik": null,
+ "tabel": {
+  "kolom": [
+   "Item",
+   "Figure",
+   "Where it comes from",
+   "Status"
+  ],
+  "baris": [
+   [
+    "Electricity access, Southeast Asia, 2017",
+    "95 percent",
+    "IRENA, Figure A3",
+    "Published data"
+   ],
+   [
+    "Electricity price, regional average",
+    "USD 0.10–0.11 per kWh",
+    "IRENA, Figure A4",
+    "Published data"
+   ],
+   [
+    "Hydropower LCOE, 2018 weighted average",
+    "USD 0.05 per kWh",
+    "IRENA, Figure A4",
+    "Published data, all hydropower, no micro-hydro estimate"
+   ],
+   [
+    "Solar PV LCOE, 2018 weighted average",
+    "USD 0.09 per kWh",
+    "IRENA, Figure A4",
+    "Published data"
+   ],
+   [
+    "Diesel marker",
+    "USD 0.25 per kWh",
+    "ASEAN Energy Outlook, Figure A2",
+    "Published data, labelled PLN Diesel"
+   ],
+   [
+    "LCOE after a 20 percent rise in WACC",
+    "12.4 percent higher for utility solar, 7.7 percent for coal",
+    "IESR, Figure A6",
+    "Published data, Indonesia"
+   ],
+   [
+    "Private share of renewable investment, 2013–2020",
+    "About 75 percent",
+    "IRENA, cited in the text",
+    "Published data, global"
+   ],
+   [
+    "Micro-hydro LCOE after de-risking",
+    "Up to 40 percent lower",
+    "Presentation slides",
+    "Pitch claim, the appendix shows solar PV only"
+   ],
+   [
+    "Household income and local employment",
+    "30 percent and 25 percent higher",
+    "Presentation slides",
+    "Pitch claim, Figures A23 and A24 show estimates that vary by study"
+   ],
+   [
+    "School enrolment",
+    "7 percent higher",
+    "Presentation slides",
+    "Pitch claim, Figure A22 shows 0.03 to 0.19 for all children"
+   ],
+   [
+    "Hydropower used and sediment trapped",
+    "68 and 21 percent, against 54 and 91 percent",
+    "Presentation slides, Schmitt et al. (2018)",
+    "Dam planning in the Mekong 3S basin, not an ASHARE result"
+   ],
+   [
+    "ASHARE pilot",
+    "24 months",
+    "Paper, Section E",
+    "Proposal"
+   ]
+  ],
+  "catatan": "Published data come from the sources named in the pitch. Pitch claims appear on the slides with no calculation in the paper. The paper's text carries none of the pitch-claim figures."
+ },
+ "jenis": [
+  [
+   "banding",
+   "Pillar 1: Decision-making",
+   "An open, standard cost-benefit toolkit based on LCOE compares micro-hydro, communal solar, and grid extension. The aim is to direct money to the option that fits each village."
+  ],
+  [
+   "kantor",
+   "Pillar 2: Financing",
+   "A last-mile blended finance fund offers risk guarantees to local banks instead of grants. It works through a public-private-community partnership and backs only projects that meet the toolkit's standards."
+  ],
+  [
+   "sekolah",
+   "Pillar 3: Capacity building",
+   "Universities train community energy facilitators, who link national policy and technical tools with rural communities. They help villages use the toolkit and prepare proposals."
+  ]
+ ],
+ "jenis_judul": "The proposal in three pillars",
+ "sub": [
+  {
+   "judul": "The data show a real access and cost gap",
+   "teks": "Figure A1 of the pitch shows Brunei, Malaysia, Singapore, Thailand, and Viet Nam at full electrification in 2017. Regional energy use was 28 GJ per person, against a world average of 51 GJ. Cost figures put hydropower below household electricity prices. These are published regional numbers that the authors collected, and they are the firmest part of the pitch."
+  },
+  {
+   "judul": "Cost of capital is the lever the fund would pull",
+   "teks": "A 20 percent rise in the cost of capital raises the LCOE of utility solar by 12.4 percent and that of geothermal by 16.4 percent in Indonesia, against 7.7 percent for coal. Renewable projects are more sensitive to finance than coal plants. Guarantees aim at this weakness, although the appendix gives no such figure for micro-hydro."
+  },
+  {
+   "judul": "The impact case is borrowed from other settings",
+   "teks": "The paper claims jobs, income, health, and education gains, and its evidence comes from a review of electrification studies. Those studies vary widely by country and method. The cited Mekong planning result concerns the location of dams in one river basin, so it supports careful siting in general and says nothing about micro-hydro."
+  }
+ ],
+ "interpretasi": [
+  "The evidence supports a narrow claim: access is uneven, diesel is costly, and renewable projects depend heavily on the cost of capital. The step from these facts to ASHARE is the authors' judgement. No data in the pitch show that a lack of decision tools is what holds back local projects.",
+  "The paper describes a triple win for the economy, society, and the environment. These are expected benefits of electrification in general, and the pitch does not estimate them for ASHARE. The proposed pilot is the first chance to measure them."
+ ],
+ "kebijakan": [
+  [
+   "Develop a standard open-source toolkit.",
+   "It would compare rural energy options by LCOE so that investments are technically sound and fiscally efficient."
+  ],
+  [
+   "Set up a last-mile blended finance fund.",
+   "It would give risk guarantees to local banks and mobilise public and private capital in a public-private-community partnership."
+  ],
+  [
+   "Launch a community energy facilitator programme.",
+   "Partnerships with universities would train young professionals to carry projects from policy to villages."
+  ],
+  [
+   "Run a 24-month pilot through the ASEAN Centre for Energy.",
+   "It would involve a university, a state-owned enterprise, and a village community in a nation such as Indonesia or the Philippines."
+  ]
+ ],
+ "batas": [
+  "The paper has no section on limitations, and several gaps come with its form as a five-page pitch. It gives no cost for the fund, no count of viable sites, no micro-hydro cost estimate, and no target for villages reached. The toolkit is described and has not been built. The authors' main safeguard is the proposed pilot, which is meant to supply proof of concept before any regional rollout."
+ ],
+ "sitasi": "Pratama, M. I., Komariah, S., & Attaqi, F. (2025). <i>Beyond Megadams: ASHARE, a policy framework to unlock ASEAN's community-scale hydropower potential.</i> Policy pitch for the 5th ASEAN Energy Youth Awards.",
+ "foto_pilih": {
+  "url": "https://commons.wikimedia.org/wiki/File:Water_Reservoir_of_Wamena_Micro_Hydro_and_Uwe_River_at_Baliem_Valley_of_Jayawijaya_Regency.jpg",
+  "teks": "Wamena micro hydro reservoir, Baliem Valley. Photo: M.akbar.raf, CC BY-SA 4.0, darkened"
+ },
+ "tautan": "https://drive.google.com/drive/folders/1lR7BCJoVCx0V04G-SrbuCG3lCloWAY-F"
+}

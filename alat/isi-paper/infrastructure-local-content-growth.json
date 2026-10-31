@@ -1,0 +1,203 @@
+{
+ "slug": "infrastructure-local-content-growth",
+ "pendek": "Infrastructure, TKDN and growth",
+ "desk": "A policy essay on why Indonesia's infrastructure spending and local content rules have yet to lift productivity, with two proposals for reform.",
+ "super": "Competition paper · Indonesia Economic Outlook 2025, FEB UI · 2024",
+ "judul": "The Role of Infrastructure Investment and Local Content (TKDN) Policy in Accelerating Indonesia's Economic Growth",
+ "judul_asli": "Peran Perencanaan Investasi Infrastruktur dan Bauran Kebijakan TKDN dalam Mengakselerasi Pertumbuhan Perekonomian Indonesia",
+ "lead": "Indonesia needed 6.9 units of investment for each extra unit of output in 2019, up from 4.2 in 2008, and this essay argues that better-mapped infrastructure and local content rules can improve that return.",
+ "hasil": "Grand champion",
+ "tanda": [
+  "Indonesia, national",
+  "Policy essay, secondary data"
+ ],
+ "penulis": "Muhammad Ilham Pratama, Nabil Azhar Musyaffa",
+ "lokasi": {
+  "wilayah": "Indonesia",
+  "wilayah_lat": -2.5,
+  "wilayah_lon": 118.0,
+  "skala": "nasional",
+  "ajang_kota": null,
+  "ajang_lat": null,
+  "ajang_lon": null
+ },
+ "ringkasan": [
+  "Indonesia's investment is buying less output. The incremental capital output ratio (ICOR) rose from 4.2 in 2008 to 6.9 in 2019, and it stood at 7.6 for 2019–2023. Other developing countries sit near 3. Growth of 5.11 percent in the first quarter of 2024 also falls short of the 7 to 8 percent a year that the World Bank is cited as requiring to escape the middle-income trap.",
+  "Workers are leaving farms, mostly for jobs that add little. Agriculture's share of employment fell from 44 percent in 1995 to 28 percent in 2018, while low value-added services rose from 23 to 36 percent. Output per worker in those services is only 1.4 to 2 times that in farming. In manufacturing the ratio is 4.5.",
+  "The two main government responses have gaps. National Strategic Projects (PSN) counted 195 operating projects and a budget of IDR 1,519 trillion in February 2024. But the essay finds special economic zones built without specialisation, with slow permits and thin supporting infrastructure. A CSIS simulation cited in the essay also shows that local content rules (TKDN) could lower GDP by 0.25 percent.",
+  "The authors make two proposals. Each zone should be mapped to a suitable form of agglomeration, and investment and local content rules should be targeted by industry. These are arguments built on secondary sources. The essay produces no new estimates and does not cost its proposals."
+ ],
+ "rantai": [
+  [
+   "manufaktur",
+   "Industry stalls",
+   "Workers leave farms for low value-added services"
+  ],
+  [
+   "banding",
+   "Investment weakens",
+   "ICOR climbs from 4.2 in 2008 to 6.9 in 2019"
+  ],
+  [
+   "tol",
+   "Policy is reviewed",
+   "National Strategic Projects and TKDN rules"
+  ],
+  [
+   "kawasan",
+   "Reform is mapped",
+   "Zones and investment matched to industry"
+  ]
+ ],
+ "pertanyaan": [
+  "The essay asks why a decade of infrastructure building has not produced faster and more productive growth. Indonesia has about 20 years left to reach the Golden Indonesia 2045 vision. Three sectors, manufacturing, wholesale and retail, and agriculture, still carry 45 percent of the economy.",
+  "It then asks what the new administration should change. The review covers two programmes, the National Strategic Projects under Presidential Regulation 3 of 2016 and the TKDN rules. World Bank simulations cited in the essay suggest large stakes. A 10 percent rise in the real infrastructure stock could lift growth to as much as 7 percent."
+ ],
+ "metode": [
+  "This is a policy essay, and the authors run no regression of their own. It draws on published data from the World Bank, UNCTAD, LPEM FEB UI, BPS and CSIS. The framework comes from Lewis and Kuznets on structural change, Rodrik on premature deindustrialisation, and regional economics on agglomeration.",
+  "The argument moves from diagnosis to policy. It sets out two problems, low productivity and weak investment efficiency, and tests the two programmes against them. It closes with two recommendations and a problem and solution table for special economic zones."
+ ],
+ "grafik": null,
+ "tabel": {
+  "kolom": [
+   "Indicator",
+   "Start",
+   "End",
+   "Source cited in the essay"
+  ],
+  "baris": [
+   [
+    "Agriculture, share of employment",
+    "44% (1995)",
+    "28% (2018)",
+    "World Bank"
+   ],
+   [
+    "Low value-added services, share of employment",
+    "23% (1995)",
+    "36% (2018)",
+    "World Bank"
+   ],
+   [
+    "Manufacturing, share of employment",
+    "19% (1995)",
+    "15% (2018)",
+    "World Bank"
+   ],
+   [
+    "Manufacturing, share of value added",
+    "24% (1995)",
+    "21% (2018)",
+    "World Bank"
+   ],
+   [
+    "ICOR, annual",
+    "4.2 (2008)",
+    "6.9 (2019)",
+    "LPEM FEB UI"
+   ],
+   [
+    "ICOR, five-year period",
+    "6.0 (2000–2004)",
+    "7.6 (2019–2023)",
+    "ANU Indonesia Update"
+   ],
+   [
+    "Growth of tradables, year on year",
+    "4.6% (Mar 2012)",
+    "4.2% (Mar 2013)",
+    "CEIC, from Nehru"
+   ],
+   [
+    "Growth of non-tradables, year on year",
+    "7.7% (Mar 2012)",
+    "7.6% (Mar 2013)",
+    "CEIC, from Nehru"
+   ]
+  ],
+  "catatan": "All figures are reproduced from the sources named in the essay. The authors did not estimate them. ICOR is the investment needed for one extra unit of output, so a higher figure means lower efficiency."
+ },
+ "jenis": [
+  [
+   "manufaktur",
+   "Localisation",
+   "Firms in a similar line of industry concentrate in one place. The aim is lower unit costs as output grows, through economies of scale."
+  ],
+  [
+   "kota",
+   "Urbanisation",
+   "Firms in different industries share common infrastructure. The aim is lower costs through product diversification."
+  ],
+  [
+   "kawasan",
+   "Complex activities",
+   "One large input producer supplies many downstream firms in a vertical chain. Linking those stages lets each firm cut its costs."
+  ]
+ ],
+ "jenis_judul": "Three models the authors propose for clustering firms",
+ "sub": [
+  {
+   "judul": "Job shifts added little to productivity",
+   "teks": "Output per worker relative to agriculture averaged 30.8 in mining and quarrying, 12.9 in financial services and 4.5 in manufacturing over 2000–2018. Trade, hotels and restaurants reached 2.0, and other services 1.4. Most workers leaving farms went into such low-end services, so productivity growth has come mainly from improvements within sectors."
+  },
+  {
+   "judul": "Manufacturing's share has shrunk",
+   "teks": "Manufacturing fell from 24 to 21 percent of value added between 1995 and 2018, and from 19 to 15 percent of employment. The essay calls this premature deindustrialisation, following Rodrik. Indonesia is moving away from manufacturing before reaping its productivity gains."
+  },
+  {
+   "judul": "Growth moved towards non-tradables",
+   "teks": "Between March 2012 and March 2013 tradables grew 4.2 to 4.7 percent, against 7.4 to 7.9 percent for non-tradables. The essay links this shift to the rising ICOR, because non-tradables earn less profit. Dutu (2016) reports services growth of 6.5 percent and manufacturing growth of 3.9 percent, with total factor productivity growth falling from 2010 to 2014."
+  },
+  {
+   "judul": "Zones have spread without clusters",
+   "teks": "The government pays for dispersal without grouping related industries along a value chain, the essay argues. Special economic zones share three problems: no clear specialisation, difficult permits and scarce supporting infrastructure. Yet the need is real. The World Bank finds that a lack of infrastructure investment cost Indonesia 1 percent of GRDP growth in 2004–2014."
+  },
+  {
+   "judul": "Local content rules have a weak record",
+   "teks": "TKDN took full shape in the automotive industry in 1974, and Law 3 of 2014 on Industry set a further milestone. It applies mainly to public procurement, with a penalty-first approach in which firms that do not comply lose incentives. Vadila and Christian (2023) find that it failed to limit imports and damaged exports."
+  }
+ ],
+ "interpretasi": [
+  "The sources in the essay report falling manufacturing shares, a rising ICOR and weak gains from job shifts. The links between these trends are the authors' own reading. The essay argues them from theory and earlier studies, and it does not test them.",
+  "A high ICOR needs careful reading. The essay itself notes that infrastructure pays back over a long period, so part of the rise may reflect assets yet to deliver returns. It adds that low technology readiness and human capital cannot alone explain the rise. Its case for reform therefore rests on how projects are planned, more than on how much is spent."
+ ],
+ "kebijakan": [
+  [
+   "Give each zone a specialisation",
+   "Research the comparative advantage of each special economic zone, then map its priority industries and type of agglomeration."
+  ],
+  [
+   "Simplify permits",
+   "Focus on one-stop services and give guidance to the government officials linked to each zone."
+  ],
+  [
+   "Match infrastructure to the cluster",
+   "Build further supporting infrastructure according to the type of agglomeration planned for the zone."
+  ],
+  [
+   "Steer investment towards manufacturing jobs",
+   "Focus foreign direct investment on labour-intensive manufacturing, and put any large disbursement through a cost-benefit analysis."
+  ],
+  [
+   "Set local content rules by industry",
+   "Intervene first in industries with high upstream competitiveness, and adjust TKDN calculations to each industry's characteristics and scale."
+  ],
+  [
+   "Coordinate and publish",
+   "The Ministry of Industry should work with the Ministry of Trade, and clear metrics should limit rent-seeking."
+  ],
+  [
+   "Diversify trade partners",
+   "Spread export and import destinations so that a crisis in one country does less damage."
+  ]
+ ],
+ "batas": [
+  "The essay offers no original estimates, and its proposals are neither costed nor tested. Its largest numbers, the 7 percent growth path and the 0.25 percent GDP loss, come from simulations by other authors. Some data are dated: the sector growth figures end in March 2013 and the employment shares in 2018. The authors also say that each region needs further study, since its economic conditions differ."
+ ],
+ "sitasi": "Pratama, M. I., & Musyaffa, N. A. (2024). <i>The role of infrastructure investment and local content (TKDN) policy in accelerating Indonesia's economic growth</i> [Policy brief]. Indonesia Economic Outlook 2025 competition, Faculty of Economics and Business, Universitas Indonesia.",
+ "foto_pilih": {
+  "url": "https://commons.wikimedia.org/wiki/File:Construction_of_Balikpapan-Samarinda_Toll_Expressway_(aerial).jpg",
+  "teks": "Balikpapan–Samarinda toll road construction. Photo: Government of Indonesia, Public domain"
+ },
+ "tautan": "https://drive.google.com/drive/folders/1QbsSs1YuHylx0cl5XJw-v5bFolys61bE"
+}

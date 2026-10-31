@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>R&D and Employment Across ICT Layers · Muhammad Ilham Pratama</title>
+<meta name="description" content="A firm-level panel study of how the link between R&D spending and employment differs across ICT layers, lags, and country income groups.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../gaya.css">
+<script>try { if (localStorage.getItem("tema") === "dark") document.documentElement.dataset.theme = "dark"; } catch (e) {}</script>
+</head>
+<body>
+
+<header class="pita">
+  <div class="wadah">
+    <a class="merek" href="../index.html">Muhammad Ilham Pratama</a>
+    <nav>
+      <a href="../index.html#sekarang">Now</a>
+      <a href="../index.html#riset">Research</a>
+      <a href="../index.html#metode">Methods</a>
+      <a href="../index.html#pengalaman">Experience</a>
+      <a class="tombol" href="https://drive.google.com/drive/folders/1XornkzLssT57CylmrSPeVhFlCcZnFp9r">Portfolio</a>
+      <button class="tema" id="tema" type="button" aria-label="Switch colour theme">
+        <svg class="bulan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+        <svg class="matahari" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="kepala-foto siang" data-lokasi="Global" style="background-image: url('../images/riset/rd-investment-employment-ict/kepala.jpg')">
+  <div class="wadah">
+    <p class="supertitle">Competition paper · 22nd Economix, Universitas Indonesia · 2025</p>
+    <h1>The Impact of R&D Investments on Employment Absorption: A Comparative Analysis Across ICT Layers</h1>
+    <p class="lead">R&D goes with far fewer added jobs in ICT hardware and software firms than in non-ICT firms, but that gap disappears within two years.</p>
+    <ul class="tanda"><li class="emas">4th place, best presenter</li><li class="lokasi">Global</li><li>2,500 firms, 55 countries</li><li>Panel fixed effects</li></ul>
+    <p class="meta-kepala">Anindya Ayu Putri Paramitha, Athillah Ayu Istiqomah, Muhammad Ilham Pratama</p>
+  </div>
+  <a class="kredit-foto" href="https://commons.wikimedia.org/wiki/File:BalticServers_data_center.jpg">Data centre. Photo: BalticServers.com, CC BY-SA 3.0, darkened</a>
+</div>
+
+<div class="wadah tata-paper">
+  <aside class="daftar-isi" aria-label="On this page">
+    <b>On this page</b>
+    <div><a href="#ringkasan">Executive summary</a><a href="#sekilas">How the study works</a><a href="#pertanyaan">The question</a><a href="#metode-paper">Data and method</a><a href="#temuan">Findings</a><a href="#penjelasan">Interpretation</a><a href="#kebijakan">Policy implications</a><a href="#batas">Limitations</a><a href="#sitasi">How to cite</a></div>
+  </aside>
+
+  <main class="naskah">
+    <section id="ringkasan">
+      <h2>Executive summary</h2>
+      <p>R&D does not relate to jobs in the same way across the ICT industry. This paper uses the World 2500 Scoreboard for 2014 to 2023, which covers the world's top R&D investors in 55 countries, and sorts ICT firms into three layers with non-ICT firms as the comparison. The widest sample has 21,279 firm-years from 4,564 firms.</p>
+      <p>Hardware and software firms add fewer jobs per euro of R&D than non-ICT firms. In the same year, €1 million of R&D goes with 9.35 more employees in non-ICT firms. The slope is 10.01 lower in Layer 1 and 10.21 lower in Layer 2, which leaves both near zero. One year on the gaps narrow to 4.13 and 6.95, and after two years neither is significant.</p>
+      <p>The content layer stands apart only in the same year. Its slope is 11.81 higher in that year, and the differences at one, two, and three years are not significant, at 2.354, 1.783, and −1.794. Same-year estimates may partly reflect expanding firms that raise payroll and R&D together.</p>
+      <p>Country income works against the paper's hypothesis. The same-year slope is 19.47 in developing countries and 10.31 lower in developed ones. These are associations, because no model isolates an outside change in R&D, and tests find serial correlation in every specification.</p>
+    </section>
+
+    <section id="sekilas">
+      <h2>How the study works</h2>
+      <ol class="rantai"><li><img src="../images/riset/ikon/server.svg" alt=""><b>R&D is recorded</b><span>Firm spending in million euros, with lags of up to three years</span></li><li><img src="../images/riset/ikon/banding.svg" alt=""><b>Firms are grouped</b><span>Three ICT layers and non-ICT firms</span></li><li><img src="../images/riset/ikon/kantor.svg" alt=""><b>Jobs are counted</b><span>Employees per firm, with net sales, capex, and profit as controls</span></li><li><img src="../images/riset/ikon/kota.svg" alt=""><b>Contexts are compared</b><span>Firms in developed and developing countries</span></li></ol>
+    </section>
+
+    <section id="pertanyaan">
+      <h2>The question</h2>
+      <p>Global R&D spending reached a record €1,249.7 billion in 2022, led by ICT. Its effect on jobs is disputed. Frey and Osborne estimate that 47 percent of US jobs are at high risk of automation, while IT services employment grew 7 percent a year between 2000 and 2022, against 1 percent for total employment.</p>
+      <p>ICT is also far from uniform, and few studies separate its layers. This paper asks whether the link between R&D and employment differs across layers, how long it takes to appear, and whether it differs between developed and developing countries. It expects a positive link in ICT, differences across layers, and a stronger link in developed countries.</p>
+    </section>
+
+    <section id="metode-paper">
+      <h2>Data and method</h2>
+      <p>Firm records come from the World 2500 Scoreboard, with R&D, net sales, capital expenditure, and profit in million euros and employment as a headcount. Layers follow Heeks (2008) with modifications. In the team's presentation, Layer 1 covers electronic and technology hardware, Layer 2 covers software and support services, and Layer 3 covers media and telecommunications.</p>
+      <p>The models use firm and year fixed effects, and each regression enters R&D at a single lag from zero to three years. Interaction terms measure the slope gap against non-ICT firms. Hausman tests favour fixed effects in all three specifications, with chi-squared values of 98.78, 128.20, and 121.04. The sample shrinks with each lag, to 10,247 firm-years at lag 3, so columns do not cover identical firms.</p>
+    </section>
+
+    <section id="temuan">
+      <h2>Findings</h2>
+      <figure class="gr" data-gr>
+        <header><h3>The job gap with non-ICT firms closes within two years</h3><p>Difference from non-ICT firms in employees per €1 million of R&D, with 95 percent confidence intervals.</p></header>
+        <div class="gr-tab" role="tablist"><button role="tab" aria-selected="true" data-p="grafik">Chart</button><button role="tab" aria-selected="false" data-p="tabel">Table</button><button role="tab" aria-selected="false" data-p="sumber">Sources</button></div>
+        <div data-panel="grafik">
+          <div class="att" role="img" aria-label="Layers 1 and 2 are significantly below non-ICT firms with no lag and at one year, and not significant after that. Layer 3 is significantly above non-ICT firms only with no lag." data-rentang="[-14, 20]" data-garis="[-10, 0, 10]" data-att='[{"grup": "Layer 1: infrastructure", "baris": [["No lag", -10.01, 0.806, true], ["1-year lag", -4.125, 0.818, true], ["2-year lag", -1.644, 1.066, false], ["3-year lag", -1.038, 1.124, false]]}, {"grup": "Layer 2: software and services", "baris": [["No lag", -10.21, 0.765, true], ["1-year lag", -6.945, 0.753, true], ["2-year lag", 0.31, 0.932, false], ["3-year lag", -0.788, 0.965, false]]}, {"grup": "Layer 3: content", "baris": [["No lag", 11.81, 3.324, true], ["1-year lag", 2.354, 1.964, false], ["2-year lag", 1.783, 2.298, false], ["3-year lag", -1.794, 2.729, false]]}]'></div>
+          <div class="att-legenda"><span><i class="isi"></i>Significant at 5 percent</span><span><i></i>Not significant at 5 percent</span><span>Lines show 95 percent confidence intervals</span></div>
+        </div>
+        <div data-panel="tabel" hidden><div class="tabel-gulir"><table class="kanan"><thead><tr><th>Term</th><th>No lag</th><th>Lag 1</th><th>Lag 2</th><th>Lag 3</th></tr></thead><tbody><tr><td>Baseline: R&D ‡</td><td>3.744*** (0.311)</td><td>6.263*** (0.319)</td><td>1.133*** (0.379)</td><td>2.112*** (0.381)</td></tr><tr><td>Model 2: R&D, non-ICT</td><td>9.347*** (0.581)</td><td>9.274*** (0.516)</td><td>−1.583** (0.617)</td><td>0.629 (0.585)</td></tr><tr><td>Layer 1 × R&D</td><td>−10.01*** (0.806)</td><td>−4.125*** (0.818)</td><td>−1.644 (1.066)</td><td>−1.038 (1.124)</td></tr><tr><td>Layer 2 × R&D</td><td>−10.21*** (0.765)</td><td>−6.945*** (0.753)</td><td>0.310 (0.932)</td><td>−0.788 (0.965)</td></tr><tr><td>Layer 3 × R&D</td><td>11.81*** (3.324)</td><td>2.354 (1.964)</td><td>1.783 (2.298)</td><td>−1.794 (2.729)</td></tr><tr><td>Model 3: R&D, developing</td><td>19.47*** (1.292)</td><td>10.41*** (1.139)</td><td>−1.941 (1.418)</td><td>5.296*** (1.639)</td></tr><tr><td>R&D × developed</td><td>−10.31*** (1.198)</td><td>−1.169 (1.044)</td><td>0.367 (1.306)</td><td>−4.792*** (1.572)</td></tr><tr><td>Observations</td><td>21,279</td><td>15,761</td><td>12,777</td><td>10,247</td></tr><tr><td>Firms</td><td>4,564</td><td>3,427</td><td>2,920</td><td>2,481</td></tr></tbody></table></div><p class="catatan">Outcome is number of employees. R&D is in million euros. Non-ICT firms are the reference for layer terms. Standard errors in parentheses. *** p < 0.01, ** p < 0.05, * p < 0.1. ‡ Labelled fixed effects in the paper, but the no-lag column matches the random-effects output in its appendix, which the Hausman test rejects. The fixed-effects R&D estimate there is 2.724, with no standard error published.</p></div>
+        <div data-panel="sumber" hidden><p>Authors' estimates from the World 2500 Scoreboard, 2014–2023. Model 2 fixed-effects regressions with year effects and controls for net sales, capital expenditure, and profit. Observations are 21,279 with no lag, 15,761 at lag 1, 12,777 at lag 2, and 10,247 at lag 3.</p></div>
+        <footer>Source: authors' estimates, Economix paper. World 2500 Scoreboard, 2014–2023.</footer>
+      </figure>
+      <h3>What the three layers show</h3>
+      <div class="dua-jenis tiga"><div><img src="../images/riset/ikon/manufaktur.svg" alt=""><h4>Layer 1: infrastructure</h4><p>Adding the terms, the same-year slope is about −0.66 employees per €1 million, and about 5.15 at lag 1, which is still positive but below non-ICT firms. The gap is not significant at lags 2 and 3. The paper reads the gap as automation, which the data do not measure.</p></div><div><img src="../images/riset/ikon/server.svg" alt=""><h4>Layer 2: software and services</h4><p>The gap is −10.21 in the same year and −6.945 a year later. It is not significant at lag 2 (0.310) or lag 3 (−0.788), so the table shows no long-term gain. The paper suggests R&D here aims at operational efficiency.</p></div><div><img src="../images/riset/ikon/jasa.svg" alt=""><h4>Layer 3: content</h4><p>The same-year slope is about 21.2 employees per €1 million, though with a wide standard error of 3.324 on the gap. No later lag differs significantly from non-ICT firms. In the presentation this layer also includes telecommunications, so it is broader than digital content.</p></div></div>
+      <h3>The one-year peak depends on the specification</h3>
+      <p>The baseline table gives 3.744, 6.263, 1.133, and 2.112 employees per €1 million at lags zero to three, which the paper reads as a peak after one year. In Model 2 the first two coefficients are almost equal, at 9.347 and 9.274, and the third is −1.583. In Model 3 they fall from 19.47 to 10.41. Each lag is a separate regression on a smaller sample, so these numbers do not trace one group of firms over time.</p>
+      <h3>Developed-country firms show a weaker link, which runs against the hypothesis</h3>
+      <p>The same-year slope is 19.47 in developing countries and about 9.16 in developed ones, so it stays positive in both. The gap is not significant at lag 1 (−1.169, standard error 1.044) or lag 2 (0.367, standard error 1.306), and returns at lag 3 at −4.792. The third hypothesis expected a stronger link in developed countries, and the table does not support it. VIFs in the appendix for this model reach 15.66 for R&D and 11.84 for the interaction, so the split is imprecise.</p>
+      <h3>Sales and capital spending move with jobs, and profit rarely does</h3>
+      <p>In Model 2 the net sales coefficient runs from 0.626 to 1.080 and capital expenditure from 1.441 to 3.022, all significant at 1 percent. Profit is significant only at lag 1, at 0.201. The paper suggests profits may go to dividends or to non-labour reinvestment.</p>
+    </section>
+
+    <section id="penjelasan">
+      <h2>Interpretation</h2>
+      <p>The direct finding is a pattern in the slopes. Hardware and software firms show a much flatter link between R&D and headcount than non-ICT firms in the same year and the next, and the gap then fades. Layer 3's higher slope holds only in the same year.</p>
+      <p>The paper reads this as creative destruction: automation in Layer 1, efficiency in Layer 2, and new content work in Layer 3. But the data contain no measure of automation, occupations, or content jobs, so these remain explanations to test. Headcount and R&D may also rise together because a firm is expanding, which weighs most on same-year estimates.</p>
+    </section>
+
+    <section id="kebijakan">
+      <h2>Policy implications</h2>
+      <ol><li><b>Support content and creative industries.</b> Use tax incentives, grants, and subsidies to stimulate innovation and job creation in Layer 3.</li><li><b>Retrain infrastructure workers.</b> Fund retraining and upskilling so that Layer 1 workers can move into emerging technical roles.</li><li><b>Broaden services in Layer 2.</b> Back service diversification and innovation hubs to offset short-term job losses.</li><li><b>Narrow the digital divide.</b> Improve ICT infrastructure and digital literacy, especially in developing countries, and sustain public-private partnerships on R&D.</li></ol>
+    </section>
+
+    <section id="batas">
+      <h2>Limitations</h2>
+      <p>The sample covers only the largest R&D investors, and firms enter and leave the list, so firm counts fall from 4,564 to 2,481 at lag 3. Serial correlation tests reject the null in all three models, and the regression tables do not state that standard errors are corrected for this, so significance may be overstated. Layer and country dummies are reported in a fixed-effects model even though they rarely change within a firm, and at lag 3 they reach −47,865 and 60,964 employees, which suggests a few firms drive them. The policy proposals for Layers 2 and 3 lean on long-term job gains that the table does not show.</p>
+    </section>
+
+    <section id="sitasi">
+      <h2>How to cite</h2>
+      <p class="sitasi">Paramitha, A. A. P., Istiqomah, A. A., & Pratama, M. I. (2025). <i>The impact of R&D investments on employment absorption: A comparative analysis across ICT layers</i>. Paper presented at the 22nd Economix, Universitas Indonesia.</p>
+      <p><a href="https://drive.google.com/drive/folders/1fZXRW2p5Mx-6Gpb7s9LY48_CFpIm7XUT">Open the paper folder</a>. Other work is in the <a href="../index.html#riset">research list</a>.</p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wadah">
+    <span>Muhammad Ilham Pratama · Jakarta · <a href="mailto:ilhamp2709@gmail.com">ilhamp2709@gmail.com</a> · <a href="https://www.linkedin.com/in/muhammad-ilham-pratama-172825245/">LinkedIn</a></span>
+    <span>Last updated October 2026</span>
+  </div>
+</footer>
+
+<script src="../paper.js"></script>
+<script src="../tema.js"></script>
+</body>
+</html>

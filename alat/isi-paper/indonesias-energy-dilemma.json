@@ -1,0 +1,299 @@
+{
+ "slug": "indonesias-energy-dilemma",
+ "pendek": "Indonesia's Energy Dilemma",
+ "desk": "Summary of a paper on how coal, solar, and hydropower plants relate to district GDP, manufacturing, and CO₂ emissions in Indonesia.",
+ "super": "Competition paper · Call for Papers New Economy, CORE Indonesia and ViriyaENB · 2025",
+ "judul": "Indonesia's Energy Dilemma: Power Plants' Impact on the Economy and Emissions",
+ "judul_asli": "Dilema Energi Indonesia: Dampak Pembangkit Listrik pada Emisi dan Perekonomian",
+ "lead": "Coal plants go with slightly higher GDP in Java and Sumatra at the 10 percent level, solar and hydropower show no GDP effect, and the coal emissions estimate fails its parallel-trends test.",
+ "hasil": "3rd place",
+ "tanda": [
+  "Districts, Indonesia, 2011–2022",
+  "Staggered DiD · QGIS"
+ ],
+ "penulis": "Muhammad Ilham Pratama, Faiz Attaqi, Siti Komariah",
+ "lokasi": {
+  "wilayah": "Indonesia",
+  "wilayah_lat": -2.5,
+  "wilayah_lon": 118.0,
+  "skala": "nasional",
+  "ajang_kota": "Jakarta",
+  "ajang_lat": -6.2,
+  "ajang_lon": 106.85
+ },
+ "ringkasan": [
+  "Only one plant type shows any link with district GDP in Indonesia, and that link is weak. This paper counts the coal, solar, and hydropower plants within 60 km of each district centre from 2011 to 2022. It then compares those counts with GDP, manufacturing share, and CO₂ emissions.",
+  "One more coal plant within 60 km goes with about 0.58 percent higher GDP in Java and Sumatra, significant only at the 10 percent level. Across Indonesia the coefficient is 0.00446 with a standard error of 0.00371, which cannot be told apart from zero. Solar and hydropower show no GDP effect in any sample.",
+  "Emissions produce the largest numbers and the weakest identification. One more coal plant goes with 44,738 more tonnes of emissions nationally, about 14 percent of the district mean, at the 10 percent level. But the national coal and solar estimates both fail the parallel-trends test, so those districts were already on different paths. Hydropower passes the test, and its national estimate is close to zero.",
+  "A clean trade-off between growth and emissions therefore cannot be read from these results. The paper places the gains where grids and industry already exist, and it asks for an energy strategy that differs by region."
+ ],
+ "rantai": [
+  [
+   "pltu",
+   "Plants are mapped",
+   "Coal, solar, and hydropower sites from the ESDM Geoportal, located in QGIS"
+  ],
+  [
+   "cincin",
+   "A 60 km ring is drawn",
+   "Each district's count is the stock of plants within 60 km of its centroid"
+  ],
+  [
+   "satelit",
+   "Outcomes are measured",
+   "GDP from CEIC, manufacturing share, and ODIAC satellite CO₂"
+  ],
+  [
+   "banding",
+   "Regions are compared",
+   "Indonesia, then Java and Sumatra against Kalimantan and Sulampua"
+  ]
+ ],
+ "pertanyaan": [
+  "Coal supplied 69.1 percent of Indonesia's electricity in the IEA data the paper cites, and it is also the largest contributor to emissions. Solar and hydropower have no operating emissions, but their local economic returns are less well known. Most earlier studies look at one technology, or at growth or emissions alone.",
+  "The paper asks how an added coal, solar, or hydropower plant changes district GDP, local CO₂ emissions, and the manufacturing share of output. It uses one framework for all three technologies, so the results can be compared directly."
+ ],
+ "metode": [
+  "The panel covers Indonesian districts and cities from 2011 to 2022, with 6,048 district-years for the plant counts. Treatment is the cumulative number of plants of each type within 60 km of the district centroid. Regressions control for four groups of other plants, population, working-age share, schooling, and night-time lights.",
+  "Plants opened in different years, so the paper uses a generalised difference-in-differences design with district and year fixed effects, in a two-way fixed effects form. It acknowledges that this form can be biased under staggered timing. A parallel-trends result is reported only for the national emissions model, where solar and coal fail and hydropower passes."
+ ],
+ "grafik": {
+  "judul": "No plant type moves district GDP at the 5 percent level",
+  "sub": "Estimated change in log district GDP for one more plant within 60 km of the district centroid. Parallel-trends results are not reported for these models.",
+  "data": [
+   {
+    "grup": "Indonesia",
+    "baris": [
+     [
+      "Solar",
+      -0.000223,
+      0.000827,
+      false
+     ],
+     [
+      "Coal",
+      0.00446,
+      0.00371,
+      false
+     ],
+     [
+      "Hydropower",
+      0.000669,
+      0.00221,
+      false
+     ]
+    ]
+   },
+   {
+    "grup": "Java and Sumatra",
+    "baris": [
+     [
+      "Solar",
+      0.000853,
+      0.000827,
+      false
+     ],
+     [
+      "Coal",
+      0.00583,
+      0.00325,
+      false
+     ],
+     [
+      "Hydropower",
+      0.00122,
+      0.00174,
+      false
+     ]
+    ]
+   },
+   {
+    "grup": "Kalimantan and Sulampua",
+    "baris": [
+     [
+      "Solar",
+      -0.00842,
+      0.00735,
+      false
+     ],
+     [
+      "Coal",
+      0.00144,
+      0.00765,
+      false
+     ],
+     [
+      "Hydropower",
+      0.0089,
+      0.0142,
+      false
+     ]
+    ]
+   }
+  ],
+  "rentang": [
+   -0.03,
+   0.04
+  ],
+  "garis": [
+   -0.02,
+   0,
+   0.02
+  ],
+  "aria": "All nine estimates of the link between plant counts and district GDP have confidence intervals that include zero. Coal in Java and Sumatra is the closest, at 0.00583.",
+  "sumber": "Authors' estimates with district and year fixed effects and robust standard errors. GDP comes from CEIC, emissions from ODIAC, plant locations from the ESDM Geoportal, and controls from Susenas, Sakernas, and VIIRS night-time lights.",
+  "kaki": "Source: authors' estimates, CORE Indonesia paper. Indonesian districts, 2011–2022."
+ },
+ "tabel": {
+  "kolom": [
+   "Outcome",
+   "Plant",
+   "Indonesia",
+   "Java and Sumatra",
+   "Kalimantan and Sulampua"
+  ],
+  "baris": [
+   [
+    "Log GDP",
+    "Solar",
+    "−0.000223 (0.000827)",
+    "0.000853 (0.000827)",
+    "−0.00842 (0.00735)"
+   ],
+   [
+    "Log GDP",
+    "Coal",
+    "0.00446 (0.00371)",
+    "0.00583* (0.00325)",
+    "0.00144 (0.00765)"
+   ],
+   [
+    "Log GDP",
+    "Hydropower",
+    "0.000669 (0.00221)",
+    "0.00122 (0.00174)",
+    "0.00890 (0.0142)"
+   ],
+   [
+    "Manufacturing share",
+    "Solar",
+    "0.000265 (0.000466)",
+    "0.000392 (0.000540)",
+    "−0.00249* (0.00139)"
+   ],
+   [
+    "Manufacturing share",
+    "Coal",
+    "0.000902 (0.00127)",
+    "0.000943 (0.00144)",
+    "0.00126 (0.00238)"
+   ],
+   [
+    "Manufacturing share",
+    "Hydropower",
+    "−0.00133 (0.00110)",
+    "−0.00101 (0.00117)",
+    "−0.00452* (0.00246)"
+   ],
+   [
+    "CO₂ emissions",
+    "Solar",
+    "14,196*** (5,117)†",
+    "11,713* (5,436)",
+    "−10,849** (3,583)"
+   ],
+   [
+    "CO₂ emissions",
+    "Coal",
+    "44,738* (24,749)†",
+    "77,889* (42,968)",
+    "9,574* (5,035)"
+   ],
+   [
+    "CO₂ emissions",
+    "Hydropower",
+    "716.4 (7,812)",
+    "−9,022 (9,110)",
+    "−12,438** (6,161)"
+   ],
+   [
+    "Observations",
+    "GDP and manufacturing models",
+    "5,211",
+    "2,936",
+    "2,275"
+   ],
+   [
+    "Observations",
+    "CO₂ model",
+    "5,441",
+    "2,936",
+    "2,505"
+   ]
+  ],
+  "catatan": "Robust standard errors in parentheses. Stars as printed in the paper. *** p < 0.01, ** p < 0.05, * p < 0.1. † Fails the parallel-trends test, so the estimate should not be read as causal. The test is reported only for the national CO₂ model. Hydropower passes it. Regional columns and the GDP and manufacturing models have no reported test."
+ },
+ "jenis": [
+  [
+   "pltu",
+   "Coal plants",
+   "The GDP link appears only in Java and Sumatra, at 0.58 percent per plant and the 10 percent level. The emissions coefficient is the largest in the table, but the national estimate fails the parallel-trends test."
+  ],
+  [
+   "surya",
+   "Solar plants",
+   "No GDP effect appears in any sample. The national estimate of 14,196 more tonnes of emissions fails the parallel-trends test, so it says little about solar itself."
+  ],
+  [
+   "plta",
+   "Hydropower plants",
+   "The national estimates for GDP and emissions are both near zero. Hydropower is the one technology that passes the test, which makes its null result the most credible in the emissions table."
+  ]
+ ],
+ "jenis_judul": "Three technologies, three different records",
+ "sub": [
+  {
+   "judul": "Manufacturing barely responds to any plant type",
+   "teks": "Nationally, no plant type changes the manufacturing share of output. In Kalimantan and Sulampua one more solar plant goes with a share 0.249 percentage points lower and one more hydropower plant with a share 0.452 points lower, both at the 10 percent level. The paper suggests a denominator effect: construction and services raise total GDP while manufacturing stays flat. Manufacturing averages only 13 percent of district output, so many districts have little industry to expand."
+  },
+  {
+   "judul": "Emissions results fail the test where they matter most",
+   "teks": "The coal coefficient in Java and Sumatra is 77,889 tonnes, about a quarter of the national district mean of 311,223 tonnes. It is significant only at the 10 percent level. The national coal and solar estimates fail the parallel-trends test, and the paper itself warns that they may reflect existing differences in trends. In Kalimantan and Sulampua, solar and hydropower carry negative coefficients of −10,849 and −12,438, but no trend test is reported for that sample."
+  },
+  {
+   "judul": "National plans still rest on coal and gas",
+   "teks": "In the RE Base scenario of the 2025–2034 electricity plan, renewables rise from 13.6 percent of generation to 29.7 percent, and coal falls from 66.5 to 47.1 percent. Gas grows from 15.7 to 22.8 percent. The faster ARED scenario reaches 34.3 percent renewables in 2034. Its coal output still grows in absolute terms, from 233,068 to 271,940 GWh."
+  }
+ ],
+ "interpretasi": [
+  "The data show a small coal coefficient in Java and Sumatra and none elsewhere. The authors explain this through location: both islands have industry, dense transmission, and steady baseload demand. They read the solar and hydropower nulls in the same way, since many of these plants are small, sit off the main grid, or serve rural electrification. These are explanations, and the regressions do not test them.",
+  "The growth and emissions results should be kept apart from any causal claim. For emissions, the failed test means that plant siting and local trends cannot be separated. For GDP, no trend test is reported, so the coal coefficient is best read as an association."
+ ],
+ "kebijakan": [
+  [
+   "Build hydropower alongside industry and the main grid.",
+   "The paper links this to the plan's collaboration between PLN and the Ministry of Public Works on dam projects."
+  ],
+  [
+   "Expand rooftop and utility-scale solar.",
+   "This expansion needs storage and grid support to help meet the renewable mix target."
+  ],
+  [
+   "Make coal plants cleaner and limit new ones.",
+   "The paper names high-efficiency technology, gasification, hydrogen, and CCUS, along with fewer new coal projects."
+  ],
+  [
+   "Link energy supply to manufacturing.",
+   "Local production of solar panels, turbines, and batteries would raise domestic content. The paper cites a Green Industrial Park in Papua tied to the Mamberamo hydropower project."
+  ]
+ ],
+ "batas": [
+  "Consistent capacity data in MW do not exist for all plant types, so the paper counts units, which treats a small plant and a large plant alike. Control groups pool technologies that may behave differently, such as geothermal and wind. The 2011–2022 window may miss long-run effects. Parallel trends fail for national coal and solar emissions and are not reported for the other models, and the two-way fixed effects form can be biased under staggered timing. The authors propose better capacity data, separate estimates for each plant type, and a longer panel."
+ ],
+ "sitasi": "Pratama, M. I., Attaqi, F., & Komariah, S. (2025). <i>Dilema Energi Indonesia: Dampak Pembangkit Listrik pada Emisi dan Perekonomian [Indonesia's energy dilemma: Power plants' impact on the economy and emissions].</i> Paper for the Call for Papers New Economy, CORE Indonesia and ViriyaENB.",
+ "foto_pilih": {
+  "url": "https://commons.wikimedia.org/wiki/File:Labuhan_Angin_coal-fired_power_plant_taken_from_Poncan_Island.jpg",
+  "teks": "Labuhan Angin coal plant, North Sumatra. Photo: Vander Tambunan, CC BY-SA 4.0, darkened"
+ },
+ "tautan": "https://drive.google.com/drive/folders/1UV52JhkpQH1kLXI5dAD8dG3SND9OJJdg"
+}

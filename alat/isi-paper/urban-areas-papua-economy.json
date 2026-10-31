@@ -1,0 +1,354 @@
+{
+ "slug": "urban-areas-papua-economy",
+ "pendek": "Urban Areas and Papua's Economy",
+ "desk": "Summary of a paper on the sectoral strengths of Jayapura, Sorong, and the districts around them, and what they imply for special economic zones.",
+ "super": "Competition paper · Papedanomics, Bank Indonesia West Papua · 2024",
+ "judul": "The Role of Urban Areas in Papua's Economy: Sectoral Location Quotient and Shift-Share Analysis at District Level",
+ "judul_asli": "Peran Kawasan Urban dalam Peningkatan Ekonomi Papua: Analisis Location Quotient dan Shift Share Sektoral di Tingkat Kabupaten/Kota",
+ "lead": "Seven sectors are a base across all four districts of the Jayapura area, against only construction in the Sorong area.",
+ "hasil": "1st place",
+ "tanda": [
+  "8 districts, Papua",
+  "LQ, shift-share"
+ ],
+ "penulis": "Faiz Attaqi, Muhammad Ilham Pratama, Siti Komariah",
+ "lokasi": {
+  "wilayah": "Jayapura and Sorong, Papua",
+  "wilayah_lat": -1.8,
+  "wilayah_lon": 136.0,
+  "skala": "kabupaten",
+  "ajang_kota": null,
+  "ajang_lat": null,
+  "ajang_lon": null
+ },
+ "ringkasan": [
+  "Papua has more than three times the land area of Java and, by this paper's count, only two urban areas: Kota Sorong and Kota Jayapura. The paper asks what these cities mean for the districts around them, using sectoral GRDP for eight districts.",
+  "The two cities are similarly broad, but their surroundings differ. Kota Jayapura is a base in 15 of 17 sectors and Kota Sorong in 14. The neighbouring districts have 9 to 14 base sectors around Jayapura, against 4 to 5 around Sorong.",
+  "Seven sectors are a base in all four districts of the Jayapura area, and only construction is in the Sorong area. Adding shift-share leaves three leading sectors around Jayapura: manufacturing, health and social work, and other services. Sorong has none, because construction has a negative differential shift there.",
+  "The authors conclude that the Sorong Special Economic Zone is well aimed and propose a new zone around Jayapura. That is a policy argument built on descriptive measures. They show where activity concentrates, but they cannot confirm that cities pass growth to their neighbours."
+ ],
+ "rantai": [
+  [
+   "kota",
+   "Two urban areas",
+   "Kota Jayapura and Kota Sorong"
+  ],
+  [
+   "cincin",
+   "Three neighbours each",
+   "Sarmi, Keerom, and Kabupaten Jayapura. Kabupaten Sorong, Tambrauw, and Maybrat"
+  ],
+  [
+   "banding",
+   "Two measures are combined",
+   "LQ above 1 with a positive differential shift marks a leading sector"
+  ],
+  [
+   "kawasan",
+   "Zones are compared",
+   "Sorong SEZ's industries are placed on the shift-share quadrants"
+  ]
+ ],
+ "pertanyaan": [
+  "Maluku and Papua grew faster than any other island group in the first quarter of 2024, at 12.15 percent, more than twice Java's 4.84 percent. Yet isolation and thin infrastructure have held back urban growth. Most earlier sector studies treat the island as a whole, and few look at the area around a city.",
+  "The paper asks whether Kota Sorong and Kota Jayapura produce sectoral spillovers in nearby districts. It also asks whether the Sorong Special Economic Zone, the only one on the island, fits the sector strengths around it."
+ ],
+ "metode": [
+  "The data are sectoral GRDP from CEIC, worked in Excel. The paper chose eight districts in two provinces because these methods suit a narrow scope. Location quotients compare each sector's share of district GRDP with its share of provincial GRDP, and the paper classifies sectors by their average for 2018 to 2022.",
+  "Shift-share compares 2018 with 2022 and places each sector in a quadrant for the Jayapura area and the Sorong area. A leading sector needs an LQ above 1 and a positive differential shift. The paper then matches the five industries planned for Sorong SEZ with their shift-share sectors."
+ ],
+ "grafik": null,
+ "tabel": {
+  "kolom": [
+   "Sector",
+   "Kota Jayapura",
+   "Sarmi",
+   "Keerom",
+   "Kab. Jayapura",
+   "Quadrant",
+   "Kota Sorong",
+   "Kab. Sorong",
+   "Tambrauw",
+   "Maybrat",
+   "Quadrant"
+  ],
+  "baris": [
+   [
+    "Agriculture, forestry, fisheries",
+    "0.51",
+    "<b>2.83</b>",
+    "<b>2.92</b>",
+    "<b>1.87</b>",
+    "IV†",
+    "0.90",
+    "<b>1.01</b>",
+    "<b>3.12</b>",
+    "<b>2.86</b>",
+    "II"
+   ],
+   [
+    "Mining",
+    "0.01",
+    "0.04",
+    "0.03",
+    "0.05",
+    "IV†",
+    "0.07",
+    "<b>1.50</b>",
+    "0.10",
+    "0.05",
+    "III"
+   ],
+   [
+    "Manufacturing",
+    "<b>1.29</b>",
+    "<b>1.12</b>",
+    "<b>2.89</b>",
+    "<b>2.40</b>",
+    "II",
+    "0.19",
+    "<b>1.40</b>",
+    "0.02",
+    "0.01",
+    "II"
+   ],
+   [
+    "Electricity and gas",
+    "<b>1.50</b>",
+    "<b>1.05</b>",
+    "<b>1.04</b>",
+    "0.99",
+    "III",
+    "<b>2.33</b>",
+    "0.88",
+    "<b>2.58</b>",
+    "0.81",
+    "III"
+   ],
+   [
+    "Water and waste",
+    "<b>2.53</b>",
+    "<b>1.21</b>",
+    "–",
+    "<b>3.07</b>",
+    "IV†",
+    "<b>2.66</b>",
+    "0.53",
+    "0.27",
+    "0.35",
+    "III"
+   ],
+   [
+    "Construction",
+    "<b>1.64</b>",
+    "<b>1.55</b>",
+    "<b>2.21</b>",
+    "<b>1.23</b>",
+    "III",
+    "<b>1.57</b>",
+    "<b>1.17</b>",
+    "<b>1.65</b>",
+    "<b>1.29</b>",
+    "IV"
+   ],
+   [
+    "Trade",
+    "<b>1.85</b>",
+    "<b>1.11</b>",
+    "0.88",
+    "<b>1.52</b>",
+    "III†",
+    "<b>2.93</b>",
+    "0.17",
+    "0.17",
+    "0.91",
+    "I"
+   ],
+   [
+    "Transport and storage",
+    "<b>1.22</b>",
+    "<b>1.41</b>",
+    "0.26",
+    "<b>3.29</b>",
+    "IV",
+    "<b>2.99</b>",
+    "0.27",
+    "0.53",
+    "0.65",
+    "II"
+   ],
+   [
+    "Accommodation and food",
+    "<b>2.67</b>",
+    "<b>1.03</b>",
+    "<b>1.46</b>",
+    "<b>1.85</b>",
+    "IV",
+    "<b>2.51</b>",
+    "0.17",
+    "0.28",
+    "0.39",
+    "III†"
+   ],
+   [
+    "Information and communication",
+    "<b>2.59</b>",
+    "0.81",
+    "0.28",
+    "<b>1.64</b>",
+    "III",
+    "<b>3.53</b>",
+    "0.19",
+    "0.07",
+    "0.12",
+    "I"
+   ],
+   [
+    "Finance and insurance",
+    "<b>2.90</b>",
+    "0.77",
+    "0.80",
+    "0.95",
+    "III†",
+    "<b>2.77</b>",
+    "0.46",
+    "0.26",
+    "<b>1.41</b>",
+    "III"
+   ],
+   [
+    "Real estate",
+    "<b>1.97</b>",
+    "<b>1.20</b>",
+    "0.62",
+    "<b>1.84</b>",
+    "III",
+    "<b>2.45</b>",
+    "0.36",
+    "0.95",
+    "0.35",
+    "I"
+   ],
+   [
+    "Business services",
+    "<b>2.93</b>",
+    "0.51",
+    "0.04",
+    "<b>1.95</b>",
+    "II",
+    "<b>2.92</b>",
+    "0.61",
+    "0.08",
+    "0.30",
+    "IV†"
+   ],
+   [
+    "Public administration",
+    "<b>1.57</b>",
+    "<b>1.63</b>",
+    "<b>1.58</b>",
+    "<b>1.00</b>",
+    "IV†",
+    "<b>1.15</b>",
+    "0.95",
+    "<b>4.04</b>",
+    "<b>4.47</b>",
+    "III†"
+   ],
+   [
+    "Education",
+    "<b>2.00</b>",
+    "<b>1.58</b>",
+    "<b>1.36</b>",
+    "<b>1.05</b>",
+    "IV†",
+    "<b>2.42</b>",
+    "0.66",
+    "<b>1.81</b>",
+    "<b>1.10</b>",
+    "III†"
+   ],
+   [
+    "Health and social work",
+    "<b>2.50</b>",
+    "<b>1.46</b>",
+    "<b>1.34</b>",
+    "<b>1.04</b>",
+    "I",
+    "<b>2.28</b>",
+    "0.61",
+    "0.93",
+    "0.79",
+    "III"
+   ],
+   [
+    "Other services",
+    "<b>2.19</b>",
+    "<b>1.45</b>",
+    "<b>1.08</b>",
+    "<b>1.54</b>",
+    "I",
+    "<b>3.11</b>",
+    "0.32",
+    "0.12",
+    "0.21",
+    "III"
+   ]
+  ],
+  "catatan": "Average location quotient, 2018–2022. Bold marks a base sector (LQ of 1 or more, as classified in the paper). Keerom has no value for water and waste. Quadrant, as drawn in the paper for each area, 2018 to 2022. I: fast growth, competitive. II: slow growth, competitive. III: fast growth, not competitive. IV: slow growth, not competitive. † The quadrant differs from the one obtained by adding up the district tables in the paper's appendix. Source: authors' calculations from CEIC data."
+ },
+ "jenis": [
+  [
+   "kota",
+   "Jayapura area",
+   "Base across all four districts: manufacturing, construction, accommodation and food, public administration, education, health, and other services. Health and other services sit in Quadrant I. Manufacturing and business services are slow-growing but competitive."
+  ],
+  [
+   "pelabuhan",
+   "Sorong area",
+   "Construction is the only sector that is a base in all four districts. Trade, information and communication, and real estate sit in Quadrant I. None of them meets the test for a leading sector, since they are not a base across the area."
+  ]
+ ],
+ "jenis_judul": "Two urban areas, two different hinterlands",
+ "sub": [
+  {
+   "judul": "Construction is the one sector strong everywhere",
+   "teks": "Construction has an LQ above 1 in all eight districts, from 1.17 in Kabupaten Sorong to 2.21 in Keerom. The authors call it the first priority for local planning. Its differential shift is negative in both areas, however, so the sector is concentrated without being locally competitive."
+  },
+  {
+   "judul": "Sorong SEZ sits in a slow-growing but competitive group",
+   "teks": "Nickel, palm oil, and forest products fall under manufacturing, and logistics under transport. Both sectors sit in Quadrant II in the Sorong area, and the authors read this as support for the zone. Manufacturing is a base in Kabupaten Sorong, where the zone lies, at 1.40, while it stays far below 1 in the other three districts."
+  },
+  {
+   "judul": "A Jayapura zone would rest on a different sector mix",
+   "teks": "The authors point to the sectors in Quadrants I and II around Jayapura: health, other services, manufacturing, and business services. Sarmi, Keerom, and Kabupaten Jayapura are the suggested sites, since Jayapura lies far from Sorong."
+  }
+ ],
+ "interpretasi": [
+  "The fact is a pattern of concentration. Kota Jayapura and Kota Sorong have nearly the same breadth of base sectors, and the gap between the two areas lies in the surrounding districts. The authors read this as a sign that Kota Jayapura gives its neighbours more spillovers than Kota Sorong does.",
+  "That reading goes beyond what these measures can show. A neighbouring district may have base sectors of its own, for reasons unconnected to the city. The authors themselves name access, infrastructure, population density, geography, and history as possible causes of the gap between the two areas."
+ ],
+ "kebijakan": [
+  [
+   "Bring more investment into eastern SEZs",
+   "The paper cites the 2023 SEZ council report, in which Sorong SEZ has the lowest realised investment of any zone, stated as 3.41 billion."
+  ],
+  [
+   "Build a new SEZ in the Jayapura area",
+   "The zone would cover sectors with potential under the location quotient and shift-share results, across Kota Jayapura, Kabupaten Jayapura, Keerom, and Sarmi."
+  ],
+  [
+   "Link urban and non-urban areas",
+   "Policy should ease integration around the two cities so that sectoral activity can spread to non-urban districts."
+  ]
+ ],
+ "batas": [
+  "The paper uses descriptive tools with two time points for shift-share, so it cannot identify causes or measure spillovers directly. The authors note that LQ considers only GRDP shares and that shift-share assumes linear change, so both need qualitative support. The eight districts were chosen by the authors, which limits any wider reading. Tambrauw and Maybrat also have very small sector values, so their shift-share results rest on little activity."
+ ],
+ "sitasi": "Attaqi, F., Pratama, M. I., &amp; Komariah, S. (2024). <i>Peran Kawasan Urban dalam Peningkatan Ekonomi Papua: Analisis Location Quotient dan Shift Share Sektoral di Tingkat Kabupaten/Kota.</i> Paper for Papedanomics, Bank Indonesia West Papua.",
+ "foto_pilih": {
+  "url": "https://commons.wikimedia.org/wiki/File:Jayapura_dari_Bukit_Jayapura.jpg",
+  "teks": "Jayapura at night. Photo: Dimas H (WMID), CC BY-SA 4.0, darkened"
+ },
+ "tautan": "https://drive.google.com/drive/folders/1SGwxmb5rLxnqPlTDCGPhzBA_Qpw8ItNw"
+}

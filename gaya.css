@@ -314,3 +314,7 @@ footer a { color: #fff; }
 .dua-jenis.tiga { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .tanda-gagal { color: var(--ink-3); }
 @media (max-width: 820px) { .kepala-foto.siang::before { background: rgba(8,42,66,.86); } .dua-jenis.tiga { grid-template-columns: minmax(0, 1fr); } }
+.kepala-foto .tanda li.lokasi::before { content: ""; display: inline-block; width: 9px; height: 9px; margin-right: 6px; border-radius: 50% 50% 50% 0; background: var(--emas); transform: rotate(-45deg); }
+.naskah table td:first-child { min-width: 130px; }
+.naskah table.teks td { min-width: 130px; }
+

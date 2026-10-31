@@ -1,0 +1,309 @@
+{
+ "slug": "trans-sumatra-toll-road",
+ "pendek": "The Trans-Sumatra Toll Road",
+ "desk": "Summary of a paper on how output, jobs, and productivity in Sumatra's districts changed with distance from the Trans-Sumatra toll road.",
+ "super": "Competition paper · 5th Sumatranomics, Bank Indonesia · 2024",
+ "judul": "Paving the Road to Growth: The Role of the Trans-Sumatra Toll Road in Sumatra's Economy",
+ "judul_asli": "Mengaspal Jalan Pertumbuhan Ekonomi: Analisis Peran Jalan Tol Trans Sumatera dalam Meningkatkan Perekonomian Pulau Sumatra",
+ "lead": "Districts within 25 km of the toll road gained more workers than distant districts, but output per worker did not change significantly.",
+ "hasil": "2nd place",
+ "tanda": [
+  "132 districts, Sumatra",
+  "DiD, long difference, QGIS"
+ ],
+ "penulis": "Muhammad Ilham Pratama, Athillah Ayu Istiqomah, Anindya Ayu Putri Paramitha",
+ "lokasi": {
+  "wilayah": "Sumatra",
+  "wilayah_lat": -0.5,
+  "wilayah_lon": 102.0,
+  "skala": "pulau",
+  "ajang_kota": null,
+  "ajang_lat": null,
+  "ajang_lon": null
+ },
+ "ringkasan": [
+  "Sumatran districts close to the toll road gained more jobs than distant ones between 2017 and 2023, without a matching rise in output per worker. In 132 districts, those within 25 km of the road added 20,767 more workers than those beyond 50 km. That equals about 11 percent of the average district's workforce of 185,869.",
+  "The gain in jobs came through accommodation and food, with 4,473 more workers, and manufacturing, with 3,499. Total GRDP also rose by about 14 percent of the sample mean, relative to distant districts. Agriculture shows no significant change in GRDP or workers.",
+  "These results weaken under a second test. A long-difference model finds no significant link with GRDP, and the total workforce result falls to 10,187, significant only at 10 percent. Manufacturing is the one result that holds at 5 percent in both models, at 3,202 workers in the second.",
+  "With only two years of data, the paper cannot test whether near and far districts were on the same path before the road, so these estimates are associations. The authors argue for finishing the network, protecting lagging districts, and linking the road with special economic zones."
+ ],
+ "rantai": [
+  [
+   "tol",
+   "Toll sections open",
+   "Some sections open from late 2017, and only part of the network runs by 2023"
+  ],
+  [
+   "cincin",
+   "Distance bands are set",
+   "QGIS distance from each district centre: 0–25, 25–50, and over 50 km"
+  ],
+  [
+   "gudang",
+   "Three sectors are followed",
+   "Agriculture, accommodation and food, and manufacturing"
+  ],
+  [
+   "banding",
+   "Two years are compared",
+   "2017 and 2023, in difference-in-differences and long-difference models"
+  ]
+ ],
+ "pertanyaan": [
+  "Sumatra produces 22.08 percent of national GDP, second only to Java, and it grew 4.48 percent year on year in the second quarter of 2024. A Bank Indonesia growth diagnostic in 2015 named electricity, road quality, and corruption among its constraints. The Trans-Sumatra toll road, planned at 2,854 km in four stages, addresses the second of these.",
+  "Few studies measure what this road has done for districts, and fewer use each district's distance from it. The paper asks how GRDP, employment, and labour productivity changed with proximity to the road, in total and in three sectors."
+ ],
+ "metode": [
+  "The sample covers 132 districts in eight provinces, leaving out Bangka Belitung and Riau Islands because the sea separates them from the road. GRDP comes from CEIC, workers from SAKERNAS, and controls from SUSENAS. Productivity is GRDP divided by workers. About 20 percent of districts lie within 25 km of an open section, 9 percent at 25 to 50 km, and 71 percent beyond 50 km.",
+  "Following Ghani et al. (2014), the paper estimates a difference-in-differences model with district fixed effects and a long-difference model of the change from 2017 to 2023. Both compare nearby districts with those beyond 50 km and use standard errors that allow for heteroskedasticity. Variance inflation factors average 2.40 and 2.22, well under the paper's limit of 5."
+ ],
+ "grafik": {
+  "judul": "Workers rose within 25 km of the road in accommodation and manufacturing",
+  "sub": "Change in thousands of workers relative to districts more than 50 km from the road, 2017 to 2023, difference-in-differences.",
+  "data": [
+   {
+    "grup": "0–25 km from the road",
+    "baris": [
+     [
+      "All sectors",
+      20.767,
+      7.647,
+      true
+     ],
+     [
+      "Accommodation",
+      4.473,
+      1.753,
+      true
+     ],
+     [
+      "Manufacturing",
+      3.499,
+      1.469,
+      true
+     ],
+     [
+      "Agriculture",
+      0.8419,
+      2.217,
+      false
+     ]
+    ]
+   },
+   {
+    "grup": "25–50 km from the road",
+    "baris": [
+     [
+      "All sectors",
+      11.211,
+      6.07,
+      false
+     ],
+     [
+      "Accommodation",
+      1.284,
+      1.159,
+      false
+     ],
+     [
+      "Manufacturing",
+      1.586,
+      1.978,
+      false
+     ],
+     [
+      "Agriculture",
+      5.37,
+      4.033,
+      false
+     ]
+    ]
+   }
+  ],
+  "rentang": [
+   -10,
+   40
+  ],
+  "garis": [
+   0,
+   10,
+   20,
+   30
+  ],
+  "aria": "Within 25 km of the toll road, total, accommodation, and manufacturing workers rise significantly and agriculture does not. At 25 to 50 km no estimate is significant at 5 percent.",
+  "sumber": "Authors' estimates in a difference-in-differences model with district fixed effects and controls for population and for the shares of men, urban residents, working-age people, and people with upper-secondary schooling. Distances are measured in QGIS from district administrative centres to the nearest toll road section.",
+  "kaki": "Source: authors' estimates, Sumatranomics paper. Two periods, 2017 and 2023. Estimates are associations because parallel trends cannot be tested."
+ },
+ "tabel": {
+  "kolom": [
+   "Outcome",
+   "Sector",
+   "DiD, 0–25 km",
+   "DiD, 25–50 km",
+   "Long difference, 0–25 km",
+   "Long difference, 25–50 km"
+  ],
+  "baris": [
+   [
+    "GRDP",
+    "All sectors",
+    "2,090** (936.3)",
+    "1,456 (1,229)",
+    "−169.9 (478.7)",
+    "42.8 (1,422)"
+   ],
+   [
+    "GRDP",
+    "Accommodation and food",
+    "98.75*** (31.35)",
+    "14.19 (16.50)",
+    "17.04 (20.62)",
+    "−20.24 (17.03)"
+   ],
+   [
+    "GRDP",
+    "Manufacturing",
+    "92.17 (198.5)",
+    "679.4 (448.7)",
+    "−137.5 (214.1)",
+    "398.6 (431.0)"
+   ],
+   [
+    "GRDP",
+    "Agriculture",
+    "−141.7 (297.0)",
+    "−175.8 (187.9)",
+    "−7.15 (293.2)",
+    "−347.9 (210.6)"
+   ],
+   [
+    "Workers",
+    "All sectors",
+    "20,767*** (7,647)",
+    "11,211* (6,070)",
+    "10,187* (5,704)",
+    "5,426 (4,969)"
+   ],
+   [
+    "Workers",
+    "Accommodation and food",
+    "4,473** (1,753)",
+    "1,284 (1,159)",
+    "−41.94 (1,236)",
+    "−1,017 (1,001)"
+   ],
+   [
+    "Workers",
+    "Manufacturing",
+    "3,499** (1,469)",
+    "1,586 (1,978)",
+    "3,202** (1,442)",
+    "1,641 (1,999)"
+   ],
+   [
+    "Workers",
+    "Agriculture",
+    "841.9 (2,217)",
+    "5,370 (4,033)",
+    "−7.15 (293.2)‡",
+    "−347.9 (210.6)‡"
+   ],
+   [
+    "Productivity",
+    "All sectors",
+    "−0.001 (0.00)",
+    "0.001 (0.01)",
+    "0.00 (0.00)",
+    "0.00 (0.01)"
+   ],
+   [
+    "Productivity",
+    "Accommodation and food",
+    "0.005 (0.01)",
+    "0.004 (0.01)",
+    "0.00 (0.00)",
+    "0.01 (0.01)"
+   ],
+   [
+    "Productivity",
+    "Manufacturing",
+    "−0.015 (0.02)",
+    "0.041 (0.04)",
+    "−0.01 (0.03)",
+    "0.05 (0.05)"
+   ],
+   [
+    "Productivity",
+    "Agriculture",
+    "−0.003 (0.00)",
+    "−0.004 (0.00)",
+    "0.00 (0.00)",
+    "0.00 (0.00)"
+   ]
+  ],
+  "catatan": "Each cell compares districts in that band with districts more than 50 km from the road. Robust standard errors in parentheses. *** p &lt; 0.01, ** p &lt; 0.05, * p &lt; 0.1. No estimate can be checked for parallel trends with two periods, so all are associations. The paper labels GRDP in million rupiah, but the sample mean of 15,370.83 suggests billions. ‡ This column repeats the agriculture GRDP column in the source table, which points to a copying error. 264 to 266 observations for DiD, 131 for long difference."
+ },
+ "jenis": [
+  [
+   "warung",
+   "Accommodation and food",
+   "Workers rise by 4,473 at the 5 percent level and GRDP by 98.75 at the 1 percent level. Neither holds in the long-difference model, at −41.94 (1,236) workers and 17.04 (20.62) GRDP."
+  ],
+  [
+   "manufaktur",
+   "Manufacturing",
+   "Workers rise by 3,499 in one model and 3,202 in the other, both at the 5 percent level. GRDP does not change significantly, at 92.17 (198.5), so the added jobs are not matched by measured output."
+  ],
+  [
+   "sawah",
+   "Agriculture",
+   "No significant link in either direction. GRDP moves by −141.7 (297.0) and workers by 841.9 (2,217). The authors point to weather and land, which better roads do not change."
+  ]
+ ],
+ "jenis_judul": "Three sectors, three outcomes",
+ "sub": [
+  {
+   "judul": "Productivity shows no significant change in any sector",
+   "teks": "The estimates within 25 km are −0.001 (0.00) for all sectors, 0.005 (0.01) for accommodation and food, −0.015 (0.02) for manufacturing, and −0.003 (0.00) for agriculture. The long-difference estimates are also null. More workers near the road did not come with higher measured output per worker."
+  },
+  {
+   "judul": "The GRDP result does not survive the second model",
+   "teks": "Total GRDP rises by 2,090 (936.3) in the difference-in-differences model and falls to −169.9 (478.7) in the long-difference model. The workforce result keeps its sign but halves, from 20,767 (7,647) to 10,187 (5,704)."
+  },
+  {
+   "judul": "The association fades with distance",
+   "teks": "At 25 to 50 km, only total workers shows any signal, at 11,211 (6,070), and that is significant only at 10 percent. No sector estimate and no GRDP estimate is significant in this band."
+  }
+ ],
+ "interpretasi": [
+  "The data show more jobs near the road, a weaker link with GRDP, and no link with productivity. They also show that the network was unfinished in 2023, with sections open in only some provinces.",
+  "The authors read the job gains as better access for labour-intensive sectors that depend on mobility and markets. They suggest that productivity depends more on technology and worker skills than on access alone. Both are plausible readings that the paper does not test directly."
+ ],
+ "kebijakan": [
+  [
+   "Complete the network",
+   "Sections open by 2023 are scattered and unconnected, so the authors urge the government to finish the road from Aceh to Lampung."
+  ],
+  [
+   "Protect lagging districts",
+   "Infrastructure can pull activity toward richer areas, so the paper calls for policies that encourage investment in less developed districts."
+  ],
+  [
+   "Link the road with special economic zones",
+   "Developing the toll road together with special economic zones could strengthen the effect of both on growth."
+  ],
+  [
+   "Pair roads with skills and technology",
+   "Roads alone did not raise productivity in these data, so the authors propose worker training and technology development alongside construction."
+  ]
+ ],
+ "batas": [
+  "With only 2017 and 2023 in the data, the paper cannot test parallel trends, and sectoral data for earlier years are unavailable. Late 2017 is also when the first sections opened, so the base year may not be fully untreated. Road length and toll gates could not be included as controls. Distance is a simple measure from the district centre. The authors note that 2023 is early, since the network was still being built and full effects take longer to appear. The difference between the two models also calls for caution."
+ ],
+ "sitasi": "Pratama, M. I., Istiqomah, A. A., &amp; Paramitha, A. A. P. (2024). <i>Mengaspal Jalan Pertumbuhan Ekonomi: Analisis Peran Jalan Tol Trans Sumatera dalam Meningkatkan Perekonomian Pulau Sumatra.</i> Paper for the 5th Sumatranomics, Bank Indonesia.",
+ "foto_pilih": {
+  "url": "https://commons.wikimedia.org/wiki/File:Trans%E2%80%93Sumatra_Toll_Road_(Toll_Route_3,_Asian_Highway_25)_-_Jambi_or_South_Sumatra_(11_December_%2724).jpg",
+  "teks": "Trans-Sumatra toll road. Photo: Firzafp, CC BY 4.0, darkened"
+ },
+ "tautan": "https://drive.google.com/drive/folders/1LxL8SWhTDcNhXDWfCkc8Rvshu3zn9V0r"
+}
