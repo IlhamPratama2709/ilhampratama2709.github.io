@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Farm Succession in Bali · Muhammad Ilham Pratama</title>
+<meta name="description" content="Summary of PENSAR 2024, a survey of farm succession in two villages of Tabanan, Bali.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../gaya.css">
+<link rel="stylesheet" href="pensar.css">
+<script>try { if (localStorage.getItem("tema") === "dark") document.documentElement.dataset.theme = "dark"; } catch (e) {}</script>
+</head>
+<body>
+
+<header class="pita">
+  <div class="wadah">
+    <a class="merek" href="../index.html">Muhammad Ilham Pratama</a>
+    <nav>
+      <a href="../index.html#sekarang">Now</a>
+      <a href="../index.html#riset">Research</a>
+      <a href="../index.html#metode">Methods</a>
+      <a href="../index.html#pengalaman">Experience</a>
+      <a class="tombol" href="https://drive.google.com/drive/folders/1XornkzLssT57CylmrSPeVhFlCcZnFp9r">Portfolio</a>
+      <button class="tema" id="tema" type="button" aria-label="Switch colour theme">
+        <svg class="bulan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+        <svg class="matahari" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="kepala-foto pensar pensar-bali">
+  <div class="wadah">
+    <p class="supertitle">PENSAR 2024 · Kanopi FEB UI, Universitas Indonesia</p>
+    <h1>Seeds of Change: Understanding the Factors Affecting Succession in Balinese Farming Communities</h1>
+    <p class="lead">Fewer than one in three farm households in two Tabanan villages has a successor, and parents want one far more often than children do.</p>
+    <ul class="tanda"><li class="emas">Research team member</li><li>Primary survey, January 2024</li><li>Probit · in-depth interview</li></ul>
+    <p class="meta-kepala">Research Division, Kanopi FEB UI. Summary by Muhammad Ilham Pratama.</p>
+    <a class="tombol-unduh" href="https://drive.google.com/file/d/1mOmF5fr7q78fdtAJbCfZE90Oyb-QLWxf/view">Download the report (PDF, 32 pages, 26 MB, in Indonesian)</a>
+  </div>
+  <span class="kredit-foto">Research team in Tabanan, Bali. Photo: Kanopi FEB UI</span>
+</div>
+
+<div class="wadah tata-paper">
+  <aside class="daftar-isi" aria-label="On this page">
+    <b>On this page</b>
+    <div>
+      <a href="#tebak">Take a guess</a><a href="#ringkasan">Executive summary</a><a href="#sekilas">How the study works</a><a href="#pertanyaan">The question</a><a href="#metode-paper">Data and method</a><a href="#temuan">Findings</a><a href="#lapangan">From the field</a><a href="#kebijakan">Policy implications</a><a href="#batas">Limitations</a><a href="#peran">My role</a><a href="#sitasi">How to cite</a>
+    </div>
+  </aside>
+
+  <main class="naskah">
+    <section id="tebak">
+      <figure class="gr tebak" data-angka="32">
+        <header><h3>Before you read: take a guess</h3><p>In what share of 69 farm households does the farmer want a child to take over, and the child want to as well?</p></header>
+        <div class="geser"><input type="range" min="0" max="100" value="50" aria-label="Your guess in percent"><output>50%</output><button type="button" data-cek>Check</button></div>
+        <p class="jawaban" hidden></p>
+      </figure>
+    </section>
+
+    <section id="ringkasan">
+      <h2>Executive summary</h2>
+      <p>Most farm households in Bengkel and Beraban have no successor. In a January 2024 survey of 69 households in Tabanan, 67 percent of farmers wanted a child to continue the farm, but only 33 percent of households had a child who wanted to. Both conditions held in 22 households, or 32 percent, and farmers in the two villages already average 57 to 58 years of age.</p>
+      <p>Children's experience matters more in these data than the farm's income. Succession reaches 52 percent where a child helps on the farm and 23 percent where none does. In the probit model, a child's schooling and the number of children lower the likelihood of succession, as does having only daughters. Land size and annual profit show no significant effect.</p>
+      <p>An interview with the head of the Beraban subak, the local irrigation association, explains much of this pattern. Three to five hectares of wet rice land are converted to housing each year, input costs eat into rice margins, and tourism offers young people work away from sun and mud.</p>
+      <p>But the sample is small and was reached by convenience, with 15 regressors on 67 observations in the full model. The results point to associations worth testing on a larger scale and do not establish cause.</p>
+      <figure class="gr">
+        <header><h3>Three surveys, three provinces</h3><p>PENSAR field sites from 2023 to 2025. Each stop opens that year's report.</p></header>
+        <div class="peta-kotak">
+          <svg viewBox="0 0 116 43" aria-hidden="true" shape-rendering="crispEdges"><path class="daratan" d="M1 1h2v1h-2zM1 2h6v1h-6zM1 3h7v1h-7zM2 4h7v1h-7zM53 4h3v1h-3zM3 5h7v1h-7zM33 5h1v1h-1zM52 5h6v1h-6zM79 5h1v1h-1zM5 6h6v1h-6zM33 6h1v1h-1zM52 6h6v1h-6zM76 6h1v1h-1zM6 7h7v1h-7zM28 7h1v1h-1zM51 7h6v1h-6zM2 8h2v1h-2zM7 8h6v1h-6zM28 8h1v1h-1zM50 8h8v1h-8zM3 9h1v1h-1zM7 9h7v1h-7zM50 9h8v1h-8zM83 9h2v1h-2zM8 10h10v1h-10zM36 10h1v1h-1zM50 10h8v1h-8zM82 10h2v1h-2zM6 11h1v1h-1zM9 11h10v1h-10zM36 11h2v1h-2zM44 11h2v1h-2zM49 11h10v1h-10zM75 11h1v1h-1zM82 11h3v1h-3zM6 12h2v1h-2zM10 12h10v1h-10zM22 12h3v1h-3zM35 12h4v1h-4zM43 12h17v1h-17zM65 12h3v1h-3zM74 12h2v1h-2zM81 12h4v1h-4zM7 13h1v1h-1zM10 13h15v1h-15zM35 13h25v1h-25zM63 13h12v1h-12zM81 13h3v1h-3zM10 14h12v1h-12zM23 14h2v1h-2zM35 14h22v1h-22zM62 14h12v1h-12zM81 14h4v1h-4zM8 15h2v1h-2zM12 15h11v1h-11zM24 15h1v1h-1zM36 15h21v1h-21zM62 15h2v1h-2zM81 15h2v1h-2zM88 15h3v1h-3zM9 16h1v1h-1zM12 16h10v1h-10zM23 16h2v1h-2zM35 16h22v1h-22zM62 16h1v1h-1zM67 16h2v1h-2zM80 16h4v1h-4zM88 16h3v1h-3zM93 16h3v1h-3zM13 17h9v1h-9zM36 17h21v1h-21zM62 17h2v1h-2zM67 17h5v1h-5zM81 17h3v1h-3zM89 17h9v1h-9zM101 17h2v1h-2zM9 18h2v1h-2zM14 18h10v1h-10zM36 18h20v1h-20zM61 18h4v1h-4zM66 18h6v1h-6zM81 18h1v1h-1zM87 18h1v1h-1zM89 18h10v1h-10zM103 18h2v1h-2zM10 19h1v1h-1zM14 19h10v1h-10zM26 19h2v1h-2zM35 19h1v1h-1zM38 19h17v1h-17zM61 19h8v1h-8zM70 19h2v1h-2zM74 19h2v1h-2zM81 19h3v1h-3zM88 19h1v1h-1zM91 19h8v1h-8zM102 19h3v1h-3zM106 19h3v1h-3zM15 20h10v1h-10zM26 20h3v1h-3zM38 20h17v1h-17zM61 20h6v1h-6zM71 20h2v1h-2zM74 20h4v1h-4zM87 20h3v1h-3zM93 20h6v1h-6zM103 20h1v1h-1zM105 20h6v1h-6zM12 21h1v1h-1zM15 21h14v1h-14zM38 21h17v1h-17zM60 21h8v1h-8zM95 21h5v1h-5zM103 21h12v1h-12zM13 22h1v1h-1zM16 22h14v1h-14zM31 22h3v1h-3zM38 22h16v1h-16zM60 22h9v1h-9zM83 22h5v1h-5zM93 22h7v1h-7zM102 22h14v1h-14zM13 23h2v1h-2zM17 23h11v1h-11zM32 23h2v1h-2zM42 23h12v1h-12zM60 23h4v1h-4zM65 23h5v1h-5zM78 23h3v1h-3zM82 23h8v1h-8zM94 23h7v1h-7zM102 23h14v1h-14zM18 24h10v1h-10zM49 24h5v1h-5zM60 24h4v1h-4zM65 24h4v1h-4zM70 24h1v1h-1zM78 24h3v1h-3zM83 24h2v1h-2zM88 24h2v1h-2zM95 24h21v1h-21zM19 25h9v1h-9zM49 25h2v1h-2zM53 25h1v1h-1zM62 25h2v1h-2zM66 25h5v1h-5zM95 25h2v1h-2zM98 25h18v1h-18zM20 26h8v1h-8zM62 26h2v1h-2zM66 26h5v1h-5zM100 26h16v1h-16zM21 27h7v1h-7zM61 27h3v1h-3zM67 27h4v1h-4zM104 27h12v1h-12zM22 28h6v1h-6zM61 28h3v1h-3zM67 28h4v1h-4zM106 28h10v1h-10zM23 29h5v1h-5zM61 29h3v1h-3zM69 29h1v1h-1zM72 29h1v1h-1zM94 29h2v1h-2zM98 29h2v1h-2zM108 29h8v1h-8zM26 30h6v1h-6zM64 30h1v1h-1zM94 30h1v1h-1zM98 30h2v1h-2zM108 30h8v1h-8zM27 31h7v1h-7zM40 31h1v1h-1zM98 31h2v1h-2zM109 31h7v1h-7zM26 32h22v1h-22zM51 32h1v1h-1zM98 32h2v1h-2zM109 32h7v1h-7zM29 33h19v1h-19zM52 33h1v1h-1zM65 33h1v1h-1zM84 33h1v1h-1zM91 33h2v1h-2zM109 33h7v1h-7zM31 34h18v1h-18zM78 34h2v1h-2zM81 34h1v1h-1zM90 34h2v1h-2zM108 34h8v1h-8zM38 35h12v1h-12zM57 35h1v1h-1zM77 35h2v1h-2zM87 35h1v1h-1zM90 35h2v1h-2zM107 35h9v1h-9zM41 36h11v1h-11zM53 36h13v1h-13zM67 36h1v1h-1zM69 36h7v1h-7zM107 36h3v1h-3zM113 36h3v1h-3zM51 37h10v1h-10zM62 37h7v1h-7zM114 37h2v1h-2zM74 38h2v1h-2zM60 39h4v1h-4zM72 39h4v1h-4zM62 40h3v1h-3zM72 40h3v1h-3zM67 41h1v1h-1zM71 41h2v1h-2zM70 42h1v1h-1z"/><polyline class="rute" points="38.9,35 50.8,36.9 28.7,21.25" shape-rendering="auto"/></svg>
+          <a class="henti kiri" href="pensar-yogyakarta.html" style="left:33.56%;top:81.4%" aria-label="PENSAR 2023, Yogyakarta"><i></i><span>2023 <em>Yogyakarta</em></span></a>
+          <a class="henti kanan" href="pensar-bali.html" aria-current="page" style="left:43.81%;top:85.76%" aria-label="PENSAR 2024, Tabanan"><i></i><span>2024 <em>Tabanan</em></span></a>
+          <a class="henti samping" href="pensar-bangka.html" style="left:24.78%;top:49.42%" aria-label="PENSAR 2025, Bangka"><i></i><span>2025 <em>Bangka</em></span></a>
+          <img class="pejalan" id="pejalan" src="../images/sprite/enumerator.png" alt="" style="left:25.93%;top:73.08%">
+        </div>
+        <footer>Map: author's pixel drawing from provincial boundaries, on a grid of 0.4 degrees.</footer>
+      </figure>
+    </section>
+
+    <section id="sekilas">
+      <h2>How the study works</h2>
+      <ol class="rantai"><li><img src="../images/sprite/desa.png" alt=""><b>Two rice villages are chosen</b><span>Bengkel and Beraban, Kediri sub-district, Tabanan</span></li><li><img src="../images/sprite/klip.png" alt=""><b>Farm households are surveyed</b><span>38 enumerators and 69 households</span></li><li><img src="../images/sprite/bicara.png" alt=""><b>A subak head is interviewed</b><span>Trends, obstacles, and local responses</span></li><li><img src="../images/sprite/grafik.png" alt=""><b>Succession is modelled</b><span>Probit on farmer, child, and farm traits</span></li></ol>
+    </section>
+
+    <section id="pertanyaan">
+      <h2>The question</h2>
+      <p>Bali's farm sector is ageing while tourism draws its young people away. The primary sector made up 15.17 percent of provincial GDP in 2020 and employed 22.51 percent of workers. Those shares give farming a weight that a tourism-centred view of the island can overlook, and the provincial government treats farmer regeneration as a priority.</p>
+      <p>Succession needs agreement between two generations, which is why the study defines it strictly. A household counts as having a successor only if the farmer wants a child to take over and the child wants to as well. Research elsewhere links succession to education, land ownership, and farm income, but little of it comes from Bali, where tourism sets the opportunity cost of farming.</p>
+      <p>The study asks which characteristics of the farmer, the child, and the farm are associated with succession in Tabanan, and what local actors see as the main obstacles.</p>
+    </section>
+
+    <section id="metode-paper">
+      <h2>Data and method</h2>
+      <p>The survey took place in Kediri, the sub-district with the largest rice output in Tabanan. Bengkel contributed 32 respondents and Beraban 37, in proportion to the number of farmers in each. Enumerators worked in pairs and interviewed farmers who met the criteria and were easiest to reach, which makes this a convenience sample.</p>
+      <p>Succession is a binary outcome, so the choice lay between probit and logit, and the probit model had the lower AIC and BIC. The model adds farmer traits, child traits, and farm traits in turn before combining them. An in-depth interview with the head of the Beraban subak then covered trends in succession, the reasons behind them, and local efforts to keep farming viable.</p>
+      <p>The average farmer in the sample has 9.46 years of schooling, about the level of junior secondary school, manages 66 are of land, or two-thirds of a hectare, and earns an annual profit of IDR 34.63 million, although the standard deviation of profit is almost as large as the mean. Tools are not the obstacle. Some 96 percent use modern technology, mainly tractors, and 81 percent received extension services in the past year.</p>
+    </section>
+
+    <section id="temuan">
+      <h2>Findings</h2>
+      <p>The gap lies between generations. Two-thirds of farmers want the farm to stay in the family, but only one-third of households have a child who agrees, so almost every household with a willing child also has a willing parent. Bengkel does better than Beraban, at 38 percent against 27 percent.</p>
+      <figure class="gr" data-gr>
+        <header><h3>Parents want a successor twice as often as children want the farm</h3><p>Share of 69 farm households, percent.</p></header>
+        <div class="gr-tab" role="tablist"><button role="tab" aria-selected="true" data-p="grafik">Chart</button><button role="tab" aria-selected="false" data-p="tabel">Table</button><button role="tab" aria-selected="false" data-p="sumber">Sources</button></div>
+        <div data-panel="grafik"><div class="batang"><div class="baris-gr" style="--x:67%" title="Farmer wants a successor: 67 percent"><span>Farmer wants a successor</span><div><i></i></div><b>67%</b></div><div class="baris-gr" style="--x:33%" title="Child wants to continue: 33 percent"><span>Child wants to continue</span><div><i></i></div><b>33%</b></div><div class="baris-gr sorot" style="--x:32%" title="Both: 32 percent"><span>Both</span><div><i></i></div><b>32%</b></div></div><p class="judul-kecil">Households with a successor, by village</p><div class="batang"><div class="baris-gr" style="--x:38%" title="Bengkel: 38 percent"><span>Bengkel</span><div><i></i></div><b>38%</b></div><div class="baris-gr" style="--x:27%" title="Beraban: 27 percent"><span>Beraban</span><div><i></i></div><b>27%</b></div></div></div>
+        <div data-panel="tabel" hidden><div class="tabel-gulir"><table class="kanan"><thead><tr><th>Group</th><th>Share, percent</th></tr></thead><tbody><tr><td>Farmer wants a successor</td><td>67</td></tr><tr><td>Child wants to continue</td><td>33</td></tr><tr><td>Both (22 of 69)</td><td>32</td></tr><tr><td>Bengkel</td><td>38</td></tr><tr><td>Beraban</td><td>27</td></tr></tbody></table></div></div>
+        <div data-panel="sumber" hidden><p>PENSAR 2024 survey of 69 households. The report gives the combined rate as 31.88 percent.</p></div>
+        <footer>Source: Kanopi FEB UI, PENSAR 2024 survey.</footer>
+      </figure>
+
+      <h3>Time on the farm counts</h3>
+      <p>Children who help on the farm are far more likely to stay. Succession is 29 percentage points higher among households where a child helps, and the coefficient of 1.477 is significant at the 5 percent level in the full model. Early exposure may build both skill and the wish to continue. Or children who already plan to farm may simply be the ones who help.</p>
+      <p>Other child traits matter as well. Older children are more likely to take over, while each additional child lowers the likelihood, possibly because heirs compete. More schooling also lowers it, which fits a higher opportunity cost in an island economy with a large tourism sector. Households with only daughters are less likely to have a successor than households with only sons, in line with studies that link succession to gender norms in farming.</p>
+      <div class="tabel-gulir"><table class="kanan"><thead><tr><th>Probit, full model</th><th>Coefficient</th></tr></thead><tbody><tr><td>Child helps on the farm</td><td>1.477** (0.592)</td></tr><tr><td>Number of children</td><td>−2.322** (0.933)</td></tr><tr><td>Age of children</td><td>0.0674** (0.0300)</td></tr><tr><td>Schooling of children</td><td>−0.282*** (0.0951)</td></tr><tr><td>All daughters (vs all sons)</td><td>−4.142*** (1.362)</td></tr><tr><td>Farmer schooling</td><td>0.127* (0.0659)</td></tr><tr><td>Tenant (vs owner)</td><td>−1.501* (0.910)</td></tr><tr><td>Land size</td><td>0.00824 (0.00575)</td></tr><tr><td>Annual profit (log)</td><td>−0.102 (0.223)</td></tr><tr><td>Modern technology</td><td>−3.357** (1.598)</td></tr><tr><td>Extension services</td><td>1.458** (0.668)</td></tr></tbody></table><p class="catatan">Standard errors in parentheses. *** p &lt; 0.01, ** p &lt; 0.05, * p &lt; 0.1. 67 observations, pseudo R² 0.457. Crop diversification is left out because the report&#39;s table and text disagree on its sign.</p></div>
+
+      <h3>Farm income does not explain it</h3>
+      <p>Neither land size nor annual profit is significant, which departs from much of the earlier literature, and the interview offers one reason: young people weigh working conditions as well as pay, and tourism jobs spare them the sun and mud of the rice field. Modern technology has a negative coefficient of −3.357, which the report links to the cost of running machines. Tractor diesel needs a letter from the village head and a barcode, with a limit of 30 litres a day.</p>
+    </section>
+
+    <section id="lapangan">
+      <h2>From the field</h2>
+      <p>The head of the Beraban subak described a sector that is under pressure from several sides. Farmland is sold as foreign and tourism demand raises its price, and a blocked channel can leave fields downstream without water. Harvest labour now comes mostly from Java, at IDR 300,000 to 350,000 a day, because nearly everyone local works in tourism.</p>
+      <div class="dua-foto">
+        <figure><img src="../images/riset/pensar/bali-wawancara.jpg" alt="The research team interviewing the head of the Beraban subak" loading="lazy"><figcaption>The interview in Beraban. Photo: Kanopi FEB UI.</figcaption></figure>
+        <figure><img src="../images/web/lapangan-1.jpg" alt="Fieldwork in Tabanan, Bali" loading="lazy"><figcaption>Fieldwork in Tabanan, January 2024.</figcaption></figure>
+      </div>
+      <p>The pandemic showed how thin the attachment to farming has become. Farming held up while tourism collapsed, and many tourism workers turned to the land on the promise that they would stay, but when tourism recovered they went back, and much of the land they had taken on now lies idle. The subak head's own two sons have declined to take over, and new entrants are mostly retirees.</p>
+      <blockquote>"Farmers in general are never well off."<cite>Head of the Beraban subak. Translated from Indonesian.</cite></blockquote>
+    </section>
+
+    <section id="kebijakan">
+      <h2>Policy implications</h2>
+      <ol>
+        <li><b>Raise the return to farming.</b> The report calls for direct incentives for farmers, together with investment in irrigation, water access, and storage, which would lower operating costs.</li>
+        <li><b>Train farmers and their children together.</b> Education programmes on modern technology, crop choice, and sustainable practice would build the skills that make farming a more attractive career. The result on helping suggests starting young.</li>
+        <li><b>Link farming to the sectors that are growing.</b> Rice-field tours were planned in Beraban before the pandemic. Support for such ventures could draw young people back and raise public regard for farming.</li>
+        <li><b>Build demand for local produce.</b> The subak head reported that consumers resist paying a price at which farmers can make a living, so awareness of local produce is part of the answer.</li>
+      </ol>
+    </section>
+
+    <section id="batas">
+      <h2>Limitations</h2>
+      <p>The study rests on 69 households in two villages, reached by convenience sampling, so the results do not represent Bali. The full model estimates many coefficients on 67 observations, which makes large values such as those for number of children and all daughters unstable. Succession is measured by stated wishes and not by actual transfers of land. One interview, in one village, carries much of the explanation.</p>
+    </section>
+
+    <section id="peran">
+      <h2>My role</h2>
+      <p>I was a member of the research team for PENSAR 2024, the yearly field study of Kanopi FEB UI. The research division prepared the study, and 38 enumerators carried out the survey over two days in Bengkel and Beraban. The report is team work, and this page is my own summary of it.</p>
+    </section>
+
+    <section id="sitasi">
+      <h2>How to cite</h2>
+      <p class="sitasi">Research Division, Kanopi FEB UI. (2024). <i>Seeds of Change: Understanding the Factors Affecting Succession in Balinese Farming Communities.</i> Penelitian Besar 2024. Faculty of Economics and Business, Universitas Indonesia.</p>
+      <p><a class="tombol-unduh" href="https://drive.google.com/file/d/1mOmF5fr7q78fdtAJbCfZE90Oyb-QLWxf/view">Download the report (PDF, 32 pages, 26 MB, in Indonesian)</a></p>
+      <h3>Other PENSAR editions</h3>
+      <div class="edisi-lain"><a href="pensar-yogyakarta.html"><b>PENSAR 2023, Yogyakarta</b><span>Malioboro merchants follow their neighbours</span></a><a href="pensar-bangka.html"><b>PENSAR 2025, Bangka</b><span>Bangka residents back tourism but take little part</span></a></div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wadah">
+    <span>Muhammad Ilham Pratama · Jakarta · <a href="mailto:ilhamp2709@gmail.com">ilhamp2709@gmail.com</a> · <a href="https://www.linkedin.com/in/muhammad-ilham-pratama-172825245/">LinkedIn</a></span>
+    <span>Last updated October 2026</span>
+  </div>
+</footer>
+
+<script src="../paper.js"></script>
+<script src="pensar.js"></script>
+<script src="../tema.js"></script>
+</body>
+</html>

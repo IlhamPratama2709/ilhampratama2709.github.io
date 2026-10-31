@@ -15,17 +15,18 @@ const RISET = [
   [2025, "Beyond Megadams: ASHARE, community-scale hydropower in ASEAN", "ASEAN Energy Youth Awards", "ASEAN", "Cost-benefit, policy design", "1st", ["env", "dev"], D + "1lR7BCJoVCx0V04G-SrbuCG3lCloWAY-F"],
   [2025, "Climate adaptation, PPP investment, and the renewable energy transition", "Purnomo Yusgiantoro Center", "214 countries", "Panel RE", "1st", ["env"], D + "1ZREd8SFRDNU_pdkqsHj2mFGwd-d-xm1G"],
   [2025, "Indonesia's energy dilemma: power plants, growth, and emissions", "CORE Indonesia", "Districts, Indonesia", "Staggered DiD, QGIS", "3rd", ["env"], D + "1UV52JhkpQH1kLXI5dAD8dG3SND9OJJdg"],
+  [2025, "Unveiling local support: community views on tourism in Bangka", "PENSAR, Kanopi FEB UI", "193 respondents, Bangka Tengah", "Ordered logit, LQ, shift-share", "Fieldwork", ["reg", "dev"], "riset/pensar-bangka.html"],
   [2025, "Tracing the economic footprints of tourism in Yogyakarta", "Jogja Economic Symposium, BI Yogyakarta", "Yogyakarta", "Input-output, LQ, OLS", "Submitted", ["reg", "dev"], ""],
   [2025, "Addressing student hunger: PIP, PKH, and food security", "EQUITAS, UGM", "Households, Indonesia", "Regression", "4th", ["dev"], D + "173uQh_IHYAbkirnOtEf4DiZdym2mwSh0"],
   [2025, "R&D investment and employment across ICT layers", "22nd Economix", "2,500 firms, 55 countries", "Panel FE", "4th, best presenter", ["lab"], D + "1fZXRW2p5Mx-6Gpb7s9LY48_CFpIm7XUT"],
   [2024, "The Trans-Sumatra Toll Road and Sumatra's economy", "5th Sumatranomics, BI North Sumatra", "132 districts, Sumatra", "DiD, long difference, QGIS", "2nd", ["reg"], D + "1LxL8SWhTDcNhXDWfCkc8Rvshu3zn9V0r"],
   [2024, "Urban areas and Papua's economy", "Papedanomics, BI West Papua", "8 districts, Papua", "LQ, shift-share", "1st", ["reg", "dev"], D + "1SGwxmb5rLxnqPlTDCGPhzBA_Qpw8ItNw"],
   [2024, "Infrastructure investment, local content (TKDN), and growth", "Indonesia Economics Olympiad, FEB UI", "Indonesia", "Policy essay, cost-benefit", "Grand champion", ["dev", "lab"], D + "1QbsSs1YuHylx0cl5XJw-v5bFolys61bE"],
-  [2024, "Seeds of Change: farmer succession in Bali", "PENSAR, Kanopi FEB UI", "69 farm households, Tabanan", "Probit, interviews", "Fieldwork", ["lab", "dev"], "https://drive.google.com/file/d/1mOmF5fr7q78fdtAJbCfZE90Oyb-QLWxf/view"],
-  [2023, "Digital payment use among MSMEs in Yogyakarta", "PENSAR, Kanopi FEB UI", "150 respondents, Malioboro", "Logit, survey", "Fieldwork", ["lab"], "https://drive.google.com/file/d/1izLhpKzmDImSsq8G0cXNSOKzO8d1NKii/view"],
+  [2024, "Seeds of Change: farmer succession in Bali", "PENSAR, Kanopi FEB UI", "69 farm households, Tabanan", "Probit, interviews", "Fieldwork", ["lab", "dev"], "riset/pensar-bali.html"],
+  [2023, "Digital payment use among MSMEs in Yogyakarta", "PENSAR, Kanopi FEB UI", "150 respondents, Malioboro", "Logit, survey", "Fieldwork", ["lab"], "riset/pensar-yogyakarta.html"],
 ];
 // jumlah paper di RISET yang memakai tiap metode
-const METODE = [["Staggered DiD / DiD", 5], ["Spatial data (QGIS, NTL)", 5], ["Panel FE / RE", 4], ["LQ and shift-share", 3], ["Logit / probit", 2], ["Primary survey", 2], ["Cost-benefit analysis", 2], ["Input-output", 1]];
+const METODE = [["Staggered DiD / DiD", 5], ["Spatial data (QGIS, NTL)", 5], ["Panel FE / RE", 4], ["LQ and shift-share", 4], ["Logit / probit", 3], ["Primary survey", 3], ["Cost-benefit analysis", 2], ["Input-output", 1]];
 
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
 const jumlah = (t) => RISET.filter((r) => r[6].includes(t)).length;

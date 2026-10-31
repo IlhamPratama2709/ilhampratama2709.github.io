@@ -5,7 +5,7 @@ document.querySelectorAll(".att").forEach((el) => {
   const f = (v) => v.toFixed(3).replace("-", "−");
   const baris = data.map((g) => `<div class="att-grup">${g.grup}</div>` + g.baris.map(([nama, att, se, nyata]) => {
     const a = att - 1.96 * se, b = att + 1.96 * se;
-    return `<div class="att-baris${nyata ? " nyata" : ""}" title="${nama}: ATT ${f(att)}, 95% CI ${f(a)} to ${f(b)}"><span>${nama}</span><div class="att-bidang"><i class="att-nol" style="left:${x(0)}%"></i><i class="att-selang" style="left:${x(a)}%;width:${x(b) - x(a)}%"></i><i class="att-titik" style="left:${x(att)}%"></i></div><span class="att-nilai">${f(att)}</span></div>`;
+    return `<div class="att-baris${nyata ? " nyata" : ""}" title="${nama}: ${el.dataset.ukuran || "ATT"} ${f(att)}, 95% CI ${f(a)} to ${f(b)}"><span>${nama}</span><div class="att-bidang"><i class="att-nol" style="left:${x(0)}%"></i><i class="att-selang" style="left:${x(a)}%;width:${x(b) - x(a)}%"></i><i class="att-titik" style="left:${x(att)}%"></i></div><span class="att-nilai">${f(att)}</span></div>`;
   }).join("")).join("");
   const sumbu = `<div class="att-sumbu"><span></span><div>${garis.map((v) => `<span style="left:${x(v)}%">${v.toFixed(2).replace("-", "−")}</span>`).join("")}</div><span></span></div>`;
   el.innerHTML = baris + sumbu;
