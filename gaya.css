@@ -10,22 +10,19 @@
   --border: #d5dde3; --border-strong: #b9c6d0;
   --accent-wash: #dcebf5; --tautan: #1f6a96;
   --st-hijau: #2e7d4f;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --pita: #0a2436; --pita-tinta: #c9d8e4; --supertitle: #8cc4e6;
-    --bg-page: #0f1d27; --bg-panel-2: #1a2d3b;
-    --ink-1: #e6eef4; --ink-2: #a9bccb; --ink-3: #8aa0b2; --teks: #dbe5ec;
-    --border: rgba(230,238,244,.14); --border-strong: rgba(230,238,244,.26);
-    --accent-wash: rgba(92,162,206,.20); --tautan: #8cc3e6; --st-hijau: #6cc08d;
-  }
+  --pembuka-dasar: #e8f1f6; --pembuka-tinta: #003a5d; --pembuka-sub: #33495b; --pembuka-super: #8a6414;
+  --pembuka-tirai: linear-gradient(90deg, rgba(240,246,250,.97) 0%, rgba(240,246,250,.92) 55%, rgba(240,246,250,.5) 100%);
+  --pembuka-tirai-hp: rgba(240,246,250,.92);
 }
 :root[data-theme="dark"] {
-  --pita: #0a2436; --pita-tinta: #c9d8e4; --supertitle: #8cc4e6;
-  --bg-page: #0f1d27; --bg-panel-2: #1a2d3b;
-  --ink-1: #e6eef4; --ink-2: #a9bccb; --ink-3: #8aa0b2; --teks: #dbe5ec;
-  --border: rgba(230,238,244,.14); --border-strong: rgba(230,238,244,.26);
+  --pita: #143247; --pita-tinta: #c9d8e4; --supertitle: #8cc4e6;
+  --bg-page: #17303f; --bg-panel-2: #213d4f;
+  --ink-1: #e6eef4; --ink-2: #b4c6d4; --ink-3: #9db1c1; --teks: #dbe5ec;
+  --border: rgba(230,238,244,.16); --border-strong: rgba(230,238,244,.3);
   --accent-wash: rgba(92,162,206,.20); --tautan: #8cc3e6; --st-hijau: #6cc08d;
+  --pembuka-dasar: #143247; --pembuka-tinta: #fff; --pembuka-sub: #d3e0ea; --pembuka-super: #f0d79f;
+  --pembuka-tirai: linear-gradient(90deg, rgba(20,50,71,.96) 0%, rgba(20,50,71,.88) 55%, rgba(20,50,71,.55) 100%);
+  --pembuka-tirai-hp: rgba(20,50,71,.9);
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 64px; }
@@ -43,15 +40,21 @@ img { max-width: 100%; }
 .pita nav a:hover { color: #fff; box-shadow: inset 0 -2px 0 var(--emas); }
 .pita nav a.tombol { color: #003a5d; background: var(--emas); padding: 5px 12px; font-weight: 700; }
 .pita nav a.tombol:hover { box-shadow: none; filter: brightness(1.08); }
+.tema { display: grid; place-items: center; width: 34px; height: 34px; padding: 0; background: none; color: var(--pita-tinta); border: 1px solid rgba(219,229,240,.45); border-radius: 0; cursor: pointer; }
+.tema:hover { color: #fff; border-color: var(--emas); }
+.tema svg { width: 18px; height: 18px; }
+.tema .matahari { display: none; }
+:root[data-theme="dark"] .tema .matahari { display: block; }
+:root[data-theme="dark"] .tema .bulan { display: none; }
 
 /* pembuka dengan foto latar */
-.pembuka { position: relative; color: #fff; background: #003a5d url("images/web/latar.jpg") center 40% / cover no-repeat; }
-.pembuka::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,40,66,.96) 0%, rgba(0,46,74,.88) 55%, rgba(0,46,74,.55) 100%); }
+.pembuka { position: relative; color: var(--pembuka-tinta); background: var(--pembuka-dasar) url("images/web/latar.jpg") center 40% / cover no-repeat; }
+.pembuka::before { content: ""; position: absolute; inset: 0; background: var(--pembuka-tirai); }
 .pembuka .wadah { position: relative; display: grid; grid-template-columns: 1fr 240px; gap: 48px; align-items: center; padding-top: 64px; padding-bottom: 56px; }
-.pembuka .supertitle { color: #f0d79f; }
-.pembuka h1 { color: #fff; }
-.pembuka .lead2 { color: #d3e0ea; }
-.pembuka .tautan-baris a { color: #fff; }
+.pembuka .supertitle { color: var(--pembuka-super); }
+.pembuka h1 { color: var(--pembuka-tinta); }
+.pembuka .lead2 { color: var(--pembuka-sub); }
+.pembuka .tautan-baris a { color: var(--pembuka-tinta); }
 .supertitle { color: var(--supertitle); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin: 0 0 10px; }
 h1 { font: 600 46px/1.1 var(--serif); margin: 0 0 20px; }
 .lead { font-size: 20px; line-height: 1.5; max-width: 620px; margin: 0 0 14px; }
@@ -151,10 +154,14 @@ footer a { color: #fff; }
 
 @media (max-width: 820px) {
   .wadah { padding: 0 16px; }
-  .pita nav a:not(.tombol) { display: none; }
-  .pembuka::before { background: rgba(0,40,66,.9); }
-  .pembuka .wadah { grid-template-columns: 1fr; gap: 24px; padding-top: 32px; padding-bottom: 40px; }
-  .pembuka .foto-kol { order: -1; max-width: 140px; }
+  html { scroll-padding-top: 96px; }
+  .pita .wadah { position: relative; flex-wrap: wrap; height: auto; gap: 4px 12px; padding-top: 10px; padding-bottom: 6px; }
+  .merek { line-height: 34px; padding-right: 44px; }
+  .pita nav { width: 100%; gap: 14px; font-size: 13px; overflow-x: auto; scrollbar-width: none; padding-bottom: 4px; }
+  .pita nav a { flex: none; }
+  .tema { position: absolute; top: 10px; right: 16px; }
+  .pembuka::before { background: var(--pembuka-tirai-hp); }
+  .pembuka .wadah { grid-template-columns: 1fr 170px; gap: 28px; padding-top: 32px; padding-bottom: 40px; }
   h1 { font-size: 34px; }
   .lead { font-size: 17px; }
   .bidang .wadah { grid-template-columns: 1fr 1fr; }
@@ -166,4 +173,24 @@ footer a { color: #fff; }
   .kartu-utama .ilustrasi { width: 90px; }
   .lapangan { grid-template-columns: 1fr 1fr; }
   .bar-baris { grid-template-columns: 140px 1fr 24px; }
+}
+
+@media (max-width: 560px) {
+  .pembuka .wadah { grid-template-columns: 1fr; gap: 24px; }
+  .pembuka .foto-kol { order: -1; max-width: 140px; }
+  .bidang .wadah { grid-template-columns: 1fr; }
+  .bidang a, .bidang a:nth-child(2n) { padding: 14px 0; border-left: 0; }
+  .bidang a + a { border-top: 1px solid var(--border); }
+  .tabel-gulir thead { display: none; }
+  .tabel-gulir table, .tabel-gulir tbody, .tabel-gulir tr, .tabel-gulir td { display: block; width: auto; }
+  .tabel-gulir tr { position: relative; padding: 12px 0; border-bottom: 1px solid var(--border); }
+  .tabel-gulir td { border: 0; padding: 0; }
+  .tabel-gulir td.judul { min-width: 0; margin: 2px 0 6px; }
+  .tabel-gulir td.hasil { white-space: normal; margin-top: 2px; }
+  .tabel-gulir td:nth-child(3), .tabel-gulir td:nth-child(4) { display: inline; font-size: 13px; color: var(--ink-2); }
+  .tabel-gulir td:nth-child(3)::after { content: " · "; }
+  .garis-waktu, .garis-waktu tbody, .garis-waktu tr, .garis-waktu td { display: block; width: auto; }
+  .garis-waktu tr { padding: 10px 0; border-bottom: 1px solid var(--border); }
+  .garis-waktu td { border: 0; padding: 0; }
+  .lapangan { grid-template-columns: 1fr; }
 }
