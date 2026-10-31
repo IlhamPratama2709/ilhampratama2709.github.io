@@ -8,9 +8,9 @@ const BIDANG = [
 ];
 // [tahun, judul, ajang, cakupan, metode, hasil, topik, tautan]
 const RISET = [
-  [2025, "Paving the Way, Sustaining Hope: the Trans-Java Toll Road and East Java's economy", "EJAVEC, BI East Java", "30 districts, East Java", "Staggered DiD, QGIS", "1st", ["reg", "dev"], D + "1uC9JmEj6kYn9F45ns69kg-oHdkfTuZY1"],
-  [2025, "When Spillovers Don't Spill: heterogeneous effects of SEZs in Sumatra", "7th Sumatranomics, BI North Sumatra", "154 districts, Sumatra", "Staggered DiD, panel FE", "2nd", ["reg"], D + "10jnVVOmJh2rUiqU8_geWk38uhrGXIBLg"],
-  [2025, "Illuminating Downstreaming: SEZs and industrial estates in Sulampua", "Aksinomi Sulampua, BI South Sulawesi", "104 districts, Sulampua", "Staggered DiD, NTL", "2nd", ["reg"], D + "1JDZW6Fr6wlXxAnTlXOBfcEwfrEWPnhjz"],
+  [2025, "Paving the Way, Sustaining Hope: the Trans-Java Toll Road and East Java's economy", "EJAVEC, BI East Java", "30 districts, East Java", "Staggered DiD, QGIS", "1st", ["reg", "dev"], "riset/trans-java-toll-road.html"],
+  [2025, "When Spillovers Don't Spill: heterogeneous effects of SEZs in Sumatra", "6th Sumatranomics, BI North Sumatra", "154 districts, Sumatra", "Staggered DiD, panel FE", "2nd", ["reg"], "riset/when-spillovers-dont-spill.html"],
+  [2025, "Illuminating Downstreaming: SEZs and industrial estates in Sulampua", "Aksinomi Sulampua, BI South Sulawesi", "104 districts, Sulampua", "Staggered DiD, NTL", "2nd", ["reg"], "riset/illuminating-downstreaming.html"],
   [2025, "Investment acceleration in Papua's new autonomous regions", "BAKU PANDAI, BI Papua", "New provinces, Papua", "LQ, shift-share", "1st", ["reg", "dev"], D + "12IpqYRGb5PKY8FzJsbHgR0ecel3A2DFn"],
   [2025, "Beyond Megadams: ASHARE, community-scale hydropower in ASEAN", "ASEAN Energy Youth Awards", "ASEAN", "Cost-benefit, policy design", "1st", ["env", "dev"], D + "1lR7BCJoVCx0V04G-SrbuCG3lCloWAY-F"],
   [2025, "Climate adaptation, PPP investment, and the renewable energy transition", "Purnomo Yusgiantoro Center", "214 countries", "Panel RE", "1st", ["env"], D + "1ZREd8SFRDNU_pdkqsHj2mFGwd-d-xm1G"],
@@ -18,7 +18,7 @@ const RISET = [
   [2025, "Tracing the economic footprints of tourism in Yogyakarta", "Jogja Economic Symposium, BI Yogyakarta", "Yogyakarta", "Input-output, LQ, OLS", "Submitted", ["reg", "dev"], ""],
   [2025, "Addressing student hunger: PIP, PKH, and food security", "EQUITAS, UGM", "Households, Indonesia", "Regression", "4th", ["dev"], D + "173uQh_IHYAbkirnOtEf4DiZdym2mwSh0"],
   [2025, "R&D investment and employment across ICT layers", "22nd Economix", "2,500 firms, 55 countries", "Panel FE", "4th, best presenter", ["lab"], D + "1fZXRW2p5Mx-6Gpb7s9LY48_CFpIm7XUT"],
-  [2024, "The Trans-Sumatra Toll Road and Sumatra's economy", "5th and 6th Sumatranomics, BI North Sumatra", "132 districts, Sumatra", "DiD, long difference, QGIS", "2nd", ["reg"], D + "1LxL8SWhTDcNhXDWfCkc8Rvshu3zn9V0r"],
+  [2024, "The Trans-Sumatra Toll Road and Sumatra's economy", "5th Sumatranomics, BI North Sumatra", "132 districts, Sumatra", "DiD, long difference, QGIS", "2nd", ["reg"], D + "1LxL8SWhTDcNhXDWfCkc8Rvshu3zn9V0r"],
   [2024, "Urban areas and Papua's economy", "Papedanomics, BI West Papua", "8 districts, Papua", "LQ, shift-share", "1st", ["reg", "dev"], D + "1SGwxmb5rLxnqPlTDCGPhzBA_Qpw8ItNw"],
   [2024, "Infrastructure investment, local content (TKDN), and growth", "Indonesia Economics Olympiad, FEB UI", "Indonesia", "Policy essay, cost-benefit", "Grand champion", ["dev", "lab"], D + "1QbsSs1YuHylx0cl5XJw-v5bFolys61bE"],
   [2024, "Seeds of Change: farmer succession in Bali", "PENSAR, Kanopi FEB UI", "69 farm households, Tabanan", "Probit, interviews", "Fieldwork", ["lab", "dev"], "https://drive.google.com/file/d/1mOmF5fr7q78fdtAJbCfZE90Oyb-QLWxf/view"],

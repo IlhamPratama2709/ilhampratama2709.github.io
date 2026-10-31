@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When Spillovers Don't Spill · Muhammad Ilham Pratama</title>
+<meta name="description" content="Summary of a paper on how special economic zones in Sumatra affect output, jobs, and productivity in nearby districts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../gaya.css">
+<script>try { if (localStorage.getItem("tema") === "dark") document.documentElement.dataset.theme = "dark"; } catch (e) {}</script>
+</head>
+<body>
+
+<header class="pita">
+  <div class="wadah">
+    <a class="merek" href="../index.html">Muhammad Ilham Pratama</a>
+    <nav>
+      <a href="../index.html#sekarang">Now</a>
+      <a href="../index.html#riset">Research</a>
+      <a href="../index.html#metode">Methods</a>
+      <a href="../index.html#pengalaman">Experience</a>
+      <a class="tombol" href="https://drive.google.com/drive/folders/1XornkzLssT57CylmrSPeVhFlCcZnFp9r">Portfolio</a>
+      <button class="tema" id="tema" type="button" aria-label="Switch colour theme">
+        <svg class="bulan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+        <svg class="matahari" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="kepala-foto siang" style="background-image: url('../images/riset/sumatra/kepala.jpg')">
+  <div class="wadah">
+    <p class="supertitle">Competition paper · 6th Sumatranomics, Bank Indonesia North Sumatra · 2025</p>
+    <h1>When Spillovers Don't Spill: Unpacking the Heterogeneous Effects of Special Economic Zones in Sumatra</h1>
+    <p class="lead">What a zone does to its neighbours depends on what the zone does, and many apparent gains began before it opened.</p>
+    <ul class="tanda"><li class='emas'>2nd place</li><li>154 districts, 2010–2024</li><li>Staggered DiD · QGIS</li></ul>
+    <p class="meta-kepala">Muhammad Syakhsan Haq, Muhammad Ilham Pratama, Siti Komariah</p>
+  </div>
+  <a class="kredit-foto" href="https://commons.wikimedia.org/wiki/File:Batam_Centre_-_panoramio.jpg">Batam, Riau Islands. Photo: musnahterinjak, CC BY-SA 3.0, darkened</a>
+</div>
+
+<div class="wadah tata-paper">
+  <aside class="daftar-isi" aria-label="On this page">
+    <b>On this page</b>
+    <div><a href="#ringkasan">Executive summary</a><a href="#sekilas">How the study works</a><a href="#pertanyaan">The question</a><a href="#metode-paper">Data and method</a><a href="#temuan">Findings</a><a href="#penjelasan">Interpretation</a><a href="#kebijakan">Policy implications</a><a href="#batas">Limitations</a><a href="#sitasi">How to cite</a></div>
+  </aside>
+
+  <main class="naskah">
+    <section id="ringkasan">
+      <h2>Executive summary</h2>
+      <p>Living near a special economic zone in Sumatra brings no uniform gain. This paper follows 154 districts from 2010 to 2024 around six operating zones, grouped into extractive, services, and innovation and tourism zones. The results change direction with both the zone type and the sector.</p>
+      <p>The clearest evidence is in trade productivity, where the tests support a causal reading. Productivity rises about 1.58 percent near innovation and tourism zones and falls about 1.17 percent near services zones. The rise of about 1.27 percent near extractive zones is significant only at the 10 percent level.</p>
+      <p>GDP results need more care. Near innovation and tourism zones total GDP is 0.126 log points higher, and near services zones it is 0.099 lower. But both fail the parallel-trends test, so those districts were already on different paths before the zones opened.</p>
+      <p>A zone's legal status is therefore no instant remedy. Many of the differences look like older agglomeration around established industrial estates, and zone policy works best when it is designed for each type of zone.</p>
+    </section>
+
+<section id="sekilas">
+      <h2>How the study works</h2>
+      <ol class="rantai"><li><img src="../images/riset/ikon/kawasan.svg" alt=""><b>A zone opens</b><span>Six zones, including Arun Lhokseumawe, Sei Mangkei, and Nongsa</span></li><li><img src="../images/riset/ikon/cincin.svg" alt=""><b>Neighbours are identified</b><span>District centres within 60 km of a zone, measured in QGIS</span></li><li><img src="../images/riset/ikon/ekstraktif.svg" alt=""><b>Zones are grouped</b><span>Extractive, services, and innovation and tourism</span></li><li><img src="../images/riset/ikon/banding.svg" alt=""><b>Sectors are compared</b><span>Total, manufacturing, trade, and transport, against districts farther away</span></li></ol>
+    </section>
+
+<section id="pertanyaan">
+      <h2>The question</h2>
+      <p>Zones are central to Sumatra's economic plans, yet the evidence on them is mixed. Studies report gains in manufacturing and income in some places, and weak results at Batam and Mandalika in others. Most treat a zone as a simple yes-or-no status, examine one zone alone, or pool all zones together.</p>
+      <p>This paper adds distance and zone type. It asks whether proximity to each type of zone changes GDP, jobs, and productivity across four levels of the economy.</p>
+    </section>
+
+<section id="metode-paper">
+      <h2>Data and method</h2>
+      <p>The paper uses an unbalanced annual panel of Sumatra's 154 districts. A district counts as treated when its centre lies within 60 km of a zone, a distance taken from earlier work on spillovers. The main estimates look two years after opening, when tenants are assumed to have reached normal production.</p>
+      <p>Zones opened in different years, so the paper uses difference-in-differences with staggered adoption and district fixed effects. Each result then faces a parallel-trends test. Only a result that passes it can support a causal reading, and many of the GDP results do not.</p>
+    </section>
+
+<section id="temuan">
+      <h2>Findings</h2>
+      <figure class="gr" data-gr>
+        <header><h3>Zone type changes the direction of trade productivity</h3><p>Estimated change in log trade productivity within 60 km of a zone, two years after opening. All three pass the parallel-trends test.</p></header>
+        <div class="gr-tab" role="tablist"><button role="tab" aria-selected="true" data-p="grafik">Chart</button><button role="tab" aria-selected="false" data-p="tabel">Table</button><button role="tab" aria-selected="false" data-p="sumber">Sources</button></div>
+        <div data-panel="grafik">
+          <div class="att" role="img" aria-label="Trade productivity rises near innovation and tourism zones and falls near services zones." data-rentang="[-0.04, 0.04]" data-garis="[-0.03, 0, 0.03]" data-att='[{"grup": "Trade productivity", "baris": [["Extractive", 0.0126, 0.00652, false], ["Innovation", 0.0157, 0.0066, true], ["Services", -0.0117, 0.005, true]]}]'></div>
+          <div class="att-legenda"><span><i class="isi"></i>Significant at 5 percent</span><span><i></i>Not significant at 5 percent</span><span>Lines show 95 percent confidence intervals</span></div>
+        </div>
+        <div data-panel="tabel" hidden><div class="tabel-gulir"><table class="kanan"><thead><tr><th>Outcome</th><th>Extractive</th><th>Innovation &amp; tourism</th><th>Services</th></tr></thead><tbody><tr><td>GDP, total</td><td>−0.023 (0.020)</td><td>0.126** (0.054)<span class="tanda-gagal">†</span></td><td>−0.099** (0.050)<span class="tanda-gagal">†</span></td></tr><tr><td>GDP, manufacturing</td><td>−0.141* (0.082)<span class="tanda-gagal">†</span></td><td>0.080 (0.099)</td><td>0.007 (0.111)</td></tr><tr><td>GDP, trade</td><td>0.042* (0.022)<span class="tanda-gagal">†</span></td><td>0.088*** (0.033)<span class="tanda-gagal">†</span></td><td>−0.123*** (0.032)<span class="tanda-gagal">†</span></td></tr><tr><td>GDP, transport</td><td>−0.040 (0.034)</td><td>0.077 (0.051)<span class="tanda-gagal">†</span></td><td>−0.095** (0.042)<span class="tanda-gagal">†</span></td></tr><tr><td>Productivity, manufacturing</td><td>0.022 (0.035)</td><td>0.129 (0.084)</td><td>−0.119 (0.091)</td></tr><tr><td>Productivity, trade</td><td>0.0126* (0.0065)</td><td>0.0157** (0.0066)</td><td>−0.0117** (0.0050)</td></tr><tr><td>Productivity, transport</td><td>0.050 (0.040)<span class="tanda-gagal">†</span></td><td>−0.032 (0.026)</td><td>−0.025 (0.037)</td></tr><tr><td>Workers, total</td><td>−0.144 (0.110)</td><td>0.157 (0.099)</td><td>0.119 (0.085)</td></tr><tr><td>Workers, manufacturing</td><td>−0.022 (0.110)</td><td>−0.350*** (0.112)<span class="tanda-gagal">†</span></td><td>0.227** (0.110)</td></tr><tr><td>Workers, trade</td><td>−0.070 (0.048)</td><td>−0.186*** (0.060)</td><td>0.044 (0.039)</td></tr><tr><td>Workers, transport</td><td>−0.058 (0.095)</td><td>0.152** (0.065)</td><td>−0.066 (0.089)</td></tr></tbody></table></div><p class="catatan">Log outcomes, 0–60 km from a zone, two years after opening. Standard errors in parentheses. *** p &lt; 0.01, ** p &lt; 0.05, * p &lt; 0.1. † Fails the parallel-trends test, so the estimate should not be read as causal.</p></div>
+        <div data-panel="sumber" hidden><p>Authors' estimates in a difference-in-differences model with district fixed effects, year controls, and district controls. Zone locations come from Google Maps and distances from QGIS.</p></div>
+        <footer>Source: authors' estimates, Sumatranomics paper. 154 districts, 2010–2024.</footer>
+      </figure>
+      <h3>Each type of zone leaves a different mark</h3>
+      <div class="dua-jenis tiga"><div><img src="../images/riset/ikon/ekstraktif.svg" alt=""><h4>Extractive zones</h4><p>No significant change in jobs. Trade productivity is 1.27 percent higher, at the 10 percent level. The paper reads this as a capital-intensive pattern with few new jobs in the early years.</p></div><div><img src="../images/riset/ikon/wisata.svg" alt=""><h4>Innovation and tourism zones</h4><p>Transport jobs rise by 0.152 log points. Trade jobs fall by about 17 percent, which suggests that workers move from trade to tourism services.</p></div><div><img src="../images/riset/ikon/jasa.svg" alt=""><h4>Services zones</h4><p>Manufacturing jobs rise by 0.227 log points, while trade productivity falls. Business services may support production without reaching local traders.</p></div></div>
+      <h3>GDP gaps opened before the zones did</h3>
+      <p>Most GDP estimates fail the parallel-trends test. These include total GDP near innovation and tourism zones and near services zones, and trade GDP for all three types. The productivity and jobs models pass in nearly every case, so they carry the stronger conclusions.</p>
+    </section>
+
+<section id="penjelasan">
+      <h2>Interpretation</h2>
+      <p>The pre-existing gaps point to two explanations. Investors may have moved before the zones opened, or the zones may sit in places that were already growing around older industrial estates. The paper cannot separate these two readings.</p>
+      <p>The sector results fit a story of reallocation. Near tourism zones, workers appear to leave formal trade for hotels, restaurants, and transport. That is a shift between sectors, so it should not be counted as new employment for the region.</p>
+    </section>
+
+<section id="kebijakan">
+      <h2>Policy implications</h2>
+      <ol>
+        <li><b>Set a different strategy for each zone type.</b> Extractive zones could serve as processing hubs for coal, palm oil, and rubber, with trade and logistics links to ports such as Kuala Tanjung and Dumai.</li>
+        <li><b>Link tourism zones to local firms.</b> Supply chains should reach small and medium trading firms in Aceh and the Riau Islands.</li>
+        <li><b>Connect services zones to industry.</b> Links to industrial clusters in Medan, Pekanbaru, and Palembang would carry spillovers into manufacturing and trade.</li>
+        <li><b>Make zones different from industrial estates.</b> Dedicated infrastructure, integrated logistics, and research facilities would give the status practical meaning.</li>
+      </ol>
+    </section>
+
+<section id="batas">
+      <h2>Limitations</h2>
+      <p>Parallel trends fail in most GDP models, so those results are strong correlations. The paper suggests anticipation by investors as one cause. Synthetic control methods and firm-level data would isolate causal effects more cleanly, and spatial spillover terms would show how districts affect one another.</p>
+    </section>
+
+<section id="sitasi">
+      <h2>How to cite</h2>
+      <p class="sitasi">Haq, M. S., Pratama, M. I., &amp; Komariah, S. (2025). <i>When Spillovers Don't Spill: Unpacking the Heterogeneous Effects of Special Economic Zones in Sumatra.</i> Paper for the 6th Sumatranomics, Bank Indonesia North Sumatra.</p>
+      <p><a href="https://drive.google.com/drive/folders/10jnVVOmJh2rUiqU8_geWk38uhrGXIBLg">Open the paper folder</a>. Other work is in the <a href="../index.html#riset">research list</a>.</p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wadah">
+    <span>Muhammad Ilham Pratama · Jakarta · <a href="mailto:ilhamp2709@gmail.com">ilhamp2709@gmail.com</a> · <a href="https://www.linkedin.com/in/muhammad-ilham-pratama-172825245/">LinkedIn</a></span>
+    <span>Last updated October 2026</span>
+  </div>
+</footer>
+
+<script src="../paper.js"></script>
+<script src="../tema.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Illuminating Downstreaming · Muhammad Ilham Pratama</title>
+<meta name="description" content="Summary of a paper comparing the spillovers of industrial estates and special economic zones in Sulawesi, Maluku, and Papua.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../gaya.css">
+<script>try { if (localStorage.getItem("tema") === "dark") document.documentElement.dataset.theme = "dark"; } catch (e) {}</script>
+</head>
+<body>
+
+<header class="pita">
+  <div class="wadah">
+    <a class="merek" href="../index.html">Muhammad Ilham Pratama</a>
+    <nav>
+      <a href="../index.html#sekarang">Now</a>
+      <a href="../index.html#riset">Research</a>
+      <a href="../index.html#metode">Methods</a>
+      <a href="../index.html#pengalaman">Experience</a>
+      <a class="tombol" href="https://drive.google.com/drive/folders/1XornkzLssT57CylmrSPeVhFlCcZnFp9r">Portfolio</a>
+      <button class="tema" id="tema" type="button" aria-label="Switch colour theme">
+        <svg class="bulan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+        <svg class="matahari" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="kepala-foto siang" style="background-image: url('../images/riset/sulampua/kepala.jpg')">
+  <div class="wadah">
+    <p class="supertitle">Competition paper · Aksinomi Sulampua, Bank Indonesia South Sulawesi · 2025</p>
+    <h1>Illuminating Downstreaming: Spillovers from Special Economic Zones and Industrial Estates in Sulampua</h1>
+    <p class="lead">Older industrial estates are carrying eastern Indonesia's downstreaming so far, and newer zones have yet to show the same results.</p>
+    <ul class="tanda"><li class='emas'>2nd place</li><li>104 districts, 2013–2024</li><li>Staggered DiD · NTL</li></ul>
+    <p class="meta-kepala">Siti Komariah, Faiz Attaqi, Muhammad Ilham Pratama</p>
+  </div>
+  <a class="kredit-foto" href="https://commons.wikimedia.org/wiki/File:Port_of_Bitung.JPG">Port of Bitung, North Sulawesi. Photo: Sakurai Midori, CC BY 2.5, darkened</a>
+</div>
+
+<div class="wadah tata-paper">
+  <aside class="daftar-isi" aria-label="On this page">
+    <b>On this page</b>
+    <div><a href="#ringkasan">Executive summary</a><a href="#sekilas">How the study works</a><a href="#pertanyaan">The question</a><a href="#metode-paper">Data and method</a><a href="#temuan">Findings</a><a href="#penjelasan">Interpretation</a><a href="#kebijakan">Policy implications</a><a href="#batas">Limitations</a><a href="#sitasi">How to cite</a></div>
+  </aside>
+
+  <main class="naskah">
+    <section id="ringkasan">
+      <h2>Executive summary</h2>
+      <p>Industrial estates in Sulawesi, Maluku, and Papua have raised nearby sector output, while special economic zones have not yet done so. Across 104 districts from 2013 to 2024, mining GDP within 60 km of an industrial estate is about 242 percent higher after it opens, and manufacturing GDP about 143 percent higher. The manufacturing estimate is significant at the 10 percent level.</p>
+      <p>Zones show no significant effect on GDP or productivity. Near zones, mining employment falls by 0.327 log points at the 10 percent level, while near industrial estates it rises by 0.467.</p>
+      <p>Maturity may explain much of the gap. Makassar's estate dates from 1988, and most zones are far newer. But the paper also finds signs of congestion where estates sit in places that are already bright at night.</p>
+      <p>These estimates are large and imprecise, so their direction deserves more trust than their size. The paper's main recommendation is land and sea infrastructure that links these sites to the rest of the region.</p>
+    </section>
+
+<section id="sekilas">
+      <h2>How the study works</h2>
+      <ol class="rantai"><li><img src="../images/riset/ikon/manufaktur.svg" alt=""><b>Two kinds of site</b><span>Nine industrial estates and five special economic zones</span></li><li><img src="../images/riset/ikon/cincin.svg" alt=""><b>Neighbours are identified</b><span>District centres within 60 km, measured in QGIS</span></li><li><img src="../images/riset/ikon/malam.svg" alt=""><b>Light is added</b><span>Night-time light tracks infrastructure and activity</span></li><li><img src="../images/riset/ikon/tambang.svg" alt=""><b>Sectors are compared</b><span>Total, mining, and manufacturing, against districts farther away</span></li></ol>
+    </section>
+
+<section id="pertanyaan">
+      <h2>The question</h2>
+      <p>The 2025–2029 national plan prepares Sulampua to become an industrial corridor that links mining with manufacturing. Bappenas lists infrastructure as a serious barrier to growth in almost every province of the region.</p>
+      <p>Both zones and industrial estates are meant to carry this agenda. The paper asks whether either one spreads output, jobs, and productivity to surrounding districts, and whether their effects differ.</p>
+    </section>
+
+<section id="metode-paper">
+      <h2>Data and method</h2>
+      <p>The region has 170 districts, but data gaps and new administrative splits leave 104 in the sample. Provinces newly created in Papua are excluded. Treatment means a district centre within 60 km of a site that is operating, and the main estimates look two years after opening.</p>
+      <p>The model is difference-in-differences with staggered adoption and district fixed effects. It also interacts proximity with night-time light, to ask whether effects change in places with more infrastructure and activity. Coefficients on proximity should be read together with that interaction term.</p>
+    </section>
+
+<section id="temuan">
+      <h2>Findings</h2>
+      <figure class="gr" data-gr>
+        <header><h3>Industrial estates raised sector output and zones have not</h3><p>Estimated change in log GDP within 60 km of a site, two years after opening.</p></header>
+        <div class="gr-tab" role="tablist"><button role="tab" aria-selected="true" data-p="grafik">Chart</button><button role="tab" aria-selected="false" data-p="tabel">Table</button><button role="tab" aria-selected="false" data-p="sumber">Sources</button></div>
+        <div data-panel="grafik">
+          <div class="att" role="img" aria-label="Mining GDP rises near industrial estates. Zone estimates are not significant." data-rentang="[-1.2, 2.6]" data-garis="[-1, 0, 1, 2]" data-att='[{"grup": "Industrial estates", "baris": [["Mining", 1.234, 0.619, true], ["Manufacturing", 0.887, 0.498, false]]}, {"grup": "Special economic zones", "baris": [["Mining", -0.101, 0.308, false], ["Manufacturing", -0.36, 0.254, false]]}]'></div>
+          <div class="att-legenda"><span><i class="isi"></i>Significant at 5 percent</span><span><i></i>Not significant at 5 percent</span><span>Lines show 95 percent confidence intervals</span></div>
+        </div>
+        <div data-panel="tabel" hidden><div class="tabel-gulir"><table class="kanan"><thead><tr><th>Outcome</th><th>Industrial estates</th><th>SEZs</th></tr></thead><tbody><tr><td>GDP, total</td><td>0.419* (0.231)<span class="tanda-gagal">†</span></td><td>−0.257 (0.203)</td></tr><tr><td>GDP, mining</td><td>1.234** (0.619)</td><td>−0.101 (0.308)</td></tr><tr><td>GDP, manufacturing</td><td>0.887* (0.498)</td><td>−0.360 (0.254)</td></tr><tr><td>Productivity, total</td><td>0.313 (0.276)</td><td>−0.152 (0.253)</td></tr><tr><td>Productivity, mining</td><td>0.008 (0.421)</td><td>0.281 (0.384)</td></tr><tr><td>Productivity, manufacturing</td><td>0.902* (0.503)<span class="tanda-gagal">†</span></td><td>−0.655 (0.439)</td></tr><tr><td>Workers, total</td><td>−0.112 (0.262)</td><td>0.498 (0.484)</td></tr><tr><td>Workers, mining</td><td>0.467** (0.211)</td><td>−0.327* (0.169)</td></tr><tr><td>Workers, manufacturing</td><td>0.063 (0.193)</td><td>0.248 (0.426)</td></tr></tbody></table></div><p class="catatan">Log outcomes, 0–60 km from a site, two years after opening. Coefficients on proximity from models that also include proximity × night-time light. Standard errors in parentheses. ** p &lt; 0.05, * p &lt; 0.1. † Fails the parallel-trends test.</p></div>
+        <div data-panel="sumber" hidden><p>Authors' estimates in a difference-in-differences model with district fixed effects and controls. Night-time light is included as a proxy for infrastructure and activity. Site locations come from Google Maps and distances from QGIS.</p></div>
+        <footer>Source: authors' estimates, Aksinomi Sulampua paper. 104 districts, 2013–2024.</footer>
+      </figure>
+      <h3>The two instruments are working differently</h3>
+      <div class="dua-jenis"><div><img src="../images/riset/ikon/manufaktur.svg" alt=""><h4>Industrial estates</h4><p>Mining GDP and mining jobs rise, with a coefficient of 0.467 for jobs. Manufacturing GDP also rises, at the 10 percent level.</p></div><div><img src="../images/riset/ikon/kawasan.svg" alt=""><h4>Special economic zones</h4><p>No significant effect on GDP or productivity in any sector. All zone models pass the parallel-trends test, so these are credible null results for the period studied.</p></div></div>
+      <h3>Gains may thin out in crowded places</h3>
+      <p>The interaction of proximity and night-time light is negative for total GDP (−0.122) and manufacturing GDP (−0.266), both at the 10 percent level. The paper reads this as diseconomies of agglomeration, such as congestion and higher land prices. Light may also reflect household consumption in these places more than production.</p>
+      <h3>The 60 km radius fits the estate results</h3>
+      <p>For total GDP, the estate effect is strongest at 60 km and 90 km and weaker at 30 km and 120 km. That total GDP model fails the parallel-trends test, so this pattern is suggestive. Estimates for zones stay insignificant up to 120 km.</p>
+      <div class="tabel-gulir"><table class="kanan">
+        <thead><tr><th>Radius</th><th>0–30 km</th><th>0–60 km</th><th>0–90 km</th><th>0–120 km</th><th>0–150 km</th></tr></thead>
+        <tbody><tr><td>Industrial estates</td><td>0.158</td><td>0.419*</td><td>0.325**</td><td>0.168*</td><td>0.127</td></tr>
+        <tr><td>SEZs</td><td>0.013</td><td>−0.257</td><td>−0.181</td><td>−0.136</td><td>−0.111*</td></tr></tbody>
+      </table></div>
+      <p class="catatan">Log total GDP. ** p &lt; 0.05, * p &lt; 0.1.</p>
+    </section>
+
+<section id="penjelasan">
+      <h2>Interpretation</h2>
+      <p>Age is the simplest explanation for the gap. Estates have had longer to build supply chains, while zones may need more time and supporting infrastructure before their benefits appear.</p>
+      <p>Mining and manufacturing respond in different ways. Mining appears to use nearby estates for transport, ports, and early processing, and it adds workers. In manufacturing the gain shows up in output more than in jobs, which fits a capital-intensive sector. The data cannot yet show how much of the gap is due to maturity and how much to design.</p>
+    </section>
+
+<section id="kebijakan">
+      <h2>Policy implications</h2>
+      <ol>
+        <li><b>Build land and sea links first.</b> Both are preconditions for moving from mining to manufacturing in the region.</li>
+        <li><b>Follow the economic corridor.</b> The paper focuses on nine economic centres, including Manokwari, Sorong, Ambon, Sofifi, Kendari, and Palu, and draws on projects in the 2025–2029 national plan.</li>
+        <li><b>Spread the gains beyond the site.</b> Supporting infrastructure in surrounding areas would help benefits reach districts around each estate or zone.</li>
+      </ol>
+    </section>
+
+<section id="batas">
+      <h2>Limitations</h2>
+      <p>The sample covers 104 of the region's 170 districts, and it leaves out the new provinces in Papua, where data are thin. Total GDP and manufacturing productivity for estates fail the parallel-trends test. Standard errors are wide, so the percentage effects should be treated with care. Most zones are young, and later data may change the picture.</p>
+    </section>
+
+<section id="sitasi">
+      <h2>How to cite</h2>
+      <p class="sitasi">Komariah, S., Attaqi, F., &amp; Pratama, M. I. (2025). <i>Menyinari Hilirisasi di Jantung Timur Indonesia: Analisis Spillover Kawasan Ekonomi Khusus dan Kawasan Industri dalam Perekonomian Sulampua.</i> Paper for Aksinomi Sulampua, Bank Indonesia South Sulawesi.</p>
+      <p><a href="https://drive.google.com/drive/folders/1JDZW6Fr6wlXxAnTlXOBfcEwfrEWPnhjz">Open the paper folder</a>. Other work is in the <a href="../index.html#riset">research list</a>.</p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wadah">
+    <span>Muhammad Ilham Pratama · Jakarta · <a href="mailto:ilhamp2709@gmail.com">ilhamp2709@gmail.com</a> · <a href="https://www.linkedin.com/in/muhammad-ilham-pratama-172825245/">LinkedIn</a></span>
+    <span>Last updated October 2026</span>
+  </div>
+</footer>
+
+<script src="../paper.js"></script>
+<script src="../tema.js"></script>
+</body>
+</html>

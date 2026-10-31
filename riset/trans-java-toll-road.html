@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Trans-Java Toll Road and East Java's Economy · Muhammad Ilham Pratama</title>
+<meta name="description" content="Summary of a paper on how the Trans-Java toll road changed output, jobs, and productivity in East Java's districts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../gaya.css">
+<script>try { if (localStorage.getItem("tema") === "dark") document.documentElement.dataset.theme = "dark"; } catch (e) {}</script>
+</head>
+<body>
+
+<header class="pita">
+  <div class="wadah">
+    <a class="merek" href="../index.html">Muhammad Ilham Pratama</a>
+    <nav>
+      <a href="../index.html#sekarang">Now</a>
+      <a href="../index.html#riset">Research</a>
+      <a href="../index.html#metode">Methods</a>
+      <a href="../index.html#pengalaman">Experience</a>
+      <a class="tombol" href="https://drive.google.com/drive/folders/1XornkzLssT57CylmrSPeVhFlCcZnFp9r">Portfolio</a>
+      <button class="tema" id="tema" type="button" aria-label="Switch colour theme">
+        <svg class="bulan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+        <svg class="matahari" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="kepala-foto siang" style="background-image: url('../images/riset/ejavec/kepala.jpg')">
+  <div class="wadah">
+    <p class="supertitle">Competition paper · EJAVEC, Bank Indonesia East Java · 2025</p>
+    <h1>Paving the Way, Sustaining Hope: The Impact of the Trans-Java Toll Road on East Java's Economy</h1>
+    <p class="lead">The toll road made transport firms far more productive with fewer workers, and it added lower-productivity jobs in food and lodging.</p>
+    <ul class="tanda"><li class='emas'>1st place</li><li>30 districts, 2011–2023</li><li>Staggered DiD · QGIS</li></ul>
+    <p class="meta-kepala">Athillah Ayu Istiqomah, Muhammad Ilham Pratama, Anindya Ayu Putri Paramitha</p>
+  </div>
+  <a class="kredit-foto" href="https://commons.wikimedia.org/wiki/File:Trans_Java_Toll_Road_km_456.jpg">Trans-Java toll road, Semarang–Solo section. Photo: Apri DAV, CC BY-SA 4.0, darkened</a>
+</div>
+
+<div class="wadah tata-paper">
+  <aside class="daftar-isi" aria-label="On this page">
+    <b>On this page</b>
+    <div><a href="#ringkasan">Executive summary</a><a href="#sekilas">How the study works</a><a href="#pertanyaan">The question</a><a href="#metode-paper">Data and method</a><a href="#temuan">Findings</a><a href="#penjelasan">Interpretation</a><a href="#kebijakan">Policy implications</a><a href="#batas">Limitations</a><a href="#sitasi">How to cite</a></div>
+  </aside>
+
+  <main class="naskah">
+    <section id="ringkasan">
+      <h2>Executive summary</h2>
+      <p>The Trans-Java toll road changed East Java's transport sector more than its wider economy. Across 30 districts from 2011 to 2023, transport GDP within 15 km of a toll gate rose by about 10 percent after opening, and output per transport worker rose by about 56 percent. The number of transport workers fell.</p>
+      <p>Accommodation and food moved the other way. Employment rose near toll gates by 0.197 log points and productivity fell by about 16 percent, which suggests that new jobs were added at low value per worker. GDP in that sector did not change significantly.</p>
+      <p>Manufacturing shows no significant change in GDP, jobs, or productivity. Total GDP looks higher by about 5 percent, but districts near the gates were already on a different path, so that figure cannot be read as the effect of the road.</p>
+      <p>A toll road helps in specific places and sectors. Its gains would reach further with better feeder roads, stronger skills, and spatial planning that is aligned with each new exit.</p>
+    </section>
+
+<section id="sekilas">
+      <h2>How the study works</h2>
+      <ol class="rantai"><li><img src="../images/riset/ikon/tol.svg" alt=""><b>Toll sections open</b><span>East Java sections opened in stages from 2017 to 2020</span></li><li><img src="../images/riset/ikon/cincin.svg" alt=""><b>Nearby districts are identified</b><span>District centres within 15 km of a toll gate</span></li><li><img src="../images/riset/ikon/gudang.svg" alt=""><b>Three sectors are followed</b><span>Transport, manufacturing, and accommodation and food</span></li><li><img src="../images/riset/ikon/banding.svg" alt=""><b>Districts are compared</b><span>30 districts, against those more than 15 km from a gate</span></li></ol>
+    </section>
+
+<section id="pertanyaan">
+      <h2>The question</h2>
+      <p>Infrastructure is widely seen as a driver of growth, yet the gains from a large road are often uneven. Most studies report an average for a whole region, which can hide which places and sectors benefit.</p>
+      <p>This paper asks how the Trans-Java toll road affected GDP, employment, and labour productivity in East Java, and whether those effects differ by distance and by sector.</p>
+    </section>
+
+<section id="metode-paper">
+      <h2>Data and method</h2>
+      <p>East Java has 38 districts, and the paper keeps 30. It leaves out four that already had toll access, Gresik, Pasuruan, Sidoarjo, and Surabaya, and four on Madura, which sit outside the road's reach.</p>
+      <p>Distance is measured in QGIS from each district's administrative centre to the nearest toll gate. Districts within 15 km count as treated once the road opens. The paper uses difference-in-differences with staggered adoption and district fixed effects, then tests parallel trends and repeats the transport results with cut-offs from 5 km to 25 km.</p>
+    </section>
+
+<section id="temuan">
+      <h2>Findings</h2>
+      <figure class="gr" data-gr>
+        <header><h3>Transport output per worker jumped, while food and lodging added lower-productivity jobs</h3><p>Estimated change in log outcomes within 15 km of a toll gate after it opens.</p></header>
+        <div class="gr-tab" role="tablist"><button role="tab" aria-selected="true" data-p="grafik">Chart</button><button role="tab" aria-selected="false" data-p="tabel">Table</button><button role="tab" aria-selected="false" data-p="sumber">Sources</button></div>
+        <div data-panel="grafik">
+          <div class="att" role="img" aria-label="Transport productivity rises and transport employment falls. Accommodation jobs rise and productivity falls. Manufacturing does not change significantly." data-rentang="[-0.6, 0.7]" data-garis="[-0.5, 0, 0.5]" data-att='[{"grup": "Transport", "baris": [["GDP", 0.098, 0.0378, true], ["Workers", -0.344, 0.102, true], ["Productivity", 0.442, 0.113, true]]}, {"grup": "Accommodation and food", "baris": [["GDP", 0.0237, 0.0238, false], ["Workers", 0.197, 0.082, true], ["Productivity", -0.174, 0.0801, true]]}, {"grup": "Manufacturing", "baris": [["GDP", 0.00316, 0.0248, false], ["Workers", -0.032, 0.0728, false], ["Productivity", 0.0352, 0.0716, false]]}]'></div>
+          <div class="att-legenda"><span><i class="isi"></i>Significant at 5 percent</span><span><i></i>Not significant at 5 percent</span><span>Lines show 95 percent confidence intervals</span></div>
+        </div>
+        <div data-panel="tabel" hidden><div class="tabel-gulir"><table class="kanan"><thead><tr><th>Sector</th><th>GDP</th><th>Workers</th><th>Productivity</th></tr></thead><tbody><tr><td>Total</td><td>0.052*** (0.014)<span class="tanda-gagal">†</span></td><td>0.002 (0.004)</td><td>0.050*** (0.013)<span class="tanda-gagal">†</span></td></tr><tr><td>Transport</td><td>0.098** (0.038)</td><td>−0.344*** (0.102)</td><td>0.442*** (0.113)</td></tr><tr><td>Accommodation and food</td><td>0.024 (0.024)</td><td>0.197** (0.082)</td><td>−0.174** (0.080)</td></tr><tr><td>Manufacturing</td><td>0.003 (0.025)</td><td>−0.032 (0.073)</td><td>0.035 (0.072)</td></tr></tbody></table></div><p class="catatan">Log outcomes, districts within 15 km of a toll gate after it opens. Robust standard errors in parentheses. *** p &lt; 0.01, ** p &lt; 0.05. † Fails the parallel-trends test.</p></div>
+        <div data-panel="sumber" hidden><p>Authors' estimates in a difference-in-differences model with district fixed effects and controls. Distances are measured from district administrative centres to toll gates in QGIS.</p></div>
+        <footer>Source: authors' estimates, EJAVEC paper. 30 districts, 360 observations, 2011–2023.</footer>
+      </figure>
+      <h3>Three sectors, three outcomes</h3>
+      <div class="dua-jenis tiga"><div><img src="../images/riset/ikon/gudang.svg" alt=""><h4>Transport</h4><p>GDP rises by about 10 percent and productivity by about 56 percent, while employment falls by 0.344 log points. Firms appear to move more with fewer workers.</p></div><div><img src="../images/riset/ikon/warung.svg" alt=""><h4>Accommodation and food</h4><p>Employment rises by 0.197 log points, GDP does not change significantly, and productivity falls by about 16 percent.</p></div><div><img src="../images/riset/ikon/manufaktur.svg" alt=""><h4>Manufacturing</h4><p>No significant change in any of the three outcomes. A nearby toll gate did not bring a visible shift in factory activity.</p></div></div>
+      <h3>The transport result holds at other distances</h3>
+      <p>Changing the cut-off from 5 km to 25 km leaves the pattern in place. Transport productivity ranges from 0.359 to 0.487 and employment from −0.282 to −0.416, and both stay significant. Transport GDP stays positive at most cut-offs, from 0.065 to 0.098.</p>
+    </section>
+
+<section id="penjelasan">
+      <h2>Interpretation</h2>
+      <p>Lower travel time and cost let transport firms carry more with fewer people. They may be using larger vehicles, more capital, or better logistics, though district data cannot show which.</p>
+      <p>Food and lodging may be growing through small roadside businesses near the gates, which add jobs without much value per worker. Low-productivity firms may also be moving into newly reached areas. The paper treats both as plausible explanations.</p>
+    </section>
+
+<section id="kebijakan">
+      <h2>Policy implications</h2>
+      <ol>
+        <li><b>Improve last-mile links.</b> Better feeder roads would connect industrial areas and farm centres to the gates, since the gains concentrate near them.</li>
+        <li><b>Pair roads with skills and technology.</b> Vocational training in logistics, hospitality, and precision manufacturing would raise the value of jobs along the corridor.</li>
+        <li><b>Plan each exit with local land use.</b> Rest areas could showcase local firms, and new gates should follow spatial plans and industrial estate plans.</li>
+      </ol>
+    </section>
+
+<section id="batas">
+      <h2>Limitations</h2>
+      <p>District data can hide effects that concentrate in one or two subdistricts near an exit. Unobserved factors, such as local governance and spatial planning, may also affect both the road's route and the results. Distance is measured in a straight line, so it does not capture the condition of feeder roads, and travel time may be longer in southern East Java. Total GDP and total productivity fail the parallel-trends test.</p>
+    </section>
+
+<section id="sitasi">
+      <h2>How to cite</h2>
+      <p class="sitasi">Istiqomah, A. A., Pratama, M. I., &amp; Paramitha, A. A. P. (2025). <i>Membentang Jalan, Menopang Harapan: Analisis Dampak Jalan Tol Trans Jawa terhadap Perekonomian Jawa Timur.</i> Paper for EJAVEC, Bank Indonesia East Java.</p>
+      <p><a href="https://drive.google.com/drive/folders/1uC9JmEj6kYn9F45ns69kg-oHdkfTuZY1">Open the paper folder</a>. Other work is in the <a href="../index.html#riset">research list</a>.</p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wadah">
+    <span>Muhammad Ilham Pratama · Jakarta · <a href="mailto:ilhamp2709@gmail.com">ilhamp2709@gmail.com</a> · <a href="https://www.linkedin.com/in/muhammad-ilham-pratama-172825245/">LinkedIn</a></span>
+    <span>Last updated October 2026</span>
+  </div>
+</footer>
+
+<script src="../paper.js"></script>
+<script src="../tema.js"></script>
+</body>
+</html>

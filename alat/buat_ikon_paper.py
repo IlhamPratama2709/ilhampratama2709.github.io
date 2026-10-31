@@ -1,4 +1,4 @@
-"""Ikon isometrik halaman skripsi KEK dan cahaya malam (31 Okt 2026).
+"""Ikon isometrik halaman paper (31 Okt 2026).
 
 Primitif dari iso_dasar.py, palet situs: navy #003a5d, emas #cc9e42.
 
@@ -9,6 +9,13 @@ Primitif dari iso_dasar.py, palet situs: navy #003a5d, emas #cc9e42.
   malam       kota dengan lampu menyala pada malam hari
   manufaktur  kawasan pabrik dan peti kemas
   wisata      kawasan wisata pantai dengan asap dari pesawat dan kendaraan
+  ekstraktif  tangki dan pipa pengolahan sumber daya alam
+  jasa        kantor dan hanggar kawasan jasa
+  tambang     tambang terbuka dengan alat berat
+  pelabuhan   pelabuhan dengan kapal dan derek
+  tol         jalan tol dengan gerbang
+  gudang      gudang dan truk logistik
+  warung      warung dan penginapan di tepi jalan
 
 python3 -I alat/buat_ikon_paper.py
 """
@@ -211,10 +218,92 @@ def wisata(sc):
     asap(sc, 4.9, .9, 1.2, .62, key=3e3)
 
 
-IKON = {'kawasan': kawasan, 'cincin': cincin, 'satelit': satelit, 'banding': banding, 'malam': malam, 'manufaktur': manufaktur, 'wisata': wisata}
+def truk(sc, x, y, warna=TEAL, key=None):
+    sc.box(x, y, .05, 1.0, .42, .42, WHITE, key=key)
+    sc.box(x + 1.0, y, .05, .35, .42, .3, warna, key=key)
+
+
+def ekstraktif(sc):
+    sc.plate(0, 0, 5.4, 5.4, .5, base=RUMPUT)
+    for (x, y, r, h) in [(1.2, 1.3, .8, 1.5), (3.2, 1.2, .8, 1.5), (1.3, 3.5, .65, 1.0)]:
+        sc.cylinder(x, y, 0, r, h, WHITE, key=x + y + .5)
+    sc.box(.8, 2.45, 0, 3.8, .12, .2, GOLD, key=-4e4)
+    sc.box(3.0, 2.5, 0, .12, 2.2, .2, GOLD, key=-4e4)
+    sc.cylinder(4.5, 3.9, 0, .1, 2.6, ABU, key=9)
+    asap(sc, 4.5, 3.9, 2.7, .6, '#e0a15c', key=2e3)
+    palem(sc, 2.4, 4.6, .8); palem(sc, .5, 4.8, .8)
+
+
+def jasa(sc):
+    sc.plate(0, 0, 5.4, 5.4, .5)
+    sc.box(.5, .5, 0, 1.3, 1.3, 2.8, SKY, stroke=True)
+    jendela(sc, .5, 1.8, 0, 1.3, 2.8, WHITE, 3, 5, key=2.2)
+    sc.box(2.3, .5, 0, 1.1, 1.1, 1.8, NAVY, stroke=True)
+    sc.box(1.0, 3.0, 0, 3.4, 1.8, 1.0, WHITE)
+    sc.roof(1.0, 3.0, 1.0, 3.4, 1.8, .55, TEAL)
+    sc.person(4.0, 1.2, 0, GOLD, .9); sc.person(4.5, 2.0, 0, NAVY, .9)
+
+
+def tambang(sc):
+    sc.plate(0, 0, 5.6, 5.6, .5, base='#d9b98a')
+    for i, (o, w) in enumerate([(.3, 5.0), (1.0, 3.6), (1.7, 2.2)]):
+        sc.box(o, o, 0, w, w, .02, ['#c9a26c', '#b78b55', '#a0763f'][i], key=-9e4 + i)
+    sc.box(2.2, 2.2, 0, 1.1, .7, .55, GOLD, stroke=True)
+    sc.box(2.5, 2.3, .55, .5, .5, .4, NAVY)
+    sc.box(3.3, 2.45, .5, 1.1, .14, .14, GOLD, key=8)
+    truk(sc, .8, 4.3, GOLD)
+    sc.person(4.6, 4.4, 0, NAVY, .85)
+
+
+def pelabuhan(sc):
+    sc.plate(0, 0, 6, 5.2, .5)
+    sc.box(0, 3.1, 0, 6, 2.1, .05, LAUT, key=-7e4)
+    sc.box(1.0, 3.6, .05, 3.6, 1.0, .55, NAVY, key=7e3)
+    sc.box(3.4, 3.7, .6, .9, .8, .8, WHITE, key=7e3 + 1)
+    sc.box(1.5, 3.8, .6, .9, .6, .4, GOLD, key=7e3 + 2)
+    sc.box(2.6, .9, 0, .18, .18, 3.2, GOLD, key=6)
+    sc.box(2.6, .9, 3.2, .18, 2.6, .16, GOLD, key=7.5e3)
+    for (x, y, c) in [(.5, .7, TEAL), (.5, 1.5, SKY), (1.5, 1.1, NAVY), (3.5, .7, SKY), (4.4, 1.5, TEAL)]:
+        sc.box(x, y, 0, .9, .6, .5, c, stroke=True)
+
+
+def tol(sc):
+    sc.plate(0, 0, 6, 5, .5, base=RUMPUT)
+    sc.box(0, 1.5, 0, 6, 2.0, .05, '#4a5560', key=-7e4)
+    for k in range(6):
+        sc.box(.2 + k, 2.45, .05, .55, .08, .01, GOLD, key=-6e4)
+    sc.box(2.5, 1.0, 0, .45, .45, 1.1, WHITE, stroke=True)
+    sc.box(2.5, 3.5, 0, .45, .45, 1.1, WHITE, stroke=True)
+    sc.box(2.5, 1.0, 1.1, .45, 2.95, .2, NAVY, key=9e3)
+    sc.box(.7, 1.75, .05, .9, .45, .35, SKY, key=2.7)
+    truk(sc, 3.8, 2.7, GOLD, key=7.2)
+    sc.tree(.5, .6, 0, .8); sc.tree(4.9, .5, 0, .8); sc.tree(.9, 4.4, 0, .8); sc.tree(5.1, 4.4, 0, .8)
+
+
+def gudang(sc):
+    sc.plate(0, 0, 5.4, 5.4, .5)
+    sc.box(.6, .6, 0, 3.8, 2.0, 1.1, WHITE)
+    sc.roof(.6, .6, 1.1, 3.8, 2.0, .5, NAVY)
+    for x in (1.0, 2.2, 3.4):
+        sc.box(x, 2.58, 0, .7, .03, .75, TEAL, key=x + 3)
+    truk(sc, .8, 3.6, TEAL); truk(sc, 2.9, 3.9, GOLD)
+
+
+def warung(sc):
+    sc.plate(0, 0, 5.4, 5.4, .5, base=RUMPUT)
+    sc.box(0, 3.4, 0, 5.4, 1.2, .05, '#4a5560', key=-7e4)
+    sc.box(.6, .7, 0, 1.6, 1.2, .9, WHITE)
+    sc.roof(.6, .7, .9, 1.6, 1.2, .4, '#d9694c')
+    sc.box(2.8, .6, 0, 1.6, 1.3, 1.4, TEAL, stroke=True)
+    jendela(sc, 2.8, 1.9, 0, 1.6, 1.4, WHITE, 3, 2, key=3.8)
+    sc.person(1.4, 2.5, 0, GOLD, .9); sc.person(2.3, 2.7, 0, NAVY, .9); sc.person(3.4, 2.6, 0, TEAL, .9)
+    payung(sc, .5, 2.6, GOLD)
+
+
+IKON = {'kawasan': kawasan, 'cincin': cincin, 'satelit': satelit, 'banding': banding, 'malam': malam, 'manufaktur': manufaktur, 'wisata': wisata, 'ekstraktif': ekstraktif, 'jasa': jasa, 'tambang': tambang, 'pelabuhan': pelabuhan, 'tol': tol, 'gudang': gudang, 'warung': warung}
 
 if __name__ == '__main__':
-    out = os.path.join(HERE, '..', 'images', 'riset', 'spillover', 'ikon'); os.makedirs(out, exist_ok=True)
+    out = os.path.join(HERE, '..', 'images', 'riset', 'ikon'); os.makedirs(out, exist_ok=True)
     for nama, fn in IKON.items():
         sc = iso.Scene(); fn(sc)
         open(os.path.join(out, nama + '.svg'), 'w').write(sc.svg(title=''))
