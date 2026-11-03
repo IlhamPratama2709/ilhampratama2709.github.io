@@ -16,3 +16,4 @@ Semua dari Wikimedia Commons dengan lisensi bebas. Kredit tampil di kartu peta.
 | `kuching.jpg` | Kuching Cat Statue - 01.JPG | JKT-c | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:Kuching_Cat_Statue_-_01.JPG |
 | `kuala-lumpur.jpg` | Kuala Lumpur Malaysia Petronas-Twin-Towers-01.jpg | CEphoto, Uwe Aranas | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Kuala_Lumpur_Malaysia_Petronas-Twin-Towers-01.jpg |
 | `bandar-lampung.jpg` | Bandar Lampung.JPG | 22Kartika | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Bandar_Lampung.JPG |
+| `makassar.jpg` | Mosque in Makassar 20251004.jpg | Rulwarih | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Mosque_in_Makassar_20251004.jpg |

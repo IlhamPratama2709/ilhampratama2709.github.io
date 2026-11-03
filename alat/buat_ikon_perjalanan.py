@@ -291,6 +291,23 @@ kkkkkkkkkkkkkkkk
 ...kkk....kkk...
 ................
 ................
+""", "pinisi": """
+.......k.....k..
+......kwk...kwk.
+.....kwwk..kwwk.
+....kwwwk.kwwwk.
+...kwwwwk.kwwwk.
+..kwwwwwkkwwwwk.
+.kwwwwwwkkwwwwk.
+kkkkkkkkkkkkkkk.
+.......k.....k..
+kppppppppppppppk
+.kpeppppppppepk.
+..kppppppppppk..
+...kkkkkkkkkk...
+bbb.bbbb.bbbb.bb
+.bb..bb...bb..b.
+................
 """,
 }
 for nama, peta in IKON.items():
