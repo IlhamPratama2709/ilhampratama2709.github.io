@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../gaya.css">
+<link rel="stylesheet" href="adegan-mesin.css">
 <script>try { if (localStorage.getItem("tema") === "dark") document.documentElement.dataset.theme = "dark"; } catch (e) {}</script>
 </head>
 <body>
@@ -55,6 +56,7 @@
       <a href="#penjelasan">Why the lights stay off</a>
       <a href="#kebijakan">Policy implications</a>
       <a href="#batas">Limitations</a>
+      <a href="#adegan-skripsi">The study in one scene</a>
       <a href="#sitasi">How to cite</a>
     </div>
   </aside>
@@ -186,6 +188,12 @@
       <p>Each district is assigned to its nearest zone as of the end of the period, and the thesis has no zone-level data on investment, jobs, or land use. Sub-district or village data would be the natural next step.</p>
     </section>
 
+    <section id="adegan-skripsi">
+      <h2>The study in one scene</h2>
+      <p>A short, illustrated tour of the thesis in nine steps: the question, how it is measured, and what the three types of zone show.</p>
+      <div class="adg-wadah"><div id="adegan" class="adg-ringkas"></div></div>
+    </section>
+
     <section id="sitasi">
       <h2>How to cite</h2>
       <p class="sitasi">Pratama, M. I. (2026). <i>Spillover or Still Over? Do Indonesia's SEZs Leave Light and Environmental Signature Beyond Their Borders?</i> Bachelor's thesis, Faculty of Economics and Business, Universitas Indonesia.</p>
@@ -203,6 +211,9 @@
 
 <script src="../paper.js"></script>
 <script src="spillover-or-still-over.js"></script>
+<script src="adegan-mesin.js"></script>
+<script src="spillover-adegan.js"></script>
+<script>Adegan.pasang(document.getElementById("adegan"), KEK_CERITA);</script>
 <script src="../tema.js"></script>
 </body>
 </html>
