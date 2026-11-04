@@ -191,6 +191,19 @@ sumbernya ditulis di `alat/indikator-dashboard.csv` supaya mudah ditambah.
    dan tidak boleh dipublikasikan; yang aman hanya agregat kab/kota dan
    provinsi. Sampai Ilham memutuskan, lapisan desa hanya ada di `draf/`.
    `draf/` dikecualikan lewat `.git/info/exclude`.
+
+   Usulan yang disimpan dulu (4 Nov 2026), belum dikerjakan:
+   - Portofolio publik hanya memuat agregat kab/kota dan provinsi, kamus
+     kuesioner, dan daftar studi.
+   - Lapisan desa ditaruh di alamat terpisah dengan pola `komitmen-situs`:
+     repo privat, Cloudflare, `noindex`. Bedanya, aksesnya dikunci dengan
+     Cloudflare Access (login email), bukan hanya link rahasia, karena
+     link bisa bocor dan `data-desa.js` bisa diunduh utuh.
+   - Dashboard KOMITMEN tidak bisa dijadikan preseden publik: repo-nya
+     privat, alamatnya link rahasia untuk kalangan terbatas, dan datanya
+     hanya desa di Jawa.
+   - Sebelum dijalankan, Ilham mengecek perjanjian BPS soal menaruh data di
+     server pihak ketiga.
 2. Daftar 10–15 indikator kabupaten/kota final (usulan di bagian 3).
 3. Apakah proyek KOMITMEN dan proyek lain yang masih menunggu laporan publik
    masuk daftar analisis setelah laporannya terbit.
