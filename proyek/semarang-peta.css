@@ -1,0 +1,44 @@
+/* Mini dashboard peta penurunan tanah: lebar penuh dengan panel kanan */
+:root { --peta-laut: #eaf1f6; --peta-netral: #e3e8ec; --peta-kosong: #cfd7dd; --peta-garis-desa: rgba(0,58,93,.18); --peta-garis-kab: #003a5d; }
+:root[data-theme="dark"] { --peta-laut: #10222e; --peta-netral: #2a3a46; --peta-kosong: #1c2a34; --peta-garis-desa: rgba(255,255,255,.14); --peta-garis-kab: #c9d5de; }
+
+/* Breaks out of the text column to the full page width (aside 190px + gap 44px) */
+.peta-mini { position: relative; z-index: 1; background: var(--bg-page); margin: 20px 0 8px; padding-top: 6px; }
+@media (min-width: 821px) { .peta-mini { margin-left: -234px; } }
+
+
+.peta-isi { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 20px; align-items: start; }
+@media (max-width: 820px) { .peta-isi { grid-template-columns: minmax(0, 1fr); gap: 12px; } }
+
+.peta-bingkai { position: relative; background: var(--peta-laut); border: 1px solid var(--border); border-radius: 4px; }
+.peta-svg { display: block; width: 100%; height: auto; max-height: 640px; touch-action: manipulation; }
+.peta-laut { position: absolute; top: 10px; left: 14px; font: italic 13px var(--serif); color: var(--ink-3); letter-spacing: .04em; pointer-events: none; }
+.peta-desa { stroke: var(--peta-garis-desa); stroke-width: .5; cursor: pointer; }
+.peta-desa.aktif { stroke: var(--teks); stroke-width: 2; }
+.peta-kab { fill: none; stroke: var(--peta-garis-kab); stroke-width: 1.6; pointer-events: none; }
+.peta-nama { font: 700 18px var(--sans); fill: var(--ink-1); text-anchor: middle; paint-order: stroke; stroke: var(--bg-page); stroke-width: 5px; stroke-linejoin: round; pointer-events: none; }
+
+.peta-tip { position: absolute; z-index: 2; max-width: 290px; padding: 9px 11px; font: 13px/1.4 var(--sans); color: var(--teks);
+  background: var(--bg-page); border: 1px solid var(--border-strong); border-radius: 4px; box-shadow: 0 3px 12px rgba(0,0,0,.15); pointer-events: none; }
+.peta-tip b { display: block; color: var(--ink-1); font-size: 14px; }
+.peta-tip > span { color: var(--ink-3); font-size: 12px; }
+.peta-tip dl { display: grid; grid-template-columns: auto auto; gap: 2px 10px; margin: 6px 0 0; }
+.peta-tip dt { color: var(--ink-3); }
+.peta-tip dd { margin: 0; font-weight: 700; }
+
+.peta-panel { font: 13px var(--sans); color: var(--ink-2); }
+.peta-label-pilih { display: block; font-weight: 700; color: var(--ink-1); margin-bottom: 4px; }
+.peta-panel select { width: 100%; font: 14px var(--sans); color: var(--teks); background: var(--bg-page); border: 1px solid var(--border-strong); border-radius: 4px; padding: 7px 8px; }
+.peta-kunci { display: grid; gap: 4px; margin: 14px 0 16px; }
+.peta-kunci b { color: var(--ink-1); margin-bottom: 2px; }
+.peta-kunci span { display: inline-flex; align-items: center; gap: 7px; }
+.peta-kunci i { width: 14px; height: 14px; border-radius: 2px; border: 1px solid var(--border); flex: none; }
+@media (max-width: 820px) { .peta-kunci { grid-template-columns: 1fr 1fr; } .peta-kunci b { grid-column: 1 / -1; } }
+
+.peta-ringkas { width: 100%; table-layout: fixed; border-collapse: collapse; font: 13px var(--sans); }
+.peta-ringkas th, .peta-ringkas td { white-space: normal; }
+.peta-ringkas th:first-child { width: 38%; }
+.peta-ringkas th, .peta-ringkas td { padding: 5px 4px; border-bottom: 1px solid var(--border); text-align: right; }
+.peta-ringkas th:first-child, .peta-ringkas td:first-child { text-align: left; }
+.peta-ringkas th { color: var(--ink-2); font-weight: 700; font-size: 12px; vertical-align: bottom; }
+.peta-catatan { font-size: 12px; color: var(--ink-3); margin-top: 6px; }
