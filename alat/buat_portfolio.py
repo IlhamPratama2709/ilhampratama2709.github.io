@@ -26,7 +26,10 @@ FOTO_LAIN = {
 }
 
 kartu = [
+    dict(judul="Sinking land in Semarang: who pays for it?", meta="2026 · Project · KOMITMEN, UIII", ket="Desk analysis and fieldwork on whether coastal land in Semarang has lost value as the ground sinks, with a village map of Kendal, Semarang, and Demak.", foto="images/proyek/semarang/latar-kota-lama.jpg", tautan="proyek/semarang-fieldwork.html", topik=["reg", "env", "dev"], jenis="proyek"),
     dict(judul="KOMITMEN dashboard site", meta="2026 · Project · KOMITMEN, UIII", ket=isi_kepala("proyek/komitmen-dashboard.html")[0], foto="images/proyek/komitmen/klip-3-sampul.jpg", tautan="proyek/komitmen-dashboard.html", topik=["reg", "env"], jenis="proyek"),
+    dict(judul="Biodiesel, land, and peat", meta="2025–26 · Internship · Bank Indonesia Institute", ket="A calculator, rebuilt from public parameters, of the land a higher biodiesel blend needs and how little peat it takes to cancel the emission saving.", foto="images/proyek/bank-indonesia/latar-gambut-riau.jpg", tautan="proyek/bi-biodiesel.html", topik=["env", "dev"], jenis="proyek"),
+    dict(judul="Rules on export proceeds in six Asian economies", meta="2025 · Internship · Bank Indonesia", ket="How Indonesia's rules on natural-resource export proceeds changed from 2019 to 2026, compared with Malaysia, the Philippines, Thailand, India, and China.", foto="images/proyek/bank-indonesia/latar-tongkang-mahakam.jpg", tautan="proyek/bi-devisa-ekspor.html", topik=["dev"], jenis="proyek"),
     dict(judul="Spillover or Still Over? SEZs in Indonesia", meta="2026 · Bachelor's thesis · Universitas Indonesia", ket=isi_kepala("riset/spillover-or-still-over.html")[0], foto=FOTO_LAIN["riset/spillover-or-still-over.html"], tautan="riset/spillover-or-still-over.html", topik=["reg", "env"], jenis="paper"),
 ]
 for tahun, judul, ajang, _, _, hasil, topik, tautan in RISET:
@@ -45,7 +48,7 @@ isi = "\n".join(
 )
 dasar = Path("index.html").read_text()
 pita = re.search(r'<header class="pita">.*?</header>', dasar, re.S).group(0)
-pita = pita.replace('href="#"', 'href="index.html"').replace('href="#', 'href="index.html#').replace('class="tombol" href="portfolio.html"', 'class="tombol" href="portfolio.html" aria-current="page"')
+pita = pita.replace('href="#"', 'href="index.html"').replace('href="#', 'href="index.html#').replace('class="tombol" href="portfolio.html"', 'class="tombol" href="portfolio.html" aria-current="page"').replace('<a href="portfolio.html">', '<a href="portfolio.html" aria-current="page">')
 kaki = re.search(r"<footer>.*?</footer>", dasar, re.S).group(0)
 Path("portfolio.html").write_text(f"""<!doctype html>
 <html lang="en">
