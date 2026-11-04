@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../gaya.css">
-<link rel="stylesheet" href="adegan-mesin.css">
+<link rel="stylesheet" href="spillover-ringkas.css">
 <script>try { if (localStorage.getItem("tema") === "dark") document.documentElement.dataset.theme = "dark"; } catch (e) {}</script>
 </head>
 <body>
@@ -44,11 +44,42 @@
   <a class="kredit-foto" href="https://commons.wikimedia.org/wiki/File:Lights_of_Java.jpg">Java at night from the International Space Station. Photo: NASA, public domain</a>
 </div>
 
+<section class="rk2" id="sekilas-ringkas" aria-labelledby="rk2-judul">
+  <div class="wadah">
+    <div class="rk2-slide">
+      <div class="rk2-foto" style="background-image: url('../images/riset/spillover/surabaya-iss.jpg')"><div>
+        <p class="rk2-asal">Universitas Indonesia · Faculty of Economics and Business</p>
+        <p class="rk2-label">AT A GLANCE</p>
+        <h2 id="rk2-judul">Indonesia's special economic zones and their neighbours</h2>
+        <ul>
+          <li>Districts near zones did not brighten faster than the rest.</li>
+          <li>Tourism zones raised CO₂ and NO₂ in nearby districts.</li>
+          <li>Most zones are young, so later gains cannot be ruled out.</li>
+        </ul>
+        <small>Photo: Greater Surabaya at night from the ISS. <a href="https://commons.wikimedia.org/wiki/File:Surabaya-iss.jpg">NASA</a>, public domain.</small>
+      </div></div>
+      <div class="rk2-isi">
+        <p class="rk2-atas">Bachelor's thesis · Spillover or Still Over?, 2026</p>
+        <div class="rk2-panel">
+        <div class="rk2-p"><h3>Districts in the panel</h3><div class="rk2-batang" data-batang='[["Within 60 km",72,1,"72"],["Never near",442,0,"442"]]'></div><p><b>The thesis follows 514 districts</b> from 2013 to 2023, comparing those whose centre lies within 60 km of a zone with those that never had one nearby.</p><cite>(19 zones that opened between 2015 and 2024)</cite></div>
+        <div class="rk2-p"><h3>Night-time light, 2013–2023</h3><div class="rk2-batang" data-batang='[["Within 60 km",67,1,"+67%"],["Elsewhere",75,0,"+75%"]]'></div><p><b>Lights rose almost everywhere.</b> Districts near zones brightened by 67 percent and the rest by 75 percent, so a rise near a zone proves little by itself.</p><cite>(VIIRS mean radiance; descriptive averages)</cite></div>
+        <div class="rk2-p"><h3>Effect on light, by method</h3><div class="rk2-batang" data-batang='[["Two-way FE",0.074,0,"0.074**"],["C–S estimator",0.024,1,"0.024"]]'></div><p><b>Method changes the answer.</b> The standard estimator reports a significant 0.074. The one built for zones that open in different years finds 0.024, not significant.</p><cite>(Author&#39;s estimates, log points)</cite></div>
+        <div class="rk2-p"><h3>CO₂, by type of zone</h3><div class="rk2-batang" data-batang='[["All zones",0.008,0,"0.008"],["Manufacturing",0.007,0,"0.007"],["Tourism",0.044,1,"0.044**"]]'></div><p><b>Only tourism zones raise CO₂</b>, by about 4.5 percent in nearby districts. Manufacturing zones sit in corridors that were already polluted.</p><cite>(ODIAC; author&#39;s estimates, log points)</cite></div>
+        <div class="rk2-p"><h3>NO₂, by type of zone</h3><div class="rk2-batang" data-batang='[["All zones",0.129,0,"0.129"],["Manufacturing",-0.611,0,"−0.611"],["Tourism",1.725,1,"1.725**"]]'></div><p><b>NO₂ also rises only near tourism zones</b>, by 1.725 µmol/m², about 13 percent of the sample mean.</p><cite>(Sentinel-5P; author&#39;s estimates, µmol/m²)</cite></div>
+        <div class="rk2-p"><h3>Light, by distance from a zone</h3><div class="rk2-batang" data-batang='[["0–30 km",0.052,1,"0.052"],["30–60 km",0.020,0,"0.020"],["60–90 km",-0.030,0,"−0.030"],["90–120 km",0.016,0,"0.016"]]'></div><p><b>Effects do not fade neatly with distance.</b> No ring from 0 to 120 km shows a significant change in light.</p><cite>(Author&#39;s estimates, all zones, log points)</cite></div>
+        </div>
+        <div class="rk2-istilah"><b>TERMS</b><p>SEZ: special economic zone. Night-time light: satellite radiance from VIIRS, used as a proxy for economic activity. Log points: 0.01 is roughly a 1 percent change. Two-way FE: two-way fixed effects. C–S: the Callaway and Sant'Anna estimator, built for zones that open in different years. ** Significant at 5 percent.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div class="wadah tata-paper">
   <aside class="daftar-isi" aria-label="On this page">
     <b>On this page</b>
     <div>
       <a href="#ringkasan">Executive summary</a>
+      <a href="#sekilas-ringkas">At a glance</a>
       <a href="#sekilas">How the study works</a>
       <a href="#pertanyaan">The question</a>
       <a href="-paper">Data and method</a>
@@ -56,7 +87,6 @@
       <a href="#penjelasan">Why the lights stay off</a>
       <a href="#kebijakan">Policy implications</a>
       <a href="#batas">Limitations</a>
-      <a href="#adegan-skripsi">The study in one scene</a>
       <a href="#sitasi">How to cite</a>
     </div>
   </aside>
@@ -158,6 +188,20 @@
 
       <h3>The national average hides regional signals</h3>
       <p>Light does respond in one part of the country. The Sumatra and Bangka group records a significant effect of 0.089 at the 5 percent level, and manufacturing zones in Java and Sumatra record 0.047 at the 10 percent level. Both fit a pattern in which industrial gains appear where agglomeration already exists.</p>
+
+      <figure class="gr rk-penjelajah" id="penjelajah">
+        <header><h3>Explore the estimates</h3><p>Pick an outcome and a view. Each estimate compares districts within 60 km of a zone with districts that never had one nearby.</p></header>
+        <div class="rk-kendali">
+          <div class="rk-grup" role="group" aria-label="Outcome"><span>Outcome</span><span id="rk-hasil"></span></div>
+          <div class="rk-grup" role="group" aria-label="View"><span>View</span><span id="rk-pandang"></span></div>
+          <div class="rk-grup" role="group" aria-label="Estimator"><span>Estimator</span><span id="rk-estimator"></span></div>
+        </div>
+        <p class="rk-kalimat" id="rk-kalimat" aria-live="polite"></p>
+        <div id="rk-grafik"></div>
+        <div class="att-legenda"><span><i class="isi"></i>Significant at 5 percent</span><span><i></i>Not significant</span></div>
+        <p class="catatan" id="rk-catatan"></p>
+        <footer>Source: author's estimates. Callaway and Sant'Anna with never-treated controls; 95 percent confidence intervals.</footer>
+      </figure>
     </section>
 
     <section id="penjelasan">
@@ -188,12 +232,6 @@
       <p>Each district is assigned to its nearest zone as of the end of the period, and the thesis has no zone-level data on investment, jobs, or land use. Sub-district or village data would be the natural next step.</p>
     </section>
 
-    <section id="adegan-skripsi">
-      <h2>The study in one scene</h2>
-      <p>A short, illustrated tour of the thesis in nine steps: the question, how it is measured, and what the three types of zone show.</p>
-      <div class="adg-wadah"><div id="adegan" class="adg-ringkas"></div></div>
-    </section>
-
     <section id="sitasi">
       <h2>How to cite</h2>
       <p class="sitasi">Pratama, M. I. (2026). <i>Spillover or Still Over? Do Indonesia's SEZs Leave Light and Environmental Signature Beyond Their Borders?</i> Bachelor's thesis, Faculty of Economics and Business, Universitas Indonesia.</p>
@@ -211,9 +249,7 @@
 
 <script src="../paper.js"></script>
 <script src="spillover-or-still-over.js"></script>
-<script src="adegan-mesin.js"></script>
-<script src="spillover-adegan.js"></script>
-<script>Adegan.pasang(document.getElementById("adegan"), KEK_CERITA);</script>
+<script src="spillover-ringkas.js"></script>
 <script src="../tema.js"></script>
 </body>
 </html>
