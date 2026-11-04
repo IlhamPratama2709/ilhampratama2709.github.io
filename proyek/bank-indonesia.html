@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biodiesel and Export Proceeds · Muhammad Ilham Pratama</title>
+<meta name="description" content="Two topics from internships at Bank Indonesia in 2025–2026, rebuilt from public sources: a calculator of the land and peat cost of biodiesel blending, and a comparison of export-proceeds rules in six Asian economies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../gaya.css">
+<link rel="stylesheet" href="proyek.css?v=20261104g">
+<link rel="stylesheet" href="semarang-tata.css?v=20261104g">
+<link rel="stylesheet" href="bank-indonesia.css?v=20261104c">
+<script>try { if (localStorage.getItem("tema") === "dark") document.documentElement.dataset.theme = "dark"; } catch (e) {}</script>
+</head>
+<body>
+
+<header class="pita">
+  <div class="wadah">
+    <a class="merek" href="../index.html">Muhammad Ilham Pratama</a>
+    <nav>
+      <a href="../index.html#perjalanan">Journey</a>
+      <a href="../index.html#pengalaman">Experience</a>
+      <a href="../portfolio.html">Research</a>
+      <button class="tema" id="tema" type="button" aria-label="Switch colour theme">
+        <svg class="bulan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+        <svg class="matahari" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="judul-paper judul-foto foto-bi">
+  <div class="wadah">
+    <p class="jejak"><a href="../index.html#pengalaman">Experience</a> › Bank Indonesia internships</p>
+    <p class="supertitle">Internship topics · Bank Indonesia, Jakarta · August 2025 – February 2026</p>
+    <h1>B40 biodiesel saves about 40 million tonnes of CO<sub>2</sub> a year, and clearing 62,500 hectares of peat forest would cancel it</h1>
+    <p class="lead">Two topics from my internships at Bank Indonesia, rebuilt from public sources: what a higher biodiesel blend costs in land and peat, and how Indonesia's rules on natural-resource export proceeds compare with five other Asian economies.</p>
+    <p class="status-proyek"><b>About this page:</b> the calculator and the tables are my own reconstruction from public regulations and published studies. They are not Bank Indonesia findings and use no Bank Indonesia data.</p>
+  </div>
+  <p class="kredit-proyek">Cleared and drained peat land for an oil palm concession, Riau (2007). Photo: Hayden, <a href="https://commons.wikimedia.org/wiki/File:Riau_palm_oil_2007.jpg">CC BY 2.0</a>.</p>
+</div>
+
+<div class="wadah tata-paper">
+  <aside class="daftar-isi" aria-label="On this page">
+    <b>On this page</b>
+    <div>
+      <a href="#ringkasan">Summary</a>
+      <a href="#kalkulator">Biodiesel calculator</a>
+      <a href="#asumsi">Assumptions</a>
+      <a href="#dhe">Export proceeds rules</a>
+      <a href="#enam">Six economies</a>
+      <a href="#peran">My role</a>
+    </div>
+  </aside>
+
+  <main class="naskah">
+    <section id="ringkasan">
+      <h2>Summary</h2>
+      <p>Indonesia has raised the share of palm-based biodiesel in its diesel from 20 percent in 2016 to 40 percent in 2025, and B50 has applied since 1 July 2026. The Ministry of Energy and Mineral Resources (ESDM) puts the emission saving of B40 at about 41 million tonnes of CO<sub>2</sub>e a year. The saving is real only if the palm oil does not come from newly cleared peat.</p>
+      <p>The calculator below shows how thin that margin is. At B40 the biodiesel needs about 14.8 million tonnes of crude palm oil, the output of some 3.7 million hectares of oil palm. Clearing 62,500 hectares of peat swamp forest, under 2 percent of that area, releases as much carbon as B40 saves in a year.</p>
+      <p>The second half of the page traces the rules on export proceeds from natural resources (<i>devisa hasil ekspor sumber daya alam</i>, DHE SDA). Since 2019 Indonesia has moved from requiring that the proceeds enter the domestic financial system to requiring that non-oil-and-gas exporters keep all of them at home for a year. None of the five neighbours compared here asks for that much.</p>
+    </section>
+
+    <section id="kalkulator">
+      <h2>A biodiesel blend can be cancelled by a small area of peat</h2>
+      <div class="duo">
+        <div>
+          <div class="kalk-kontrol">
+            <label for="campuran">Biodiesel blend <span class="kalk-b" id="kalk-b">B40</span></label>
+            <input type="range" id="campuran" min="0" max="70" step="5" value="40">
+            <div class="kalk-skala" aria-hidden="true"><span style="--p:0">B0</span><span style="--p:.2857">B20</span><span style="--p:.5714">B40</span><span style="--p:.7143">B50</span><span style="--p:1">B70</span></div>
+            <div class="kalk-pilih"><span>Tonnes of biodiesel per tonne of CPO</span><span role="group" aria-label="Conversion yield"><button type="button" data-rendemen="0.85" aria-pressed="true">0.85</button><button type="button" data-rendemen="0.9" aria-pressed="false">0.90</button></span></div>
+          </div>
+          <dl class="kalk-hasil" aria-live="polite">
+            <div><dt>Biodiesel needed</dt><dd><span id="o-biodiesel"></span><small>million kL</small></dd></div>
+            <div><dt>Crude palm oil needed</dt><dd><span id="o-cpo"></span><small>million t</small></dd></div>
+            <div><dt>Oil palm land equivalent</dt><dd><span id="o-lahan"></span><small>million ha</small></dd></div>
+            <div><dt>Emissions saved a year</dt><dd><span id="o-emisi"></span><small>Mt CO<sub>2</sub>e</small></dd></div>
+            <div class="gambut"><dt>Peat forest whose clearing cancels one year</dt><dd><span id="o-sekali"></span><small>ha</small></dd></div>
+            <div class="gambut"><dt>Drained peat that cancels it every year</dt><dd><span id="o-tahunan"></span><small>ha</small></dd></div>
+          </dl>
+          <svg class="kalk-batang" id="kalk-batang" viewBox="0 0 400 136" role="img" aria-label="Bars comparing the oil palm land equivalent with the two peat areas, in hectares"></svg>
+          <p class="kalk-rasio" id="kalk-rasio"></p>
+        </div>
+        <div class="duo-teks">
+          <p>Move the slider to change the blend. B40 means 40 percent biodiesel and 60 percent fossil diesel. Every figure scales in a straight line with the blend.</p>
+          <p>The first three figures trace the palm oil back to the land. At B40 the program needs 14.3 million kilolitres of biodiesel a year, or about 12.6 million tonnes. Making it takes 14.0–14.8 million tonnes of crude palm oil, depending on the conversion yield, and growing that oil takes 3.5–3.7 million hectares.</p>
+          <p>The last two figures turn the saving into peat. Clearing a hectare of peat swamp forest for oil palm releases about 640 tonnes of CO<sub>2</sub> from vegetation alone. A drained hectare then keeps emitting about 100 tonnes a year as the peat decomposes. So 62,500 hectares of cleared forest wipe out one year of B40's saving, and 400,000 hectares of drained peat wipe it out every year.</p>
+          <p>The land figure is an equivalent, not a forecast of new plantations. Most of the oil would be diverted from exports grown on existing land. But each step up in the blend raises demand for palm oil, and the peat figures show how little expansion onto peat it takes to erase the gain.</p>
+          <p class="catatan">My illustration from the public parameters listed below, not a Bank Indonesia result. The 40 Mt saving is the ESDM estimate, which counts the fossil diesel displaced; a life-cycle estimate that counts the emissions of growing and processing the palm oil would be smaller.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="asumsi">
+      <h2>Assumptions</h2>
+      <p>The calculator uses seven public parameters. Changing any of them moves the results in proportion.</p>
+      <div class="tabel-gulir"><table class="asumsi">
+        <thead><tr><th>Parameter</th><th>Value</th><th>Source</th></tr></thead>
+        <tbody>
+          <tr><td>Diesel demand for transport</td><td>35.7 million kL a year</td><td>ESDM energy statistics, 2021–2023 average; IEA (2023)</td></tr>
+          <tr><td>Emissions saved</td><td>40 Mt CO<sub>2</sub>e a year at B40, linear in the blend</td><td>ESDM: 41.46 Mt CO<sub>2</sub>e for the 15.6 million kL B40 allocation in 2025</td></tr>
+          <tr><td>Biodiesel (FAME) density</td><td>0.88 t per kL</td><td>Typical palm methyl ester; SNI 7182:2015 allows 0.85–0.89 at 40°C</td></tr>
+          <tr><td>Conversion yield</td><td>0.85 or 0.90 t biodiesel per t CPO</td><td>MPOB; Basiron (2017)</td></tr>
+          <tr><td>Oil palm productivity</td><td>4 t CPO per ha a year</td><td>FAO; Directorate General of Estate Crops</td></tr>
+          <tr><td>Clearing peat swamp forest</td><td>640 t CO<sub>2</sub> per ha, once</td><td>Novita et al. (2021), vegetation carbon lost when primary peat swamp forest becomes oil palm, Central Kalimantan (±114)</td></tr>
+          <tr><td>Drained peat under oil palm</td><td>100 t CO<sub>2</sub>e per ha a year</td><td>Page et al. (2011) and Hooijer et al. (2012), average over 25 years; the IPCC (2014) Tier 1 default for on-site CO<sub>2</sub> is lower, about 40</td></tr>
+        </tbody>
+      </table></div>
+      <p class="catatan">The 640 tonnes leaves out the peat itself, so it understates what clearing releases once the peat burns or decomposes. The 100-tonne rate sits well above the IPCC default because it includes the fast losses of the first years after drainage. The calculator shows the two separately and does not add them. Biodiesel volumes in kilolitres are converted to tonnes with the density above; skipping that step, and treating a kilolitre as a tonne, overstates the land by about 14 percent.</p>
+    </section>
+
+    <section id="dhe">
+      <h2>Indonesia now asks natural-resource exporters to keep all non-oil-and-gas proceeds at home for a year</h2>
+      <p>Indonesia's exports of coal, palm oil, metals, timber, and fish earn a large share of its foreign currency, but much of it used to stay in accounts abroad. Since 2019 four government regulations (<i>peraturan pemerintah</i>, PP) have set, and then tightened, what exporters must do with those earnings.</p>
+      <ol class="alur">
+        <li class="langkah" id="langkah-1">
+          <p class="tanggal-langkah">PP 1/2019 · in force 10 January 2019</p>
+          <h3>Proceeds must enter the Indonesian financial system</h3>
+          <p>Exporters of mining, plantation, forestry, and fishery products had to bring their proceeds into a special account (<i>rekening khusus</i> DHE SDA) at a domestic foreign-exchange bank by the end of the third month after export. They could withdraw the money at once. Sanctions ranged from fines to suspension of exports and of the business licence.</p>
+        </li>
+        <li class="langkah" id="langkah-2">
+          <p class="tanggal-langkah">PP 36/2023 · in force 1 August 2023</p>
+          <h3>30 percent must stay for at least three months</h3>
+          <p>For export declarations worth USD 250,000 or more, at least 30 percent of the proceeds had to be retained for at least three months. Exporters could hold them in the special account, in bank deposits, in instruments issued by the export credit agency LPEI, or in Bank Indonesia instruments such as its foreign-currency term deposit for export proceeds. The sanction became suspension of export services.</p>
+        </li>
+        <li class="langkah" id="langkah-3">
+          <p class="tanggal-langkah">PP 8/2025 · in force 1 March 2025</p>
+          <h3>Non-oil-and-gas exporters must retain 100 percent for 12 months</h3>
+          <p>Mining other than oil and gas, plantations, forestry, and fisheries must now retain all of their proceeds for at least 12 months. Oil and gas stays at 30 percent for three months. Funds placed in bank, LPEI, or Bank Indonesia instruments cannot be withdrawn before maturity. A new Article 11A lets exporters spend from the special account on five things, and the amount spent reduces what they must retain:</p>
+          <ol class="pasal">
+            <li>conversion to rupiah at the same bank;</li>
+            <li>taxes, non-tax state revenue, and other payments to the government in foreign currency;</li>
+            <li>dividends in foreign currency;</li>
+            <li>raw materials, auxiliary materials, and capital goods that are unavailable or insufficient in Indonesia;</li>
+            <li>repayment of foreign-currency loans taken to buy capital goods.</li>
+          </ol>
+        </li>
+        <li class="langkah" id="langkah-4">
+          <p class="tanggal-langkah">PP 21/2026 · in force 1 June 2026</p>
+          <h3>Retention moves to state-owned banks, and conversion is capped</h3>
+          <p>The shares and periods are unchanged. According to statements by the Coordinating Minister for Economic Affairs, retained proceeds must now be placed in state-owned banks (Himbara), and no more than half may be converted to rupiah. I have not yet checked these changes against the text of the regulation.</p>
+        </li>
+      </ol>
+      <p class="catatan">Sources: PP 1/2019, PP 36/2023, and PP 8/2025 as published in the State Gazette (texts read through the <a href="https://perpajakan.ddtc.co.id/sumber-hukum/peraturan-pusat/peraturan-pemerintah-8-tahun-2025">DDTC legal database</a>); PP 21/2026 from <a href="https://www.antaranews.com/berita/5555515/airlangga-pp-dhe-sda-berlaku-1-juni-wajib-setor-ke-himbara">ANTARA, 5 May 2026</a> and <a href="https://nasional.kontan.co.id/news/mulai-juni-2026-seluruh-dhe-sda-wajib-masuk-sistem-keuangan-indonesia">Kontan, 21 May 2026</a>; Bank Indonesia instruments under PBI 7/2023.</p>
+    </section>
+
+    <section id="enam">
+      <h2>Indonesia is the only one of six economies to require exporters to keep proceeds for a fixed period</h2>
+      <p>Every economy here wants export earnings to pass through its own banks, but only Indonesia tells exporters how long to keep them there. Malaysia and India set a deadline for bringing proceeds home. Thailand asks only for large receipts to come home, and since January 2026 only above USD 10 million a transaction. The Philippines asks for nothing beyond reporting.</p>
+      <p>India goes the other way on retention. Exporters may hold earnings in a foreign-currency account, but what they have not used by the end of the following month must be converted to rupees. The rules also serve different ends. Thailand relaxed its rules to let money flow out and ease pressure on the baht, while Indonesia tightened its own to keep foreign currency at home.</p>
+      <div class="tabel-gulir tabel-lebar"><table class="enam">
+        <thead><tr><th></th><th class="id">Indonesia</th><th>Malaysia</th><th>Philippines</th><th>Thailand</th><th>India</th><th>China</th></tr></thead>
+        <tbody>
+          <tr><td>Repatriation</td>
+            <td class="id">Proceeds must enter a special account at a domestic bank by the end of the third month after export.</td>
+            <td>In full, by the payment date and within 6 months of shipment; up to 24 months in listed cases such as buyer distress or disputes.</td>
+            <td>Not required. Proceeds may be used freely and held in foreign-currency accounts in the Philippines or abroad.</td>
+            <td>Required only above USD 10 million a transaction (USD 1 million before January 2026), within 360 days.</td>
+            <td>Within 9 months of export; 12 months for exports invoiced in rupees.</td>
+            <td>Proceeds may be brought home or held abroad; holding goods-export proceeds abroad needs SAFE approval.</td></tr>
+          <tr><td>Retention, conversion, and placement</td>
+            <td class="id">100 percent for 12 months for non-oil-and-gas, 30 percent for 3 months for oil and gas, in the special account or bank, LPEI, or Bank Indonesia instruments. Five uses in Article 11A count against it.</td>
+            <td>No conversion required since 15 April 2021, when the 2016 rule to convert 75 percent was removed. Proceeds may stay in a trade foreign-currency account onshore.</td>
+            <td>No retention, conversion, or placement required.</td>
+            <td>Repatriated funds must be sold or deposited in an onshore foreign-currency account; conversion is not compulsory.</td>
+            <td>Up to 100 percent may go to an EEFC account, but each month's unused balance must be converted to rupees by the end of the next month.</td>
+            <td>Current-account earnings may be retained or sold to banks; limits on retention were lifted in 2007.</td></tr>
+          <tr><td>Coverage</td>
+            <td class="id">Mining, plantations, forestry, and fisheries; exports of USD 250,000 or more per declaration. Other exporters only report.</td>
+            <td>Resident exporters of goods, with exemptions such as border trade, samples, and goods sent abroad for repair.</td>
+            <td>Residents' export receipts, goods and services.</td>
+            <td>All residents' foreign-currency receipts; case-by-case exemptions.</td>
+            <td>Goods, software, and services.</td>
+            <td>Goods and services earnings of domestic firms and individuals.</td></tr>
+          <tr><td>Monitoring</td>
+            <td class="id">Customs export declarations matched with bank records of the special account; sanction is suspension of export services.</td>
+            <td>Proceeds must land at licensed onshore banks; exporters above RM 250 million a year report to the central bank when asked.</td>
+            <td>Export declaration for each shipment, kept by the bank; banks report to the central bank.</td>
+            <td>Exporters declare transactions to banks, with documents for USD 200,000 or more.</td>
+            <td>Banks log each export declaration in an electronic system (EDPMS) and close it only when proceeds arrive; persistent defaulters go on a caution list.</td>
+            <td>Banks check documents; since 2012 SAFE compares goods and money flows off-site and grades firms A, B, or C.</td></tr>
+          <tr><td>Regulator</td>
+            <td class="id">Government regulation; Bank Indonesia, Ministry of Finance (customs), and banks implement.</td>
+            <td>Bank Negara Malaysia</td>
+            <td>Bangko Sentral ng Pilipinas</td>
+            <td>Ministry of Finance holds the power; Bank of Thailand administers.</td>
+            <td>Reserve Bank of India, under FEMA</td>
+            <td>State Administration of Foreign Exchange (SAFE), under the People's Bank of China</td></tr>
+          <tr><td>Stated aim</td>
+            <td class="id">Keep export earnings in the domestic financial system to deepen foreign-exchange supply and strengthen reserves (government statements).</td>
+            <td>2021 removal: give exporters flexibility and strengthen Malaysia's place in supply chains.</td>
+            <td>Part of a long liberalisation of foreign exchange rules; no export-specific aim stated.</td>
+            <td>2019 and 2026: let capital flow out and ease pressure on the baht.</td>
+            <td>EEFC accounts: avoid repeated conversion and keep transaction costs down.</td>
+            <td>2012 reform: make trade easier and cheaper while watching for unusual capital flows.</td></tr>
+          <tr class="sumber"><td>Sources</td>
+            <td class="id">PP 1/2019, PP 36/2023, PP 8/2025 (<a href="https://perpajakan.ddtc.co.id/sumber-hukum/peraturan-pusat/peraturan-pemerintah-8-tahun-2025">DDTC</a>); PP 21/2026 (<a href="https://www.antaranews.com/berita/5555515/airlangga-pp-dhe-sda-berlaku-1-juni-wajib-setor-ke-himbara">ANTARA</a>)</td>
+            <td>BNM, <a href="https://www.bnm.gov.my/documents/20124/60360/Notice+7_Export+of+Goods.pdf">FEP Notice 7</a>; <a href="https://www.bnm.gov.my/-/liberalisation-of-foreign-exchange-policy-2021">BNM, 31 March 2021</a></td>
+            <td>BSP, <a href="https://www.bsp.gov.ph/Regulations/MORFXT/MORFXT.pdf">Manual of Regulations on FX Transactions</a>, Sections 17–20</td>
+            <td>BOT, <a href="https://www.bot.or.th/content/dam/bot/documents/en/news-and-media/news-pdf/2019/n6662e.pdf">Press Release 66/2019</a>; <a href="https://www.bot.or.th/th/news-and-media/news/news-20260120.html">BOT, 20 January 2026</a></td>
+            <td>RBI, <a href="https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=13277&amp;Mode=0">FEMA 23(R)/2026-RB</a> (replaces Master Direction 16/2015-16); <a href="https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=10198">MD Deposits and Accounts</a></td>
+            <td><a href="https://www.gov.cn/zwgk/2008-08/06/content_1066085.htm">FX Administration Regulations 2008</a>, Arts. 9, 12, 13; <a href="https://www.safe.gov.cn/en/2012/0903/1066.html">SAFE, 2012</a></td></tr>
+        </tbody>
+      </table></div>
+      <p class="catatan">Rules as of November 2026. Scroll the table sideways on a small screen. The comparison is mine, compiled from the public documents listed in the last row; the 2007 Chinese circular on retention limits is cited from secondary summaries.</p>
+    </section>
+
+    <section id="peran">
+      <h2>My role</h2>
+      <p>I interned at Bank Indonesia in two units. From August to October 2025 I was in the Department of Reporting Management and Compliance, working on an issue note on natural-resource export proceeds and foreign exchange reserves. I processed data for the note and compared the rules on export proceeds in six economies. The table above is a fresh version of that comparison, checked again against public sources.</p>
+      <p>From November 2025 to February 2026 I was at the Bank Indonesia Institute, which was studying a move to B50 biodiesel and beyond. I worked on the trade-off between emission savings and the land and peat that palm oil needs, which the calculator above rebuilds from public parameters. I also wrote my own internship report on a business model for fishers' cooperatives under the Koperasi Desa Merah Putih program.</p>
+      <p>The issue note and the biodiesel study are internal Bank Indonesia documents, and their data and findings are not shown here.</p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wadah">
+    <span>Muhammad Ilham Pratama · Jakarta · <a href="tel:+6287776565132">+62 877 7656 5132</a> · <a href="mailto:ilhamp2709@gmail.com">ilhamp2709@gmail.com</a> · <a href="https://www.linkedin.com/in/muhammad-ilham-pratama-172825245/">LinkedIn</a> · <a href="../portfolio.html">Portfolio</a></span>
+    <span>Last updated November 2026</span>
+  </div>
+</footer>
+
+<script src="proyek.js?v=20261104g"></script>
+<script src="bank-indonesia.js?v=20261104b"></script>
+</body>
+</html>

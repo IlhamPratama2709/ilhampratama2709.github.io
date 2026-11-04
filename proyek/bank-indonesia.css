@@ -1,0 +1,60 @@
+/* Halaman magang Bank Indonesia: foto pembuka, kalkulator biodiesel, dan tabel aturan devisa enam ekonomi */
+:root { --bi-lahan: #2a8a6a; --bi-gambut: #8a5a2b; --bi-gambut-2: #c08a4a; }
+:root[data-theme="dark"] { --bi-lahan: #5cc09b; --bi-gambut: #e0a868; --bi-gambut-2: #a8794a; }
+
+.judul-foto.foto-bi { background-image: url("../images/proyek/bank-indonesia/latar-gambut-riau.jpg"); background-position: center 62%; }
+
+/* Calculator */
+.kalk-kontrol { padding: 14px 16px; background: var(--bg-panel-2); border-left: 4px solid var(--emas); }
+.kalk-kontrol label { display: flex; justify-content: space-between; align-items: baseline; font: 700 14px var(--sans); color: var(--ink-1); }
+.kalk-b { font: 600 30px/1 var(--serif); color: var(--ink-1); }
+.kalk-kontrol input[type="range"] { width: 100%; margin: 10px 0 2px; accent-color: var(--pita); }
+:root[data-theme="dark"] .kalk-kontrol input[type="range"] { accent-color: var(--emas); }
+/* tick labels sit under the thumb positions (thumb about 16px wide) */
+.kalk-skala { position: relative; height: 16px; margin: 0 8px; font: 11.5px var(--sans); color: var(--ink-3); }
+.kalk-skala span { position: absolute; left: calc(var(--p) * 100%); transform: translateX(-50%); }
+.kalk-pilih { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 10px; margin-top: 12px; font: 13px var(--sans); color: var(--ink-2); }
+.kalk-pilih span + span { display: inline-flex; border: 1px solid var(--border-strong); }
+.kalk-pilih button { font: 700 13px var(--sans); color: var(--ink-2); background: var(--bg-page); border: 0; padding: 5px 12px; cursor: pointer; }
+.kalk-pilih button + button { border-left: 1px solid var(--border-strong); }
+.kalk-pilih button[aria-pressed="true"] { background: var(--pita); color: #fff; }
+:root[data-theme="dark"] .kalk-pilih button[aria-pressed="true"] { background: var(--emas); color: #003a5d; }
+.kalk-pilih button:focus-visible, .kalk-kontrol input:focus-visible { outline: 2px solid var(--tautan); outline-offset: 2px; }
+
+.kalk-hasil { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; margin: 14px 0 12px; background: var(--border); border: 1px solid var(--border); }
+.kalk-hasil div { background: var(--bg-page); padding: 10px 12px; }
+.kalk-hasil dt { font: 12.5px/1.35 var(--sans); color: var(--ink-3); }
+.kalk-hasil dd { margin: 4px 0 0; font: 700 22px/1.1 var(--sans); color: var(--ink-1); font-variant-numeric: tabular-nums; }
+.kalk-hasil dd small { font: 400 12px var(--sans); color: var(--ink-3); margin-left: 3px; }
+.kalk-hasil .gambut dd { color: var(--bi-gambut); }
+
+.kalk-batang { display: block; width: 100%; height: auto; overflow: visible; }
+.kb-latar { fill: var(--bg-panel-2); }
+.kb-lahan { fill: var(--bi-lahan); }
+.kb-tahunan { fill: var(--bi-gambut-2); }
+.kb-sekali { fill: var(--bi-gambut); }
+.kalk-rasio { font: italic 14px var(--sans); color: var(--ink-2); margin: 6px 0 0 !important; }
+
+/* Assumptions and the six-economy table */
+.naskah table.asumsi td:nth-child(2) { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.naskah table.asumsi td:last-child, .naskah table.enam .sumber { font-size: 12.5px; color: var(--ink-3); }
+.naskah table.enam { min-width: 920px; font-size: 13px; }
+.naskah table.enam th { text-align: left; vertical-align: bottom; font: 700 13px var(--sans); color: var(--ink-1); padding: 8px; border-bottom: 2px solid var(--border-strong); }
+.naskah table.enam td { vertical-align: top; padding: 8px; border-bottom: 1px solid var(--border); }
+.naskah table.enam td:first-child, .naskah table.enam th:first-child { position: sticky; left: 0; z-index: 1; background: var(--bg-page); min-width: 118px; width: 118px; }
+.naskah table.enam th.id, .naskah table.enam td.id { background: var(--accent-wash); }
+.naskah table.enam tr.sumber td { font-size: 12px; }
+.naskah table.enam tr.sumber a { word-break: break-word; }
+.naskah .pasal { margin: 0 0 14px; padding-left: 22px; }
+.naskah .pasal li { margin-bottom: 4px; }
+.tanggal-langkah { font: 700 13px var(--sans); color: var(--supertitle); margin: 0 0 4px !important; }
+
+@media (max-width: 560px) {
+  .kalk-hasil { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .kalk-hasil dd { font-size: 19px; }
+}
+
+/* The six-economy table breaks out to the full page width, like the duo blocks */
+.tabel-lebar { position: relative; z-index: 1; background: var(--bg-page); margin: 18px 0 8px; }
+@media (min-width: 821px) { .tabel-lebar { margin-left: -234px; } }
+.kalk-batang .gr-label { font-size: 12px; }
