@@ -60,10 +60,15 @@ Menggantikan `PAPER` dan `paperWilayah()` di `perjalanan.js` serta melengkapi
 }
 ```
 
-`cakupan` berisi kode BPS: 2 digit = seluruh provinsi, 4 digit (`35.78`) =
+`cakupan` berisi kode BPS 2020 (sama dengan batas desa VLV3 di mock-up): 2 digit = seluruh provinsi, 4 digit (`35.78`) =
 kabupaten/kota, 10 digit = desa (untuk survei PENSAR dan kerja lapangan
 Semarang). Wilayah mewarisi analisis dari tingkat di atasnya, jadi desa di
 Surabaya otomatis menampilkan paper Jawa Timur.
+
+Catatan kode: `peta-data.js` di situs memakai kode Kemendagri, yang di beberapa
+kabupaten berbeda dari kode BPS (contoh 11.11 Aceh Utara vs Bireuen). Saat
+`dashboard.html` dibangun, pakai batas dan kode BPS 2020 seperti mock-up, atau
+buat tabel padanan sebelum membaca `cakupan`.
 
 ### 2. Halaman `dashboard.html`
 
@@ -91,6 +96,68 @@ Satu berkas, 514 baris, ±10–15 indikator per gelombang. Usulan awal:
   mulai dengan titik pusat desa dari `10-VLV3-Centroid-*.gpkg`.
 - Batas dan kode desa mengikuti `turunan-kabkot/xw_desa_podes_ke_kab2022`
   supaya cocok dengan batas kabupaten 2022 di `peta-data.js`.
+
+### 4a. Penyajian menurut jenis data PODES (mock-up 4 Nov 2026)
+
+Satu cara saji tidak cocok untuk semua pertanyaan PODES. Tiap lapisan diberi
+`jenis`, dan jenis itu menentukan warna peta, kotak warna, grafik perubahan
+kecil, dan kalimat analisis singkat. Mock-up di `draf/dashboard/` (lokal, tidak
+di-push) sudah memakai aturan ini.
+
+| Jenis | Contoh | Peta per desa | Peta per kab/kota dan provinsi | Grafik perubahan kecil |
+|---|---|---|---|---|
+| biner (ada/tidak) | pasar berbangunan, agen bank, BTS, banjir | dua warna: ya, tidak | porsi desa yang ya, 0–100% | desa: enam kotak ya/tidak; wilayah: garis 0–100% |
+| jumlah (hitungan) | minimarket, SMA/MA/SMK | empat kelas bertangga: tidak ada, 1, 2–4, 5+ | porsi desa yang punya satu atau lebih; rata-rata per desa di teks | desa: deret angka per gelombang; wilayah: garis 0–100% |
+| porsi (persen keluarga) | keluarga pengguna listrik PLN | enam kelas 0–100% | rata-rata berbobot jumlah keluarga | garis 0–100% |
+| kategori (satu jawaban dari beberapa) | permukaan jalan, sinyal HP, bahan bakar memasak | satu warna per jawaban | porsi desa dengan jawaban yang dipilih (tombol pilihan jawaban di panel kiri) | desa: enam kotak berwarna jawaban; wilayah: kolom 100% kecil per gelombang |
+| kab (angka kab/kota) | IPM, pengeluaran per kapita, Susenas | warna kab/kotanya | kuantil enam kelas; provinsi berbobot penduduk | garis pada rentang semua kab/kota |
+
+Aturan tambahan:
+
+- Skala grafik tetap (0–100% untuk porsi), supaya perubahan kecil tidak tampak
+  seperti lonjakan.
+- Gelombang yang definisinya berbeda tidak dipakai, dan alasannya ditulis:
+  listrik PLN mulai 2014 (2008 definisi lain; 2011 tanpa keluarga tak
+  berlistrik), minimarket mulai 2011 (2008 tanpa batasan definisi).
+- Pertanyaan yang masa ingatnya berubah (banjir: tiga tahun sampai 2018, sekitar
+  1,4 tahun sejak 2021) digambar dengan garis putus di titik perubahan, dan
+  analisis singkat menyebutnya.
+- Hitungan per desa tidak dibagi penduduk, karena PODES hanya mencatat penduduk
+  di 2008 dan 2011.
+
+### 4b. Kamus variabel: "How PODES asks this"
+
+Setiap lapisan desa punya bagian penjelasan di panel kanan:
+
+- arti indikatornya;
+- cara jawaban diolah menjadi warna peta;
+- hal yang perlu diwaspadai;
+- cuplikan kuesioner per gelombang: nama kolom mentah, blok, nomor rincian,
+  halaman, bunyi pertanyaan, pilihan jawaban, dan recode bila ada.
+
+Kamus dibangkitkan oleh `draf/dashboard/buat_kamus.py` dari sumber kebenaran
+sesi pembersihan PODES, sehingga ikut berubah kalau crosswalk diperbaiki:
+
+- `13-PODES/kode/crosswalk/tema/*/crosswalk.csv` dan `value_labels.csv`;
+- `13-PODES/referensi/layout-terintegrasi/PODES_Layout_Terintegrasi_2008-2024.xlsx`.
+
+Hanya teks penjelasan berbahasa Inggris yang ditulis tangan. Teks itu sudah
+diperiksa sesi "Podes data cleaning dan panel" pada 4 Nov 2026. Lima kalimat
+diperbaiki atas masukannya: pasar, minimarket, bahan bakar memasak, jalan,
+banjir.
+
+Kalau satu lapisan baru ditambahkan, langkahnya:
+
+1. Tambah konsep di `LAPIS` dan teks di `TEKS` (`buat_kamus.py`).
+2. Tambah turunannya di `buat_data.py`, dengan `JENIS` yang sesuai.
+3. Tambah satu baris di `IND` (`dashboard.js`).
+
+Calon berikutnya menurut sesi PODES, semuanya enam gelombang dan lolos audit:
+
+- jumlah SD dan SMP;
+- puskesmas atau sarana kesehatan dasar;
+- lampu jalan;
+- longsor dan gempa, dengan catatan masa ingat yang sama seperti banjir.
 
 ### 5. Sambungan ke Ilham's Journey
 
@@ -120,6 +187,10 @@ sumbernya ditulis di `alat/indikator-dashboard.csv` supaya mudah ditambah.
 ## Keputusan yang menunggu Ilham
 
 1. Indikator PODES tingkat desa apa yang boleh tampil menurut perjanjian data BPS.
+   Sesi PODES (4 Nov 2026) mengingatkan bahwa nilai per desa adalah mikrodata
+   dan tidak boleh dipublikasikan; yang aman hanya agregat kab/kota dan
+   provinsi. Sampai Ilham memutuskan, lapisan desa hanya ada di `draf/`.
+   `draf/` dikecualikan lewat `.git/info/exclude`.
 2. Daftar 10–15 indikator kabupaten/kota final (usulan di bagian 3).
 3. Apakah proyek KOMITMEN dan proyek lain yang masih menunggu laporan publik
    masuk daftar analisis setelah laporannya terbit.
