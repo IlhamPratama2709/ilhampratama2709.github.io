@@ -48,15 +48,6 @@
 .film-utama video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: var(--bg-panel-2); border: 3px solid var(--emas); }
 .film-utama .catatan { margin: 8px 0 0; }
 
-/* dinding sampul laporan wilayah di kiri dan kanan naskah, samar, hanya di layar lebar */
-.dinding-laporan { position: relative; isolation: isolate; }
-.dinding-laporan::before, .dinding-laporan::after { content: ""; position: absolute; top: 0; bottom: 0; z-index: -1; width: calc((100% - 1080px) / 2); pointer-events: none;
-  background: url("../images/proyek/komitmen/dinding-laporan.webp") 0 0 / 320px auto repeat-y; opacity: 0.2; }
-.dinding-laporan::before { left: 0; background-position: right 0; -webkit-mask-image: linear-gradient(to right, #000 35%, transparent); mask-image: linear-gradient(to right, #000 35%, transparent); }
-.dinding-laporan::after { right: 0; background-position: left -520px; -webkit-mask-image: linear-gradient(to left, #000 35%, transparent); mask-image: linear-gradient(to left, #000 35%, transparent); }
-:root[data-theme="dark"] .dinding-laporan::before, :root[data-theme="dark"] .dinding-laporan::after { opacity: 0.22; }
-@media (max-width: 1299px) { .dinding-laporan::before, .dinding-laporan::after { display: none; } }
-
 /* alur: rute melekat di atas, langkah bernomor disambung garis emas */
 .rute { position: sticky; top: 56px; z-index: 5; display: grid; grid-template-columns: repeat(4, 1fr); margin: 18px 0 26px; background: var(--bg-page); border-bottom: 2px solid var(--border); }
 .rute a { position: relative; padding: 10px 4px 8px; font-size: 14px; font-weight: 700; text-align: center; color: var(--ink-3); text-decoration: none; border-bottom: 3px solid transparent; margin-bottom: -2px; }
