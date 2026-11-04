@@ -9,9 +9,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../gaya.css">
-<link rel="stylesheet" href="proyek.css">
-<link rel="stylesheet" href="semarang-peta.css">
-<link rel="stylesheet" href="sayung-gnss.css">
+<link rel="stylesheet" href="proyek.css?v=20261104f">
+<link rel="stylesheet" href="semarang-peta.css?v=20261104f">
+<link rel="stylesheet" href="sayung-gnss.css?v=20261104f">
+<link rel="stylesheet" href="semarang-tata.css?v=20261104f">
 <style>.judul-foto.foto-semarang { background-image: url("../images/proyek/semarang/latar-kota-lama.jpg"); background-position: center 40%; }</style>
 <script>try { if (localStorage.getItem("tema") === "dark") document.documentElement.dataset.theme = "dark"; } catch (e) {}</script>
 </head>
@@ -49,6 +50,7 @@
     <div>
       <a href="#mengapa">Why Semarang</a>
       <a href="#peta">Map</a>
+      <a href="#bangunan">Buildings</a>
       <a href="#sayung">Sayung</a>
       <a href="#pertanyaan">The question</a>
       <a href="#meja">Desk analysis</a>
@@ -68,27 +70,56 @@
 
     <section id="peta">
       <h2>Fast subsidence runs from east Semarang into Demak</h2>
-      <p>In Kota Semarang, 38 of 177 villages sink faster than 5 cm a year, and in neighbouring Demak, 70 of 249 do. To the west the picture changes: only 6 of Kendal's 286 villages sink that fast. The map also shows flood reports, night-time light, and population density for each village. Hover over or tap a village to see its figures.</p>
+      <p>In Kota Semarang, 38 of 177 villages sink faster than 5 cm a year, and in neighbouring Demak, 70 of 249 do. To the west the picture changes: only 6 of Kendal's 286 villages sink that fast. The map also shows flood reports, night-time light, and population density for each village. Hover over a village for its value, or click it to see its land cover, night-time light, and flood reports over time.</p>
       <div class="peta-mini" id="peta-mini"><p class="catatan">The map needs JavaScript.</p></div>
       <p class="catatan">Sources: subsidence from Sentinel-1 radar estimates (Ohenhen et al., 2026), as the median of points in each village; villages with fewer than 20 points are not covered. Village boundaries from BIG. Residents are 2024 estimates from WorldPop. Floods from PODES village censuses, by year of occurrence. Night-time light from VIIRS, 2014 and 2022, stopping before a change in the satellite product in 2023; villages too dim in 2014 are left out. Data from the KOMITMEN land subsidence dashboard.</p>
+    </section>
+
+    <section id="bangunan">
+      <h2>About 405,000 buildings in Semarang and Demak stand on ground sinking faster than 5 cm a year</h2>
+      <div class="duo">
+        <div id="grafik-bangunan"></div>
+        <div class="duo-teks">
+          <p>In Kota Semarang, 189,114 of 836,000 buildings stand on ground that sinks faster than 5 cm a year, or 23 percent. In Demak the share is higher, 34 percent, or 215,689 buildings. Together their roofs cover about 3,900 hectares.</p>
+          <p>Most of Demak's remaining buildings sink more slowly, between 1 and 5 cm a year. In Kota Semarang, two thirds stand on ground that barely moves.</p>
+          <p>This measures exposure, not loss. A building on sinking ground has not necessarily lost value, and the count does not separate houses from factories.</p>
+          <p class="catatan">Sources: building footprints from Google Open Buildings v3 (imagery up to 2023); each building takes the rate of the nearest radar point within 150 m (Ohenhen et al., 2026). Kendal has not been computed.</p>
+        </div>
+      </div>
     </section>
 
     <section id="sayung">
       <h2>In Sayung, next to Semarang, the sea already covers 44 percent of seven coastal villages</h2>
       <p>Sayung, in Demak, borders Kota Semarang to the east. In its seven coastal villages, 1,479 of the 3,358 hectares inside village boundaries are no longer mapped as land. In Sidogemah the share is 75 percent, and in Purwosari, Sriwulan, and Bedono it is between 64 and 70 percent.</p>
-      <p>The satellite images show the change. In 2000, fish ponds lined the shore of Sayung. By 2024, the sea had covered most of them, and only the raised roads and houses of the villages remain above water.</p>
-      <p>The 44 percent is the gap between each village's administrative area and the land that MapBiomas maps in it, so it does not show when the land was lost. Aerial photos from 2013–2015 already show most of it as open water. The map below uses the same frame as the images, from Genuk in Kota Semarang to Sayung.</p>
-      <div class="banding" id="banding-citra">
-        <img src="../images/proyek/semarang/citra-sayung-genuk-2024.jpg" width="1400" height="708" alt="Satellite image of the coast of Genuk and Sayung in July 2024, with village boundaries reaching into the sea">
-        <div class="banding-atas"><img src="../images/proyek/semarang/citra-sayung-genuk-2000.jpg" width="1400" height="708" alt="Satellite image of the same coast in July 2000, when fish ponds still lined the shore"></div>
-        <span class="banding-garis"></span>
-        <span class="banding-tahun kiri">July 2000</span><span class="banding-tahun kanan">July 2024</span>
-        <input type="range" min="0" max="100" value="50" aria-label="Drag to compare 2000 and 2024">
+      <div class="duo">
+        <div>
+          <div class="banding" id="banding-citra">
+            <img src="../images/proyek/semarang/citra-sayung-genuk-2024.jpg?v=20261104f" width="1400" height="708" alt="Satellite image of the coast of Genuk and Sayung in July 2024, with village boundaries reaching into the sea">
+            <div class="banding-atas"><img src="../images/proyek/semarang/citra-sayung-genuk-2000.jpg?v=20261104f" width="1400" height="708" alt="Satellite image of the same coast in July 2000, when fish ponds still lined the shore"></div>
+            <span class="banding-garis"></span>
+            <span class="banding-tahun kiri">July 2000</span><span class="banding-tahun kanan">July 2024</span>
+            <input type="range" min="0" max="100" value="50" aria-label="Drag to compare 2000 and 2024">
+          </div>
+        </div>
+        <div class="duo-teks">
+          <h3>Drag across the image to compare 2000 and 2024</h3>
+          <p>In 2000, fish ponds lined the shore of Sayung. By 2024, the sea had covered most of them, and only the raised roads and houses of the villages remain above water. Thin yellow lines are village boundaries, and many of them now run through open sea.</p>
+          <p>Next door in Genuk, on the Kota Semarang side of the white line, built-up land, mostly factories and warehouses, has spread over the same years.</p>
+          <p class="catatan">Images: Landsat 5, 6 July 2000, courtesy of the U.S. Geological Survey; contains modified Copernicus Sentinel data 2024 (Sentinel-2, 16 July 2024).</p>
+        </div>
       </div>
-      <p class="catatan">Drag across the image to compare. Thin yellow lines are village boundaries; the white line is the border between Kota Semarang and Demak. Images: Landsat 5, 6 July 2000, courtesy of the U.S. Geological Survey; contains modified Copernicus Sentinel data 2024 (Sentinel-2, 16 July 2024).</p>
-      <div id="peta-sayung"><p class="catatan">The map needs JavaScript.</p></div>
+      <div class="sy-blok" id="peta-sayung"><p class="catatan">The map needs JavaScript.</p></div>
+      <p class="catatan">The land cover map uses the same frame. Area no longer mapped as land is each village's administrative area minus the land MapBiomas maps in it, so it carries no date; aerial photos from 2013–2015 already show most of it as open water. Sources: MapBiomas Indonesia Collection 4.1.1 (30 m), 2000 and 2024; village boundaries from BPS.</p>
+      <div class="duo balik">
+        <div class="duo-teks">
+          <h3>Sayung stopped building; Genuk kept going</h3>
+          <p>Between 2000 and 2024, Sayung lost 383 hectares of settlement and gained only 34. Genuk, just across the border in Kota Semarang, lost 42 hectares and built 82.</p>
+          <p>Both sink fast, and Genuk's coastal villages have lost land to the sea as well. The difference is whether people keep building. Most of Sayung's loss came before 2014; in 2014–2022 the two figures were closer, 114 lost against 88 built.</p>
+          <p class="catatan">A descriptive comparison from MapBiomas land cover, used to frame field questions. It does not explain why the two areas differ.</p>
+        </div>
+        <div id="grafik-sayung-genuk"></div>
+      </div>
       <p class="lanjut">Land under the sea still sits inside village boundaries, and often on land certificates and asset registers. Who carries that loss is the question this study asks.</p>
-      <p class="catatan">Sources: land cover from MapBiomas Indonesia Collection 4.1.1 (30 m), 2000 and 2024. Village boundaries from BPS. Area no longer mapped as land is administrative area minus mapped area, with no date.</p>
     </section>
 
     <section id="pertanyaan">
@@ -100,6 +131,23 @@
       <h2>The desk analysis found exposure, not loss</h2>
       <p>I first combined the public data into one record for each of the 177 villages, joining radar estimates of subsidence from Ohenhen et al. (2026) to village boundaries, registered population, building footprints, night-time light, PODES flood reports, and regional finance records.</p>
       <p>Villages that sink fast have not lost people. Population change tracks distance from the old city centre far more closely than the rate of subsidence, and villages near the centre lost residents whether or not their ground was sinking. Property tax revenue also kept growing.</p>
+      <div class="duo">
+        <div id="grafik-penduduk"></div>
+        <div class="duo-teks">
+          <h3>Residents follow distance from the centre, not the sinking ground</h3>
+          <p>Between 2021 and 2025, 99 of Kota Semarang's 177 villages lost registered residents. Of the 87 villages within 5 km of Simpang Lima, the old centre, 80 lost people, whether their ground sank or not. Villages farther out mostly grew, including 14 on ground sinking faster than 5 cm a year in Genuk and Pedurungan.</p>
+          <p class="catatan">Registered population from BPS Kecamatan Dalam Angka, 2021 and 2025. Distance in a straight line from Simpang Lima. Hover over or tap a dot to see the village.</p>
+        </div>
+      </div>
+      <div class="duo balik">
+        <div class="duo-teks">
+          <h3>Property tax kept growing in Semarang but stalled in Demak</h3>
+          <p>In 2018 prices, Kota Semarang collected 30 percent more land and building tax (PBB-P2) in 2024 than in 2018, and Kendal more than twice as much. Demak's receipts have stayed near Rp70 billion a year since 2019, so their real value has fallen for five years.</p>
+          <p>That flat line is not proof that subsidence shrank Demak's tax base. Rates and assessed values may simply not have been updated. It is one of the questions the field visit put to local revenue agencies.</p>
+          <p class="catatan">Sources: DJPK regional finance data, checked against Demak's audited financial statements; deflated with Central Java's consumer price index. Switch to BPHTB, the tax on land transfers, to see sales activity.</p>
+        </div>
+        <div id="grafik-pajak"></div>
+      </div>
       <p>But exposure is not the same as loss, and the public data stop there. Land values by zone, tax arrears by property, and transaction records are held by local agencies.</p>
     </section>
 
@@ -112,10 +160,14 @@
 
     <section id="gnss">
       <h2>Radar estimates match ground stations to within 0.3 cm a year</h2>
-      <p>Every subsidence figure on this page comes from radar estimates by Ohenhen et al. (2026). Before using them, I compared them with GNSS stations run by BIG, Indonesia's mapping agency. At 57 stations with an official velocity, the radar median within 500 metres differs from the station by a median of 0.28 cm a year, and by less than 0.64 cm at nine stations in ten.</p>
-      <p>But most stations stand on stable ground, so the test is weakest where it matters most. Only two stations sink fast. In Pekalongan, GNSS records 12.2 cm a year and the radar 9.2. In Genuk, Semarang, the figures are 8.4 and 7.6, from a record of only two years. Both confirm fast sinking, and the radar may understate the fastest rates.</p>
-      <div id="grafik-gnss"><p class="catatan">The chart needs JavaScript.</p></div>
-      <p class="catatan">Sources: GNSS velocities from BIG's Ina-CORS network; where no official velocity exists, a trend fitted to the station's own record, 2017–2023 (open circles). Radar estimates from Ohenhen et al. (2026), median of points within 500 m of each station. Stations with no radar points nearby are left out.</p>
+      <div class="duo">
+        <div id="grafik-gnss"></div>
+        <div class="duo-teks">
+          <p>Every subsidence figure on this page comes from radar estimates by Ohenhen et al. (2026). Before using them, I compared them with GNSS stations run by BIG, Indonesia's mapping agency. At 57 stations with an official velocity, the radar median within 500 metres differs from the station by a median of 0.28 cm a year, and by less than 0.64 cm at nine stations in ten.</p>
+          <p>But most stations stand on stable ground, so the test is weakest where it matters most. Only two stations sink fast. In Pekalongan, GNSS records 12.2 cm a year and the radar 9.2. In Genuk, Semarang, the figures are 8.4 and 7.6, from a record of only two years. Both confirm fast sinking, and the radar may understate the fastest rates.</p>
+          <p class="catatan">Sources: GNSS velocities from BIG's Ina-CORS network; where no official velocity exists, a trend fitted to the station's own record, 2017–2023 (open circles). Radar estimates from Ohenhen et al. (2026), median of points within 500 m of each station. Stations with no radar points nearby are left out.</p>
+        </div>
+      </div>
     </section>
 
     <section id="berikutnya">
@@ -140,10 +192,12 @@
   </div>
 </footer>
 
-<script src="proyek.js"></script>
-<script src="semarang-peta-data.js"></script>
-<script src="semarang-peta.js"></script>
-<script src="sayung-gnss-data.js"></script>
-<script src="sayung-gnss.js"></script>
+<script src="proyek.js?v=20261104f"></script>
+<script src="semarang-peta-data.js?v=20261104f"></script>
+<script src="semarang-peta.js?v=20261104f"></script>
+<script src="sayung-gnss-data.js?v=20261104f"></script>
+<script src="sayung-gnss.js?v=20261104f"></script>
+<script src="semarang-grafik-data.js?v=20261104f"></script>
+<script src="semarang-grafik.js?v=20261104f"></script>
 </body>
 </html>

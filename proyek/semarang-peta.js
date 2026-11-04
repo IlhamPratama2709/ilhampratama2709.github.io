@@ -1,4 +1,4 @@
-/* Mini dashboard: land subsidence and related village data, Kendal–Semarang–Demak.
+/* Mini dashboard: land subsidence and related village data, Kendal–Semarang–Demak, with a village detail panel.
    Data: window.DATA_PENURUNAN (semarang-peta-data.js), one feature per village. */
 (function(){
   var D = window.DATA_PENURUNAN, akar = document.getElementById('peta-mini');
@@ -58,8 +58,7 @@
         '<label class="peta-label-pilih" for="peta-lapisan">Layer</label>' +
         '<select id="peta-lapisan">' + Object.keys(LAPISAN).map(function(k){ return '<option value="' + k + '">' + LAPISAN[k].nama + '</option>'; }).join('') + '</select>' +
         '<div class="peta-kunci"></div>' +
-        '<table class="peta-ringkas"><thead><tr><th>District</th><th>Villages</th><th>Over 5 cm</th><th>Residents</th></tr></thead><tbody></tbody></table>' +
-        '<p class="peta-catatan">"Over 5 cm" counts villages sinking faster than 5 cm a year; residents are 2024 WorldPop estimates for those villages.</p>' +
+        '<div class="peta-detail" aria-live="polite"></div>' +
       '</div>' +
     '</div>';
 
@@ -93,28 +92,80 @@
       k.label.map(function(l, i){ return '<span><i style="background:' + k.warna[i] + '"></i>' + esc(l) + '</span>'; }).join('') +
       (k.kosong ? '<span><i style="background:var(--peta-kosong)"></i>' + esc(k.kosong) + '</span>' : '');
   }
+  var ringkasHtml = '';
   function ringkas(fitur, w){
-    akar.querySelector('.peta-ringkas tbody').innerHTML = w.kab.map(function(nama){
+    ringkasHtml = '<p class="peta-ajak">Click a village to see its own figures over time.</p>' +
+      '<table class="peta-ringkas"><thead><tr><th>District</th><th>Villages</th><th>Over 5 cm</th><th>Residents</th></tr></thead><tbody>' + w.kab.map(function(nama){
       var s = fitur.filter(function(f){ return f.properties.kb === nama; });
       var cepat = s.filter(function(f){ return f.properties.laju != null && f.properties.laju < -5; });
       var jiwa = cepat.reduce(function(a, f){ return a + (f.properties.jiwa || 0); }, 0);
       return '<tr><td>' + esc(nama) + '</td><td>' + s.length + '</td><td>' + cepat.length + '</td><td>' + (jiwa ? angka(Math.round(jiwa / 1000)) + 'k' : '–') + '</td></tr>';
-    }).join('');
+    }).join('') + '</tbody></table>' +
+      '<p class="peta-catatan">"Over 5 cm" counts villages sinking faster than 5 cm a year; residents are 2024 WorldPop estimates for those villages.</p>';
+    akar.querySelector('.peta-detail').innerHTML = ringkasHtml;
+  }
+
+  /* --- village detail: small charts of the village's own series */
+  function garisMini(seri, tahun, o){
+    var W = 280, H = 104, m = {l: 30, r: 6, t: 8, b: 18}, maks = o.maks, isi = '';
+    if (maks == null){ maks = 0; seri.forEach(function(s){ s.v.forEach(function(v){ if (v != null && v > maks) maks = v; }); }); maks = maks > 0 ? maks * 1.1 : 1; }
+    function sx(i){ return m.l + i / (tahun.length - 1) * (W - m.l - m.r); }
+    function sy(v){ return m.t + (1 - v / maks) * (H - m.t - m.b); }
+    [0, maks / 2, maks].forEach(function(v){
+      isi += '<line x1="' + m.l + '" x2="' + (W - m.r) + '" y1="' + sy(v) + '" y2="' + sy(v) + '" class="mini-kisi"/>' +
+        '<text x="' + (m.l - 4) + '" y="' + (sy(v) + 4) + '" class="mini-angka" text-anchor="end">' + angka(v, maks < 5 ? 1 : 0) + '</text>';
+    });
+    [0, tahun.length - 1].forEach(function(i){ isi += '<text x="' + sx(i) + '" y="' + (H - 4) + '" class="mini-angka" text-anchor="' + (i ? 'end' : 'start') + '">' + tahun[i] + '</text>'; });
+    if (o.potong != null){ var xp = sx(tahun.indexOf(o.potong)); isi += '<rect x="' + xp + '" y="' + m.t + '" width="' + (W - m.r - xp) + '" height="' + (H - m.t - m.b) + '" class="mini-arsir"/>'; }
+    seri.forEach(function(s){
+      var d = '';
+      s.v.forEach(function(v, i){ if (v == null) return; d += (d ? 'L' : 'M') + sx(i).toFixed(1) + ' ' + sy(v).toFixed(1); });
+      isi += '<path d="' + d + '" fill="none" stroke="' + s.w + '" stroke-width="2" stroke-linejoin="round"/>';
+    });
+    return '<svg viewBox="0 0 ' + W + ' ' + H + '" class="mini" role="img" aria-label="' + esc(o.judul) + '">' + isi + '</svg>' +
+      (seri.length > 1 ? '<div class="mini-kunci">' + seri.map(function(s){ return '<span><i style="background:' + s.w + '"></i>' + s.l + '</span>'; }).join('') + '</div>' : '');
+  }
+  function titikTahun(teks, tahun, warnaIsi){
+    return '<span class="mini-tahun">' + tahun.map(function(t, i){ return '<i class="' + (teks && teks[i] === '1' ? 'ya' : '') + '" style="--w:' + warnaIsi + '" title="' + t + '">' + String(t).slice(2) + '</i>'; }).join('') + '</span>';
+  }
+  function detail(f){
+    var p = f.properties, s = p.seri || {}, dp = padat(p);
+    var h = '<button type="button" class="peta-kembali">← All districts</button>' +
+      '<h4 class="peta-judul-desa">' + esc(p.n) + '</h4><p class="peta-sub">' + esc(p.kc) + ', ' + esc(p.kb) + '</p>' +
+      '<dl class="peta-angka">' +
+        baris('Ground', p.laju == null ? 'not covered' : (p.laju < 0 ? 'sinking ' + angka(-p.laju, 1) : 'rising ' + angka(p.laju, 1)) + ' cm a year') +
+        (p.t5 != null ? baris('Area sinking &gt; 5 cm', p.t5 + '%') : '') +
+        (p.jiwa != null ? baris('Residents, 2024', angka(p.jiwa) + (dp != null ? ' (' + angka(dp) + '/ha)' : '')) : '') +
+        (s.bg ? baris('Buildings on ground sinking &gt; 5 cm', angka(s.bg[1]) + ' of ' + angka(s.bg[0])) : '') +
+      '</dl>';
+    if (s.lc) h += '<p class="mini-judul">Land cover, % of mapped land</p>' + garisMini([
+        {v: s.lc.p, w: 'var(--lc-mukim)', l: 'Settlement'}, {v: s.lc.s, w: '#c9a227', l: 'Rice fields'},
+        {v: s.lc.t, w: 'var(--lc-tambak)', l: 'Ponds'}, {v: s.lc.a, w: 'var(--lc-air)', l: 'Water'}], D.tahunLahan, {judul: 'Land cover over time', maks: 100});
+    if (s.ntl) h += '<p class="mini-judul">Night-time light (nW/cm²/sr)</p>' + garisMini([{v: s.ntl, w: '#cc9e42', l: 'Light'}], D.tahunNtl, {judul: 'Night-time light over time', potong: 2023}) +
+      '<p class="mini-catatan">Shaded: the satellite product changed in 2023, so the jump is not growth.</p>';
+    h += '<p class="mini-judul">Floods reported by the village head (PODES)</p>' +
+      '<div class="mini-baris"><span>Tidal</span>' + titikTahun(s.rb, D.tahunRob, '#3987e5') + '</div>' +
+      '<div class="mini-baris"><span>Other</span>' + titikTahun(s.bj, D.tahunBanjir, '#4f9a7d') + '</div>';
+    akar.querySelector('.peta-detail').innerHTML = h;
+    akar.classList.add('ada-detail');
   }
 
   /* --- tooltip: hover on desktop, tap on touch */
   function baris(judul, isi){ return '<dt>' + judul + '</dt><dd>' + isi + '</dd>'; }
+  var pilihan = null;
+  function nilaiLapisan(p){
+    var k = keadaan.lapisan, v = LAPISAN[k].nilai(p);
+    if (v == null) return 'no data';
+    if (k === 'laju') return (v < 0 ? 'sinking ' + angka(-v, 1) : 'rising ' + angka(v, 1)) + ' cm a year';
+    if (k === 'rob' || k === 'banjir') return v + ' of ' + (k === 'rob' ? nRob : nBjr) + ' years';
+    if (k === 'cahaya') return (v >= 0 ? '+' : '') + angka(v) + '%, 2014–2022';
+    return angka(v) + ' residents per ha';
+  }
   function tampil(el, x, y){
-    var p = el.__f.properties, dp = padat(p);
-    jalurDesa.forEach(function(j){ j.classList.toggle('aktif', j === el); });
+    var p = el.__f.properties;
+    jalurDesa.forEach(function(j){ j.classList.toggle('aktif', j === el || j === pilihan); });
     tip.innerHTML = '<b>' + esc(p.n) + '</b><span>' + esc(p.kc) + ', ' + esc(p.kb) + '</span><dl>' +
-      baris('Ground', p.laju == null ? 'not covered' : (p.laju < 0 ? 'sinking ' + angka(-p.laju, 1) : 'rising ' + angka(p.laju, 1)) + ' cm a year') +
-      (p.t5 != null ? baris('Area sinking &gt; 5 cm', p.t5 + '%') : '') +
-      baris('Tidal floods', p.rob + ' of ' + nRob + ' years') +
-      baris('Other floods', p.bjr + ' of ' + nBjr + ' years') +
-      (p.ntl != null ? baris('Night light', (p.ntl >= 0 ? '+' : '') + angka(p.ntl) + '% (2014–2022)') : '') +
-      (p.jiwa != null ? baris('Residents', angka(p.jiwa) + (dp != null ? ' (' + angka(dp) + ' per ha)' : '')) : '') +
-      '</dl>';
+      baris(LAPISAN[keadaan.lapisan].nama, nilaiLapisan(p)) + '</dl><em class="peta-tip-ajak">Click for details</em>';
     tip.hidden = false;
     var b = bingkai.getBoundingClientRect(), lt = tip.offsetWidth, tt = tip.offsetHeight;
     var kiri = x - b.left + 14, atas = y - b.top + 14;
@@ -122,14 +173,20 @@
     if (atas + tt > b.height) atas = Math.max(4, y - b.top - tt - 14);
     tip.style.left = kiri + 'px'; tip.style.top = atas + 'px';
   }
-  function sembunyi(){ tip.hidden = true; jalurDesa.forEach(function(j){ j.classList.remove('aktif'); }); }
+  function sembunyi(){ tip.hidden = true; jalurDesa.forEach(function(j){ j.classList.toggle('aktif', j === pilihan); }); }
 
   svg.addEventListener('pointermove', function(e){
     if (e.pointerType === 'touch') return;
     if (e.target.__f) tampil(e.target, e.clientX, e.clientY); else sembunyi();
   });
   svg.addEventListener('pointerleave', function(e){ if (e.pointerType !== 'touch') sembunyi(); });
-  svg.addEventListener('click', function(e){ if (e.target.__f) tampil(e.target, e.clientX, e.clientY); else sembunyi(); });
+  svg.addEventListener('click', function(e){
+    if (!e.target.__f) return;
+    pilihan = e.target; tip.hidden = true; sembunyi(); detail(e.target.__f);
+  });
+  akar.querySelector('.peta-detail').addEventListener('click', function(e){
+    if (e.target.closest('.peta-kembali')){ pilihan = null; sembunyi(); akar.classList.remove('ada-detail'); akar.querySelector('.peta-detail').innerHTML = ringkasHtml; }
+  });
   akar.querySelector('#peta-lapisan').addEventListener('change', function(e){ keadaan.lapisan = e.target.value; warnai(); });
 
   gambar();
