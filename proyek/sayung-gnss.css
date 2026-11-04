@@ -1,0 +1,40 @@
+/* Peta Sayung dan grafik GNSS vs radar (halaman lapangan Semarang) */
+:root { --lc-mukim: #7a5c4f; --lc-tambak: #7fc4bb; --lc-air: #3987e5; --lc-mangrove: #2e7d4f; --lc-lain: #dfe9cf; --lc-hilang: #cfe0f8; --gn-titik: #003a5d; }
+:root[data-theme="dark"] { --lc-mukim: #c49a86; --lc-tambak: #4f9a90; --lc-air: #6aa5ec; --lc-mangrove: #6cc08d; --lc-lain: #3a4a3a; --lc-hilang: #1d3550; --gn-titik: #8cc3e6; }
+
+.sy-kendali { display: flex; align-items: center; gap: 10px; margin: 18px 0 10px; font: 700 13px var(--sans); color: var(--ink-2); }
+.sy-pilih { display: inline-flex; border: 1px solid var(--border-strong); border-radius: 4px; overflow: hidden; }
+.sy-pilih button { font: 700 13px var(--sans); color: var(--ink-2); background: var(--bg-page); border: 0; padding: 6px 14px; cursor: pointer; }
+.sy-pilih button + button { border-left: 1px solid var(--border-strong); }
+.sy-pilih button[aria-pressed="true"] { background: var(--pita); color: #fff; }
+.sy-isi { display: grid; grid-template-columns: minmax(0, 1fr) 230px; gap: 18px; align-items: start; }
+@media (max-width: 820px) { .sy-isi { grid-template-columns: minmax(0, 1fr); } }
+.sy-bingkai, .gn-bingkai { position: relative; border: 1px solid var(--border); border-radius: 4px; background: var(--bg-page); }
+.sy-svg, .gn-svg { display: block; width: 100%; height: auto; touch-action: manipulation; }
+.sy-desa { fill: transparent; stroke: var(--teks); stroke-width: 1; stroke-opacity: .55; cursor: pointer; }
+.sy-desa.aktif { stroke-width: 2.4; stroke-opacity: 1; }
+.sy-nama { font: 700 24px var(--sans); fill: var(--ink-1); text-anchor: middle; paint-order: stroke; stroke: var(--bg-page); stroke-width: 4px; stroke-linejoin: round; pointer-events: none; }
+.sy-kunci { display: grid; gap: 4px; margin: 0 0 16px; font: 13px var(--sans); color: var(--ink-2); }
+.sy-kunci b, .sy-judul-batang { color: var(--ink-1); font: 700 13px var(--sans); }
+.sy-kunci span { display: inline-flex; align-items: center; gap: 7px; }
+.sy-kunci i, .gn-kunci i { width: 14px; height: 14px; border-radius: 2px; flex: none; }
+.sy-kunci i.arsir { background: repeating-linear-gradient(45deg, var(--lc-air) 0 2px, var(--lc-hilang) 2px 5px); }
+.sy-batang { display: grid; gap: 5px; margin-top: 6px; font: 13px var(--sans); color: var(--ink-2); }
+.sy-batang div { display: grid; grid-template-columns: 84px 1fr 34px; align-items: center; gap: 6px; }
+.sy-batang i { height: 10px; background: var(--bg-panel-2); border-radius: 2px; overflow: hidden; }
+.sy-batang i b { display: block; height: 100%; background: var(--lc-air); border-radius: 0 2px 2px 0; }
+.sy-batang em { font-style: normal; font-weight: 700; color: var(--teks); text-align: right; }
+
+.gn-bingkai { max-width: 680px; }
+.gn-kisi { stroke: var(--border); stroke-width: 1; }
+.gn-diagonal { stroke: var(--ink-3); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.gn-angka { font: 12px var(--sans); fill: var(--ink-3); }
+.gn-sumbu { font: 700 13px var(--sans); fill: var(--ink-2); }
+.gn-label { font: 700 13px var(--sans); fill: var(--ink-1); paint-order: stroke; stroke: var(--bg-page); stroke-width: 4px; }
+.gn-titik { fill: var(--gn-titik); fill-opacity: .8; stroke: var(--bg-page); stroke-width: 2; cursor: pointer; }
+.gn-titik.kosong { fill: var(--bg-page); stroke: var(--gn-titik); stroke-width: 2; }
+.gn-kunci { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 10px 0 0; font: 13px var(--sans); color: var(--ink-2); }
+.gn-kunci span { display: inline-flex; align-items: center; gap: 7px; }
+.gn-kunci .gn-penuh { background: var(--gn-titik); border-radius: 50%; }
+.gn-kunci .gn-kosong { border: 2px solid var(--gn-titik); border-radius: 50%; }
+.gn-kunci .gn-garis { height: 0; border-top: 2px dashed var(--ink-3); border-radius: 0; }

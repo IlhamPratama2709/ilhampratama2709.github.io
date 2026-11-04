@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="../gaya.css">
 <link rel="stylesheet" href="proyek.css">
 <link rel="stylesheet" href="semarang-peta.css">
+<link rel="stylesheet" href="sayung-gnss.css">
 <style>.judul-foto.foto-semarang { background-image: url("../images/proyek/semarang/latar-kota-lama.jpg"); background-position: center 40%; }</style>
 <script>try { if (localStorage.getItem("tema") === "dark") document.documentElement.dataset.theme = "dark"; } catch (e) {}</script>
 </head>
@@ -48,9 +49,11 @@
     <div>
       <a href="#mengapa">Why Semarang</a>
       <a href="#peta">Map</a>
+      <a href="#sayung">Sayung</a>
       <a href="#pertanyaan">The question</a>
       <a href="#meja">Desk analysis</a>
       <a href="#lapangan">Fieldwork</a>
+      <a href="#gnss">Checking the radar data</a>
       <a href="#berikutnya">Next steps and limits</a>
       <a href="#peran">My role</a>
     </div>
@@ -70,6 +73,15 @@
       <p class="catatan">Sources: subsidence from Sentinel-1 radar estimates (Ohenhen et al., 2026), as the median of points in each village; villages with fewer than 20 points are not covered. Village boundaries from BIG. Residents are 2024 estimates from WorldPop. Floods from PODES village censuses, by year of occurrence. Night-time light from VIIRS, 2014 and 2022, stopping before a change in the satellite product in 2023; villages too dim in 2014 are left out. Data from the KOMITMEN land subsidence dashboard.</p>
     </section>
 
+    <section id="sayung">
+      <h2>In Sayung, next to Semarang, the sea already covers 44 percent of seven coastal villages</h2>
+      <p>Sayung, in Demak, borders Kota Semarang to the east. In its seven coastal villages, 1,479 of the 3,358 hectares inside village boundaries are no longer mapped as land. In Sidogemah the share is 75 percent, and in Purwosari, Sriwulan, and Bedono it is between 64 and 70 percent.</p>
+      <p>The figure is the gap between each village's administrative area and the land that MapBiomas maps in it, so it does not show when the land was lost. Aerial photos from 2013–2015 already show most of it as open water. Between 2000 and 2024, much of what remained changed too, as rice fields became aquaculture ponds and ponds turned into water.</p>
+      <div id="peta-sayung"><p class="catatan">The map needs JavaScript.</p></div>
+      <p class="lanjut">Land under the sea still sits inside village boundaries, and often on land certificates and asset registers. Who carries that loss is the question this study asks.</p>
+      <p class="catatan">Sources: land cover from MapBiomas Indonesia Collection 4.1.1 (30 m), 2000 and 2024. Village boundaries from BPS. Area no longer mapped as land is administrative area minus mapped area, with no date.</p>
+    </section>
+
     <section id="pertanyaan">
       <h2>The study asks who bears the loss when coastal land sinks</h2>
       <p>The study asks whether land and buildings on the sinking coast have lost value, and who bears the loss. Owners, banks, and local government are the three candidates. Each would see the loss in a different record: sale prices, collateral values, or tax and asset accounts.</p>
@@ -87,6 +99,14 @@
       <p>The field visit was designed to ask for those records and to test what the data suggested. The team met four planning, finance, and revenue agencies of Kota Semarang and Central Java province.</p>
       <p>Officials described flooded offices, abandoned houses, and government land that has turned into fish ponds while still being listed as land. Yet assets stay on the books at their recorded value, and tax assessments have not been lowered anywhere on the coast. The cost shows up instead as land fill, raised roads, pumps, and sea walls, paid by households, firms, and the government.</p>
       <p class="lanjut">The study can now ask a sharper question: not only whether coastal assets have lost value, but who is paying to keep that value on paper, and how much.</p>
+    </section>
+
+    <section id="gnss">
+      <h2>Radar estimates match ground stations to within 0.3 cm a year</h2>
+      <p>Every subsidence figure on this page comes from radar estimates by Ohenhen et al. (2026). Before using them, I compared them with GNSS stations run by BIG, Indonesia's mapping agency. At 57 stations with an official velocity, the radar median within 500 metres differs from the station by a median of 0.28 cm a year, and by less than 0.64 cm at nine stations in ten.</p>
+      <p>But most stations stand on stable ground, so the test is weakest where it matters most. Only two stations sink fast. In Pekalongan, GNSS records 12.2 cm a year and the radar 9.2. In Genuk, Semarang, the figures are 8.4 and 7.6, from a record of only two years. Both confirm fast sinking, and the radar may understate the fastest rates.</p>
+      <div id="grafik-gnss"><p class="catatan">The chart needs JavaScript.</p></div>
+      <p class="catatan">Sources: GNSS velocities from BIG's Ina-CORS network; where no official velocity exists, a trend fitted to the station's own record, 2017–2023 (open circles). Radar estimates from Ohenhen et al. (2026), median of points within 500 m of each station. Stations with no radar points nearby are left out.</p>
     </section>
 
     <section id="berikutnya">
@@ -114,5 +134,7 @@
 <script src="proyek.js"></script>
 <script src="semarang-peta-data.js"></script>
 <script src="semarang-peta.js"></script>
+<script src="sayung-gnss-data.js"></script>
+<script src="sayung-gnss.js"></script>
 </body>
 </html>
