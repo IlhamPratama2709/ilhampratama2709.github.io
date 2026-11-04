@@ -79,7 +79,29 @@ const grupJarak = (k) => ({ judul: `${HASIL[k].nama}, all zones`, unit: HASIL[k]
 
 // Diagram batang mendatar gaya slide ringkasan KOMITMEN. Baris yang disorot berwarna navy, pembanding pucat.
 // Nilai negatif digambar ke kiri dari garis nol.
+// Kolom tegak dengan garis nol, untuk estimasi per cincin jarak.
+function kolom(el, data) {
+  const L = el.clientWidth; if (!L) return;
+  const T = 132, atas = 16, bawah = 30, gelap = document.documentElement.dataset.theme === "dark";
+  const v = data.map((d) => d[1]); let lo = Math.min(0, ...v), hi = Math.max(0, ...v);
+  const pad = (hi - lo) * 0.18; lo -= pad; hi += pad;
+  const y = (x) => atas + ((hi - x) / (hi - lo)) * (T - atas - bawah);
+  const lebarKolom = (L / data.length) * 0.5;
+  let s = `<line x1="0" x2="${L}" y1="${y(0)}" y2="${y(0)}" style="stroke:${warna("--ink-3")}"/>`;
+  data.forEach(([label, nilai, sorot], i) => {
+    const cx = (i + 0.5) * (L / data.length), y0 = y(0), y1 = y(nilai);
+    const isi = sorot ? warna(gelap ? "--seri-1" : "--pita") : gelap ? "rgba(230,238,244,.22)" : "#c9d6e0";
+    s += `<rect x="${(cx - lebarKolom / 2).toFixed(1)}" y="${Math.min(y0, y1).toFixed(1)}" width="${lebarKolom.toFixed(1)}" height="${Math.max(Math.abs(y1 - y0), 1).toFixed(1)}" style="fill:${isi}"/>`
+      + `<text x="${cx}" y="${nilai < 0 ? y1 + 13 : y1 - 5}" text-anchor="middle" style="fill:${warna("--ink-1")};font-weight:700">${angka(nilai)}</text>`
+      + `<text x="${cx}" y="${T - 8}" text-anchor="middle" style="fill:${warna(sorot ? "--ink-1" : "--teks")}${sorot ? ";font-weight:700" : ""}">${label}</text>`;
+  });
+  el.innerHTML = `<svg viewBox="0 0 ${L} ${T}" width="100%" aria-hidden="true">${s}</svg>`;
+}
+
 function ringkasan() {
+  document.querySelectorAll(".rk2-vis[data-garis]").forEach(garisIndeks);
+  document.querySelectorAll(".rk2-vis[data-titik]").forEach((el) => plotTitik(el, [{ baris: JSON.parse(el.dataset.titik).map(([l, e, se, sig]) => [l, e, se, !!sig]) }], true));
+  document.querySelectorAll(".rk2-vis[data-kolom]").forEach((el) => kolom(el, JSON.parse(el.dataset.kolom)));
   document.querySelectorAll(".rk2-batang").forEach((el) => {
     const data = JSON.parse(el.dataset.batang);
     const v = data.map((d) => d[1]), lo = Math.min(0, ...v), hi = Math.max(0, ...v);

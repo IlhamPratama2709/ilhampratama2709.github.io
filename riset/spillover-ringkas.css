@@ -64,7 +64,8 @@
   .rk2-atas { text-align: left; }
 }
 
-.rk-penjelajah svg text { font-family: var(--sans); font-size: 12px; fill: var(--ink-3); }
+.rk2-vis { min-height: 96px; }
+.rk2 svg text, .rk-penjelajah svg text { font-family: var(--sans); font-size: 12px; fill: var(--ink-3); }
 
 /* Penjelajah temuan */
 .rk-kendali { display: grid; gap: 8px; margin: 4px 0 12px; }
