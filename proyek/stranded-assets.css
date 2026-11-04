@@ -1,0 +1,17 @@
+/* Halaman stranded assets: warna kelompok pulau untuk grafik dan kartu studi kasus Semarang */
+:root { --sa-kal: #2a8a6a; --sa-sum: #c05917; --sa-jawa: #286bbb; --sa-sul: #8a4fb0; --sa-lain: #9aa5ae; --sa-captive: #173f66; }
+:root[data-theme="dark"] { --sa-kal: #5cc09b; --sa-sum: #ec8d4f; --sa-jawa: #6aa5ec; --sa-sul: #c08fe0; --sa-lain: #6c7a85; --sa-captive: #c9ddf3; }
+
+.sa-pita { stroke: none; }
+.sa-grup { font: 700 11.5px var(--sans); fill: var(--ink-3); letter-spacing: .04em; text-transform: uppercase; }
+
+/* Case study card */
+.kartu-studi { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 0; margin: 14px 0 0; border: 1px solid var(--border-strong); border-left: 4px solid var(--emas); background: var(--bg-panel-2); color: var(--teks); text-decoration: none; }
+.kartu-studi:hover { border-color: var(--tautan); border-left-color: var(--emas); }
+.kartu-foto { background: url("../images/proyek/semarang/latar-kota-lama.jpg") center 40% / cover no-repeat; min-height: 170px; }
+.kartu-isi { display: flex; flex-direction: column; gap: 8px; padding: 16px 20px; }
+.kartu-isi .meta-kerja { margin: 0 !important; }
+.kartu-isi b { font: 600 21px/1.3 var(--serif); color: var(--ink-1); }
+.kartu-isi span { font-size: 15px; }
+.kartu-isi .kartu-tautan { font-weight: 700; color: var(--tautan); }
+@media (max-width: 560px) { .sekilas td:first-child { width: 96px; } .kartu-studi { grid-template-columns: minmax(0, 1fr); } .kartu-foto { min-height: 140px; } }

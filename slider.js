@@ -2,6 +2,7 @@
 const DRIVE = "https://drive.google.com/drive/folders/";
 const PROYEK = [
   { meta: "Now · KOMITMEN, UIII", judul: "KOMITMEN dashboards", ket: "Eight dashboards and reports for 38 provinces and 514 districts.", foto: "images/proyek/komitmen/klip-3-sampul.jpg", posisi: "62% 50%", tautan: "proyek/komitmen-dashboard.html", sprite: "monas" },
+  { meta: "Now · KOMITMEN, UIII", judul: "Who bears the loss when assets are stranded?", ket: "Coal, palm oil, and the 3.35 million people in Java on fast-sinking ground.", foto: "images/proyek/semarang/latar-kota-lama.jpg", posisi: "50% 40%", tautan: "proyek/stranded-assets.html", sprite: "pinisi" },
   { meta: "EJAVEC 2025 · 1st place", judul: "The Trans-Java Toll Road and East Java's economy", ket: "Toll-road proximity and regional GDP in 30 regencies and cities, 2011–2023.", foto: "images/perjalanan/kota/surabaya.jpg", posisi: "50% 70%", tautan: DRIVE + "1uC9JmEj6kYn9F45ns69kg-oHdkfTuZY1", sprite: "sura" },
   { meta: "Sumatranomics 2025 · 2nd place", judul: "When spillovers don't spill: SEZs in Sumatra", ket: "Why SEZ spillovers are uneven across 154 districts and cities, 2010–2024.", foto: "images/perjalanan/kota/medan.jpg", posisi: "50% 45%", tautan: DRIVE + "10jnVVOmJh2rUiqU8_geWk38uhrGXIBLg", sprite: "maimun" },
   { meta: "PENSAR 2025 · Bangka", judul: "Residents back tourism but take little part", ket: "A survey I led in two villages of Bangka Tengah, with 193 respondents.", foto: "images/perjalanan/kota/bangka.jpg", posisi: "50% 50%", tautan: "riset/pensar-bangka.html", sprite: "ikan" },
