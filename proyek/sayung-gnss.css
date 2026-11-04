@@ -7,13 +7,15 @@
 .sy-pilih button { font: 700 13px var(--sans); color: var(--ink-2); background: var(--bg-page); border: 0; padding: 6px 14px; cursor: pointer; }
 .sy-pilih button + button { border-left: 1px solid var(--border-strong); }
 .sy-pilih button[aria-pressed="true"] { background: var(--pita); color: #fff; }
-.sy-isi { display: grid; grid-template-columns: minmax(0, 1fr) 230px; gap: 18px; align-items: start; }
-@media (max-width: 820px) { .sy-isi { grid-template-columns: minmax(0, 1fr); } }
+.sy-isi { display: grid; gap: 14px; }
+.sy-panel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px 32px; align-items: start; }
+@media (max-width: 560px) { .sy-panel { grid-template-columns: minmax(0, 1fr); } }
 .sy-bingkai, .gn-bingkai { position: relative; border: 1px solid var(--border); border-radius: 4px; background: var(--bg-page); }
 .sy-svg, .gn-svg { display: block; width: 100%; height: auto; touch-action: manipulation; }
 .sy-desa { fill: transparent; stroke: var(--teks); stroke-width: 1; stroke-opacity: .55; cursor: pointer; }
 .sy-desa.aktif { stroke-width: 2.4; stroke-opacity: 1; }
-.sy-nama { font: 700 24px var(--sans); fill: var(--ink-1); text-anchor: middle; paint-order: stroke; stroke: var(--bg-page); stroke-width: 4px; stroke-linejoin: round; pointer-events: none; }
+.sy-nama { font: 700 19px var(--sans); fill: var(--ink-1); text-anchor: middle; paint-order: stroke; stroke: var(--bg-page); stroke-width: 4px; stroke-linejoin: round; pointer-events: none; }
+.sy-kec { font: 900 30px var(--sans); letter-spacing: .08em; fill: var(--ink-1); fill-opacity: .75; text-anchor: middle; paint-order: stroke; stroke: var(--bg-page); stroke-width: 5px; stroke-linejoin: round; pointer-events: none; }
 .sy-kunci { display: grid; gap: 4px; margin: 0 0 16px; font: 13px var(--sans); color: var(--ink-2); }
 .sy-kunci b, .sy-judul-batang { color: var(--ink-1); font: 700 13px var(--sans); }
 .sy-kunci span { display: inline-flex; align-items: center; gap: 7px; }
@@ -38,3 +40,14 @@
 .gn-kunci .gn-penuh { background: var(--gn-titik); border-radius: 50%; }
 .gn-kunci .gn-kosong { border: 2px solid var(--gn-titik); border-radius: 50%; }
 .gn-kunci .gn-garis { height: 0; border-top: 2px dashed var(--ink-3); border-radius: 0; }
+
+/* satellite before/after: 2000 on top, clipped by the slider; 2024 underneath */
+.banding { position: relative; margin: 18px 0 6px; border-radius: 4px; overflow: hidden; background: #0b1e2b; user-select: none; }
+.banding img { display: block; width: 100%; height: auto; }
+.banding-atas { position: absolute; inset: 0; }
+.banding-garis { position: absolute; top: 0; bottom: 0; width: 3px; margin-left: -1.5px; background: #fff; box-shadow: 0 0 6px rgba(0,0,0,.5); pointer-events: none; }
+.banding-garis::after { content: "‹ ›"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 34px; height: 34px; border-radius: 50%;
+  background: #fff; color: #003a5d; font: 900 16px/34px var(--sans); text-align: center; box-shadow: 0 1px 6px rgba(0,0,0,.4); }
+.banding input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; touch-action: pan-y; }
+.banding-tahun { position: absolute; top: 10px; padding: 3px 9px; border-radius: 3px; background: rgba(0,0,0,.6); color: #fff; font: 700 13px var(--sans); pointer-events: none; }
+.banding-tahun.kiri { left: 10px; } .banding-tahun.kanan { right: 10px; }

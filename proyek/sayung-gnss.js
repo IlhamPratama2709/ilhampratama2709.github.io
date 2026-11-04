@@ -30,10 +30,8 @@
     var tahun = '2024';
 
     function cincin(g){ return g.type === 'Polygon' ? [g.coordinates] : g.coordinates; }
-    var x0 = 1e9, x1 = -1e9, y0 = 1e9, y1 = -1e9;
-    S.desa.forEach(function(d){ cincin(d.g).forEach(function(p){ p[0].forEach(function(c){
-      if (c[0] < x0) x0 = c[0]; if (c[0] > x1) x1 = c[0]; if (c[1] < y0) y0 = c[1]; if (c[1] > y1) y1 = c[1];
-    }); }); });
+    /* Same frame as the satellite images above, Genuk to Sayung */
+    var x0 = S.bbox[0], y0 = S.bbox[1], x1 = S.bbox[2], y1 = S.bbox[3];
     var kos = Math.cos((y0 + y1) / 2 * Math.PI / 180), L = 900, tepi = 8;
     var sk = (L - 2 * tepi) / ((x1 - x0) * kos), T = Math.round((y1 - y0) * sk + 2 * tepi);
     function f(c){ return (tepi + (c[0] - x0) * kos * sk).toFixed(1) + ' ' + (tepi + (y1 - c[1]) * sk).toFixed(1); }
@@ -43,7 +41,7 @@
       '<div class="sy-kendali"><span>Land cover in</span><div class="sy-pilih" role="group" aria-label="Year">' +
         '<button type="button" data-th="2000">2000</button><button type="button" data-th="2024">2024</button></div></div>' +
       '<div class="sy-isi"><div class="sy-bingkai"><svg class="sy-svg" role="img" viewBox="0 0 ' + L + ' ' + T + '"></svg><div class="peta-tip" hidden></div></div>' +
-      '<div class="sy-panel"><div class="peta-kunci sy-kunci"></div><b class="sy-judul-batang">Share of village area no longer mapped as land</b><div class="sy-batang"></div></div></div>';
+      '<div class="sy-panel"><div class="peta-kunci sy-kunci"></div><div><b class="sy-judul-batang">Share of village area no longer mapped as land, Sayung</b><div class="sy-batang"></div></div></div></div>';
     var svg = akar.querySelector('svg'), tip = akar.querySelector('.peta-tip'), bingkai = akar.querySelector('.sy-bingkai');
     el('defs', {}, svg).innerHTML = '<pattern id="sy-arsir" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="var(--lc-hilang)"/><line x1="0" y1="0" x2="0" y2="7" stroke="var(--lc-air)" stroke-width="2.4"/></pattern>';
     var gDasar = el('g', {}, svg), gLahan = el('g', {}, svg), gDesa = el('g', {}, svg), gNama = el('g', {}, svg);
@@ -51,7 +49,11 @@
     S.desa.forEach(function(d){ el('path', {d: jalur(d.g), fill: 'url(#sy-arsir)'}, gDasar); });
     S.desa.forEach(function(d){
       var p = el('path', {d: jalur(d.g), 'class': 'sy-desa'}, gDesa); p.__d = d;
-      if (d.pct > 4){ var q = f(d.lbl).split(' '); el('text', {x: q[0], y: q[1], 'class': 'sy-nama'}, gNama).textContent = d.n; }
+      if (d.pct > 4 && d.kec.indexOf('Sayung') === 0){ var q = f(d.lbl).split(' '); el('text', {x: q[0], y: q[1], 'class': 'sy-nama'}, gNama).textContent = d.n; }
+    });
+    [['GENUK', 110.462, -6.951], ['SAYUNG', 110.537, -6.950]].forEach(function(k){
+      var q = f([k[1], k[2]]).split(' ');
+      el('text', {x: q[0], y: q[1], 'class': 'sy-kec'}, gNama).textContent = k[0];
     });
     function gambar(){
       gLahan.textContent = '';
@@ -62,7 +64,7 @@
     akar.querySelector('.sy-kunci').innerHTML = '<b>Land cover (MapBiomas)</b>' +
       Object.keys(KELAS).map(function(k){ return '<span><i style="background:' + KELAS[k][0] + '"></i>' + KELAS[k][1] + '</span>'; }).join('') +
       '<span><i class="arsir"></i>No longer mapped as land</span>';
-    var pesisir = S.desa.filter(function(d){ return d.pct > 4; }).sort(function(a, b){ return b.pct - a.pct; });
+    var pesisir = S.desa.filter(function(d){ return d.pct > 4 && d.kec.indexOf('Sayung') === 0; }).sort(function(a, b){ return b.pct - a.pct; });
     akar.querySelector('.sy-batang').innerHTML = pesisir.map(function(d){
       return '<div><span>' + d.n + '</span><i><b style="width:' + d.pct + '%"></b></i><em>' + d.pct + '%</em></div>';
     }).join('');
@@ -70,7 +72,7 @@
     function tampil(p, x, y){
       var d = p.__d;
       gDesa.querySelectorAll('path').forEach(function(j){ j.classList.toggle('aktif', j === p); });
-      tip.innerHTML = '<b>' + d.n + '</b><span>Sayung, Kab. Demak</span><dl>' +
+      tip.innerHTML = '<b>' + d.n + '</b><span>' + d.kec + '</span><dl>' +
         (d.adm != null ? '<dt>Village area</dt><dd>' + angka(d.adm) + ' ha</dd><dt>No longer land</dt><dd>' + angka(d.hilang) + ' ha (' + d.pct + '%)</dd>' : '') + '</dl>';
       tempelTip(bingkai, tip, x, y);
     }
@@ -80,6 +82,16 @@
     svg.addEventListener('click', function(e){ if (e.target.__d) tampil(e.target, e.clientX, e.clientY); else sembunyi(); });
     akar.addEventListener('click', function(e){ var b = e.target.closest('[data-th]'); if (b){ tahun = b.dataset.th; gambar(); } });
     gambar();
+  })();
+
+  /* ---------------------------------------------------------------- satellite before/after */
+  (function(){
+    var akar = document.getElementById('banding-citra');
+    if (!akar) return;
+    var geser = akar.querySelector('input'), atas = akar.querySelector('.banding-atas'), garis = akar.querySelector('.banding-garis');
+    function atur(){ var v = geser.value; atas.style.clipPath = 'inset(0 ' + (100 - v) + '% 0 0)'; garis.style.left = v + '%'; }
+    geser.addEventListener('input', atur);
+    atur();
   })();
 
   /* ---------------------------------------------------------------- GNSS vs radar */
