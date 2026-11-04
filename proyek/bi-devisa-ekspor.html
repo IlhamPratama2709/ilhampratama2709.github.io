@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Biodiesel and Export Proceeds · Muhammad Ilham Pratama</title>
-<meta name="description" content="Two topics from internships at Bank Indonesia in 2025–2026, rebuilt from public sources: a calculator of the land and peat cost of biodiesel blending, and a comparison of export-proceeds rules in six Asian economies.">
+<title>Rules on Export Proceeds · Muhammad Ilham Pratama</title>
+<meta name="description" content="From an internship at Bank Indonesia, rebuilt from public regulations: how Indonesia's rules on natural-resource export proceeds changed from 2019 to 2026, compared with five Asian economies.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../gaya.css">
 <link rel="stylesheet" href="proyek.css?v=20261104g">
 <link rel="stylesheet" href="semarang-tata.css?v=20261104g">
-<link rel="stylesheet" href="bank-indonesia.css?v=20261104c">
+<link rel="stylesheet" href="bank-indonesia.css?v=20261104d">
 <script>try { if (localStorage.getItem("tema") === "dark") document.documentElement.dataset.theme = "dark"; } catch (e) {}</script>
 </head>
 <body>
@@ -31,15 +31,15 @@
   </div>
 </header>
 
-<div class="judul-paper judul-foto foto-bi">
+<div class="judul-paper judul-foto foto-bi foto-bi-dhe">
   <div class="wadah">
-    <p class="jejak"><a href="../index.html#pengalaman">Experience</a> › Bank Indonesia internships</p>
-    <p class="supertitle">Internship topics · Bank Indonesia, Jakarta · August 2025 – February 2026</p>
-    <h1>B40 biodiesel saves about 40 million tonnes of CO<sub>2</sub> a year, and clearing 62,500 hectares of peat forest would cancel it</h1>
-    <p class="lead">Two topics from my internships at Bank Indonesia, rebuilt from public sources: what a higher biodiesel blend costs in land and peat, and how Indonesia's rules on natural-resource export proceeds compare with five other Asian economies.</p>
-    <p class="status-proyek"><b>About this page:</b> the calculator and the tables are my own reconstruction from public regulations and published studies. They are not Bank Indonesia findings and use no Bank Indonesia data.</p>
+    <p class="jejak"><a href="../index.html#pengalaman">Experience</a> › Bank Indonesia, Department of Reporting Management and Compliance</p>
+    <p class="supertitle">Internship · Bank Indonesia, Jakarta · August – October 2025</p>
+    <h1>Indonesia is the only one of six Asian economies that makes exporters keep their proceeds at home for a fixed period</h1>
+    <p class="lead">From my internship in Bank Indonesia's Department of Reporting Management and Compliance: how the rules on natural-resource export proceeds (DHE SDA) have changed since 2019, and how they compare with Malaysia, the Philippines, Thailand, India, and China.</p>
+    <p class="status-proyek"><b>About this page:</b> the timeline and the table are my own compilation from public regulations. They are not Bank Indonesia findings and use no Bank Indonesia data.</p>
   </div>
-  <p class="kredit-proyek">Cleared and drained peat land for an oil palm concession, Riau (2007). Photo: Hayden, <a href="https://commons.wikimedia.org/wiki/File:Riau_palm_oil_2007.jpg">CC BY 2.0</a>.</p>
+  <p class="kredit-proyek">Coal barges on the Mahakam River, Samarinda (2020). Photo: Herusutimbul, <a href="https://commons.wikimedia.org/wiki/File:Kapal_Tongkang_Batubara_melintas_Sungai_Mahakam.jpg">CC BY-SA 4.0</a>.</p>
 </div>
 
 <div class="wadah tata-paper">
@@ -47,9 +47,7 @@
     <b>On this page</b>
     <div>
       <a href="#ringkasan">Summary</a>
-      <a href="#kalkulator">Biodiesel calculator</a>
-      <a href="#asumsi">Assumptions</a>
-      <a href="#dhe">Export proceeds rules</a>
+      <a href="#dhe">Indonesia's rules, 2019–2026</a>
       <a href="#enam">Six economies</a>
       <a href="#peran">My role</a>
     </div>
@@ -58,63 +56,14 @@
   <main class="naskah">
     <section id="ringkasan">
       <h2>Summary</h2>
-      <p>Indonesia has raised the share of palm-based biodiesel in its diesel from 20 percent in 2016 to 40 percent in 2025, and B50 has applied since 1 July 2026. The Ministry of Energy and Mineral Resources (ESDM) puts the emission saving of B40 at about 41 million tonnes of CO<sub>2</sub>e a year. The saving is real only if the palm oil does not come from newly cleared peat.</p>
-      <p>The calculator below shows how thin that margin is. At B40 the biodiesel needs about 14.8 million tonnes of crude palm oil, the output of some 3.7 million hectares of oil palm. Clearing 62,500 hectares of peat swamp forest, under 2 percent of that area, releases as much carbon as B40 saves in a year.</p>
-      <p>The second half of the page traces the rules on export proceeds from natural resources (<i>devisa hasil ekspor sumber daya alam</i>, DHE SDA). Since 2019 Indonesia has moved from requiring that the proceeds enter the domestic financial system to requiring that non-oil-and-gas exporters keep all of them at home for a year. None of the five neighbours compared here asks for that much.</p>
-    </section>
-
-    <section id="kalkulator">
-      <h2>A biodiesel blend can be cancelled by a small area of peat</h2>
-      <div class="duo">
-        <div>
-          <div class="kalk-kontrol">
-            <label for="campuran">Biodiesel blend <span class="kalk-b" id="kalk-b">B40</span></label>
-            <input type="range" id="campuran" min="0" max="70" step="5" value="40">
-            <div class="kalk-skala" aria-hidden="true"><span style="--p:0">B0</span><span style="--p:.2857">B20</span><span style="--p:.5714">B40</span><span style="--p:.7143">B50</span><span style="--p:1">B70</span></div>
-            <div class="kalk-pilih"><span>Tonnes of biodiesel per tonne of CPO</span><span role="group" aria-label="Conversion yield"><button type="button" data-rendemen="0.85" aria-pressed="true">0.85</button><button type="button" data-rendemen="0.9" aria-pressed="false">0.90</button></span></div>
-          </div>
-          <dl class="kalk-hasil" aria-live="polite">
-            <div><dt>Biodiesel needed</dt><dd><span id="o-biodiesel"></span><small>million kL</small></dd></div>
-            <div><dt>Crude palm oil needed</dt><dd><span id="o-cpo"></span><small>million t</small></dd></div>
-            <div><dt>Oil palm land equivalent</dt><dd><span id="o-lahan"></span><small>million ha</small></dd></div>
-            <div><dt>Emissions saved a year</dt><dd><span id="o-emisi"></span><small>Mt CO<sub>2</sub>e</small></dd></div>
-            <div class="gambut"><dt>Peat forest whose clearing cancels one year</dt><dd><span id="o-sekali"></span><small>ha</small></dd></div>
-            <div class="gambut"><dt>Drained peat that cancels it every year</dt><dd><span id="o-tahunan"></span><small>ha</small></dd></div>
-          </dl>
-          <svg class="kalk-batang" id="kalk-batang" viewBox="0 0 400 136" role="img" aria-label="Bars comparing the oil palm land equivalent with the two peat areas, in hectares"></svg>
-          <p class="kalk-rasio" id="kalk-rasio"></p>
-        </div>
-        <div class="duo-teks">
-          <p>Move the slider to change the blend. B40 means 40 percent biodiesel and 60 percent fossil diesel. Every figure scales in a straight line with the blend.</p>
-          <p>The first three figures trace the palm oil back to the land. At B40 the program needs 14.3 million kilolitres of biodiesel a year, or about 12.6 million tonnes. Making it takes 14.0–14.8 million tonnes of crude palm oil, depending on the conversion yield, and growing that oil takes 3.5–3.7 million hectares.</p>
-          <p>The last two figures turn the saving into peat. Clearing a hectare of peat swamp forest for oil palm releases about 640 tonnes of CO<sub>2</sub> from vegetation alone. A drained hectare then keeps emitting about 100 tonnes a year as the peat decomposes. So 62,500 hectares of cleared forest wipe out one year of B40's saving, and 400,000 hectares of drained peat wipe it out every year.</p>
-          <p>The land figure is an equivalent, not a forecast of new plantations. Most of the oil would be diverted from exports grown on existing land. But each step up in the blend raises demand for palm oil, and the peat figures show how little expansion onto peat it takes to erase the gain.</p>
-          <p class="catatan">My illustration from the public parameters listed below, not a Bank Indonesia result. The 40 Mt saving is the ESDM estimate, which counts the fossil diesel displaced; a life-cycle estimate that counts the emissions of growing and processing the palm oil would be smaller.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="asumsi">
-      <h2>Assumptions</h2>
-      <p>The calculator uses seven public parameters. Changing any of them moves the results in proportion.</p>
-      <div class="tabel-gulir"><table class="asumsi">
-        <thead><tr><th>Parameter</th><th>Value</th><th>Source</th></tr></thead>
-        <tbody>
-          <tr><td>Diesel demand for transport</td><td>35.7 million kL a year</td><td>ESDM energy statistics, 2021–2023 average; IEA (2023)</td></tr>
-          <tr><td>Emissions saved</td><td>40 Mt CO<sub>2</sub>e a year at B40, linear in the blend</td><td>ESDM: 41.46 Mt CO<sub>2</sub>e for the 15.6 million kL B40 allocation in 2025</td></tr>
-          <tr><td>Biodiesel (FAME) density</td><td>0.88 t per kL</td><td>Typical palm methyl ester; SNI 7182:2015 allows 0.85–0.89 at 40°C</td></tr>
-          <tr><td>Conversion yield</td><td>0.85 or 0.90 t biodiesel per t CPO</td><td>MPOB; Basiron (2017)</td></tr>
-          <tr><td>Oil palm productivity</td><td>4 t CPO per ha a year</td><td>FAO; Directorate General of Estate Crops</td></tr>
-          <tr><td>Clearing peat swamp forest</td><td>640 t CO<sub>2</sub> per ha, once</td><td>Novita et al. (2021), vegetation carbon lost when primary peat swamp forest becomes oil palm, Central Kalimantan (±114)</td></tr>
-          <tr><td>Drained peat under oil palm</td><td>100 t CO<sub>2</sub>e per ha a year</td><td>Page et al. (2011) and Hooijer et al. (2012), average over 25 years; the IPCC (2014) Tier 1 default for on-site CO<sub>2</sub> is lower, about 40</td></tr>
-        </tbody>
-      </table></div>
-      <p class="catatan">The 640 tonnes leaves out the peat itself, so it understates what clearing releases once the peat burns or decomposes. The 100-tonne rate sits well above the IPCC default because it includes the fast losses of the first years after drainage. The calculator shows the two separately and does not add them. Biodiesel volumes in kilolitres are converted to tonnes with the density above; skipping that step, and treating a kilolitre as a tonne, overstates the land by about 14 percent.</p>
+      <p>Coal, palm oil, metals, timber, and fish earn a large share of Indonesia's foreign currency, but for years much of it stayed in accounts abroad. Since 2019 the government has moved from requiring that these export proceeds enter the domestic financial system to requiring that non-oil-and-gas exporters keep all of them at home for a year.</p>
+      <p>None of the five neighbours compared here asks for that much. Malaysia and India set deadlines for bringing proceeds home but do not say how long they must stay. Thailand and the Philippines ask for little beyond reporting, and Thailand loosened its rule again in January 2026 to ease pressure on the baht.</p>
+      <p class="lanjut">My other placement, on biodiesel and peat, has <a href="bi-biodiesel.html">its own page</a>.</p>
     </section>
 
     <section id="dhe">
       <h2>Indonesia now asks natural-resource exporters to keep all non-oil-and-gas proceeds at home for a year</h2>
-      <p>Indonesia's exports of coal, palm oil, metals, timber, and fish earn a large share of its foreign currency, but much of it used to stay in accounts abroad. Since 2019 four government regulations (<i>peraturan pemerintah</i>, PP) have set, and then tightened, what exporters must do with those earnings.</p>
+      <p>Since 2019 four government regulations (<i>peraturan pemerintah</i>, PP) have set, and then tightened, what exporters of mining, plantation, forestry, and fishery products must do with their earnings.</p>
       <ol class="alur">
         <li class="langkah" id="langkah-1">
           <p class="tanggal-langkah">PP 1/2019 · in force 10 January 2019</p>
@@ -148,7 +97,7 @@
     </section>
 
     <section id="enam">
-      <h2>Indonesia is the only one of six economies to require exporters to keep proceeds for a fixed period</h2>
+      <h2>Malaysia and India set deadlines for bringing proceeds home; Thailand and the Philippines ask for little</h2>
       <p>Every economy here wants export earnings to pass through its own banks, but only Indonesia tells exporters how long to keep them there. Malaysia and India set a deadline for bringing proceeds home. Thailand asks only for large receipts to come home, and since January 2026 only above USD 10 million a transaction. The Philippines asks for nothing beyond reporting.</p>
       <p>India goes the other way on retention. Exporters may hold earnings in a foreign-currency account, but what they have not used by the end of the following month must be converted to rupees. The rules also serve different ends. Thailand relaxed its rules to let money flow out and ease pressure on the baht, while Indonesia tightened its own to keep foreign currency at home.</p>
       <div class="tabel-gulir tabel-lebar"><table class="enam">
@@ -210,9 +159,8 @@
 
     <section id="peran">
       <h2>My role</h2>
-      <p>I interned at Bank Indonesia in two units. From August to October 2025 I was in the Department of Reporting Management and Compliance, working on an issue note on natural-resource export proceeds and foreign exchange reserves. I processed data for the note and compared the rules on export proceeds in six economies. The table above is a fresh version of that comparison, checked again against public sources.</p>
-      <p>From November 2025 to February 2026 I was at the Bank Indonesia Institute, which was studying a move to B50 biodiesel and beyond. I worked on the trade-off between emission savings and the land and peat that palm oil needs, which the calculator above rebuilds from public parameters. I also wrote my own internship report on a business model for fishers' cooperatives under the Koperasi Desa Merah Putih program.</p>
-      <p>The issue note and the biodiesel study are internal Bank Indonesia documents, and their data and findings are not shown here.</p>
+      <p>From August to October 2025 I interned in the Department of Reporting Management and Compliance, working on an issue note on natural-resource export proceeds and foreign exchange reserves. I processed data for the note and compared the rules on export proceeds in six economies. The table above is a fresh version of that comparison, checked again against public sources.</p>
+      <p>The issue note is an internal Bank Indonesia document, and its data and findings are not shown here. After this placement I moved to the Bank Indonesia Institute to work on <a href="bi-biodiesel.html">biodiesel and peat</a>.</p>
     </section>
   </main>
 </div>
@@ -225,6 +173,5 @@
 </footer>
 
 <script src="proyek.js?v=20261104g"></script>
-<script src="bank-indonesia.js?v=20261104b"></script>
 </body>
 </html>

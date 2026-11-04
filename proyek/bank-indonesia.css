@@ -58,3 +58,4 @@
 .tabel-lebar { position: relative; z-index: 1; background: var(--bg-page); margin: 18px 0 8px; }
 @media (min-width: 821px) { .tabel-lebar { margin-left: -234px; } }
 .kalk-batang .gr-label { font-size: 12px; }
+.judul-foto.foto-bi-dhe { background-image: url("../images/proyek/bank-indonesia/latar-tongkang-mahakam.jpg"); background-position: center 55%; }
