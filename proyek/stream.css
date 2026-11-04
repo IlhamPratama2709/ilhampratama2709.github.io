@@ -1,0 +1,20 @@
+/* Halaman stream growth diagnostics dan dekarbonisasi industri: warna bahan bakar, status tahun, dan peta kecil Jawa Barat */
+:root { --bb-B: #4a4a4a; --bb-G: #c05917; --bb-D: #8a6d3b; --bb-A: #286bbb; --bb-P: #b8302f; --bb-M: #6b8e23; --bb-S: #d9a521; --bb-W: #3a9c92; --bb-U: #9aa5ae;
+  --sk-hijau: #2a8a6a; --sk-kuning: #d9a521; --sk-merah: #b8302f; --pj-isi: #e3e8ec; --pj-garis: #ffffff; --pj-1: #dbe7f1; --pj-2: #a9c6df; --pj-3: #6a9cc8; --pj-4: #2f6aa6; --pj-5: #173f66; }
+:root[data-theme="dark"] { --bb-B: #b8b8b8; --bb-G: #ec8d4f; --bb-D: #c9a66b; --bb-A: #6aa5ec; --bb-P: #e0706f; --bb-M: #9cc45a; --bb-S: #f0c84a; --bb-W: #5cc0b3; --bb-U: #6c7a85;
+  --sk-hijau: #5cc09b; --sk-kuning: #f0c84a; --sk-merah: #e0706f; --pj-isi: #1a2730; --pj-garis: #0e1a23; --pj-1: #2e4a60; --pj-2: #3a6185; --pj-3: #3f75a6; --pj-4: #6aa5ec; --pj-5: #c9ddf3; }
+
+.peta-jabar .grafik-svg { max-height: 420px; }
+.pj-wil { fill: var(--pj-isi); stroke: var(--pj-garis); stroke-width: .8px; vector-effect: non-scaling-stroke; cursor: pointer; }
+.pj-wil:hover { stroke: var(--ink-1); stroke-width: 1.4px; }
+.pj-titik { stroke: var(--bg-page); stroke-width: 1px; fill-opacity: .85; cursor: pointer; }
+.pj-kek { fill: none; stroke: var(--emas); stroke-width: 2.5px; cursor: pointer; }
+.gn-kunci i.bulat { border-radius: 50%; }
+.gn-kunci i.cincin { border-radius: 50%; background: none !important; border: 2.5px solid var(--emas); width: 10px; height: 10px; }
+.angka-celah { margin: 18px 0 8px; }
+.angka-celah td:nth-child(n+2) { text-align: right; white-space: nowrap; }
+.angka-celah th { font-size: 13px; text-align: left; color: var(--ink-3); font-weight: 700; padding: 0 0 6px; }
+.angka-celah th:nth-child(n+2) { text-align: right; }
+.video-rencana { margin: 6px 0 0; padding: 16px 18px; border: 1px dashed var(--border-strong); background: var(--bg-panel-2); font-size: 15px; }
+.video-rencana b { color: var(--ink-1); }
+@media (max-width: 560px) { .sekilas td:first-child { width: 96px; } .angka-celah td:nth-child(n+2) { white-space: normal; } .angka-celah { font-size: 14px; } }
