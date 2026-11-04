@@ -1,0 +1,83 @@
+/* Ringkasan "at a glance" dan penjelajah temuan di halaman skripsi. */
+
+/* Pita selebar halaman yang meniru slide ringkasan eksekutif PPT KOMITMEN:
+   panel foto di kiri, 3 × 2 panel diagram batang di kanan, pita istilah di bawah. */
+.rk2 { padding: 32px 0 4px; scroll-margin-top: 70px; }
+/* Container dipasang di pembungkus: container query tidak bisa mengubah tata letak elemen container itu sendiri. */
+.rk2 > .wadah { container-type: inline-size; }
+.rk2-slide { display: grid; grid-template-columns: 31% 1fr; background: var(--bg-page); border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,30,50,.06); }
+.rk2-foto { position: relative; color: #fff; background: #0b1a2a center / cover no-repeat; border-left: 7px solid var(--emas); }
+.rk2-foto::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,24,42,.50) 0%, rgba(7,24,42,.72) 45%, rgba(7,24,42,.93) 100%); }
+.rk2-foto > div { position: relative; height: 100%; display: flex; flex-direction: column; padding: 28px 26px 18px; }
+.rk2-asal { font: 700 12px var(--sans); letter-spacing: .06em; color: #d6e2ec; margin: 0; }
+.rk2-label { margin: auto 0 10px; padding-top: 40px; font: 700 13px var(--sans); letter-spacing: .2em; color: var(--emas); }
+.rk2-foto h2 { font: 600 30px/1.15 var(--serif); color: #fff; margin: 0 0 22px; }
+.rk2-foto ul { list-style: none; margin: 0 0 22px; padding: 0; display: grid; gap: 14px; }
+.rk2-foto li { position: relative; padding-left: 20px; font-size: 15.5px; line-height: 1.42; color: #eef3f7; }
+.rk2-foto li::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; background: var(--emas); }
+.rk2-foto small { font-size: 11.5px; color: #b9c8d4; }
+.rk2-foto small a { color: inherit; }
+
+.rk2-isi { display: flex; flex-direction: column; padding: 14px 26px 18px; min-width: 0; }
+.rk2-atas { margin: 0 0 6px; text-align: right; font-size: 13px; color: var(--ink-2); }
+.rk2-panel { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.rk2-p { display: flex; flex-direction: column; padding: 14px 18px 16px; border-left: 1px dashed var(--border-strong); }
+.rk2-p:nth-child(3n + 1) { border-left: 0; padding-left: 0; }
+.rk2-p:nth-child(n + 4) { border-top: 1px solid var(--border); }
+.rk2-p h3 { font: 700 12.5px var(--sans); letter-spacing: .13em; text-transform: uppercase; color: var(--supertitle); margin: 0 0 14px; }
+.rk2-p p { font-size: 13.6px; line-height: 1.45; margin: 14px 0 8px; color: var(--teks); }
+.rk2-p p b { color: var(--ink-1); }
+.rk2-p cite { margin-top: auto; font-size: 11.8px; color: var(--ink-3); }
+
+.rk2-batang { display: grid; grid-template-columns: max-content minmax(0, 1fr); align-items: center; gap: 10px 10px; font-size: 13.4px; }
+.rk2-baris { display: contents; }
+.rk2-baris > span:first-child { text-align: right; white-space: nowrap; color: var(--teks); }
+.rk2-baris.sorot > span:first-child { font-weight: 700; color: var(--ink-1); }
+.rk2-jalur { position: relative; height: 24px; }
+.rk2-jalur i { position: absolute; top: 0; height: 100%; background: #c9d6e0; }
+.rk2-baris.sorot .rk2-jalur i { background: var(--pita); }
+.rk2-jalur em { position: absolute; top: 3px; font-style: normal; font-weight: 700; color: var(--ink-1); white-space: nowrap; }
+.rk2-jalur b { position: absolute; top: -3px; bottom: -3px; width: 1px; background: var(--ink-3); }
+:root[data-theme="dark"] .rk2-jalur i { background: rgba(230, 238, 244, .22); }
+:root[data-theme="dark"] .rk2-baris.sorot .rk2-jalur i { background: var(--seri-1); }
+
+.rk2-istilah { display: flex; gap: 22px; align-items: baseline; margin-top: 14px; padding: 14px 20px; background: var(--bg-panel-2); }
+.rk2-istilah b { flex: none; font: 700 12.5px var(--sans); letter-spacing: .13em; color: var(--supertitle); }
+.rk2-istilah p { margin: 0; font-size: 13px; line-height: 1.5; color: var(--ink-2); }
+
+@container (max-width: 980px) {
+  .rk2-slide { grid-template-columns: 1fr; }
+  .rk2-foto { border-left: 0; border-top: 6px solid var(--emas); }
+  .rk2-label { margin-top: 0; padding-top: 18px; }
+  .rk2-panel { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rk2-p:nth-child(3n + 1) { border-left: 1px dashed var(--border-strong); padding-left: 18px; }
+  .rk2-p:nth-child(2n + 1) { border-left: 0; padding-left: 0; }
+  .rk2-p:nth-child(n + 3) { border-top: 1px solid var(--border); }
+}
+@container (max-width: 560px) {
+  .rk2-isi { padding: 10px 16px 16px; }
+  .rk2-panel { grid-template-columns: 1fr; }
+  .rk2-p { border-left: 0 !important; padding-left: 0 !important; }
+  .rk2-p:nth-child(n + 2) { border-top: 1px solid var(--border); }
+  .rk2-foto h2 { font-size: 25px; }
+  .rk2-istilah { flex-direction: column; gap: 4px; padding: 12px 14px; }
+  .rk2-atas { text-align: left; }
+}
+
+.rk-penjelajah svg text { font-family: var(--sans); font-size: 12px; fill: var(--ink-3); }
+
+/* Penjelajah temuan */
+.rk-kendali { display: grid; gap: 8px; margin: 4px 0 12px; }
+.rk-grup { display: flex; align-items: flex-start; gap: 8px; }
+.rk-grup > span:first-child { flex: none; width: 82px; padding-top: 6px; font: 700 11.5px var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
+.rk-grup > span[id] { display: flex; flex-wrap: wrap; gap: 6px; flex: 1; }
+.rk-grup button { font: 700 13px var(--sans); white-space: nowrap; padding: 5px 11px; border-radius: 999px; border: 1px solid var(--border-strong); background: var(--bg-page); color: var(--ink-1); cursor: pointer; }
+.rk-grup button[aria-pressed="true"] { background: var(--pita); border-color: var(--pita); color: #fff; }
+:root[data-theme="dark"] .rk-grup button[aria-pressed="true"] { background: var(--emas); border-color: var(--emas); color: #0d2238; }
+.rk-grup button:disabled { opacity: .4; cursor: default; }
+.rk-grup button:focus-visible { outline: 2px solid var(--tautan); outline-offset: 2px; }
+.rk-kalimat { font: 700 16.5px/1.45 var(--sans); color: var(--ink-1); border-left: 3px solid var(--emas); background: var(--bg-panel-2); padding: 10px 14px; margin: 0 0 12px; }
+
+@media (max-width: 760px) {
+  .rk-grup > span:first-child { width: 70px; }
+}
