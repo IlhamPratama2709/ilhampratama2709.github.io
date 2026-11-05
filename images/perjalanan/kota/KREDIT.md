@@ -17,3 +17,4 @@ Semua dari Wikimedia Commons dengan lisensi bebas. Kredit tampil di kartu peta.
 | `kuala-lumpur.jpg` | Kuala Lumpur Malaysia Petronas-Twin-Towers-01.jpg | CEphoto, Uwe Aranas | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Kuala_Lumpur_Malaysia_Petronas-Twin-Towers-01.jpg |
 | `bandar-lampung.jpg` | Bandar Lampung.JPG | 22Kartika | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Bandar_Lampung.JPG |
 | `makassar.jpg` | Mosque in Makassar 20251004.jpg | Rulwarih | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Mosque_in_Makassar_20251004.jpg |
+| `semarang.jpg` | Exterior of Blenduk Church, Semarang, 2014-06-18.jpg | Crisco 1492 | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Exterior_of_Blenduk_Church,_Semarang,_2014-06-18.jpg |

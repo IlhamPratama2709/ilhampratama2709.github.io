@@ -308,6 +308,23 @@ kppppppppppppppk
 bbb.bbbb.bbbb.bb
 .bb..bb...bb..b.
 ................
+""", "blenduk": """
+.......ee.......
+......keek......
+......kwwk......
+....kkrrrrkk....
+...krrrrrrrrk...
+..krrrrrrrrrrk..
+..kkkkkkkkkkkk..
+..kwkwkwwkwkwk..
+..kwkwkwwkwkwk..
+kkkkkkkkkkkkkkkk
+kwwkwwkwwkwwkwwk
+kwwkwwkwwkwwkwwk
+kwwkwwkwwkwwkwwk
+kkkkkkkkkkkkkkkk
+.kaaaaaaaaaaaak.
+................
 """,
 }
 for nama, peta in IKON.items():
