@@ -18,3 +18,11 @@
 .video-rencana { margin: 6px 0 0; padding: 16px 18px; border: 1px dashed var(--border-strong); background: var(--bg-panel-2); font-size: 15px; }
 .video-rencana b { color: var(--ink-1); }
 @media (max-width: 560px) { .sekilas td:first-child { width: 96px; } .angka-celah td:nth-child(n+2) { white-space: normal; } .angka-celah { font-size: 14px; } }
+.tabel-pabrik { border-collapse: separate; border-spacing: 2px; font-size: 13px; font-variant-numeric: tabular-nums; margin: 6px 0 8px; width: 100%; min-width: 560px; }
+.naskah .tabel-pabrik th { font: 700 12px/1.25 var(--sans); color: var(--ink-1); text-align: right; vertical-align: bottom; padding: 0 5px 4px; white-space: normal; text-transform: none; letter-spacing: 0; }
+.naskah .tabel-pabrik th:first-child, .naskah .tabel-pabrik td:first-child { text-align: left; font-weight: 700; color: var(--ink-1); white-space: nowrap; padding-right: 10px; }
+.naskah .tabel-pabrik td { text-align: right; padding: 5px 6px; }
+.tabel-pabrik td.tp-kosong { color: var(--ink-3); }
+.tabel-pabrik td.tp-jumlah { font-weight: 700; border-left: 2px solid var(--border-strong); }
+.tabel-pabrik sup { font-size: 9px; }
+.grafik-svg .tp-isi { font-weight: 700; }

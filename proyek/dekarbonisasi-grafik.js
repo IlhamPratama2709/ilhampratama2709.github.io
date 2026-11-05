@@ -4,6 +4,8 @@
   var D = window.DATA_DEKARB, A = window.ALAT;
   if (!D || !A) return;
   var el = A.el, angka = A.angka;
+  /* why each year is flagged, from the IBS data-quality report (7 Sep 2026) */
+  var ALASAN = {2000: '9% of industry codes cut short', 2001: '29% of industry codes cut short; electricity at the same plants fell', 2002: 'Only 6 of 16 fuel types recorded', 2003: '8% of industry codes cut short', 2004: 'Electricity at the same plants jumped, workforce flat', 2006: 'Plants surveyed rose 42%: the survey frame changed', 2010: 'Electricity at the same plants fell, workforce flat', 2014: 'Electricity at the same plants jumped, workforce flat', 2015: 'Electricity at the same plants fell; use with care'};
   var STATUS = {HIJAU: ['var(--sk-hijau)', 'Usable as a trend'], KUNING: ['var(--sk-kuning)', 'Use with care'], MERAH: ['var(--sk-merah)', 'Break: within-year comparison only']};
 
   /* ------------------------------------------------ 1. electricity at the same plants, year on year, against their employment */
@@ -20,7 +22,7 @@
     seri.forEach(function(d, i){
       var x = m.l + i * lb, y = sy(Math.max(d.listrik, 0)), h = Math.abs(sy(d.listrik) - sy(0)), s = STATUS[d.st];
       var r = el('rect', {x: x + lb * .18, y: y, width: lb * .64, height: Math.max(h, 1), fill: s[0], rx: 1.5}, c.svg);
-      r.__tip = '<b>' + d.th + '</b><span>' + s[1] + '</span><dl><dt>Electricity, same plants</dt><dd>' + (d.listrik > 0 ? '+' : '') + angka(d.listrik, 1) + '%</dd><dt>Median employment</dt><dd>' + (d.pekerja === 1 ? 'no change' : angka((d.pekerja - 1) * 100, 1) + '%') + '</dd><dt>Plants matched</dt><dd>' + angka(d.cocok) + '</dd></dl>';
+      r.__tip = '<b>' + d.th + '</b><span>' + s[1] + (ALASAN[d.th] ? '. ' + ALASAN[d.th] : '') + '</span><dl><dt>Electricity, same plants</dt><dd>' + (d.listrik > 0 ? '+' : '') + angka(d.listrik, 1) + '%</dd><dt>Median employment</dt><dd>' + (d.pekerja === 1 ? 'no change' : angka((d.pekerja - 1) * 100, 1) + '%') + '</dd><dt>Plants matched</dt><dd>' + angka(d.cocok) + '</dd></dl>';
       el('circle', {cx: x + lb / 2, cy: sy((d.pekerja - 1) * 100), r: 3.5, fill: 'var(--ink-1)', 'pointer-events': 'none'}, c.svg);
       if (i % (W < 500 ? 2 : 1) === 0 || d.st === 'MERAH') el('text', {x: x + lb / 2, y: H - 10, 'class': 'gn-angka', 'text-anchor': 'middle'}, c.svg, W < 500 ? "'" + String(d.th).slice(2) : d.th);
     });
