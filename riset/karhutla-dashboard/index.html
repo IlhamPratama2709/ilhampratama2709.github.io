@@ -723,10 +723,11 @@ a.ke-tampilan{color:var(--link, #1a5a8a); text-decoration:underline; text-underl
 .ring-v3 .ring-utama > section{display:flex; flex-direction:column; gap:10px;}
 .ring-v3 .ring-utama > section > p.byline{text-align:left;}
 @media (min-width:1200px){
-  .ring-v3 .ring-utama > section.dua-sisi{display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, 680px); column-gap:40px; row-gap:10px; align-items:start;}
-  .ring-v3 .ring-utama > section.dua-sisi > *{grid-column:1;}
-  .ring-v3 .ring-utama > section.dua-sisi > h2{grid-column:1 / -1;}
-  .ring-v3 .ring-utama > section.dua-sisi > .grafik, .ring-v3 .ring-utama > section.dua-sisi > .kisi-grafik{grid-column:2; grid-row:2 / span 8; margin-top:0;}
+  .ring-utama > section.dua-sisi{display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, 680px); column-gap:40px; row-gap:10px; align-items:start;}
+  .ring-utama > section.dua-sisi > *{grid-column:1;}
+  .ring-utama > section.dua-sisi > h2{grid-column:1 / -1;}
+  .ring-utama > section.dua-sisi > .grafik:not([data-kh-grafik$="tabel"]), .ring-utama > section.dua-sisi > .kisi-grafik{grid-column:2; grid-row:2 / span 8; margin-top:0;}
+  .ring-utama > section.dua-sisi > .grafik[data-kh-grafik$="tabel"]{grid-column:1 / -1;}
 }
 .kisi-lebar{display:grid; grid-template-columns:repeat(2, minmax(0, 640px)); gap:28px 48px; align-items:start;}
 .kisi-lebar > .blok-grafik > p.ket-grafik{max-width:640px; margin:0 0 14px; font-size:15px; line-height:1.55; color:var(--ink-1);}
@@ -746,6 +747,65 @@ ul.daftar-rujukan a{color:var(--link, #1a5a8a); text-decoration:underline; text-
 .metode .dua-kolom-teks{display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:10px 40px;}
 .metode .dua-kolom-teks > div > p, .metode .dua-kolom-teks li{max-width:75ch;}
 @media (max-width:900px){ .metode .dua-kolom-teks{grid-template-columns:minmax(0, 1fr);} }
+
+/* ==========================================================================
+   DAFTAR ISI KANAN DAN HALAMAN HASIL (22 Nov 2026, permintaan Ilham: isi selebar kolom, daftar isi di kanan yang bisa digulir,
+   persamaan yang rapi). Daftar isi dibuat pasangDaftarIsi() di kode-8b-karhutla-ringkas.js untuk Ringkasan, Hasil, dan Sumber data.
+   ========================================================================== */
+.ring-nav{top:12px; max-height:calc(100vh - 90px); overscroll-behavior:contain;}
+.ring-nav .isi-lipat > summary{list-style:none; cursor:pointer;}
+.ring-nav .isi-lipat > summary::-webkit-details-marker{display:none;}
+.ring-nav .isi-lipat > summary::after{content:" +"; font-weight:400;}
+.ring-nav .isi-lipat[open] > summary::after{content:" −";}
+.ring-nav a{display:block; padding:2px 0 2px 12px; margin-left:-13px; border-left:2px solid transparent;}
+.ring-nav a.aktif{color:var(--ink-1); font-weight:700; border-left-color:var(--accent, #1a5a8a);}
+@media (max-width:1100px){
+  .ring-tata{grid-template-columns:minmax(0, 1fr); gap:16px;}
+  .ring-nav{display:block; position:static; order:-1; max-height:none; overflow:visible; border-left:none; border:1px solid var(--border); padding:10px 14px; margin:0;}
+  .ring-nav .isi-lipat > summary{font-size:13px; margin:0;}
+  .ring-nav ol{margin-top:8px;}
+  .ring-nav a{margin-left:0; padding-left:0; border-left:none;}
+}
+.ring-utama > section{display:flex; flex-direction:column; gap:10px;}
+/* tabel dan grafik tabel memakai seluruh lebar kolom isi */
+.metode .grafik[data-kh-grafik$="tabel"], .metode [data-kh-tabel]{max-width:none;}
+.metode .metode-tabel table.tabel-kbli{width:100%;}
+.tabel-dua th:first-child, .tabel-dua td:first-child{width:24%;}
+.tabel-syarat th:first-child, .tabel-syarat td:first-child{width:14%;}
+.tabel-syarat th:nth-child(2), .tabel-syarat td:nth-child(2){width:26%;}
+.metode-tabel table.tabel-kbli td{white-space:normal;}
+/* ringkasan hasil: tiga kotak berdampingan, tanpa sudut membulat dan bayangan */
+.metode ul.kotak-ringkas{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:16px; max-width:none;}
+.metode ul.kotak-ringkas li{border-top:3px solid var(--q4); background:var(--bg-panel); padding:12px 14px; font-size:15px; line-height:1.55; color:var(--ink-1);}
+.metode ul.kotak-ringkas li b{display:block; margin-bottom:4px;}
+@media (max-width:900px){ .metode ul.kotak-ringkas{grid-template-columns:minmax(0, 1fr);} }
+/* persamaan: satu baris per model, label di kiri, rumus di kanan; hanya rumus yang boleh digulir ke samping di ponsel */
+.persamaan{border-top:1px solid var(--ink-1); border-bottom:1px solid var(--border-strong);}
+.pers-baris{display:grid; grid-template-columns:200px minmax(0, 1fr); gap:6px 24px; padding:12px 4px; border-top:1px solid var(--border); align-items:baseline;}
+.pers-baris:first-child{border-top:none;}
+.pers-label{font-weight:700; font-size:14px; color:var(--ink-1);}
+.pers-isi{min-width:0;}
+.pers-rumus{display:block; overflow-x:auto; white-space:nowrap; font-family:"Cambria Math", "STIX Two Math", "Times New Roman", Georgia, serif; font-size:18px; line-height:1.9; color:var(--ink-1); padding-bottom:2px;}
+.pers-rumus sub{font-size:0.68em;}
+.pers-ket{display:block; font-size:13px; color:var(--ink-2);}
+.topi{position:relative; display:inline-block;}
+.topi::before{content:""; position:absolute; left:50%; top:-0.2em; width:0.3em; height:0.3em; margin-left:-0.1em; border-left:1.4px solid currentColor; border-top:1.4px solid currentColor; transform:rotate(45deg);}
+@media (max-width:700px){ .pers-baris{grid-template-columns:minmax(0, 1fr);} }
+.tabel-simbol td:nth-child(odd){white-space:nowrap; font-family:"Cambria Math", "STIX Two Math", "Times New Roman", Georgia, serif; font-size:15px;}
+.tabel-simbol td:nth-child(3){border-left:1px solid var(--border);}
+@media (max-width:700px){
+  .tabel-simbol thead th:nth-child(n+3){display:none;}
+  .tabel-simbol tbody tr{display:grid; grid-template-columns:minmax(96px, auto) minmax(0, 1fr);}
+  .tabel-simbol td:nth-child(3){border-left:none;}
+  .tabel-simbol td:empty{display:none;}
+}
+/* Hubungan: kisi grafik dua kolom yang rata atas */
+.kisi-lebar{grid-template-columns:repeat(2, minmax(0, 1fr)); max-width:1360px;}
+.kisi-lebar > .blok-grafik{display:flex; flex-direction:column; min-width:0; border-top:1px solid var(--border); padding-top:14px;}
+.kisi-lebar > .blok-grafik > h3{font-family:Lato, system-ui, sans-serif; font-size:17px; font-weight:700; margin:0 0 6px; color:var(--ink-1);}
+.kisi-lebar > .blok-grafik > p.ket-grafik{min-height:4.7em;}
+.kisi-lebar .grafik{max-width:640px;}
+@media (max-width:1100px){ .kisi-lebar{grid-template-columns:minmax(0, 1fr);} .kisi-lebar > .blok-grafik > p.ket-grafik{min-height:0;} }
 
 /* templat bersama (peta-dashboard/templat-bersama/, 23 Okt 2026): halaman Hubungan dan peta dua variabel */
 .hb-tanya{flex-wrap:wrap; gap:8px; margin:4px 0 14px;}
@@ -1201,30 +1261,26 @@ ul.daftar-rujukan a{color:var(--link, #1a5a8a); text-decoration:underline; text-
       belum dikendalikan apa pun; versi yang memperhitungkan efek tetap kab/kota dan tahun ada di halaman <a href="#hasil">Hasil awal regresi</a>.</p>
       <div class="kisi-lebar">
         <div class="blok-grafik">
-          <p class="ket-grafik">Di luar Jawa-Bali, median PM2.5 melonjak di tahun kebakaran dan turun lagi sesudahnya. Di Jawa-Bali garisnya lebih rata dan hampir setiap tahun lebih tinggi,
-          karena udaranya kotor juga oleh kendaraan dan industri; hanya pada 2015 median luar Jawa-Bali melampauinya. Pada 2015 mediannya <b data-kh="kel-med:pm25_pop:2015:luar"></b> di luar Jawa-Bali dan
-          <span data-kh="kel-med:pm25_pop:2015:jb"></span> di Jawa-Bali.</p>
+          <p class="ket-grafik">Di luar Jawa-Bali, PM2.5 melonjak di tahun kebakaran lalu turun lagi. Jawa-Bali hampir selalu lebih tinggi karena kendaraan dan industri,
+          kecuali pada 2015: <b data-kh="kel-med:pm25_pop:2015:luar"></b> di luar Jawa-Bali, <span data-kh="kel-med:pm25_pop:2015:jb"></span> di Jawa-Bali.</p>
           <div class="grafik" data-kh-grafik="jb-pm25" data-judul="PM2.5 di luar Jawa-Bali mengikuti musim kebakaran"
                data-sub="Median kab/kota PM2.5 ditimbang penduduk, µg/m³ rata-rata setahun"></div>
         </div>
         <div class="blok-grafik">
-          <p class="ket-grafik">Tiap titik adalah korelasi antar-kab/kota pada satu tahun. Garis api tetangga selalu di atas garis api sendiri, dan keduanya naik di tahun kering seperti 2006, 2015, dan 2019.
-          Di tahun basah, korelasi dengan api sendiri malah di bawah nol, kemungkinan karena kab/kota yang punya api umumnya kabupaten berpenduduk jarang yang udaranya relatif bersih.
-          Korelasi tertinggi dengan api tetangga tercatat pada <b data-kh="kor-maks:api_luar_n300"></b>.</p>
+          <p class="ket-grafik">Korelasi dengan api tetangga selalu lebih tinggi daripada dengan api sendiri, dan paling tinggi pada <b data-kh="kor-maks:api_luar_n300"></b>.
+          Di tahun basah, korelasi dengan api sendiri malah di bawah nol, kemungkinan karena kab/kota yang punya api umumnya berpenduduk jarang dan udaranya relatif bersih.</p>
           <div class="grafik" data-kh-grafik="kor-tahun" data-judul="PM2.5 lebih mengikuti api tetangga, setiap tahun"
                data-sub="Korelasi antar-kab/kota PM2.5 dengan log titik api sendiri dan titik api tetangga dalam 300 km, per tahun"></div>
         </div>
         <div class="blok-grafik">
-          <p class="ket-grafik">Kab/kota dibagi lima menurut PM2.5 di tiap tahun, lalu dilihat persen penduduk yang dirawat inap pada survei Maret tahun berikutnya. Seperlima terkotor
-          bermedian <b data-kh="kuintil:pct_rawat_inap:1:atas"></b>, seperlima terbersih <span data-kh="kuintil:pct_rawat_inap:1:bawah"></span>. Perbandingan mentah ini mencampur
-          banyak hal, misalnya kota besar yang udaranya kotor juga punya lebih banyak rumah sakit.</p>
+          <p class="ket-grafik">Seperlima kab/kota dengan udara terkotor bermedian <b data-kh="kuintil:pct_rawat_inap:1:atas"></b> penduduk dirawat inap pada survei tahun berikutnya,
+          seperlima terbersih <span data-kh="kuintil:pct_rawat_inap:1:bawah"></span>. Perbandingan mentah ini juga menangkap hal lain, misalnya kota besar punya lebih banyak rumah sakit.</p>
           <div class="grafik" data-kh-grafik="pm25-kuintil" data-y="pct_rawat_inap" data-geser="1" data-judul="Rawat inap menurut seperlima PM2.5"
                data-sub="Median persen penduduk yang dirawat inap setahun terakhir, menurut seperlima kab/kota berdasarkan PM2.5 tahun sebelumnya"></div>
         </div>
         <div class="blok-grafik">
-          <p class="ket-grafik">Pembagian yang sama untuk porsi belanja kesehatan dalam APBD pada tahun yang sama. Seperlima terkotor bermedian
-          <b data-kh="kuintil:pct_kesehatan:0:atas"></b> dan seperlima terbersih <span data-kh="kuintil:pct_kesehatan:0:bawah"></span>. Porsi belanja lebih ditentukan
-          oleh aturan belanja wajib dan gaji daripada oleh kualitas udara.</p>
+          <p class="ket-grafik">Porsi belanja kesehatan hampir sama di kelima kelompok: <b data-kh="kuintil:pct_kesehatan:0:atas"></b> di seperlima terkotor dan
+          <span data-kh="kuintil:pct_kesehatan:0:bawah"></span> di seperlima terbersih. Porsi ini lebih ditentukan aturan belanja wajib dan gaji daripada kualitas udara.</p>
           <div class="grafik" data-kh-grafik="pm25-kuintil" data-y="pct_kesehatan" data-geser="0" data-judul="Porsi belanja kesehatan menurut seperlima PM2.5"
                data-sub="Median persen belanja APBD kab/kota untuk fungsi kesehatan, menurut seperlima kab/kota berdasarkan PM2.5 tahun yang sama"></div>
         </div>
@@ -1247,24 +1303,13 @@ ul.daftar-rujukan a{color:var(--link, #1a5a8a); text-decoration:underline; text-
       tetapi petunjuk itu rapuh: ia hilang bila perbandingan dibatasi ke kab/kota di pulau yang sama pada tahun yang sama. Halaman ini menjelaskan model, variabel, asumsi, hasil, dan batasnya.</p>
       <p class="byline" data-status></p>
       <p class="byline">Berkas hasil diperbarui <span data-kh="reg-tanggal"></span>. Kode: <code>01-kode/08-regresi-paparan-satelit.do</code> dan <code>01-kode/10-uji-ulang-ketahanan.do</code>.</p>
-      <nav class="daftar-isi" aria-label="Isi halaman">
-        <a href="#h-ringkas">Ringkasan</a>
-        <a href="#h-model">Model</a>
-        <a href="#h-variabel">Variabel</a>
-        <a href="#h-kontrol">Kontrol</a>
-        <a href="#h-instrumen">Instrumen</a>
-        <a href="#h-tahap1">Tahap pertama</a>
-        <a href="#h-belanja">Belanja</a>
-        <a href="#h-rawat">Rawat inap</a>
-        <a href="#h-uji-ulang">Uji ulang</a>
-        <a href="#h-pustaka">Kaitan dengan kajian lain</a>
-        <a href="#h-batas">Batas</a>
-      </nav>
     </header>
 
+    <div class="ring-tata">
+    <div class="ring-utama">
     <section id="h-ringkas">
       <h2 data-ikon="catatan">Ringkasan</h2>
-      <ul class="peringatan">
+      <ul class="kotak-ringkas">
         <li><b>Api di wilayah tetangga menaikkan PM2.5.</b> Bila titik api dalam <span class="angka-tetap">300 km</span> berlipat dua, PM2.5 yang dihirup penduduk naik sekitar
         <span data-kh="reg-ganda:T1:2001-2024:pm25_10:ln_api_luar"></span>.</li>
         <li><b>Belanja kesehatan daerah tidak bergerak, dan ini kokoh.</b> Tidak satu pun dari enam ukuran belanja DJPK 2018–2024 yang signifikan, dengan OLS, dengan instrumen,
@@ -1282,19 +1327,21 @@ ul.daftar-rujukan a{color:var(--link, #1a5a8a); text-decoration:underline; text-
       <p>Unit analisisnya kab/kota per tahun. Paparan asap diukur dengan PM2.5<button type="button" class="tanya" data-ket="reg-pm25" aria-label="Keterangan: PM2.5 dalam regresi">?</button> dibagi 10, sehingga koefisien berarti perubahan per <span class="angka-tetap">10 µg/m³</span>.
       Karena kab/kota yang berasap bisa berbeda dalam hal lain, PM2.5 diestimasi dengan <button type="button" class="istilah" data-ket="reg-iv">variabel instrumen</button>, yaitu titik api di kab/kota lain dalam radius <span class="angka-tetap">300 km</span>.
       Estimasinya dua tahap (2SLS).</p>
-      <div class="metode-tabel tabel-geser"><table class="tabel-kbli"><thead><tr><th>Tahap</th><th>Persamaan</th></tr></thead><tbody>
-        <tr><td>Tahap pertama<button type="button" class="tanya" data-ket="reg-tahap-pertama" aria-label="Keterangan: Tahap pertama">?</button></td>
-          <td><i>PM</i><sub><i>it</i></sub>/10 = <i>π</i>&#8202;ln(1 + <i>ApiLuar</i><sub><i>it</i></sub>) + <i>γ</i>&#8202;ln(1 + <i>ApiSendiri</i><sub><i>it</i></sub>) + <i>α</i><sub><i>i</i></sub> + <i>λ</i><sub><i>t</i></sub> + <i>u</i><sub><i>it</i></sub></td></tr>
-        <tr><td>Tahap kedua, IV<button type="button" class="tanya" data-ket="reg-iv" aria-label="Keterangan: Variabel instrumen (IV, 2SLS)">?</button></td>
-          <td><i>Y</i><sub><i>it</i></sub> = <i>β</i>&#8202;<i>PM̂</i><sub><i>it</i></sub>/10 + <i>δ</i>&#8202;ln(1 + <i>ApiSendiri</i><sub><i>it</i></sub>) + <i>α</i><sub><i>i</i></sub> + <i>λ</i><sub><i>t</i></sub> + <i>ε</i><sub><i>it</i></sub></td></tr>
-        <tr><td>OLS efek tetap<button type="button" class="tanya" data-ket="reg-ols" aria-label="Keterangan: OLS efek tetap">?</button></td>
-          <td>Sama dengan tahap kedua, tetapi memakai <i>PM</i><sub><i>it</i></sub> apa adanya, tanpa instrumen</td></tr>
-        <tr><td>Bentuk tereduksi<button type="button" class="tanya" data-ket="reg-bentuk-tereduksi" aria-label="Keterangan: Bentuk tereduksi">?</button></td>
-          <td><i>Y</i><sub><i>it</i></sub> = <i>ρ</i>&#8202;ln(1 + <i>ApiLuar</i><sub><i>it</i></sub>) + <i>δ</i>&#8202;ln(1 + <i>ApiSendiri</i><sub><i>it</i></sub>) + <i>α</i><sub><i>i</i></sub> + <i>λ</i><sub><i>t</i></sub> + <i>e</i><sub><i>it</i></sub></td></tr>
+      <div class="persamaan" role="group" aria-label="Persamaan model">
+        <div class="pers-baris"><div class="pers-label">Tahap pertama<button type="button" class="tanya" data-ket="reg-tahap-pertama" aria-label="Keterangan: Tahap pertama">?</button></div><div class="pers-isi"><span class="pers-rumus"><i>PM</i><sub><i>it</i></sub> / 10 = <i>π</i> ln(1 + <i>ApiLuar</i><sub><i>it</i></sub>) + <i>γ</i> ln(1 + <i>ApiSendiri</i><sub><i>it</i></sub>) + <i>α</i><sub><i>i</i></sub> + <i>λ</i><sub><i>t</i></sub> + <i>u</i><sub><i>it</i></sub></span><span class="pers-ket">PM2.5 diperkirakan dari titik api tetangga</span></div></div>
+        <div class="pers-baris"><div class="pers-label">Tahap kedua, IV<button type="button" class="tanya" data-ket="reg-iv" aria-label="Keterangan: Variabel instrumen (IV, 2SLS)">?</button></div><div class="pers-isi"><span class="pers-rumus"><i>Y</i><sub><i>it</i></sub> = <i>β</i> <span class="topi"><i>PM</i></span><sub><i>it</i></sub> / 10 + <i>δ</i> ln(1 + <i>ApiSendiri</i><sub><i>it</i></sub>) + <i>α</i><sub><i>i</i></sub> + <i>λ</i><sub><i>t</i></sub> + <i>ε</i><sub><i>it</i></sub></span><span class="pers-ket">memakai PM2.5 hasil tahap pertama</span></div></div>
+        <div class="pers-baris"><div class="pers-label">OLS efek tetap<button type="button" class="tanya" data-ket="reg-ols" aria-label="Keterangan: OLS efek tetap">?</button></div><div class="pers-isi"><span class="pers-rumus"><i>Y</i><sub><i>it</i></sub> = <i>β</i> <i>PM</i><sub><i>it</i></sub> / 10 + <i>δ</i> ln(1 + <i>ApiSendiri</i><sub><i>it</i></sub>) + <i>α</i><sub><i>i</i></sub> + <i>λ</i><sub><i>t</i></sub> + <i>ε</i><sub><i>it</i></sub></span><span class="pers-ket">sama dengan tahap kedua, tetapi memakai PM2.5 apa adanya, tanpa instrumen</span></div></div>
+        <div class="pers-baris"><div class="pers-label">Bentuk tereduksi<button type="button" class="tanya" data-ket="reg-bentuk-tereduksi" aria-label="Keterangan: Bentuk tereduksi">?</button></div><div class="pers-isi"><span class="pers-rumus"><i>Y</i><sub><i>it</i></sub> = <i>ρ</i> ln(1 + <i>ApiLuar</i><sub><i>it</i></sub>) + <i>δ</i> ln(1 + <i>ApiSendiri</i><sub><i>it</i></sub>) + <i>α</i><sub><i>i</i></sub> + <i>λ</i><sub><i>t</i></sub> + <i>e</i><sub><i>it</i></sub></span><span class="pers-ket">hasil langsung pada titik api tetangga</span></div></div>
+      </div>
+      <div class="metode-tabel tabel-geser"><table class="tabel-kbli tabel-simbol"><thead><tr><th>Simbol</th><th>Arti</th><th>Simbol</th><th>Arti</th></tr></thead><tbody>
+        <tr><td><i>i</i>, <i>t</i></td><td>kab/kota dan tahun</td><td><i>β</i></td><td>angka yang dicari: perubahan <i>Y</i> bila PM2.5 naik <span class="angka-tetap">10 µg/m³</span> karena asap kiriman</td></tr>
+        <tr><td><i>Y</i><sub><i>it</i></sub></td><td>variabel terikat: belanja kesehatan atau rawat inap</td><td><i>π</i></td><td>pengaruh titik api tetangga pada PM2.5 (tahap pertama)</td></tr>
+        <tr><td><i>PM</i><sub><i>it</i></sub></td><td>PM2.5 ditimbang penduduk</td><td><i>γ</i>, <i>δ</i></td><td>pengaruh titik api sendiri, dikontrol di setiap model</td></tr>
+        <tr><td><span class="topi"><i>PM</i></span><sub><i>it</i></sub></td><td>PM2.5 yang diperkirakan di tahap pertama</td><td><i>ρ</i></td><td>pengaruh langsung titik api tetangga pada <i>Y</i> (bentuk tereduksi)</td></tr>
+        <tr><td><i>ApiLuar</i><sub><i>it</i></sub>, <i>ApiSendiri</i><sub><i>it</i></sub></td><td>titik api di kab/kota lain dalam <span class="angka-tetap">300 km</span>, dan di dalam kab/kota</td><td><i>α</i><sub><i>i</i></sub>, <i>λ</i><sub><i>t</i></sub></td><td><button type="button" class="istilah" data-ket="reg-efek-tetap">efek tetap</button> kab/kota dan efek tetap tahun</td></tr>
+        <tr><td><i>u</i><sub><i>it</i></sub>, <i>ε</i><sub><i>it</i></sub>, <i>e</i><sub><i>it</i></sub></td><td>sisa yang tidak dijelaskan model</td><td></td><td></td></tr>
       </tbody></table></div>
-      <p><i>i</i> adalah kab/kota dan <i>t</i> tahun. <i>α</i><sub><i>i</i></sub> adalah <button type="button" class="istilah" data-ket="reg-efek-tetap">efek tetap</button> kab/kota dan <i>λ</i><sub><i>t</i></sub> efek tetap tahun.
-      <i>β</i> adalah angka yang dicari: perubahan <i>Y</i> bila PM2.5 naik <span class="angka-tetap">10 µg/m³</span> karena asap kiriman.
-      <button type="button" class="istilah" data-ket="reg-galat-baku">Galat baku</button> diklaster per kab/kota; sebagai uji, juga diklaster per provinsi.</p>
+      <p><button type="button" class="istilah" data-ket="reg-galat-baku">Galat baku</button> diklaster per kab/kota; sebagai uji, juga diklaster per provinsi.</p>
     </section>
 
     <section id="h-variabel">
@@ -1323,12 +1370,11 @@ ul.daftar-rujukan a{color:var(--link, #1a5a8a); text-decoration:underline; text-
     <section id="h-kontrol">
       <h2 data-ikon="catatan">Kontrol dan alasannya</h2>
       <p>Kontrol sengaja dibuat sedikit. Variabel yang ikut berubah karena asap, seperti pendapatan daerah atau kemiskinan tahun berjalan, tidak dimasukkan supaya efeknya tidak ikut terserap.</p>
-      <ul>
-        <li><b>Titik api sendiri</b><button type="button" class="tanya" data-ket="reg-api-sendiri" aria-label="Keterangan: Titik api sendiri (kontrol)">?</button>. Api di wilayah sendiri menghasilkan asap lokal, tetapi juga memengaruhi ekonomi setempat: lahan dibuka, petani bekerja, aparat dikerahkan.
-        Dengan mengontrolnya, yang tersisa adalah variasi asap yang datang dari luar.</li>
-        <li><b>Efek tetap kab/kota</b><button type="button" class="tanya" data-ket="reg-efek-tetap" aria-label="Keterangan: Efek tetap kab/kota dan tahun">?</button>. Menyerap perbedaan yang tidak berubah antarwaktu, misalnya jumlah rumah sakit, kemiskinan struktural, atau jarak ke kota besar.</li>
-        <li><b>Efek tetap tahun</b>. Menyerap kejutan yang sama untuk seluruh Indonesia: COVID-19, perubahan aturan DAK, inflasi, atau perubahan kuesioner SUSENAS.</li>
-      </ul>
+      <div class="metode-tabel tabel-geser"><table class="tabel-kbli tabel-dua"><thead><tr><th>Kontrol</th><th>Alasannya</th></tr></thead><tbody>
+        <tr><td><b>Titik api sendiri</b><button type="button" class="tanya" data-ket="reg-api-sendiri" aria-label="Keterangan: Titik api sendiri (kontrol)">?</button></td><td>Api di wilayah sendiri menghasilkan asap lokal, tetapi juga memengaruhi ekonomi setempat: lahan dibuka, petani bekerja, aparat dikerahkan. Dengan mengontrolnya, yang tersisa adalah variasi asap yang datang dari luar.</td></tr>
+        <tr><td><b>Efek tetap kab/kota</b><button type="button" class="tanya" data-ket="reg-efek-tetap" aria-label="Keterangan: Efek tetap kab/kota dan tahun">?</button></td><td>Menyerap perbedaan yang tidak berubah antarwaktu, misalnya jumlah rumah sakit, kemiskinan struktural, atau jarak ke kota besar.</td></tr>
+        <tr><td><b>Efek tetap tahun</b></td><td>Menyerap kejutan yang sama untuk seluruh Indonesia: COVID-19, perubahan aturan DAK, inflasi, atau perubahan kuesioner SUSENAS.</td></tr>
+      </tbody></table></div>
       <p>Uji tambahan<button type="button" class="tanya" data-ket="reg-uji-ketahanan" aria-label="Keterangan: Uji ketahanan">?</button> untuk rawat inap: luas terbakar SiPongi di wilayah sendiri, curah hujan CHIRPS sebagai penanda tahun kering El Niño<button type="button" class="tanya beda" data-ket="reg-hujan" aria-label="Keterangan: Curah hujan dan tahun kering">?</button>,
       tren linier per provinsi, tanpa tahun 2020–2021 (masa pandemi), sampel luar Jawa-Bali, dan galat baku yang diklaster per provinsi<button type="button" class="tanya" data-ket="reg-klaster" aria-label="Keterangan: Klaster provinsi">?</button>.
       Uji ulang menambah instrumen lain, ukuran PM2.5 lain, plasebo waktu, dan efek tetap pulau × tahun<button type="button" class="tanya beda" data-ket="reg-pulau-tahun" aria-label="Keterangan: Efek tetap pulau × tahun">?</button> (lihat <a href="#h-uji-ulang">Uji ulang</a>).</p>
@@ -1337,7 +1383,7 @@ ul.daftar-rujukan a{color:var(--link, #1a5a8a); text-decoration:underline; text-
     <section id="h-instrumen">
       <h2 data-ikon="sebar">Instrumen dan asumsinya</h2>
       <p>Instrumen yang sah harus memenuhi tiga syarat. Data kita memenuhi syarat pertama dengan jelas; dua lainnya hanya bisa dinalar dan diuji sebagian.</p>
-      <div class="metode-tabel tabel-geser"><table class="tabel-kbli"><thead><tr><th>Syarat</th><th>Arti untuk riset ini</th><th>Bukti dan ancaman</th></tr></thead><tbody>
+      <div class="metode-tabel tabel-geser"><table class="tabel-kbli tabel-syarat"><thead><tr><th>Syarat</th><th>Arti untuk riset ini</th><th>Bukti dan ancaman</th></tr></thead><tbody>
         <tr><td>Relevansi<button type="button" class="tanya" data-ket="reg-f" aria-label="Keterangan: Statistik F tahap pertama">?</button></td><td>Api tetangga benar-benar menaikkan PM2.5 di sini</td>
           <td>Terpenuhi. Statistik F tahap pertama <span data-kh="reg:T2-IV:IV:ln_kes_total:pm25_10:fstat"></span> (sampel belanja) dan <span data-kh="reg:T3-IV:IV:pct_rawat_inap:pm25_10:fstat"></span> (sampel SUSENAS),
           jauh di atas ambang lazim <span class="angka-tetap">10</span>. Dengan klaster provinsi turun menjadi <span data-kh="reg:T4:IV klaster provinsi:pct_rawat_inap:pm25_10:fstat"></span>, masih di atas ambang.</td></tr>
@@ -1353,7 +1399,7 @@ ul.daftar-rujukan a{color:var(--link, #1a5a8a); text-decoration:underline; text-
       menjadi pembanding yang membedakan efek asap dari efek tahun kering. Rancangan serupa dipakai Rangel dan Vogl (2019) untuk pembakaran tebu di Brasil.</p>
     </section>
 
-    <section id="h-tahap1">
+    <section id="h-tahap1" class="dua-sisi">
       <h2 data-ikon="sebar">Api di wilayah tetangga menaikkan PM2.5</h2>
       <p>Bila titik api di wilayah tetangga berlipat dua, PM2.5 di sebuah kab/kota naik sekitar <b data-kh="reg-ganda:T1:2001-2024:pm25_10:ln_api_luar"></b>
       (koefisien <span data-kh="reg:T1:2001-2024:pm25_10:ln_api_luar:koef:3"></span>, <span data-kh="reg:T1:2001-2024:pm25_10:ln_api_luar:p"></span>). Api di wilayah sendiri yang berlipat dua
@@ -1375,7 +1421,7 @@ ul.daftar-rujukan a{color:var(--link, #1a5a8a); text-decoration:underline; text-
       <div class="grafik" data-kh-grafik="reg-tabel" data-tabel="T2-OLS,T2-IV" data-judul="Tabel 2. Belanja kesehatan dan PM2.5, 2018–2024" data-sub="Koefisien PM2.5 per 10 µg/m³ terhadap ln belanja (DJPK, tahun yang lolos uji mutu)"></div>
     </section>
 
-    <section id="h-rawat">
+    <section id="h-rawat" class="dua-sisi">
       <h2 data-ikon="penduduk">Rawat inap tampak naik di tahun berasap</h2>
       <p>Setiap tambahan <span class="angka-tetap">10 µg/m³</span> PM2.5 menaikkan persen penduduk yang dirawat inap dalam setahun terakhir sebesar
       <b data-kh="reg:T3-IV:IV:pct_rawat_inap:pm25_10:koef:2"></b> poin persen (<span data-kh="reg:T3-IV:IV:pct_rawat_inap:pm25_10:p"></span>). Rata-rata kab/kota dalam sampel ini
@@ -1395,7 +1441,7 @@ ul.daftar-rujukan a{color:var(--link, #1a5a8a); text-decoration:underline; text-
       <div class="grafik" data-kh-grafik="reg-tabel" data-tabel="T4" data-judul="Tabel 4. Uji ketahanan untuk rawat inap" data-sub="Persen penduduk dirawat inap setahun terakhir; baris pertama bentuk tereduksi, sisanya IV"></div>
     </section>
 
-    <section id="h-uji-ulang">
+    <section id="h-uji-ulang" class="dua-sisi">
       <h2 data-ikon="sebar">Uji ulang: rawat inap rapuh, belanja kokoh</h2>
       <p>Temuan rawat inap hilang bila kab/kota hanya dibandingkan dengan kab/kota lain di pulau yang sama pada tahun yang sama. Dengan <button type="button" class="istilah" data-ket="reg-pulau-tahun">efek tetap pulau × tahun</button>,
       koefisiennya turun dari <span data-kh="uu:U0:pct_rawat_inap:koef:2"></span> menjadi <span data-kh="uu:U4:pct_rawat_inap:koef:2"></span> (<span data-kh="uu:U4:pct_rawat_inap:p"></span>),
@@ -1435,6 +1481,9 @@ ul.daftar-rujukan a{color:var(--link, #1a5a8a); text-decoration:underline; text-
       begitu efek tetap pulau × tahun dipakai. Petunjuk rawat inap belum boleh dibaca sebagai efek asap sampai uji dengan arah angin selesai. PM2.5 adalah perkiraan satelit yang dikalibrasi dengan sedikit stasiun darat di Sumatra dan Kalimantan; saat asap tebal, arah kesalahannya belum diketahui
       (lihat <a href="#sd-terbuka">Yang masih terbuka</a>). Rawat inap SUSENAS diukur dari pengakuan responden, bukan catatan rumah sakit.</p>
     </section>
+    </div>
+    <nav class="ring-nav" aria-label="Isi halaman"></nav>
+    </div>
   </article>
 </div>
 
@@ -1492,21 +1541,10 @@ ul.daftar-rujukan a{color:var(--link, #1a5a8a); text-decoration:underline; text-
       <h2 class="judul-utama">Sumber data dan cara mengolahnya</h2>
       <p class="lead">Dari mana angka dashboard ini, bagaimana diolah, tahun mana yang layak dipakai, dan apa yang belum selesai.</p>
       <p class="byline" data-status></p>
-      <nav class="daftar-isi" aria-label="Isi halaman">
-        <a href="#sd-asal">Asal data</a>
-        <a href="#sd-cara">Cara mengolah</a>
-        <a href="#sd-mutu">Tahun yang layak</a>
-        <a href="#sd-uji">Uji</a>
-        <a href="#sd-rujukan">Rujukan dan panduan data</a>
-        <a href="#sd-batas">Keterbatasan</a>
-        <a href="#sd-baru">Apa yang baru</a>
-        <a href="#sd-wilayah">Wilayah</a>
-        <a href="#sd-terbuka">Yang masih terbuka</a>
-        <a href="#sd-istilah">Istilah</a>
-        <a href="#sd-kutip">Kutip dan perubahan</a>
-      </nav>
     </header>
 
+    <div class="ring-tata">
+    <div class="ring-utama">
     <section id="sd-asal">
       <h2 data-ikon="data">Asal data</h2>
       <p>Semua data berasal dari sumber terbuka atau data pemerintah yang sudah diunduh tim, lalu diolah ke kabupaten dan kota (batas 2022) oleh tim riset karhutla.
@@ -1643,6 +1681,9 @@ ul.daftar-rujukan a{color:var(--link, #1a5a8a); text-decoration:underline; text-
       <p class="kutipan">Pratama, M. I., dan Khoirunurrofik (2026). Karhutla dan asap: kebakaran hutan dan lahan, polusi asap, dan kesehatan per kabupaten dan kota (dashboard rancangan). Fakultas Ekonomi dan Bisnis, Universitas Indonesia.</p>
       <ul class="catatan-ubah" id="sdUbah"></ul>
     </section>
+    </div>
+    <nav class="ring-nav" aria-label="Isi halaman"></nav>
+    </div>
   </article>
 </div>
 
@@ -1914,7 +1955,8 @@ function grafikGaris(w, o){
   var sx = function(j){ return kiri + (nx < 2 ? 0.5 : j / (nx - 1)) * (W - kiri - kanan); }, sy = function(v){ return atas + (hi - v) / (hi - lo) * (H - atas - bawah); };
   for(var v = Math.ceil(lo / ly) * ly; v <= hi; v += ly){ el('line', {x1: kiri, x2: W - kanan, y1: sy(v), y2: sy(v), 'class': 'sumbu'}, svg); teks(svg, kiri - 6, sy(v) + 4, fmt(v, ly < 1 ? 1 : 0), {'text-anchor': 'end'}); }
   var jarakX = Math.ceil(nx * 40 / (W - kiri - kanan));
-  x.forEach(function(t, j){ if(j % jarakX === 0 || j === nx - 1) teks(svg, sx(j), H - 7, String(t), {'text-anchor': 'middle'}); });
+  /* (22 Nov 2026) label di dekat ujung dilewati supaya tidak bertumpuk dengan label tahun terakhir */
+  x.forEach(function(t, j){ if((j % jarakX === 0 && (nx - 1 - j >= jarakX || jarakX === 1)) || j === nx - 1) teks(svg, sx(j), H - 7, String(t), {'text-anchor': 'middle'}); });
   var ujung = [];
   o.seri.forEach(function(s){
     var d = '', mulai = true;
@@ -3594,10 +3636,39 @@ function tabelPanduan(w){
 }
 var TABEL_KH = {deskriptif: tabelDeskriptif, 'banding-besar': tabelBandingBesar, rujukan: tabelRujukan, panduan: tabelPanduan};
 
+/* Daftar isi kanan (Ringkasan, Hasil, Sumber data): dibuat dari judul bagian di .ring-utama, menempel saat digulir, bisa digulir sendiri,
+   dan menandai bagian yang sedang dibaca. Di layar <= 1.100 px pindah ke atas isi dan dilipat. */
+function pasangDaftarIsi(akar){
+  var nav = akar.querySelector('.ring-nav'), utama = akar.querySelector('.ring-utama'), gulir = akar.querySelector('.metode-wrap');
+  if(!nav || !utama) return;
+  var bagian = [].slice.call(utama.querySelectorAll(':scope > section[id]')).filter(function(b){ return b.querySelector(':scope > h2'); });
+  var sempit = window.matchMedia && window.matchMedia('(max-width: 1100px)').matches;
+  nav.innerHTML = '<details class="isi-lipat"' + (sempit ? '' : ' open') + '><summary class="judul-isi">Isi halaman</summary><ol>'
+    + bagian.map(function(b){ return '<li><a href="#' + b.id + '" data-ke="' + b.id + '">' + esc(b.querySelector(':scope > h2').textContent.trim()) + '</a></li>'; }).join('') + '</ol></details>';
+  var tautan = [].slice.call(nav.querySelectorAll('a[data-ke]'));
+  function tandai(){
+    if(!gulir || akar.hidden) return;
+    var atas = gulir.getBoundingClientRect().top + 140, kini = bagian[0];
+    bagian.forEach(function(b){ if(b.getBoundingClientRect().top <= atas) kini = b; });
+    if(gulir.scrollTop + gulir.clientHeight >= gulir.scrollHeight - 4) kini = bagian[bagian.length - 1];
+    tautan.forEach(function(t){
+      var ya = kini && t.getAttribute('data-ke') === kini.id;
+      t.classList.toggle('aktif', ya);
+      if(ya){ t.setAttribute('aria-current', 'location');
+        var r = t.getBoundingClientRect(), rn = nav.getBoundingClientRect();
+        if(!sempit && (r.top < rn.top || r.bottom > rn.bottom)) nav.scrollTop += r.top - rn.top - rn.height / 3;
+      } else t.removeAttribute('aria-current');
+    });
+  }
+  if(gulir && !gulir._adaDaftarIsi){ gulir._adaDaftarIsi = true; gulir.addEventListener('scroll', tandai, {passive: true}); }
+  tandai();
+}
+
 isiKh = (function(asli){
   return function(akar){
     asli(akar);
     if(!akar) return;
+    pasangDaftarIsi(akar);
     [].forEach.call(akar.querySelectorAll('[data-kh-tabel]'), function(w){
       var j = w.getAttribute('data-kh-tabel');
       if(TABEL_KH[j]) TABEL_KH[j](w); else w.innerHTML = '<p class="salah-angka">[tabel ' + esc(j) + ' tidak dikenal]</p>';
